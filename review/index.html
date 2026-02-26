@@ -23,10 +23,16 @@
     .toolbar{display:grid;grid-template-columns:repeat(8,minmax(120px,1fr));gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;position:sticky;top:8px;z-index:5}
     label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
     input,select{height:34px;border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:#fff}
+    .exportbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}
+    .exportbar .btn{height:32px}
     .meta{display:flex;justify-content:space-between;align-items:center;margin:10px 2px;color:var(--muted);gap:10px;flex-wrap:wrap}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
     .card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer}
+    .card.picked{outline:3px solid #0f3c75;outline-offset:1px}
+    .imgwrap{position:relative}
     .card img{display:block;width:100%;height:158px;object-fit:cover;background:#eef2f6}
+    .pickbox-wrap{position:absolute;top:8px;right:8px;background:#ffffffee;border:1px solid #cad5e3;border-radius:999px;padding:3px 8px;font-size:12px;color:#3e536b;display:flex;align-items:center;gap:6px}
+    .pickbox-wrap input{height:auto;width:auto}
     .txt{padding:8px 10px}
     .t{font-weight:700;font-size:13px}
     .s{font-size:12px;color:var(--muted);margin-top:2px}
@@ -42,6 +48,7 @@
     .kv{margin-top:8px;font-size:13px}
     .kv b{display:inline-block;width:230px;color:var(--muted)}
     .btn{height:34px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:0 10px;cursor:pointer}
+    .btn.primary{background:#0f3c75;color:#fff;border-color:#0f3c75}
     .empty{grid-column:1/-1;background:#fff;border:1px solid #d6dee7;border-radius:10px;padding:14px;color:#5b6a7e}
     pre{white-space:pre-wrap;word-break:break-word;background:#f7f9fb;border:1px solid var(--line);padding:10px;border-radius:8px}
     @media (max-width:900px){.toolbar{grid-template-columns:repeat(2,minmax(120px,1fr))}.imgrow{grid-template-columns:1fr}}
@@ -49,10 +56,10 @@
 </head>
 <body>
   <div class="wrap">
-  <div class="head"><h2>RWTD Miner Review</h2><button class="btn" id="reset">Reset</button></div>
+  <div class="head"><h2>RWTD Miner Review</h2><button class="btn" id="reset">Reset Filters</button></div>
 
   <div class="help">
-    <div><b>How to review:</b> use <b>Status</b> to inspect `selected / borderline / rejected`, keep sort on <b>final score</b>, then open a card to compare <b>original</b>, <b>annotation mask</b>, and <b>texture-boundary overlay</b>.</div>
+    <div><b>How to review:</b> filter/sort, then mark good images with the checkbox on each card. You can auto-select by score threshold and manually deselect mistakes, then export selected names.</div>
     <div class="chips" id="stats_chips"></div>
   </div>
 
@@ -74,14 +81,26 @@
     <label>ID contains<input type="text" id="f_id" placeholder="ADE_train_000123"/></label>
   </div>
 
+  <div class="exportbar">
+    <label style="min-width:130px">Auto-select >= score<input type="number" id="exp_thr" min="0" max="100" value="80"/></label>
+    <button class="btn" id="exp_auto">Auto-select (filtered)</button>
+    <button class="btn" id="exp_sel_visible">Select visible</button>
+    <button class="btn" id="exp_clear_visible">Clear visible</button>
+    <button class="btn" id="exp_clear_all">Clear all picks</button>
+    <button class="btn primary" id="exp_download_txt">Export picked names (.txt)</button>
+    <button class="btn" id="exp_download_csv">Export picked manifest (.csv)</button>
+    <span class="chip" id="picked_chip">Picked <b>0</b></span>
+  </div>
+
   <div class="meta"><div id="count"></div><div>Keyboard: ← prev, → next, Esc close</div></div>
   <div id="grid" class="grid"></div>
 </div>
 <aside id="detail" class="detail"><div class="inner"></div></aside>
 <script src="data.js"></script>
 <script>
-const BUILD_TAG = "v3";
+const BUILD_TAG = "v4";
 const STATUS_SET = new Set(["selected", "borderline", "rejected"]);
+const PICK_KEY = `rwtd_manual_picks_${location.pathname}`;
 
 function num(v, d=0){
   const n = Number(v);
@@ -126,6 +145,28 @@ function escapeHtml(s){
     .replaceAll("'", "&#39;");
 }
 
+function rowKey(r){
+  return `${String(r.dataset || "unknown")}::${String(r.image_id || "")}`;
+}
+
+function loadPicked(){
+  try{
+    const raw = localStorage.getItem(PICK_KEY);
+    if (!raw) return new Set();
+    const arr = JSON.parse(raw);
+    if (!Array.isArray(arr)) return new Set();
+    return new Set(arr.map((x) => String(x)));
+  } catch (_) {
+    return new Set();
+  }
+}
+
+function savePicked(){
+  try {
+    localStorage.setItem(PICK_KEY, JSON.stringify([...state.picked]));
+  } catch (_) {}
+}
+
 const rawRows = Array.isArray(window.REVIEW_DATA) ? window.REVIEW_DATA : [];
 const rows = rawRows.map((r) => {
   const row = {...r};
@@ -140,7 +181,7 @@ const rows = rawRows.map((r) => {
   return row;
 });
 
-const state = {rows, filtered: [], idx: -1};
+const state = {rows, filtered: [], idx: -1, picked: loadPicked()};
 const el = {
   dataset: document.getElementById("f_dataset"),
   status: document.getElementById("f_status"),
@@ -156,10 +197,18 @@ const el = {
   inner: document.querySelector("#detail .inner"),
   reset: document.getElementById("reset"),
   chips: document.getElementById("stats_chips"),
+  pickedChip: document.getElementById("picked_chip"),
   q_all: document.getElementById("q_all"),
   q_sel: document.getElementById("q_sel"),
   q_bor: document.getElementById("q_bor"),
-  q_rej: document.getElementById("q_rej")
+  q_rej: document.getElementById("q_rej"),
+  expThr: document.getElementById("exp_thr"),
+  expAuto: document.getElementById("exp_auto"),
+  expSelVisible: document.getElementById("exp_sel_visible"),
+  expClearVisible: document.getElementById("exp_clear_visible"),
+  expClearAll: document.getElementById("exp_clear_all"),
+  expDownloadTxt: document.getElementById("exp_download_txt"),
+  expDownloadCsv: document.getElementById("exp_download_csv")
 };
 
 function initDatasets(){
@@ -192,6 +241,10 @@ function renderStats(){
     chips.push(`<span class=\"chip\">${escapeHtml(ds)} <b>${dsCount[ds]}</b></span>`);
   }
   el.chips.innerHTML = chips.join("");
+}
+
+function updatePickedChip(){
+  el.pickedChip.innerHTML = `Picked <b>${state.picked.size}</b>`;
 }
 
 function sortRows(rows){
@@ -244,10 +297,13 @@ function pill(s){
 }
 
 function card(r, i){
+  const k = rowKey(r);
+  const checked = state.picked.has(k) ? "checked" : "";
+  const pickedClass = state.picked.has(k) ? " picked" : "";
   const ds = r.dataset ? `${escapeHtml(r.dataset)} / ` : "";
   const thumb = bust(r.thumb);
   const orig = bust(r.image_path);
-  return `<article class="card" data-i="${i}"><img src="${thumb}" loading="lazy" onerror="this.onerror=null;this.src='${orig}'"/><div class="txt"><div class="t">${ds}${escapeHtml(r.image_id)}</div><div class="s">final ${num(r.final_score).toFixed(1)} | boundary ${num(r.geom_texture_boundary_score).toFixed(1)} | obj ${num(r.geom_object_fraction).toFixed(3)}</div><div class="s">${pill(r.status)}</div></div></article>`;
+  return `<article class="card${pickedClass}" data-i="${i}"><div class="imgwrap"><img src="${thumb}" loading="lazy" onerror="this.onerror=null;this.src='${orig}'"/><label class="pickbox-wrap"><input type="checkbox" class="pickbox" data-i="${i}" ${checked}/>pick</label></div><div class="txt"><div class="t">${ds}${escapeHtml(r.image_id)}</div><div class="s">final ${num(r.final_score).toFixed(1)} | boundary ${num(r.geom_texture_boundary_score).toFixed(1)} | obj ${num(r.geom_object_fraction).toFixed(3)}</div><div class="s">${pill(r.status)}</div></div></article>`;
 }
 
 function render(){
@@ -260,11 +316,24 @@ function render(){
       `min_masks=${el.masks.value}`,
       `obj_max=${el.obj.value}`
     ].join(" | ");
-    el.grid.innerHTML = `<div class=\"empty\">No samples match current filters.<br/><br/><code>${escapeHtml(active)}</code><br/><br/>Tip: click <b>Reset</b> or use quick buttons above.</div>`;
+    el.grid.innerHTML = `<div class=\"empty\">No samples match current filters.<br/><br/><code>${escapeHtml(active)}</code><br/><br/>Tip: click <b>Reset Filters</b> or quick buttons above.</div>`;
+    updatePickedChip();
     return;
   }
   el.grid.innerHTML = state.filtered.map((r, i) => card(r, i)).join("");
   el.grid.querySelectorAll(".card").forEach((c) => c.onclick = () => openDetail(Number(c.dataset.i)));
+  el.grid.querySelectorAll(".pickbox").forEach((cb) => cb.addEventListener("click", (ev) => {
+    ev.stopPropagation();
+    const i = Number(cb.dataset.i);
+    if (!Number.isFinite(i) || i < 0 || i >= state.filtered.length) return;
+    const r = state.filtered[i];
+    const k = rowKey(r);
+    if (cb.checked) state.picked.add(k);
+    else state.picked.delete(k);
+    savePicked();
+    render();
+  }));
+  updatePickedChip();
 }
 
 function kv(label, value){
@@ -275,6 +344,7 @@ function openDetail(i){
   if (i < 0 || i >= state.filtered.length) return;
   state.idx = i;
   const r = state.filtered[i];
+  const k = rowKey(r);
   const thumb = bust(r.thumb);
   const orig = bust(r.image_path);
   const mask = bust(r.mask_rel);
@@ -286,11 +356,14 @@ function openDetail(i){
     breakdownPretty = JSON.stringify(JSON.parse(breakdown), null, 2);
   } catch (_) {}
 
+  const isPicked = state.picked.has(k);
+
   el.inner.innerHTML = `
     <div style="position:sticky;top:0;background:#fff;padding:6px 0 10px">
       <button class="btn" id="c">Close</button>
       <button class="btn" id="p">Prev</button>
       <button class="btn" id="n">Next</button>
+      <button class="btn ${isPicked ? "primary" : ""}" id="pick_toggle">${isPicked ? "Unpick" : "Pick"}</button>
     </div>
     <h3>${escapeHtml(r.dataset ? `${r.dataset} / ${r.image_id}` : r.image_id)}</h3>
     <div class="imgrow">
@@ -325,6 +398,69 @@ function openDetail(i){
   document.getElementById("c").onclick = () => el.detail.classList.remove("open");
   document.getElementById("p").onclick = () => openDetail(Math.max(0, state.idx - 1));
   document.getElementById("n").onclick = () => openDetail(Math.min(state.filtered.length - 1, state.idx + 1));
+  document.getElementById("pick_toggle").onclick = () => {
+    if (state.picked.has(k)) state.picked.delete(k);
+    else state.picked.add(k);
+    savePicked();
+    openDetail(state.idx);
+    render();
+  };
+}
+
+function pickRows(rows){
+  for (const r of rows) state.picked.add(rowKey(r));
+  savePicked();
+  render();
+}
+
+function unpickRows(rows){
+  for (const r of rows) state.picked.delete(rowKey(r));
+  savePicked();
+  render();
+}
+
+function downloadFile(filename, content, contentType){
+  const blob = new Blob([content], {type: contentType || "text/plain;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function selectedRows(){
+  return state.rows.filter((r) => state.picked.has(rowKey(r)));
+}
+
+function exportTxt(){
+  const rows = selectedRows();
+  const lines = rows.map((r) => `${r.dataset || ""}/${r.image_id || ""}`);
+  downloadFile("picked_image_names.txt", lines.join("\n") + "\n", "text/plain;charset=utf-8");
+}
+
+function csvEscape(v){
+  const s = String(v ?? "");
+  if (s.includes(",") || s.includes("\n") || s.includes('"')) return '"' + s.replaceAll('"', '""') + '"';
+  return s;
+}
+
+function exportCsv(){
+  const rows = selectedRows();
+  const header = ["dataset","image_id","image_path","final_score","status"];
+  const out = [header.join(",")];
+  for (const r of rows){
+    out.push([
+      csvEscape(r.dataset || ""),
+      csvEscape(r.image_id || ""),
+      csvEscape(r.image_path || ""),
+      csvEscape(num(r.final_score, 0).toFixed(3)),
+      csvEscape(r.status || "")
+    ].join(","));
+  }
+  downloadFile("picked_manifest.csv", out.join("\n") + "\n", "text/csv;charset=utf-8");
 }
 
 [el.dataset, el.status, el.sort, el.min, el.max, el.masks, el.obj, el.id].forEach((x) => x.addEventListener("input", filterRows));
@@ -346,6 +482,17 @@ el.q_sel.onclick = () => { el.status.value = "selected"; filterRows(); };
 el.q_bor.onclick = () => { el.status.value = "borderline"; filterRows(); };
 el.q_rej.onclick = () => { el.status.value = "rejected"; filterRows(); };
 
+el.expAuto.onclick = () => {
+  const thr = num(el.expThr.value, 80);
+  const rows = state.filtered.filter((r) => num(r.final_score, 0) >= thr);
+  pickRows(rows);
+};
+el.expSelVisible.onclick = () => pickRows(state.filtered);
+el.expClearVisible.onclick = () => unpickRows(state.filtered);
+el.expClearAll.onclick = () => { state.picked.clear(); savePicked(); render(); };
+el.expDownloadTxt.onclick = () => exportTxt();
+el.expDownloadCsv.onclick = () => exportCsv();
+
 document.addEventListener("keydown", (e) => {
   if (!el.detail.classList.contains("open")) return;
   if (e.key === "Escape") el.detail.classList.remove("open");
@@ -356,6 +503,7 @@ document.addEventListener("keydown", (e) => {
 initDatasets();
 renderStats();
 filterRows();
+updatePickedChip();
 </script>
 </body>
 </html>
