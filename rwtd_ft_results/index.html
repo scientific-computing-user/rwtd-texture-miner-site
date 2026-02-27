@@ -141,7 +141,7 @@
       <label>IoUavg min<input id="q_iouavg" type="number" min="0" max="1" step="0.01" value="0" /></label>
       <label>IoUagg min<input id="q_iouagg" type="number" min="0" max="1" step="0.01" value="0" /></label>
       <label>ARI min<input id="q_ari" type="number" min="-1" max="1" step="0.01" value="-1" /></label>
-      <label>View K
+      <label>Diag K
         <select id="q_viewk">
           <option value="2">K=2</option>
         </select>
@@ -197,23 +197,27 @@
     function renderCards(){
       const p = state.payload;
       const s = p.summary || {};
+      const k2 = (s.per_k_metrics || {})["2"] || (s.per_k_metrics || {})["K2"] || {};
       const b03 = (p.baseline || {}).texturesam_eta_le_0_3 || {};
       const b10 = (p.baseline || {}).texturesam_eta_le_1_0 || {};
 
-      const dAvg03 = Number(s.IoUavg_mean) - Number(b03.iouavg);
-      const dAgg03 = Number(s.IoUagg_mean) - Number(b03.iouagg);
-      const dAri03 = Number(s.ARI_mean) - Number(b03.ari);
-      const dAvg10 = Number(s.IoUavg_mean) - Number(b10.iouavg);
-      const dAgg10 = Number(s.IoUagg_mean) - Number(b10.iouagg);
-      const dAri10 = Number(s.ARI_mean) - Number(b10.ari);
+      const k2Avg = Number(k2.IoUavg_mean ?? s.IoUavg_mean);
+      const k2Agg = Number(k2.IoUagg_mean ?? s.IoUagg_mean);
+      const k2Ari = Number(k2.ARI_mean ?? s.ARI_mean);
+      const dAvg03 = k2Avg - Number(b03.iouavg);
+      const dAgg03 = k2Agg - Number(b03.iouagg);
+      const dAri03 = k2Ari - Number(b03.ari);
+      const dAvg10 = k2Avg - Number(b10.iouavg);
+      const dAgg10 = k2Agg - Number(b10.iouagg);
+      const dAri10 = k2Ari - Number(b10.ari);
 
       const cards = [
-        {label: "Our IoUavg", value: fmt(s.IoUavg_mean), delta: "vs TextureSAM η<=0.3: " + deltaText(dAvg03), cls: deltaClass(dAvg03)},
-        {label: "Our IoUagg", value: fmt(s.IoUagg_mean), delta: "vs TextureSAM η<=0.3: " + deltaText(dAgg03), cls: deltaClass(dAgg03)},
-        {label: "Our ARI", value: fmt(s.ARI_mean), delta: "vs TextureSAM η<=0.3: " + deltaText(dAri03), cls: deltaClass(dAri03)},
-        {label: "IoUavg Delta", value: deltaText(dAvg10), delta: "vs TextureSAM η<=1.0", cls: deltaClass(dAvg10)},
-        {label: "IoUagg Delta", value: deltaText(dAgg10), delta: "vs TextureSAM η<=1.0", cls: deltaClass(dAgg10)},
-        {label: "ARI Delta", value: deltaText(dAri10), delta: "vs TextureSAM η<=1.0", cls: deltaClass(dAri10)},
+        {label: "Edge F1 (Primary)", value: fmt(s.edge_f1_mean), delta: "Texture-edge task", cls: "ok"},
+        {label: "Edge Precision", value: fmt(s.edge_precision_mean), delta: "Texture-edge task", cls: "ok"},
+        {label: "Edge Recall", value: fmt(s.edge_recall_mean), delta: "Texture-edge task", cls: "ok"},
+        {label: "K=2 IoUavg Delta", value: deltaText(dAvg03), delta: "vs TextureSAM η<=0.3", cls: deltaClass(dAvg03)},
+        {label: "K=2 IoUagg Delta", value: deltaText(dAgg03), delta: "vs TextureSAM η<=0.3", cls: deltaClass(dAgg03)},
+        {label: "K=2 ARI Delta", value: deltaText(dAri03), delta: "vs TextureSAM η<=0.3", cls: deltaClass(dAri03)},
       ];
 
       el.cards.innerHTML = cards.map((c) => `
@@ -271,17 +275,20 @@
       const sort = el.sort.value;
 
       let rows = state.rows.filter((r) => {
+        const iouavgK = Number(r[`iouavg_k${viewK}`] ?? r.iouavg);
+        const iouaggK = Number(r[`iouagg_k${viewK}`] ?? r.iouagg);
+        const ariK = Number(r[`ari_k${viewK}`] ?? r.ari);
         if (idNeedle && !String(r.sample_id).toLowerCase().includes(idNeedle)) return false;
-        if (Number(r.iouavg) < minIouAvg) return false;
-        if (Number(r.iouagg) < minIouAgg) return false;
-        if (Number(r.ari) < minAri) return false;
+        if (iouavgK < minIouAvg) return false;
+        if (iouaggK < minIouAgg) return false;
+        if (ariK < minAri) return false;
         return true;
       });
 
-      if (sort === "iouavg_desc") rows.sort((a,b) => Number(b.iouavg) - Number(a.iouavg));
-      if (sort === "iouavg_asc") rows.sort((a,b) => Number(a.iouavg) - Number(b.iouavg));
-      if (sort === "iouagg_desc") rows.sort((a,b) => Number(b.iouagg) - Number(a.iouagg));
-      if (sort === "ari_desc") rows.sort((a,b) => Number(b.ari) - Number(a.ari));
+      if (sort === "iouavg_desc") rows.sort((a,b) => Number(b[`iouavg_k${viewK}`] ?? b.iouavg) - Number(a[`iouavg_k${viewK}`] ?? a.iouavg));
+      if (sort === "iouavg_asc") rows.sort((a,b) => Number(a[`iouavg_k${viewK}`] ?? a.iouavg) - Number(b[`iouavg_k${viewK}`] ?? b.iouavg));
+      if (sort === "iouagg_desc") rows.sort((a,b) => Number(b[`iouagg_k${viewK}`] ?? b.iouagg) - Number(a[`iouagg_k${viewK}`] ?? a.iouagg));
+      if (sort === "ari_desc") rows.sort((a,b) => Number(b[`ari_k${viewK}`] ?? b.ari) - Number(a[`ari_k${viewK}`] ?? a.ari));
       if (sort === "id") rows.sort((a,b) => String(a.sample_id).localeCompare(String(b.sample_id), undefined, {numeric:true}));
 
       state.filtered = rows;
@@ -297,16 +304,17 @@
           <div class="sample-top">
             <div class="id">${r.sample_id}</div>
             <div class="metrics">
-              <span>IoUavg: <b>${fmt(r.iouavg,4)}</b></span>
-              <span>IoUagg: <b>${fmt(r.iouagg,4)}</b></span>
-              <span>ARI: <b>${fmt(r.ari,4)}</b></span>
+              <span>Edge F1: <b>${fmt(r.edge_f1,4)}</b></span>
+              <span>IoUavg(K=${viewK}): <b>${fmt(r[`iouavg_k${viewK}`] ?? r.iouavg,4)}</b></span>
+              <span>IoUagg(K=${viewK}): <b>${fmt(r[`iouagg_k${viewK}`] ?? r.iouagg,4)}</b></span>
+              <span>ARI(K=${viewK}): <b>${fmt(r[`ari_k${viewK}`] ?? r.ari,4)}</b></span>
             </div>
           </div>
           <div class="quad">
             <div class="panel"><div class="t">Original Image</div><img loading="lazy" src="${r.original}" alt="${r.sample_id} original" /></div>
-            <div class="panel"><div class="t">Original Mask (GT)</div><img loading="lazy" src="${r.gt_mask}" alt="${r.sample_id} gt mask" /></div>
-            <div class="panel"><div class="t">Predicted Mask (K=${viewK})</div><img loading="lazy" src="${r[`pred_mask_k${viewK}`] || r.pred_mask}" alt="${r.sample_id} predicted mask" /></div>
-            <div class="panel"><div class="t">Overlayed Mask (K=${viewK})</div><img loading="lazy" src="${r[`overlay_k${viewK}`] || r.overlay}" alt="${r.sample_id} overlay" /></div>
+            <div class="panel"><div class="t">GT Texture Edges</div><img loading="lazy" src="${r.gt_edge || r.gt_mask}" alt="${r.sample_id} gt texture edges" /></div>
+            <div class="panel"><div class="t">Pred Texture Edges</div><img loading="lazy" src="${r.pred_edge || r.pred_mask}" alt="${r.sample_id} predicted texture edges" /></div>
+            <div class="panel"><div class="t">Boundary Overlay</div><img loading="lazy" src="${r.edge_overlay || r.overlay}" alt="${r.sample_id} edge overlay" /></div>
           </div>
         </article>
       `).join("");
