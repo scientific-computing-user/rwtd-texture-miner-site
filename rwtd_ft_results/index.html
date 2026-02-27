@@ -117,7 +117,7 @@
   <div class="wrap">
     <section class="top">
       <h1>RWTD Fine-Tune Results: Texture K-Seg vs TextureSAM</h1>
-      <p>Full-image inspection page: original image, ground-truth mask, predicted mask, and overlay for every evaluated RWTD sample.</p>
+      <p>Full-image inspection page: original image, original RWTD annotation mask (GT), predicted mask, and overlay for every evaluated RWTD sample.</p>
       <div class="links">
         <a class="btn" href="../index.html">Home</a>
         <a class="btn" href="../review/index.html">Review UI</a>
@@ -224,11 +224,16 @@
         </div>
       `).join("");
 
-      el.runmeta.textContent = `Samples: ${s.num_valid || 0}/${s.num_samples || 0} | Benchmark K=${s.K} | tau=${s.tau} | checkpoint=${(s.checkpoint || "").split("/").slice(-1)[0] || "n/a"}`;
+      const kViews = Array.isArray(s.available_K_views) ? s.available_K_views.join(",") : String(s.K || 2);
+      el.runmeta.textContent = `Samples: ${s.num_valid || 0}/${s.num_samples || 0} | K views=${kViews} | tau=${s.tau} | checkpoint=${(s.checkpoint || "").split("/").slice(-1)[0] || "n/a"}`;
       const note = s.note || "Metrics are strict K=2 by default.";
       const note2 = s.note_multik || "";
       const propAgg = s.IoUagg_prop_mean;
-      el.metricNote.textContent = `${note} ${note2} Proposal-IoUagg (not benchmark): ${fmt(propAgg)}.`;
+      const edgeTxt = `Edge metrics: F1=${fmt(s.edge_f1_mean)}, Precision=${fmt(s.edge_precision_mean)}, Recall=${fmt(s.edge_recall_mean)}.`;
+      const propTxt = (propAgg === null || propAgg === undefined || Number.isNaN(Number(propAgg)))
+        ? ""
+        : ` Proposal-IoUagg (not benchmark): ${fmt(propAgg)}.`;
+      el.metricNote.textContent = `${note} ${note2} ${edgeTxt}${propTxt}`;
       renderPerKTable(s.per_k_metrics || {});
     }
 
