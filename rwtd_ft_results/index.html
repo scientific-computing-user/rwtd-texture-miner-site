@@ -45,6 +45,13 @@
       display:grid;grid-template-columns:repeat(6,minmax(130px,1fr));
       gap:10px;margin-bottom:12px;
     }
+    .ktable{
+      background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:12px;
+    }
+    .ktable h3{margin:2px 0 8px;font-size:14px}
+    .ktable table{width:100%;border-collapse:collapse;font-size:12px}
+    .ktable th,.ktable td{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}
+    .ktable tr:last-child td{border-bottom:0}
     .card{
       background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 11px;
     }
@@ -56,7 +63,7 @@
     .controls{
       position:sticky;top:8px;z-index:4;background:#ffffffdb;backdrop-filter:blur(4px);
       border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;
-      grid-template-columns:repeat(5,minmax(120px,1fr));gap:10px;margin-bottom:12px;
+      grid-template-columns:repeat(6,minmax(120px,1fr));gap:10px;margin-bottom:12px;
     }
     label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
     input,select{
@@ -64,6 +71,10 @@
       padding:4px 8px;background:#fff;color:var(--ink)
     }
     .meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px;margin:8px 2px 10px;gap:8px;flex-wrap:wrap}
+    .note{
+      background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;
+      color:var(--muted);font-size:13px;margin:0 0 12px;
+    }
     .grid{display:grid;grid-template-columns:1fr;gap:10px}
     .sample{
       background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;
@@ -114,6 +125,7 @@
     </section>
 
     <section class="scorecards" id="scorecards"></section>
+    <section class="ktable" id="per_k_table"></section>
 
     <section class="controls">
       <label>Search Sample ID<input id="q_id" type="text" placeholder="rwtd_101" /></label>
@@ -129,7 +141,14 @@
       <label>IoUavg min<input id="q_iouavg" type="number" min="0" max="1" step="0.01" value="0" /></label>
       <label>IoUagg min<input id="q_iouagg" type="number" min="0" max="1" step="0.01" value="0" /></label>
       <label>ARI min<input id="q_ari" type="number" min="-1" max="1" step="0.01" value="-1" /></label>
+      <label>View K
+        <select id="q_viewk">
+          <option value="2">K=2</option>
+        </select>
+      </label>
     </section>
+
+    <div class="note" id="metric_note">Loading metric details...</div>
 
     <div class="meta">
       <div id="count">Loading...</div>
@@ -152,6 +171,9 @@
       iouavg: document.getElementById("q_iouavg"),
       iouagg: document.getElementById("q_iouagg"),
       ari: document.getElementById("q_ari"),
+      viewk: document.getElementById("q_viewk"),
+      metricNote: document.getElementById("metric_note"),
+      perKTable: document.getElementById("per_k_table"),
     };
 
     const state = { payload: null, rows: [], filtered: [] };
@@ -202,7 +224,37 @@
         </div>
       `).join("");
 
-      el.runmeta.textContent = `Samples: ${s.num_valid || 0}/${s.num_samples || 0} | K=${s.K} | tau=${s.tau} | checkpoint=${(s.checkpoint || "").split("/").slice(-1)[0] || "n/a"}`;
+      el.runmeta.textContent = `Samples: ${s.num_valid || 0}/${s.num_samples || 0} | Benchmark K=${s.K} | tau=${s.tau} | checkpoint=${(s.checkpoint || "").split("/").slice(-1)[0] || "n/a"}`;
+      const note = s.note || "Metrics are strict K=2 by default.";
+      const note2 = s.note_multik || "";
+      const propAgg = s.IoUagg_prop_mean;
+      el.metricNote.textContent = `${note} ${note2} Proposal-IoUagg (not benchmark): ${fmt(propAgg)}.`;
+      renderPerKTable(s.per_k_metrics || {});
+    }
+
+    function renderPerKTable(perK){
+      const keys = Object.keys(perK).sort((a,b) => Number(a) - Number(b));
+      if (!keys.length){
+        el.perKTable.innerHTML = "<h3>Per-K Metrics</h3><div>No per-K metrics available.</div>";
+        return;
+      }
+      const body = keys.map((k) => {
+        const r = perK[k] || {};
+        return `<tr>
+          <td>K=${k}</td>
+          <td>${fmt(r.IoUavg_mean,4)}</td>
+          <td>${fmt(r.IoUagg_mean,4)}</td>
+          <td>${fmt(r.ARI_mean,4)}</td>
+          <td>${Number(r.num_samples || 0)}</td>
+        </tr>`;
+      }).join("");
+      el.perKTable.innerHTML = `
+        <h3>Per-K Metrics (Strict)</h3>
+        <table>
+          <thead><tr><th>K</th><th>IoUavg</th><th>IoUagg</th><th>ARI</th><th>n</th></tr></thead>
+          <tbody>${body}</tbody>
+        </table>
+      `;
     }
 
     function renderRows(){
@@ -210,6 +262,7 @@
       const minIouAvg = Number(el.iouavg.value || 0);
       const minIouAgg = Number(el.iouagg.value || 0);
       const minAri = Number(el.ari.value || -1);
+      const viewK = Number(el.viewk.value || 2);
       const sort = el.sort.value;
 
       let rows = state.rows.filter((r) => {
@@ -247,16 +300,27 @@
           <div class="quad">
             <div class="panel"><div class="t">Original Image</div><img loading="lazy" src="${r.original}" alt="${r.sample_id} original" /></div>
             <div class="panel"><div class="t">Original Mask (GT)</div><img loading="lazy" src="${r.gt_mask}" alt="${r.sample_id} gt mask" /></div>
-            <div class="panel"><div class="t">Predicted Mask</div><img loading="lazy" src="${r.pred_mask}" alt="${r.sample_id} predicted mask" /></div>
-            <div class="panel"><div class="t">Overlayed Mask</div><img loading="lazy" src="${r.overlay}" alt="${r.sample_id} overlay" /></div>
+            <div class="panel"><div class="t">Predicted Mask (K=${viewK})</div><img loading="lazy" src="${r[`pred_mask_k${viewK}`] || r.pred_mask}" alt="${r.sample_id} predicted mask" /></div>
+            <div class="panel"><div class="t">Overlayed Mask (K=${viewK})</div><img loading="lazy" src="${r[`overlay_k${viewK}`] || r.overlay}" alt="${r.sample_id} overlay" /></div>
           </div>
         </article>
       `).join("");
     }
 
     function bind(){
-      [el.id, el.sort, el.iouavg, el.iouagg, el.ari].forEach((n) => n.addEventListener("input", renderRows));
+      [el.id, el.sort, el.iouavg, el.iouagg, el.ari, el.viewk].forEach((n) => n.addEventListener("input", renderRows));
       el.sort.addEventListener("change", renderRows);
+      el.viewk.addEventListener("change", renderRows);
+    }
+
+    function initKOptions(payload){
+      const ks = ((payload.summary || {}).available_K_views || [2]).map((x) => Number(x)).filter((x) => Number.isFinite(x));
+      const uniq = [...new Set(ks)].sort((a,b) => a-b);
+      el.viewk.innerHTML = uniq.map((k) => `<option value="${k}">K=${k}</option>`).join("");
+      if (!uniq.includes(2)) {
+        el.viewk.innerHTML = `<option value="2">K=2</option>` + el.viewk.innerHTML;
+      }
+      el.viewk.value = "2";
     }
 
     async function load(){
@@ -265,6 +329,7 @@
       const payload = await res.json();
       state.payload = payload;
       state.rows = Array.isArray(payload.samples) ? payload.samples : [];
+      initKOptions(payload);
       renderCards();
       renderRows();
       bind();
