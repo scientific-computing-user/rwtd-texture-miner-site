@@ -1,0 +1,24 @@
+{
+  "gt_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+  "pred_root": "/home/galoren/rwtd_partition_nonsam/outputs/rwtd/stage2_ade_rwtd_off",
+  "threshold": 127,
+  "parity_mode": true,
+  "results": {
+    "non_aggregated": {
+      "num_images": 256,
+      "miou": 0.6324297875842588,
+      "ari": 0.07299391481327047,
+      "iou0_mean": 0.44555647432469647,
+      "iou1_mean": 0.49274539430886855,
+      "inversion_rate": 0.5625
+    },
+    "aggregated": {
+      "num_images": 256,
+      "miou": 0.636715559396237,
+      "ari": 0.06602321134037155,
+      "iou0_mean": 0.44944460768998235,
+      "iou1_mean": 0.4957171967522699,
+      "inversion_rate": 0.55859375
+    }
+  }
+}
