@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_224",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "textured",
+      "canonical": "textured",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Textured with geometric squares, earthy tones, and subtle grain, in the middle-right area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, vertical stripes with soft, subtle texture, in the middle-left area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 18710,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "textured",
+        "prompt": "Textured with geometric squares, earthy tones, and subtle grain, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 17463,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, vertical stripes with soft, subtle texture, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 29363,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Textured with geometric squares, earthy tones, and subtle grain, in the middle-right area",
+      "Fine, vertical stripes with soft, subtle texture, in the middle-left area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"fabric\",\n    \"patterned\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.5286102294921875,
+        "cx": 0.7363902845438034,
+        "cy": 0.4935848172366542,
+        "location": "middle-right area",
+        "rough": 0.2959267795085907,
+        "lap": 0.24577343463897705,
+        "contrast": 0.09152836352586746,
+        "sat": 0.2862061560153961,
+        "val": 0.5170142650604248,
+        "gx_abs": 0.2311558872461319,
+        "gy_abs": 0.11291929334402084,
+        "anis": 0.34363492904191734,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.4713897705078125,
+        "cx": 0.2349150737237892,
+        "cy": 0.5071939007694489,
+        "location": "middle-left area",
+        "rough": 0.12899571657180786,
+        "lap": 0.14471454918384552,
+        "contrast": 0.023201897740364075,
+        "sat": 0.03829397261142731,
+        "val": 0.5940378904342651,
+        "gx_abs": 0.041863154619932175,
+        "gy_abs": 0.11207487434148788,
+        "anis": 0.4561008354752715,
+        "phrase": "smooth fine texture with horizontal layered pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "middle-right area",
+        "phrase": "Textured with geometric squares, earthy tones, and subtle grain, in the middle-right area",
+        "raw_text": "Textured with geometric squares, earthy tones, and subtle grain."
+      },
+      {
+        "label_id": 2,
+        "location": "middle-left area",
+        "phrase": "Fine, vertical stripes with soft, subtle texture, in the middle-left area",
+        "raw_text": "Fine, vertical stripes with soft, subtle texture."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

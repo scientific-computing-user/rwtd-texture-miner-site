@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_330",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "rich",
+      "canonical": "rich",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Rich, textured pattern with vibrant colors and intricate circular design, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with subtle vertical pattern and muted earthy tone, in the lower-left area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 23539,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "rich",
+        "prompt": "Rich, textured pattern with vibrant colors and intricate circular design, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 38488,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, granular texture with subtle vertical pattern and muted earthy tone, in the lower-left area",
+        "num_masks_used": 1,
+        "mask_area": 3509,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Rich, textured pattern with vibrant colors and intricate circular design, in the central area",
+      "Fine, granular texture with subtle vertical pattern and muted earthy tone, in the lower-left area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 3, \"textures\": [\"granular\", \"pattern\", \"orientation\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.9685821533203125,
+        "cx": 0.5142537037500382,
+        "cy": 0.48759041023659333,
+        "location": "central area",
+        "rough": 0.5473816990852356,
+        "lap": 0.44451192021369934,
+        "contrast": 0.12106326967477798,
+        "sat": 0.2727951407432556,
+        "val": 0.7454794645309448,
+        "gx_abs": 0.3552839756011963,
+        "gy_abs": 0.336852490901947,
+        "anis": 0.026629803458509294,
+        "phrase": "coarse grainy texture with irregular speckled pattern, bright pale tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.0314178466796875,
+        "cx": 0.06057195097563066,
+        "cy": 0.882575779218924,
+        "location": "lower-left area",
+        "rough": 0.32484370470046997,
+        "lap": 0.2710510790348053,
+        "contrast": 0.0669194757938385,
+        "sat": 0.4159110188484192,
+        "val": 0.5406469702720642,
+        "gx_abs": 0.14727310836315155,
+        "gy_abs": 0.25562572479248047,
+        "anis": 0.26893189699454284,
+        "phrase": "smooth fine texture with horizontal layered pattern, muted neutral tone, small region in the lower-left area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "Rich, textured pattern with vibrant colors and intricate circular design, in the central area",
+        "raw_text": "Rich, textured pattern with vibrant colors and intricate circular design."
+      },
+      {
+        "label_id": 2,
+        "location": "lower-left area",
+        "phrase": "Fine, granular texture with subtle vertical pattern and muted earthy tone, in the lower-left area",
+        "raw_text": "Fine, granular texture with subtle vertical pattern and muted earthy tone."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

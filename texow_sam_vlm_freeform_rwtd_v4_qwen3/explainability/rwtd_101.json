@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_101",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular texture with intricate patterns and warm, earthy tones, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "rough",
+      "canonical": "rough",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Rough, granular surface with intricate, directional patterns and varied tones, in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 1,
+    "overlap_pixels": 3567,
+    "unassigned_before_fill": 44498,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "granular",
+        "prompt": "Granular texture with intricate patterns and warm, earthy tones, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 21038,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "rough",
+        "prompt": "Rough, granular surface with intricate, directional patterns and varied tones, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 3567,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Granular texture with intricate patterns and warm, earthy tones, in the central area",
+      "Rough, granular surface with intricate, directional patterns and varied tones, in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 3, \"textures\": [\"granular\", \"pattern\", \"orientated\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.7808074951171875,
+        "cx": 0.5329818781394638,
+        "cy": 0.5373220355739177,
+        "location": "central area",
+        "rough": 0.5724971890449524,
+        "lap": 0.4732336401939392,
+        "contrast": 0.1539296954870224,
+        "sat": 0.47496694326400757,
+        "val": 0.6295686364173889,
+        "gx_abs": 0.34545308351516724,
+        "gy_abs": 0.37608304619789124,
+        "anis": 0.0424509861258352,
+        "phrase": "coarse grainy texture with irregular speckled pattern, vivid chromatic tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.2191925048828125,
+        "cx": 0.3825119605795677,
+        "cy": 0.3670514526729592,
+        "location": "central area",
+        "rough": 0.21517737209796906,
+        "lap": 0.2310430407524109,
+        "contrast": 0.055738095194101334,
+        "sat": 0.17646239697933197,
+        "val": 0.8319848775863647,
+        "gx_abs": 0.06845996528863907,
+        "gy_abs": 0.1897045522928238,
+        "anis": 0.4696389670472804,
+        "phrase": "smooth fine texture with horizontal layered pattern, bright pale tone, mid-size region in the central area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "Granular texture with intricate patterns and warm, earthy tones, in the central area",
+        "raw_text": "Granular texture with intricate patterns and warm, earthy tones."
+      },
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Rough, granular surface with intricate, directional patterns and varied tones, in the central area",
+        "raw_text": "Rough, granular surface with intricate, directional patterns and varied tones."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

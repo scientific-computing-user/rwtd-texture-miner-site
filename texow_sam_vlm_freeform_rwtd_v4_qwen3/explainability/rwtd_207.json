@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_207",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, dense, irregular texture with subtle green and brown tones, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine granular texture with subtle horizontal pattern and neutral tone, in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with subtle vertical striations and a muted, earthy tone, in the central area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 23718,
+    "unassigned_before_fill": 7626,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, dense, irregular texture with subtle green and brown tones, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 28372,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine granular texture with subtle horizontal pattern and neutral tone, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 29423,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "fine",
+        "prompt": "Fine, granular texture with subtle vertical striations and a muted, earthy tone, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 23833,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Fine, dense, irregular texture with subtle green and brown tones, in the middle-left area",
+      "Fine granular texture with subtle horizontal pattern and neutral tone, in the middle-right area",
+      "Fine, granular texture with subtle vertical striations and a muted, earthy tone, in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"grassy\", \"concrete\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 3,
+        "area_ratio": 0.498382568359375,
+        "cx": 0.24827592417164038,
+        "cy": 0.4963138791736154,
+        "location": "middle-left area",
+        "rough": 0.3968034088611603,
+        "lap": 0.43364396691322327,
+        "contrast": 0.07630085945129395,
+        "sat": 0.26030778884887695,
+        "val": 0.3732757866382599,
+        "gx_abs": 0.26098868250846863,
+        "gy_abs": 0.24252288043498993,
+        "anis": 0.03667396492657582,
+        "phrase": "mottled medium-grain texture with irregular speckled pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.4478912353515625,
+        "cx": 0.7771250959416915,
+        "cy": 0.5000202404403999,
+        "location": "middle-right area",
+        "rough": 0.1857394427061081,
+        "lap": 0.2106427252292633,
+        "contrast": 0.0345723032951355,
+        "sat": 0.05021753907203674,
+        "val": 0.6163438558578491,
+        "gx_abs": 0.1228470429778099,
+        "gy_abs": 0.11281982064247131,
+        "anis": 0.04254811063885617,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 2
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.0537261962890625,
+        "cx": 0.5248107990711196,
+        "cy": 0.5340249817620886,
+        "location": "central area",
+        "rough": 0.3984522819519043,
+        "lap": 0.3007456660270691,
+        "contrast": 0.12088632583618164,
+        "sat": 0.12032343447208405,
+        "val": 0.4798012971878052,
+        "gx_abs": 0.34015628695487976,
+        "gy_abs": 0.13197341561317444,
+        "anis": 0.4409433027958975,
+        "phrase": "coarse grainy texture with vertical striated pattern, muted neutral tone, small region in the central area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 3,
+        "location": "middle-left area",
+        "phrase": "Fine, dense, irregular texture with subtle green and brown tones, in the middle-left area",
+        "raw_text": "Fine, dense, irregular texture with subtle green and brown tones."
+      },
+      {
+        "label_id": 2,
+        "location": "middle-right area",
+        "phrase": "Fine granular texture with subtle horizontal pattern and neutral tone, in the middle-right area",
+        "raw_text": "Fine granular texture with subtle horizontal pattern and neutral tone."
+      },
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "Fine, granular texture with subtle vertical striations and a muted, earthy tone, in the central area",
+        "raw_text": "Fine, granular texture with subtle vertical striations and a muted, earthy tone."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

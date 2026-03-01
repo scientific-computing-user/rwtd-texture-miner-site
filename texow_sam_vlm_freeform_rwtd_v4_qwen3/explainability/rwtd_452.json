@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_452",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular, patterned texture with varied tones and subtle directional structure, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 11504,
+    "unassigned_before_fill": 29552,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "granular",
+        "prompt": "Granular, patterned texture with varied tones and subtle directional structure, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 12931,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "smooth",
+        "prompt": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 34557,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Granular, patterned texture with varied tones and subtle directional structure, in the middle-left area",
+      "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"granular\", \"patterned\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.515655517578125,
+        "cx": 0.27217512796679305,
+        "cy": 0.47480060853127426,
+        "location": "middle-left area",
+        "rough": 0.5917660593986511,
+        "lap": 0.6204649209976196,
+        "contrast": 0.12438760697841644,
+        "sat": 0.2025032937526703,
+        "val": 0.3931347727775574,
+        "gx_abs": 0.3171379864215851,
+        "gy_abs": 0.429759681224823,
+        "anis": 0.1507857754762451,
+        "phrase": "coarse grainy texture with horizontal layered pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.484344482421875,
+        "cx": 0.7425528865695356,
+        "cy": 0.5268284366232159,
+        "location": "middle-right area",
+        "rough": 0.4239198565483093,
+        "lap": 0.407377153635025,
+        "contrast": 0.09652645885944366,
+        "sat": 0.41596031188964844,
+        "val": 0.44376203417778015,
+        "gx_abs": 0.24167250096797943,
+        "gy_abs": 0.2939501106739044,
+        "anis": 0.0976013912935519,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Granular, patterned texture with varied tones and subtle directional structure, in the middle-left area",
+        "raw_text": "Granular, patterned texture with varied tones and subtle directional structure."
+      },
+      {
+        "label_id": 2,
+        "location": "middle-right area",
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "raw_text": "Granular, patterned texture with varied tones and directional structure."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

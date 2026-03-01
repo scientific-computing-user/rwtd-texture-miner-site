@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_33",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular texture with diagonal brick pattern and warm, earthy tones, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "rough",
+      "canonical": "rough",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Rough, textured surface with vertical ridges and warm, earthy tones, in the lower-center area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 8229,
+    "unassigned_before_fill": 56913,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "granular",
+        "prompt": "Granular texture with diagonal brick pattern and warm, earthy tones, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 8610,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "rough",
+        "prompt": "Rough, textured surface with vertical ridges and warm, earthy tones, in the lower-center area",
+        "num_masks_used": 1,
+        "mask_area": 8242,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Granular texture with diagonal brick pattern and warm, earthy tones, in the central area",
+      "Rough, textured surface with vertical ridges and warm, earthy tones, in the lower-center area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"brick\", \"metal\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.8802337646484375,
+        "cx": 0.5032536980330296,
+        "cy": 0.4757286873006696,
+        "location": "central area",
+        "rough": 1.0046521425247192,
+        "lap": 0.9072486758232117,
+        "contrast": 0.17286333441734314,
+        "sat": 0.25167781114578247,
+        "val": 0.48581600189208984,
+        "gx_abs": 0.38041600584983826,
+        "gy_abs": 0.8228106498718262,
+        "anis": 0.36767326774636944,
+        "phrase": "coarse grainy texture with horizontal layered pattern, muted neutral tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.1197662353515625,
+        "cx": 0.4760866252476274,
+        "cy": 0.6783844076552776,
+        "location": "lower-center area",
+        "rough": 0.5024781823158264,
+        "lap": 0.5503056645393372,
+        "contrast": 0.10058476775884628,
+        "sat": 0.5846084952354431,
+        "val": 0.3963577151298523,
+        "gx_abs": 0.34740883111953735,
+        "gy_abs": 0.28070467710494995,
+        "anis": 0.10619744193322696,
+        "phrase": "smooth fine texture with broad uniform pattern, vivid chromatic tone, small region in the lower-center area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Granular texture with diagonal brick pattern and warm, earthy tones, in the central area",
+        "raw_text": "Granular texture with diagonal brick pattern and warm, earthy tones."
+      },
+      {
+        "label_id": 1,
+        "location": "lower-center area",
+        "phrase": "Rough, textured surface with vertical ridges and warm, earthy tones, in the lower-center area",
+        "raw_text": "Rough, textured surface with vertical ridges and warm, earthy tones."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

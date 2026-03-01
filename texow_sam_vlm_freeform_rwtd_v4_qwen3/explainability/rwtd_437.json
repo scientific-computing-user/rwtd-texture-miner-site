@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_437",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with subtle, natural patterns and warm, earthy tones, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "wood",
+      "canonical": "wood",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Wood grain with fine, vertical lines and warm, earthy tones, in the lower-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 37974,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, granular texture with subtle, natural patterns and warm, earthy tones, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 15880,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "wood",
+        "prompt": "Wood grain with fine, vertical lines and warm, earthy tones, in the lower-right area",
+        "num_masks_used": 1,
+        "mask_area": 11682,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Fine, granular texture with subtle, natural patterns and warm, earthy tones, in the central area",
+      "Wood grain with fine, vertical lines and warm, earthy tones, in the lower-right area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"smooth\",\n    \"rough\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.771026611328125,
+        "cx": 0.4117590404457845,
+        "cy": 0.4370459792862326,
+        "location": "central area",
+        "rough": 0.7459557056427002,
+        "lap": 0.7080609798431396,
+        "contrast": 0.14962798357009888,
+        "sat": 0.6559547781944275,
+        "val": 0.6801393032073975,
+        "gx_abs": 0.4517408311367035,
+        "gy_abs": 0.49298223853111267,
+        "anis": 0.04365444759855699,
+        "phrase": "coarse grainy texture with irregular speckled pattern, vivid chromatic tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.228973388671875,
+        "cx": 0.7971355248750173,
+        "cy": 0.7119863165844773,
+        "location": "lower-right area",
+        "rough": 0.2146226167678833,
+        "lap": 0.19883394241333008,
+        "contrast": 0.050602782517671585,
+        "sat": 0.6995989084243774,
+        "val": 0.26958656311035156,
+        "gx_abs": 0.1657637655735016,
+        "gy_abs": 0.09393001347780228,
+        "anis": 0.27660837987624015,
+        "phrase": "smooth fine texture with vertical striated pattern, vivid chromatic tone, mid-size region in the lower-right area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "Fine, granular texture with subtle, natural patterns and warm, earthy tones, in the central area",
+        "raw_text": "Fine, granular texture with subtle, natural patterns and warm, earthy tones."
+      },
+      {
+        "label_id": 2,
+        "location": "lower-right area",
+        "phrase": "Wood grain with fine, vertical lines and warm, earthy tones, in the lower-right area",
+        "raw_text": "Wood grain with fine, vertical lines and warm, earthy tones."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

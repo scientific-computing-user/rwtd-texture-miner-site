@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_237",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with a subtle, uniform pattern, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with a subtle, uneven pattern, in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 6102,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, granular texture with a subtle, uniform pattern, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 28804,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, granular texture with a subtle, uneven pattern, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 30630,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Fine, granular texture with a subtle, uniform pattern, in the middle-left area",
+      "Fine, granular texture with a subtle, uneven pattern, in the middle-right area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"grainy\", \"flaky\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.5399322509765625,
+        "cx": 0.26922119985481824,
+        "cy": 0.497004546625772,
+        "location": "middle-left area",
+        "rough": 0.6842877268791199,
+        "lap": 0.6923747062683105,
+        "contrast": 0.1211623027920723,
+        "sat": 0.49002373218536377,
+        "val": 0.4768427908420563,
+        "gx_abs": 0.4813282787799835,
+        "gy_abs": 0.38575148582458496,
+        "anis": 0.11022824730633515,
+        "phrase": "coarse grainy texture with irregular speckled pattern, vivid chromatic tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.4600677490234375,
+        "cx": 0.7708403649344053,
+        "cy": 0.5035154428591774,
+        "location": "middle-right area",
+        "rough": 0.4068262279033661,
+        "lap": 0.3578774034976959,
+        "contrast": 0.07766556739807129,
+        "sat": 0.035763390362262726,
+        "val": 0.4911677837371826,
+        "gx_abs": 0.2876966595649719,
+        "gy_abs": 0.22766157984733582,
+        "anis": 0.11649171126939993,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Fine, granular texture with a subtle, uniform pattern, in the middle-left area",
+        "raw_text": "Fine, granular texture with a subtle, uniform pattern."
+      },
+      {
+        "label_id": 2,
+        "location": "middle-right area",
+        "phrase": "Fine, granular texture with a subtle, uneven pattern, in the middle-right area",
+        "raw_text": "Fine, granular texture with a subtle, uneven pattern."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

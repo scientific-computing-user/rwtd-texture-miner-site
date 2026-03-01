@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_344",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with a subtle, repeating pattern, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, textured weave with repeating geometric pattern and subtle color variation, in the middle-left area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 16402,
+    "unassigned_before_fill": 3824,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, granular texture with a subtle, repeating pattern, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 60964,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, textured weave with repeating geometric pattern and subtle color variation, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 17150,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Fine, granular texture with a subtle, repeating pattern, in the central area",
+      "Fine, textured weave with repeating geometric pattern and subtle color variation, in the middle-left area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"crosshatch\", \"woven\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.6778717041015625,
+        "cx": 0.5873079766515498,
+        "cy": 0.5454292429408455,
+        "location": "central area",
+        "rough": 0.35681894421577454,
+        "lap": 0.2927159368991852,
+        "contrast": 0.06991832703351974,
+        "sat": 0.011971444822847843,
+        "val": 0.8577370643615723,
+        "gx_abs": 0.24815964698791504,
+        "gy_abs": 0.20639394223690033,
+        "anis": 0.0918827039503457,
+        "phrase": "smooth fine texture with broad uniform pattern, bright pale tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.3221282958984375,
+        "cx": 0.31627318162355655,
+        "cy": 0.4044008281158136,
+        "location": "middle-left area",
+        "rough": 0.6505239605903625,
+        "lap": 0.4181598424911499,
+        "contrast": 0.1465848684310913,
+        "sat": 0.3259885907173157,
+        "val": 0.5376249551773071,
+        "gx_abs": 0.3825952708721161,
+        "gy_abs": 0.44875457882881165,
+        "anis": 0.07958048997062536,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, mid-size region in the middle-left area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Fine, granular texture with a subtle, repeating pattern, in the central area",
+        "raw_text": "Fine, granular texture with a subtle, repeating pattern."
+      },
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Fine, textured weave with repeating geometric pattern and subtle color variation, in the middle-left area",
+        "raw_text": "Fine, textured weave with repeating geometric pattern and subtle color variation."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

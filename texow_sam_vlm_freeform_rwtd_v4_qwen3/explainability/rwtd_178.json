@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_178",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "textured",
+      "canonical": "textured",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Textured with geometric pattern, subtle tonal variation, and directional structure, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "textured",
+      "canonical": "textured",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Textured surface with fine grain and subtle pattern, in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 12834,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "textured",
+        "prompt": "Textured with geometric pattern, subtle tonal variation, and directional structure, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 24354,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "textured",
+        "prompt": "Textured surface with fine grain and subtle pattern, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 28348,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Textured with geometric pattern, subtle tonal variation, and directional structure, in the middle-left area",
+      "Textured surface with fine grain and subtle pattern, in the middle-right area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"fabric\",\n    \"pattern\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.5123291015625,
+        "cx": 0.2576289319635407,
+        "cy": 0.5265067952365602,
+        "location": "middle-left area",
+        "rough": 0.4842999577522278,
+        "lap": 0.3804043233394623,
+        "contrast": 0.1290162205696106,
+        "sat": 0.09365350008010864,
+        "val": 0.44088271260261536,
+        "gx_abs": 0.3436388075351715,
+        "gy_abs": 0.22009067237377167,
+        "anis": 0.2191617085905236,
+        "phrase": "coarse grainy texture with vertical striated pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.4876708984375,
+        "cx": 0.754626125794498,
+        "cy": 0.4721529362683747,
+        "location": "middle-right area",
+        "rough": 0.11321800947189331,
+        "lap": 0.09854818880558014,
+        "contrast": 0.025159168988466263,
+        "sat": 0.20920979976654053,
+        "val": 0.35332390666007996,
+        "gx_abs": 0.06548209488391876,
+        "gy_abs": 0.07694912701845169,
+        "anis": 0.08050869375886698,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "middle-left area",
+        "phrase": "Textured with geometric pattern, subtle tonal variation, and directional structure, in the middle-left area",
+        "raw_text": "Textured with geometric pattern, subtle tonal variation, and directional structure."
+      },
+      {
+        "label_id": 1,
+        "location": "middle-right area",
+        "phrase": "Textured surface with fine grain and subtle pattern, in the middle-right area",
+        "raw_text": "Textured surface with fine grain and subtle pattern."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

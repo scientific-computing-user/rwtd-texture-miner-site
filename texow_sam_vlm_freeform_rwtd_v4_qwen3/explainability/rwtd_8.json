@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_8",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, dry, fibrous strands radiating from a central point, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, delicate, feathery strands with soft, uniform texture, in the lower-center area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse grainy texture with woven undulating pattern, vivid chromatic tone, mid-size region in the upper-center area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 48687,
+    "unassigned_before_fill": 39933,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, dry, fibrous strands radiating from a central point, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 25503,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, delicate, feathery strands with soft, uniform texture, in the lower-center area",
+        "num_masks_used": 1,
+        "mask_area": 23746,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "coarse",
+        "prompt": "coarse grainy texture with woven undulating pattern, vivid chromatic tone, mid-size region in the upper-center area",
+        "num_masks_used": 1,
+        "mask_area": 25041,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Fine, dry, fibrous strands radiating from a central point, in the central area",
+      "Fine, delicate, feathery strands with soft, uniform texture, in the lower-center area",
+      "coarse grainy texture with woven undulating pattern, vivid chromatic tone, mid-size region in the upper-center area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"fibrous\",\n    \"mottled\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 3,
+        "area_ratio": 0.4480438232421875,
+        "cx": 0.5155689466468739,
+        "cy": 0.4617794970728134,
+        "location": "central area",
+        "rough": 0.374708890914917,
+        "lap": 0.35019102692604065,
+        "contrast": 0.08266574889421463,
+        "sat": 0.5873558521270752,
+        "val": 0.6114089488983154,
+        "gx_abs": 0.2396751344203949,
+        "gy_abs": 0.23477287590503693,
+        "anis": 0.010332529752766134,
+        "phrase": "mottled medium-grain texture with irregular speckled pattern, vivid chromatic tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.290771484375,
+        "cx": 0.3703464299237747,
+        "cy": 0.7476523270937259,
+        "location": "lower-center area",
+        "rough": 0.2776165306568146,
+        "lap": 0.17078043520450592,
+        "contrast": 0.08418701589107513,
+        "sat": 0.7567108869552612,
+        "val": 0.23525317013263702,
+        "gx_abs": 0.15193423628807068,
+        "gy_abs": 0.1780245155096054,
+        "anis": 0.07907109603335108,
+        "phrase": "smooth fine texture with broad uniform pattern, vivid chromatic tone, mid-size region in the lower-center area",
+        "rank": 2
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.2611846923828125,
+        "cx": 0.617633198047578,
+        "cy": 0.2898583795263739,
+        "location": "upper-center area",
+        "rough": 0.41735926270484924,
+        "lap": 0.3058530390262604,
+        "contrast": 0.14701327681541443,
+        "sat": 0.6617528796195984,
+        "val": 0.2441549450159073,
+        "gx_abs": 0.24325568974018097,
+        "gy_abs": 0.20955409109592438,
+        "anis": 0.07442755356227897,
+        "phrase": "coarse grainy texture with woven undulating pattern, vivid chromatic tone, mid-size region in the upper-center area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 3,
+        "location": "central area",
+        "phrase": "Fine, dry, fibrous strands radiating from a central point, in the central area",
+        "raw_text": "Fine, dry, fibrous strands radiating from a central point."
+      },
+      {
+        "label_id": 2,
+        "location": "lower-center area",
+        "phrase": "Fine, delicate, feathery strands with soft, uniform texture, in the lower-center area",
+        "raw_text": "Fine, delicate, feathery strands with soft, uniform texture."
+      },
+      {
+        "label_id": 1,
+        "location": "upper-center area",
+        "phrase": "coarse grainy texture with woven undulating pattern, vivid chromatic tone, mid-size region in the upper-center area",
+        "raw_text": "Fine, feathery strands with a soft, delicate texture."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_245",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, uniform granules with a smooth, slightly glossy surface, in the upper-center area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular texture with dark speckles and subtle grain pattern, in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with subtle directional grain and earthy tone, in the lower-center area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 12381,
+    "unassigned_before_fill": 32062,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, uniform granules with a smooth, slightly glossy surface, in the upper-center area",
+        "num_masks_used": 1,
+        "mask_area": 12382,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "granular",
+        "prompt": "Granular texture with dark speckles and subtle grain pattern, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 12958,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "fine",
+        "prompt": "Fine, granular texture with subtle directional grain and earthy tone, in the lower-center area",
+        "num_masks_used": 1,
+        "mask_area": 20515,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Fine, uniform granules with a smooth, slightly glossy surface, in the upper-center area",
+      "Granular texture with dark speckles and subtle grain pattern, in the central area",
+      "Fine, granular texture with subtle directional grain and earthy tone, in the lower-center area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"granular\", \"pattern\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.356903076171875,
+        "cx": 0.5084554317665502,
+        "cy": 0.17789921954245572,
+        "location": "upper-center area",
+        "rough": 0.2828065752983093,
+        "lap": 0.20648138225078583,
+        "contrast": 0.07139042764902115,
+        "sat": 0.26353076100349426,
+        "val": 0.7463170289993286,
+        "gx_abs": 0.17081673443317413,
+        "gy_abs": 0.14450518786907196,
+        "anis": 0.08344317746390097,
+        "phrase": "mottled medium-grain texture with woven undulating pattern, bright pale tone, dominant region in the upper-center area",
+        "rank": 1
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.3459320068359375,
+        "cx": 0.4837621873326985,
+        "cy": 0.5295015399305151,
+        "location": "central area",
+        "rough": 0.3800327479839325,
+        "lap": 0.22492550313472748,
+        "contrast": 0.10968921333551407,
+        "sat": 0.39797186851501465,
+        "val": 0.4266333281993866,
+        "gx_abs": 0.15971532464027405,
+        "gy_abs": 0.29216301441192627,
+        "anis": 0.2931041061745735,
+        "phrase": "coarse grainy texture with horizontal layered pattern, muted neutral tone, mid-size region in the central area",
+        "rank": 2
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.2971649169921875,
+        "cx": 0.5087473633869466,
+        "cy": 0.8525087467592942,
+        "location": "lower-center area",
+        "rough": 0.21689099073410034,
+        "lap": 0.15860013663768768,
+        "contrast": 0.04210817813873291,
+        "sat": 0.5371342301368713,
+        "val": 0.28393447399139404,
+        "gx_abs": 0.13622090220451355,
+        "gy_abs": 0.13842865824699402,
+        "anis": 0.008038418122471924,
+        "phrase": "smooth fine texture with broad uniform pattern, vivid chromatic tone, mid-size region in the lower-center area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "upper-center area",
+        "phrase": "Fine, uniform granules with a smooth, slightly glossy surface, in the upper-center area",
+        "raw_text": "Fine, uniform granules with a smooth, slightly glossy surface."
+      },
+      {
+        "label_id": 3,
+        "location": "central area",
+        "phrase": "Granular texture with dark speckles and subtle grain pattern, in the central area",
+        "raw_text": "Granular texture with dark speckles and subtle grain pattern."
+      },
+      {
+        "label_id": 2,
+        "location": "lower-center area",
+        "phrase": "Fine, granular texture with subtle directional grain and earthy tone, in the lower-center area",
+        "raw_text": "Fine, granular texture with subtle directional grain and earthy tone."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

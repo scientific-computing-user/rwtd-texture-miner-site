@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_51",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "middle-right",
+      "canonical": "middle-right",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u3001\u6df1\u6d45\u4e0d\u4e00\u7684\u7eb9\u7406\u3002, in the middle-right area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "bright",
+      "canonical": "bright",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Bright pink and orange stripes with smooth, flowing texture, in the middle-left area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 3,
+    "unassigned_before_fill": 4750,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "middle-right",
+        "prompt": "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u3001\u6df1\u6d45\u4e0d\u4e00\u7684\u7eb9\u7406\u3002, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 31997,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "bright",
+        "prompt": "Bright pink and orange stripes with smooth, flowing texture, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 28792,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u3001\u6df1\u6d45\u4e0d\u4e00\u7684\u7eb9\u7406\u3002, in the middle-right area",
+      "Bright pink and orange stripes with smooth, flowing texture, in the middle-left area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"fabric texture\", \"wood grain\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.5294036865234375,
+        "cx": 0.7361700420188251,
+        "cy": 0.4989284210585805,
+        "location": "middle-right area",
+        "rough": 0.43779805302619934,
+        "lap": 0.401297390460968,
+        "contrast": 0.09226028621196747,
+        "sat": 0.85903000831604,
+        "val": 0.46422266960144043,
+        "gx_abs": 0.2838119566440582,
+        "gy_abs": 0.2678706645965576,
+        "anis": 0.028895713836223975,
+        "phrase": "coarse grainy texture with irregular speckled pattern, vivid chromatic tone, dominant region in the middle-right area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.4705963134765625,
+        "cx": 0.23431731760179186,
+        "cy": 0.5012054872206656,
+        "location": "middle-left area",
+        "rough": 0.20563817024230957,
+        "lap": 0.10506463050842285,
+        "contrast": 0.06593406945466995,
+        "sat": 0.5749501585960388,
+        "val": 0.977875828742981,
+        "gx_abs": 0.16602066159248352,
+        "gy_abs": 0.08868560940027237,
+        "anis": 0.30362326089391706,
+        "phrase": "smooth fine texture with vertical striated pattern, vivid chromatic tone, dominant region in the middle-left area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "middle-right area",
+        "phrase": "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u3001\u6df1\u6d45\u4e0d\u4e00\u7684\u7eb9\u7406\u3002, in the middle-right area",
+        "raw_text": "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u3001\u6df1\u6d45\u4e0d\u4e00\u7684\u7eb9\u7406\u3002"
+      },
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Bright pink and orange stripes with smooth, flowing texture, in the middle-left area",
+        "raw_text": "Bright pink and orange stripes with smooth, flowing texture."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

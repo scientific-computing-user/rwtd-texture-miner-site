@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_258",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "diagonal",
+      "canonical": "diagonal",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Diagonal stripes with rough, weathered texture and alternating dark and light tones, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular, uneven surface with dark streaks and subtle texture variation, in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 9230,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "diagonal",
+        "prompt": "Diagonal stripes with rough, weathered texture and alternating dark and light tones, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 27339,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "granular",
+        "prompt": "Granular, uneven surface with dark streaks and subtle texture variation, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 28967,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Diagonal stripes with rough, weathered texture and alternating dark and light tones, in the middle-left area",
+      "Granular, uneven surface with dark streaks and subtle texture variation, in the middle-right area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"diagonal striped\", \"rough concrete\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.5621185302734375,
+        "cx": 0.28020613278021106,
+        "cy": 0.4990275118706784,
+        "location": "middle-left area",
+        "rough": 0.3192460536956787,
+        "lap": 0.28768426179885864,
+        "contrast": 0.10194233059883118,
+        "sat": 0.09648875892162323,
+        "val": 0.5160692930221558,
+        "gx_abs": 0.25898608565330505,
+        "gy_abs": 0.1523105651140213,
+        "anis": 0.2593633110723279,
+        "phrase": "coarse grainy texture with vertical striated pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.4378814697265625,
+        "cx": 0.7821544507965921,
+        "cy": 0.5012484054150635,
+        "location": "middle-right area",
+        "rough": 0.16060636937618256,
+        "lap": 0.12263631075620651,
+        "contrast": 0.036664631217718124,
+        "sat": 0.26586779952049255,
+        "val": 0.5210711359977722,
+        "gx_abs": 0.11454446613788605,
+        "gy_abs": 0.08773890137672424,
+        "anis": 0.13251426736782185,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Diagonal stripes with rough, weathered texture and alternating dark and light tones, in the middle-left area",
+        "raw_text": "Diagonal stripes with rough, weathered texture and alternating dark and light tones."
+      },
+      {
+        "label_id": 2,
+        "location": "middle-right area",
+        "phrase": "Granular, uneven surface with dark streaks and subtle texture variation, in the middle-right area",
+        "raw_text": "Granular, uneven surface with dark streaks and subtle texture variation."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

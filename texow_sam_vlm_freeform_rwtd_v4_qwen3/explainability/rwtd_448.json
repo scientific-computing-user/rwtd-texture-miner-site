@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_448",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "dark",
+      "canonical": "dark",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Dark brown with intricate, repeating geometric pattern and fine granular texture, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "textured",
+      "canonical": "textured",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Textured with intricate geometric pattern, subtle tonal variation, and fine directional grain, in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 1,
+    "overlap_pixels": 32148,
+    "unassigned_before_fill": 32476,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "dark",
+        "prompt": "Dark brown with intricate, repeating geometric pattern and fine granular texture, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 33060,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "textured",
+        "prompt": "Textured with intricate geometric pattern, subtle tonal variation, and fine directional grain, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 32148,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Dark brown with intricate, repeating geometric pattern and fine granular texture, in the central area",
+      "Textured with intricate geometric pattern, subtle tonal variation, and fine directional grain, in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"patterned\", \"smooth\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.779327392578125,
+        "cx": 0.5174338349507481,
+        "cy": 0.4979698046740331,
+        "location": "central area",
+        "rough": 0.3147737681865692,
+        "lap": 0.3336395025253296,
+        "contrast": 0.0751742348074913,
+        "sat": 0.49757662415504456,
+        "val": 0.5143250823020935,
+        "gx_abs": 0.23277299106121063,
+        "gy_abs": 0.1654757708311081,
+        "anis": 0.16898244938134774,
+        "phrase": "coarse grainy texture with irregular speckled pattern, vivid chromatic tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.220672607421875,
+        "cx": 0.4384306675235438,
+        "cy": 0.5071698379254896,
+        "location": "central area",
+        "rough": 0.04799357056617737,
+        "lap": 0.031900230795145035,
+        "contrast": 0.014323296956717968,
+        "sat": 0.2982637286186218,
+        "val": 0.8143711686134338,
+        "gx_abs": 0.03550426661968231,
+        "gy_abs": 0.023535648360848427,
+        "anis": 0.20271735732382606,
+        "phrase": "smooth fine texture with vertical striated pattern, bright pale tone, mid-size region in the central area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "Dark brown with intricate, repeating geometric pattern and fine granular texture, in the central area",
+        "raw_text": "Dark brown with intricate, repeating geometric pattern and fine granular texture."
+      },
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Textured with intricate geometric pattern, subtle tonal variation, and fine directional grain, in the central area",
+        "raw_text": "Textured with intricate geometric pattern, subtle tonal variation, and fine directional grain."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

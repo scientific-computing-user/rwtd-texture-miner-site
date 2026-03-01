@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_221",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, striped texture with subtle vertical grain and soft, neutral tone, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "wood",
+      "canonical": "wood",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Wood grain with fine, linear texture and warm, earthy tones, in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, vertical ridges with subtle grain and warm, earthy tone, in the central area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 28939,
+    "unassigned_before_fill": 4667,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, striped texture with subtle vertical grain and soft, neutral tone, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 31084,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "wood",
+        "prompt": "Wood grain with fine, linear texture and warm, earthy tones, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 29432,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "fine",
+        "prompt": "Fine, vertical ridges with subtle grain and warm, earthy tone, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 29292,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Fine, striped texture with subtle vertical grain and soft, neutral tone, in the middle-left area",
+      "Wood grain with fine, linear texture and warm, earthy tones, in the middle-right area",
+      "Fine, vertical ridges with subtle grain and warm, earthy tone, in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"striped\", \"wood grain\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.482421875,
+        "cx": 0.2414063120187346,
+        "cy": 0.5164680826784155,
+        "location": "middle-left area",
+        "rough": 0.15151028335094452,
+        "lap": 0.7748153209686279,
+        "contrast": 0.05984441563487053,
+        "sat": 0.043421670794487,
+        "val": 0.4743577241897583,
+        "gx_abs": 0.03301890194416046,
+        "gy_abs": 0.14197616279125214,
+        "anis": 0.6226269202786412,
+        "phrase": "mottled medium-grain texture with horizontal layered pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.4406890869140625,
+        "cx": 0.780706360311515,
+        "cy": 0.5018632916273743,
+        "location": "middle-right area",
+        "rough": 0.11604149639606476,
+        "lap": 0.10431473702192307,
+        "contrast": 0.02389027737081051,
+        "sat": 0.4915696978569031,
+        "val": 0.3177064061164856,
+        "gx_abs": 0.08491871505975723,
+        "gy_abs": 0.06269744783639908,
+        "anis": 0.1505330869892823,
+        "phrase": "smooth fine texture with broad uniform pattern, vivid chromatic tone, dominant region in the middle-right area",
+        "rank": 2
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.0768890380859375,
+        "cx": 0.5136173143597585,
+        "cy": 0.3859955095354276,
+        "location": "central area",
+        "rough": 0.25748828053474426,
+        "lap": 0.4457544982433319,
+        "contrast": 0.07391808927059174,
+        "sat": 0.26525261998176575,
+        "val": 0.4129110872745514,
+        "gx_abs": 0.20010894536972046,
+        "gy_abs": 0.10478971153497696,
+        "anis": 0.3126249297962886,
+        "phrase": "coarse grainy texture with woven undulating pattern, muted neutral tone, small region in the central area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "middle-left area",
+        "phrase": "Fine, striped texture with subtle vertical grain and soft, neutral tone, in the middle-left area",
+        "raw_text": "Fine, striped texture with subtle vertical grain and soft, neutral tone."
+      },
+      {
+        "label_id": 1,
+        "location": "middle-right area",
+        "phrase": "Wood grain with fine, linear texture and warm, earthy tones, in the middle-right area",
+        "raw_text": "Wood grain with fine, linear texture and warm, earthy tones."
+      },
+      {
+        "label_id": 3,
+        "location": "central area",
+        "phrase": "Fine, vertical ridges with subtle grain and warm, earthy tone, in the central area",
+        "raw_text": "Fine, vertical ridges with subtle grain and warm, earthy tone."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

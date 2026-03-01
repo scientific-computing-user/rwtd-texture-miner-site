@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_440",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, textured surface with subtle grain and soft, muted tones, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, speckled texture with subtle blue and yellow gradient, in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse grainy texture with horizontal layered pattern, dark matte tone, mid-size region in the central area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 12737,
+    "unassigned_before_fill": 56910,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, textured surface with subtle grain and soft, muted tones, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 5978,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, speckled texture with subtle blue and yellow gradient, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 6892,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "coarse",
+        "prompt": "coarse grainy texture with horizontal layered pattern, dark matte tone, mid-size region in the central area",
+        "num_masks_used": 1,
+        "mask_area": 8493,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Fine, textured surface with subtle grain and soft, muted tones, in the central area",
+      "Fine, speckled texture with subtle blue and yellow gradient, in the central area",
+      "coarse grainy texture with horizontal layered pattern, dark matte tone, mid-size region in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"granular\", \"pattern\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.44171142578125,
+        "cx": 0.49576034918596423,
+        "cy": 0.3997728177909274,
+        "location": "central area",
+        "rough": 0.14387521147727966,
+        "lap": 0.11500216275453568,
+        "contrast": 0.04268011823296547,
+        "sat": 0.3853068947792053,
+        "val": 0.1754518747329712,
+        "gx_abs": 0.12276591360569,
+        "gy_abs": 0.043891552835702896,
+        "anis": 0.4732694501165595,
+        "phrase": "smooth fine texture with broad uniform pattern, dark matte tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.393341064453125,
+        "cx": 0.5125680965224945,
+        "cy": 0.6153318150908436,
+        "location": "central area",
+        "rough": 0.2856108844280243,
+        "lap": 0.23055927455425262,
+        "contrast": 0.07611740380525589,
+        "sat": 0.3777729570865631,
+        "val": 0.3607763946056366,
+        "gx_abs": 0.1747284233570099,
+        "gy_abs": 0.18113210797309875,
+        "anis": 0.01799487736747978,
+        "phrase": "mottled medium-grain texture with woven undulating pattern, muted neutral tone, dominant region in the central area",
+        "rank": 2
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.164947509765625,
+        "cx": 0.48138288803032775,
+        "cy": 0.4933721499700713,
+        "location": "central area",
+        "rough": 0.2933838367462158,
+        "lap": 0.33738404512405396,
+        "contrast": 0.08351193368434906,
+        "sat": 0.12946546077728271,
+        "val": 0.11996590346097946,
+        "gx_abs": 0.04618381708860397,
+        "gy_abs": 0.26573652029037476,
+        "anis": 0.7038720244233189,
+        "phrase": "coarse grainy texture with horizontal layered pattern, dark matte tone, mid-size region in the central area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "Fine, textured surface with subtle grain and soft, muted tones, in the central area",
+        "raw_text": "Fine, textured surface with subtle grain and soft, muted tones."
+      },
+      {
+        "label_id": 3,
+        "location": "central area",
+        "phrase": "Fine, speckled texture with subtle blue and yellow gradient, in the central area",
+        "raw_text": "Fine, speckled texture with subtle blue and yellow gradient."
+      },
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "coarse grainy texture with horizontal layered pattern, dark matte tone, mid-size region in the central area",
+        "raw_text": "Fine, textured surface with subtle grain and soft, natural pattern."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

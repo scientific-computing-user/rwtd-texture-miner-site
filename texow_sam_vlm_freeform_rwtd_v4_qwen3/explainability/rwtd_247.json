@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_247",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "faint",
+      "canonical": "faint",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Faint, repeating floral pattern with soft, textured surface and gentle gradient, in the middle-right area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Smooth, uniform surface with subtle grain and soft gradient, in the middle-left area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, textured surface with subtle grain and soft, muted tones, in the central area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 23323,
+    "unassigned_before_fill": 16300,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "faint",
+        "prompt": "Faint, repeating floral pattern with soft, textured surface and gentle gradient, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 23323,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "smooth",
+        "prompt": "Smooth, uniform surface with subtle grain and soft gradient, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 16636,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "fine",
+        "prompt": "Fine, textured surface with subtle grain and soft, muted tones, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 32600,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Faint, repeating floral pattern with soft, textured surface and gentle gradient, in the middle-right area",
+      "Smooth, uniform surface with subtle grain and soft gradient, in the middle-left area",
+      "Fine, textured surface with subtle grain and soft, muted tones, in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"patterned\", \"smooth\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.4475250244140625,
+        "cx": 0.7767021732488556,
+        "cy": 0.5029668152848783,
+        "location": "middle-right area",
+        "rough": 0.12273940443992615,
+        "lap": 0.0855286717414856,
+        "contrast": 0.028441641479730606,
+        "sat": 0.05094308778643608,
+        "val": 0.6944606304168701,
+        "gx_abs": 0.09176087379455566,
+        "gy_abs": 0.061333924531936646,
+        "anis": 0.19874450896248938,
+        "phrase": "mottled medium-grain texture with woven undulating pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.316925048828125,
+        "cx": 0.16088268335740652,
+        "cy": 0.5280515826937419,
+        "location": "middle-left area",
+        "rough": 0.020989513024687767,
+        "lap": 0.012801649048924446,
+        "contrast": 0.008270648308098316,
+        "sat": 0.03846025839447975,
+        "val": 0.35860979557037354,
+        "gx_abs": 0.01929423026740551,
+        "gy_abs": 0.0030675840098410845,
+        "anis": 0.7256084165611699,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, mid-size region in the middle-left area",
+        "rank": 2
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.2355499267578125,
+        "cx": 0.43056090091669236,
+        "cy": 0.45662077488895414,
+        "location": "central area",
+        "rough": 0.15979841351509094,
+        "lap": 0.11013518273830414,
+        "contrast": 0.050948262214660645,
+        "sat": 0.08865205198526382,
+        "val": 0.28395870327949524,
+        "gx_abs": 0.152298703789711,
+        "gy_abs": 0.02129439450800419,
+        "anis": 0.7546587733474293,
+        "phrase": "coarse grainy texture with vertical striated pattern, dark matte tone, mid-size region in the central area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "middle-right area",
+        "phrase": "Faint, repeating floral pattern with soft, textured surface and gentle gradient, in the middle-right area",
+        "raw_text": "Faint, repeating floral pattern with soft, textured surface and gentle gradient."
+      },
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Smooth, uniform surface with subtle grain and soft gradient, in the middle-left area",
+        "raw_text": "Smooth, uniform surface with subtle grain and soft gradient."
+      },
+      {
+        "label_id": 3,
+        "location": "central area",
+        "phrase": "Fine, textured surface with subtle grain and soft, muted tones, in the central area",
+        "raw_text": "Fine, textured surface with subtle grain and soft, muted tones."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

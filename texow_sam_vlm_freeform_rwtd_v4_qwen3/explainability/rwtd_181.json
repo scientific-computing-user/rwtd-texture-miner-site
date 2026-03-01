@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_181",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular texture with diagonal pattern and muted gray tones, in the middle-right area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular texture with varied tones and a rough, uneven surface, in the middle-left area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 6855,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "granular",
+        "prompt": "Granular texture with diagonal pattern and muted gray tones, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 33307,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "granular",
+        "prompt": "Granular texture with varied tones and a rough, uneven surface, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 25374,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Granular texture with diagonal pattern and muted gray tones, in the middle-right area",
+      "Granular texture with varied tones and a rough, uneven surface, in the middle-left area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"granular\", \"rough\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.62640380859375,
+        "cx": 0.6875278221977674,
+        "cy": 0.5005764090689379,
+        "location": "middle-right area",
+        "rough": 0.3301800787448883,
+        "lap": 0.32286131381988525,
+        "contrast": 0.06944141536951065,
+        "sat": 0.027102306485176086,
+        "val": 0.4035136103630066,
+        "gx_abs": 0.22640495002269745,
+        "gy_abs": 0.19173063337802887,
+        "anis": 0.08292581424629383,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.37359619140625,
+        "cx": 0.18557457291036003,
+        "cy": 0.49903354251355825,
+        "location": "middle-left area",
+        "rough": 0.4585963785648346,
+        "lap": 0.4610556364059448,
+        "contrast": 0.09419342130422592,
+        "sat": 0.020335650071501732,
+        "val": 0.5974794626235962,
+        "gx_abs": 0.3125085234642029,
+        "gy_abs": 0.26784422993659973,
+        "anis": 0.07696046293467701,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "middle-right area",
+        "phrase": "Granular texture with diagonal pattern and muted gray tones, in the middle-right area",
+        "raw_text": "Granular texture with diagonal pattern and muted gray tones."
+      },
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Granular texture with varied tones and a rough, uneven surface, in the middle-left area",
+        "raw_text": "Granular texture with varied tones and a rough, uneven surface."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

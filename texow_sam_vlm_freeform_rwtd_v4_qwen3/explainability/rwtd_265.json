@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_265",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "fine, uniform, granular texture with subtle grain pattern, in the lower-center area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, uniform dots with a smooth, slightly raised texture, in the upper-center area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, uniform granules with a smooth, slightly raised pattern, in the upper-left area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 16545,
+    "unassigned_before_fill": 22219,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "fine, uniform, granular texture with subtle grain pattern, in the lower-center area",
+        "num_masks_used": 1,
+        "mask_area": 19540,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, uniform dots with a smooth, slightly raised texture, in the upper-center area",
+        "num_masks_used": 1,
+        "mask_area": 19484,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "fine",
+        "prompt": "Fine, uniform granules with a smooth, slightly raised pattern, in the upper-left area",
+        "num_masks_used": 1,
+        "mask_area": 20838,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "fine, uniform, granular texture with subtle grain pattern, in the lower-center area",
+      "Fine, uniform dots with a smooth, slightly raised texture, in the upper-center area",
+      "Fine, uniform granules with a smooth, slightly raised pattern, in the upper-left area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"grainy\", \"smooth\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 3,
+        "area_ratio": 0.5261077880859375,
+        "cx": 0.5691424561355619,
+        "cy": 0.703613964510367,
+        "location": "lower-center area",
+        "rough": 0.26179569959640503,
+        "lap": 0.3137539327144623,
+        "contrast": 0.05166992172598839,
+        "sat": 0.24048982560634613,
+        "val": 0.6783512830734253,
+        "gx_abs": 0.19862036406993866,
+        "gy_abs": 0.1285214126110077,
+        "anis": 0.2142763235371589,
+        "phrase": "mottled medium-grain texture with woven undulating pattern, muted neutral tone, dominant region in the lower-center area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.3607177734375,
+        "cx": 0.5206149431007597,
+        "cy": 0.271165522046382,
+        "location": "upper-center area",
+        "rough": 0.42934033274650574,
+        "lap": 0.35944992303848267,
+        "contrast": 0.08184335380792618,
+        "sat": 0.15490512549877167,
+        "val": 0.5144307017326355,
+        "gx_abs": 0.2644912600517273,
+        "gy_abs": 0.283724844455719,
+        "anis": 0.03508388236312399,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the upper-center area",
+        "rank": 2
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.1131744384765625,
+        "cx": 0.11287582580558177,
+        "cy": 0.2828287955333138,
+        "location": "upper-left area",
+        "rough": 0.1331935077905655,
+        "lap": 0.08961184322834015,
+        "contrast": 0.04203657805919647,
+        "sat": 0.36020007729530334,
+        "val": 0.4092136323451996,
+        "gx_abs": 0.09735187143087387,
+        "gy_abs": 0.06192293390631676,
+        "anis": 0.22243766056968425,
+        "phrase": "smooth fine texture with vertical striated pattern, muted neutral tone, small region in the upper-left area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 3,
+        "location": "lower-center area",
+        "phrase": "fine, uniform, granular texture with subtle grain pattern, in the lower-center area",
+        "raw_text": "fine, uniform, granular texture with subtle grain pattern"
+      },
+      {
+        "label_id": 2,
+        "location": "upper-center area",
+        "phrase": "Fine, uniform dots with a smooth, slightly raised texture, in the upper-center area",
+        "raw_text": "Fine, uniform dots with a smooth, slightly raised texture."
+      },
+      {
+        "label_id": 1,
+        "location": "upper-left area",
+        "phrase": "Fine, uniform granules with a smooth, slightly raised pattern, in the upper-left area",
+        "raw_text": "Fine, uniform granules with a smooth, slightly raised pattern."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_373",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular, textured surface with fine, uneven particles and a rough, uneven pattern, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 12754,
+    "unassigned_before_fill": 52009,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "granular",
+        "prompt": "Granular, textured surface with fine, uneven particles and a rough, uneven pattern, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 13258,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "coarse",
+        "prompt": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the central area",
+        "num_masks_used": 1,
+        "mask_area": 13023,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Granular, textured surface with fine, uneven particles and a rough, uneven pattern, in the central area",
+      "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"rough\", \"smooth\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.5628509521484375,
+        "cx": 0.5876144260398876,
+        "cy": 0.43744844482646256,
+        "location": "central area",
+        "rough": 0.07581579685211182,
+        "lap": 0.06727574020624161,
+        "contrast": 0.019074460491538048,
+        "sat": 0.3906160891056061,
+        "val": 0.7165960073471069,
+        "gx_abs": 0.03276928886771202,
+        "gy_abs": 0.05932288244366646,
+        "anis": 0.28833401215138343,
+        "phrase": "smooth fine texture with horizontal layered pattern, muted neutral tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.4371490478515625,
+        "cx": 0.3871921067634705,
+        "cy": 0.5805382113053257,
+        "location": "central area",
+        "rough": 0.6047940254211426,
+        "lap": 0.5813862085342407,
+        "contrast": 0.13063527643680573,
+        "sat": 0.27353042364120483,
+        "val": 0.6556204557418823,
+        "gx_abs": 0.35027259588241577,
+        "gy_abs": 0.40935882925987244,
+        "anis": 0.07778266359073482,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the central area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "Granular, textured surface with fine, uneven particles and a rough, uneven pattern, in the central area",
+        "raw_text": "Granular, textured surface with fine, uneven particles and a rough, uneven pattern."
+      },
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the central area",
+        "raw_text": "Granular, textured surface with a rough, uneven pattern."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

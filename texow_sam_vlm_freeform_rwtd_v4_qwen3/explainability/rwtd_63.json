@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_63",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, intricate, symmetrical, and textured pattern with subtle color variation, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "blue",
+      "canonical": "blue",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Blue and white floral pattern with intricate geometric design and smooth texture, in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, intricate, textured pattern with golden and dark tones, in the upper-center area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 42069,
+    "unassigned_before_fill": 16234,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, intricate, symmetrical, and textured pattern with subtle color variation, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 22869,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "blue",
+        "prompt": "Blue and white floral pattern with intricate geometric design and smooth texture, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 19202,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "fine",
+        "prompt": "Fine, intricate, textured pattern with golden and dark tones, in the upper-center area",
+        "num_masks_used": 1,
+        "mask_area": 49300,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Fine, intricate, symmetrical, and textured pattern with subtle color variation, in the central area",
+      "Blue and white floral pattern with intricate geometric design and smooth texture, in the central area",
+      "Fine, intricate, textured pattern with golden and dark tones, in the upper-center area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"pattern\", \"orientation\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 3,
+        "area_ratio": 0.553985595703125,
+        "cx": 0.45702919519595425,
+        "cy": 0.5843475339786111,
+        "location": "central area",
+        "rough": 0.606255829334259,
+        "lap": 0.47782349586486816,
+        "contrast": 0.17752140760421753,
+        "sat": 0.5201800465583801,
+        "val": 0.46872153878211975,
+        "gx_abs": 0.42695003747940063,
+        "gy_abs": 0.3261048197746277,
+        "anis": 0.13391465816692377,
+        "phrase": "mottled medium-grain texture with woven undulating pattern, vivid chromatic tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.344268798828125,
+        "cx": 0.5663094809770375,
+        "cy": 0.49634088898390666,
+        "location": "central area",
+        "rough": 0.8947604894638062,
+        "lap": 0.6504276394844055,
+        "contrast": 0.22272324562072754,
+        "sat": 0.33451229333877563,
+        "val": 0.5742151737213135,
+        "gx_abs": 0.6316016912460327,
+        "gy_abs": 0.5015349388122559,
+        "anis": 0.11478460249094917,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, mid-size region in the central area",
+        "rank": 2
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.10174560546875,
+        "cx": 0.5096016090899467,
+        "cy": 0.0531246691838103,
+        "location": "upper-center area",
+        "rough": 0.4538663923740387,
+        "lap": 0.4187621772289276,
+        "contrast": 0.1266424059867859,
+        "sat": 0.5257266163825989,
+        "val": 0.5894967913627625,
+        "gx_abs": 0.1370602399110794,
+        "gy_abs": 0.3861822187900543,
+        "anis": 0.47611102391490845,
+        "phrase": "smooth fine texture with horizontal layered pattern, vivid chromatic tone, small region in the upper-center area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 3,
+        "location": "central area",
+        "phrase": "Fine, intricate, symmetrical, and textured pattern with subtle color variation, in the central area",
+        "raw_text": "Fine, intricate, symmetrical, and textured pattern with subtle color variation."
+      },
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Blue and white floral pattern with intricate geometric design and smooth texture, in the central area",
+        "raw_text": "Blue and white floral pattern with intricate geometric design and smooth texture."
+      },
+      {
+        "label_id": 1,
+        "location": "upper-center area",
+        "phrase": "Fine, intricate, textured pattern with golden and dark tones, in the upper-center area",
+        "raw_text": "Fine, intricate, textured pattern with golden and dark tones."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

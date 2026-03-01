@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_56",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "soft",
+      "canonical": "soft",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Soft, fluffy, textured fur with a subtle striped pattern, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, soft, textured surface with subtle grain and gentle pattern, in the lower-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "fuzzy",
+      "canonical": "fuzzy",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fuzzy, coarse, textured, and uneven with a natural, earthy tone, in the central area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 31522,
+    "unassigned_before_fill": 29253,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "soft",
+        "prompt": "Soft, fluffy, textured fur with a subtle striped pattern, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 31959,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, soft, textured surface with subtle grain and gentle pattern, in the lower-right area",
+        "num_masks_used": 1,
+        "mask_area": 3403,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "fuzzy",
+        "prompt": "Fuzzy, coarse, textured, and uneven with a natural, earthy tone, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 32443,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Soft, fluffy, textured fur with a subtle striped pattern, in the central area",
+      "Fine, soft, textured surface with subtle grain and gentle pattern, in the lower-right area",
+      "Fuzzy, coarse, textured, and uneven with a natural, earthy tone, in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"fluffy\", \"woven\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.57244873046875,
+        "cx": 0.3451760190162001,
+        "cy": 0.3862660428282626,
+        "location": "central area",
+        "rough": 0.7426488399505615,
+        "lap": 0.6177919507026672,
+        "contrast": 0.1454930454492569,
+        "sat": 0.14594630897045135,
+        "val": 0.5944174528121948,
+        "gx_abs": 0.5493733882904053,
+        "gy_abs": 0.38941797614097595,
+        "anis": 0.17038422787589777,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.2310943603515625,
+        "cx": 0.7666688676130736,
+        "cy": 0.6634828034878527,
+        "location": "lower-right area",
+        "rough": 0.507393479347229,
+        "lap": 0.41721245646476746,
+        "contrast": 0.11033866554498672,
+        "sat": 0.2595827281475067,
+        "val": 0.41085195541381836,
+        "gx_abs": 0.32741591334342957,
+        "gy_abs": 0.3183303773403168,
+        "anis": 0.014069801196521656,
+        "phrase": "mottled medium-grain texture with woven undulating pattern, muted neutral tone, mid-size region in the lower-right area",
+        "rank": 2
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.1964569091796875,
+        "cx": 0.6374505996573386,
+        "cy": 0.639098724538359,
+        "location": "central area",
+        "rough": 0.431448370218277,
+        "lap": 0.3106357455253601,
+        "contrast": 0.10265340656042099,
+        "sat": 0.32716602087020874,
+        "val": 0.6341092586517334,
+        "gx_abs": 0.3290846347808838,
+        "gy_abs": 0.21464122831821442,
+        "anis": 0.21047958861251118,
+        "phrase": "smooth fine texture with vertical striated pattern, muted neutral tone, mid-size region in the central area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Soft, fluffy, textured fur with a subtle striped pattern, in the central area",
+        "raw_text": "Soft, fluffy, textured fur with a subtle striped pattern."
+      },
+      {
+        "label_id": 1,
+        "location": "lower-right area",
+        "phrase": "Fine, soft, textured surface with subtle grain and gentle pattern, in the lower-right area",
+        "raw_text": "Fine, soft, textured surface with subtle grain and gentle pattern."
+      },
+      {
+        "label_id": 3,
+        "location": "central area",
+        "phrase": "Fuzzy, coarse, textured, and uneven with a natural, earthy tone, in the central area",
+        "raw_text": "Fuzzy, coarse, textured, and uneven with a natural, earthy tone."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

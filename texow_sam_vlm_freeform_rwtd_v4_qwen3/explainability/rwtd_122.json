@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_122",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, textured, woven pattern with subtle color variation, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth fine texture with vertical striated pattern, vivid chromatic tone, mid-size region in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 29240,
+    "unassigned_before_fill": 35767,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, textured, woven pattern with subtle color variation, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 29291,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "smooth",
+        "prompt": "smooth fine texture with vertical striated pattern, vivid chromatic tone, mid-size region in the central area",
+        "num_masks_used": 1,
+        "mask_area": 29718,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Fine, textured, woven pattern with subtle color variation, in the central area",
+      "smooth fine texture with vertical striated pattern, vivid chromatic tone, mid-size region in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"fibrous\", \"woven\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.772735595703125,
+        "cx": 0.5362324227507045,
+        "cy": 0.5313363859030441,
+        "location": "central area",
+        "rough": 0.4186166524887085,
+        "lap": 0.30575627088546753,
+        "contrast": 0.08362627774477005,
+        "sat": 0.4677734375,
+        "val": 0.8792445063591003,
+        "gx_abs": 0.27318963408470154,
+        "gy_abs": 0.2612054646015167,
+        "anis": 0.02242563056251196,
+        "phrase": "coarse grainy texture with irregular speckled pattern, vivid chromatic tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.227264404296875,
+        "cx": 0.37680392420161296,
+        "cy": 0.3934512384247374,
+        "location": "central area",
+        "rough": 0.09258740395307541,
+        "lap": 0.06944183260202408,
+        "contrast": 0.02205313742160797,
+        "sat": 0.7343804836273193,
+        "val": 0.9444993138313293,
+        "gx_abs": 0.07989609241485596,
+        "gy_abs": 0.03252553567290306,
+        "anis": 0.4213614069311263,
+        "phrase": "smooth fine texture with vertical striated pattern, vivid chromatic tone, mid-size region in the central area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Fine, textured, woven pattern with subtle color variation, in the central area",
+        "raw_text": "Fine, textured, woven pattern with subtle color variation."
+      },
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "smooth fine texture with vertical striated pattern, vivid chromatic tone, mid-size region in the central area",
+        "raw_text": "Soft, textured fabric with a subtle woven pattern and gentle, neutral tone."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

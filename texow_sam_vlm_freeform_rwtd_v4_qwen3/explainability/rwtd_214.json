@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_214",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with a subtle woven pattern and neutral tone, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "grainy",
+      "canonical": "grainy",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Grainy, geometric pattern with directional texture and muted tones, in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth fine texture with broad uniform pattern, muted neutral tone, mid-size region in the middle-right area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 3752,
+    "unassigned_before_fill": 8555,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, granular texture with a subtle woven pattern and neutral tone, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 30629,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "grainy",
+        "prompt": "Grainy, geometric pattern with directional texture and muted tones, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 26352,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "smooth",
+        "prompt": "smooth fine texture with broad uniform pattern, muted neutral tone, mid-size region in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 3752,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Fine, granular texture with a subtle woven pattern and neutral tone, in the middle-left area",
+      "Grainy, geometric pattern with directional texture and muted tones, in the middle-right area",
+      "smooth fine texture with broad uniform pattern, muted neutral tone, mid-size region in the middle-right area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"granular\", \"pattern\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.5568389892578125,
+        "cx": 0.27760489118783455,
+        "cy": 0.4974314171452704,
+        "location": "middle-left area",
+        "rough": 0.5812215209007263,
+        "lap": 0.8086755871772766,
+        "contrast": 0.1121569275856018,
+        "sat": 0.03211252763867378,
+        "val": 0.4581105411052704,
+        "gx_abs": 0.42875978350639343,
+        "gy_abs": 0.29364922642707825,
+        "anis": 0.18702752622677227,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.277587890625,
+        "cx": 0.8145547708969252,
+        "cy": 0.5364743390759997,
+        "location": "middle-right area",
+        "rough": 0.40506473183631897,
+        "lap": 0.2856428921222687,
+        "contrast": 0.1169193908572197,
+        "sat": 0.04387470707297325,
+        "val": 0.3926895260810852,
+        "gx_abs": 0.3351783752441406,
+        "gy_abs": 0.1437380313873291,
+        "anis": 0.3997356145464268,
+        "phrase": "mottled medium-grain texture with vertical striated pattern, muted neutral tone, mid-size region in the middle-right area",
+        "rank": 2
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.1655731201171875,
+        "cx": 0.7205773028960916,
+        "cy": 0.4474881686155247,
+        "location": "middle-right area",
+        "rough": 0.3293951451778412,
+        "lap": 0.21153053641319275,
+        "contrast": 0.11092853546142578,
+        "sat": 0.04768729954957962,
+        "val": 0.3777293562889099,
+        "gx_abs": 0.1701778769493103,
+        "gy_abs": 0.23421677947044373,
+        "anis": 0.15835704836221687,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, mid-size region in the middle-right area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "middle-left area",
+        "phrase": "Fine, granular texture with a subtle woven pattern and neutral tone, in the middle-left area",
+        "raw_text": "Fine, granular texture with a subtle woven pattern and neutral tone."
+      },
+      {
+        "label_id": 1,
+        "location": "middle-right area",
+        "phrase": "Grainy, geometric pattern with directional texture and muted tones, in the middle-right area",
+        "raw_text": "Grainy, geometric pattern with directional texture and muted tones."
+      },
+      {
+        "label_id": 3,
+        "location": "middle-right area",
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, mid-size region in the middle-right area",
+        "raw_text": "Grainy, geometric pattern with directional texture and muted tones."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

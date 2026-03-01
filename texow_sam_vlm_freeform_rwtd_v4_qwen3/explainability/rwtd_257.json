@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_257",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "small",
+      "canonical": "small",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "small, rounded, light-colored pebbles with a rough, uneven surface, in the lower-center area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "rough",
+      "canonical": "rough",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Rough, layered, and textured with a coarse, uneven surface, in the upper-center area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 14077,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "small",
+        "prompt": "small, rounded, light-colored pebbles with a rough, uneven surface, in the lower-center area",
+        "num_masks_used": 1,
+        "mask_area": 28714,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "rough",
+        "prompt": "Rough, layered, and textured with a coarse, uneven surface, in the upper-center area",
+        "num_masks_used": 1,
+        "mask_area": 22745,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "small, rounded, light-colored pebbles with a rough, uneven surface, in the lower-center area",
+      "Rough, layered, and textured with a coarse, uneven surface, in the upper-center area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"gravel\", \"wrinkled\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.59918212890625,
+        "cx": 0.5908365240768815,
+        "cy": 0.6602026896120575,
+        "location": "lower-center area",
+        "rough": 0.8220868706703186,
+        "lap": 0.8041884303092957,
+        "contrast": 0.1506555676460266,
+        "sat": 0.12469946593046188,
+        "val": 0.5370194315910339,
+        "gx_abs": 0.5920014977455139,
+        "gy_abs": 0.4463857412338257,
+        "anis": 0.14023247861013716,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the lower-center area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.40081787109375,
+        "cx": 0.36420859496531977,
+        "cy": 0.2605132017783511,
+        "location": "upper-center area",
+        "rough": 0.4093884825706482,
+        "lap": 0.37605738639831543,
+        "contrast": 0.08607988059520721,
+        "sat": 0.27221399545669556,
+        "val": 0.39280301332473755,
+        "gx_abs": 0.2747982442378998,
+        "gy_abs": 0.24377353489398956,
+        "anis": 0.0598271073847084,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the upper-center area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "lower-center area",
+        "phrase": "small, rounded, light-colored pebbles with a rough, uneven surface, in the lower-center area",
+        "raw_text": "small, rounded, light-colored pebbles with a rough, uneven surface."
+      },
+      {
+        "label_id": 1,
+        "location": "upper-center area",
+        "phrase": "Rough, layered, and textured with a coarse, uneven surface, in the upper-center area",
+        "raw_text": "Rough, layered, and textured with a coarse, uneven surface."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_423",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with subtle, irregular pattern and muted tone, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with a rough, uneven surface, in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 22254,
+    "unassigned_before_fill": 43226,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, granular texture with subtle, irregular pattern and muted tone, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 22256,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, granular texture with a rough, uneven surface, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 22308,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Fine, granular texture with subtle, irregular pattern and muted tone, in the central area",
+      "Fine, granular texture with a rough, uneven surface, in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"grainy\", \"smooth\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.6779327392578125,
+        "cx": 0.46996278265520797,
+        "cy": 0.47728947573987845,
+        "location": "central area",
+        "rough": 0.6997575163841248,
+        "lap": 0.7093083262443542,
+        "contrast": 0.13533984124660492,
+        "sat": 0.05237234756350517,
+        "val": 0.6395267844200134,
+        "gx_abs": 0.46563732624053955,
+        "gy_abs": 0.42169567942619324,
+        "anis": 0.049520976919315805,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.3220672607421875,
+        "cx": 0.5632265849913187,
+        "cy": 0.5478043247431156,
+        "location": "central area",
+        "rough": 0.33805185556411743,
+        "lap": 0.3305889964103699,
+        "contrast": 0.07330138236284256,
+        "sat": 0.4439963698387146,
+        "val": 0.6368052959442139,
+        "gx_abs": 0.22566810250282288,
+        "gy_abs": 0.20393384993076324,
+        "anis": 0.050591487905147975,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, mid-size region in the central area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "Fine, granular texture with subtle, irregular pattern and muted tone, in the central area",
+        "raw_text": "Fine, granular texture with subtle, irregular pattern and muted tone."
+      },
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Fine, granular texture with a rough, uneven surface, in the central area",
+        "raw_text": "Fine, granular texture with a rough, uneven surface."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

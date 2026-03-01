@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_350",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "central",
+      "canonical": "central",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u7684\u7eb9\u7406\uff0c\u5e26\u6709\u5782\u76f4\u7684\u6761\u7eb9\u548c\u6591\u9a73\u7684\u7eff\u8272\u82d4\u85d3\u3002, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, rough, granular texture with subtle vertical striations, in the middle-left area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 38751,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "central",
+        "prompt": "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u7684\u7eb9\u7406\uff0c\u5e26\u6709\u5782\u76f4\u7684\u6761\u7eb9\u548c\u6591\u9a73\u7684\u7eff\u8272\u82d4\u85d3\u3002, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 16633,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine, rough, granular texture with subtle vertical striations, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 10152,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u7684\u7eb9\u7406\uff0c\u5e26\u6709\u5782\u76f4\u7684\u6761\u7eb9\u548c\u6591\u9a73\u7684\u7eff\u8272\u82d4\u85d3\u3002, in the central area",
+      "Fine, rough, granular texture with subtle vertical striations, in the middle-left area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"rough\",\n    \"mottled\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.7471771240234375,
+        "cx": 0.6254524355538363,
+        "cy": 0.5176006890594986,
+        "location": "central area",
+        "rough": 0.9935715794563293,
+        "lap": 1.0142817497253418,
+        "contrast": 0.19701465964317322,
+        "sat": 0.26074546575546265,
+        "val": 0.546892523765564,
+        "gx_abs": 0.8460090756416321,
+        "gy_abs": 0.3672065734863281,
+        "anis": 0.39465540017066136,
+        "phrase": "coarse grainy texture with vertical striated pattern, muted neutral tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.2528228759765625,
+        "cx": 0.12924561459564815,
+        "cy": 0.447984009826998,
+        "location": "middle-left area",
+        "rough": 0.4895875155925751,
+        "lap": 0.439543753862381,
+        "contrast": 0.11356966197490692,
+        "sat": 0.15619508922100067,
+        "val": 0.24063627421855927,
+        "gx_abs": 0.35868754982948303,
+        "gy_abs": 0.25579094886779785,
+        "anis": 0.16745326927884455,
+        "phrase": "smooth fine texture with broad uniform pattern, dark matte tone, mid-size region in the middle-left area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u7684\u7eb9\u7406\uff0c\u5e26\u6709\u5782\u76f4\u7684\u6761\u7eb9\u548c\u6591\u9a73\u7684\u7eff\u8272\u82d4\u85d3\u3002, in the central area",
+        "raw_text": "\u7c97\u7cd9\u3001\u4e0d\u89c4\u5219\u7684\u7eb9\u7406\uff0c\u5e26\u6709\u5782\u76f4\u7684\u6761\u7eb9\u548c\u6591\u9a73\u7684\u7eff\u8272\u82d4\u85d3\u3002"
+      },
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Fine, rough, granular texture with subtle vertical striations, in the middle-left area",
+        "raw_text": "Fine, rough, granular texture with subtle vertical striations."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

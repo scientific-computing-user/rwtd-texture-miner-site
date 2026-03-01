@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_236",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine, granular texture with a subtle, uniform pattern and warm, earthy tone, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "fine",
+      "canonical": "fine",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Fine granular texture with subtle pattern and neutral tone, in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 5132,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "fine",
+        "prompt": "Fine, granular texture with a subtle, uniform pattern and warm, earthy tone, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 32587,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "fine",
+        "prompt": "Fine granular texture with subtle pattern and neutral tone, in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 27817,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Fine, granular texture with a subtle, uniform pattern and warm, earthy tone, in the middle-left area",
+      "Fine granular texture with subtle pattern and neutral tone, in the middle-right area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"granular\", \"fibrous\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 3,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.5609893798828125,
+        "cx": 0.27964373618344385,
+        "cy": 0.5011123644344179,
+        "location": "middle-left area",
+        "rough": 0.6636031866073608,
+        "lap": 0.7112857699394226,
+        "contrast": 0.11721592396497726,
+        "sat": 0.5212978720664978,
+        "val": 0.47835350036621094,
+        "gx_abs": 0.4657420814037323,
+        "gy_abs": 0.3767344057559967,
+        "anis": 0.10564991587823905,
+        "phrase": "coarse grainy texture with irregular speckled pattern, vivid chromatic tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.4390106201171875,
+        "cx": 0.7815820805399772,
+        "cy": 0.4985785659715904,
+        "location": "middle-right area",
+        "rough": 0.4187532067298889,
+        "lap": 0.38393864035606384,
+        "contrast": 0.07864376902580261,
+        "sat": 0.033797379583120346,
+        "val": 0.4898708462715149,
+        "gx_abs": 0.2981909215450287,
+        "gy_abs": 0.23197446763515472,
+        "anis": 0.12489749493978107,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "location": "middle-left area",
+        "phrase": "Fine, granular texture with a subtle, uniform pattern and warm, earthy tone, in the middle-left area",
+        "raw_text": "Fine, granular texture with a subtle, uniform pattern and warm, earthy tone."
+      },
+      {
+        "label_id": 2,
+        "location": "middle-right area",
+        "phrase": "Fine granular texture with subtle pattern and neutral tone, in the middle-right area",
+        "raw_text": "Fine granular texture with subtle pattern and neutral tone."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

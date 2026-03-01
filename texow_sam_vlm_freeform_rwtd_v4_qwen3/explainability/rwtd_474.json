@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_474",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular, textured surface with fine, irregular patterns and a rough, uneven tone, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular, rough, and uneven surface with subtle directional grain, in the upper-center area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Granular, rough, and uneven with a subtle vertical grain pattern, in the lower-right area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 12638,
+    "unassigned_before_fill": 41508,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "granular",
+        "prompt": "Granular, textured surface with fine, irregular patterns and a rough, uneven tone, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 18155,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "granular",
+        "prompt": "Granular, rough, and uneven surface with subtle directional grain, in the upper-center area",
+        "num_masks_used": 1,
+        "mask_area": 12731,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "granular",
+        "prompt": "Granular, rough, and uneven with a subtle vertical grain pattern, in the lower-right area",
+        "num_masks_used": 1,
+        "mask_area": 5780,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Granular, textured surface with fine, irregular patterns and a rough, uneven tone, in the central area",
+      "Granular, rough, and uneven surface with subtle directional grain, in the upper-center area",
+      "Granular, rough, and uneven with a subtle vertical grain pattern, in the lower-right area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"rough\", \"smooth\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.4306640625,
+        "cx": 0.3399105475523543,
+        "cy": 0.6116259003601441,
+        "location": "central area",
+        "rough": 0.4093288481235504,
+        "lap": 0.41247057914733887,
+        "contrast": 0.1005425751209259,
+        "sat": 0.1806754767894745,
+        "val": 0.49495574831962585,
+        "gx_abs": 0.2910778224468231,
+        "gy_abs": 0.23136699199676514,
+        "anis": 0.11429095381623607,
+        "phrase": "coarse grainy texture with irregular speckled pattern, muted neutral tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.3182830810546875,
+        "cx": 0.49067153972188615,
+        "cy": 0.1636231691967261,
+        "location": "upper-center area",
+        "rough": 0.10667618364095688,
+        "lap": 0.04877379909157753,
+        "contrast": 0.037298500537872314,
+        "sat": 0.4761665165424347,
+        "val": 0.6533036828041077,
+        "gx_abs": 0.07680495083332062,
+        "gy_abs": 0.05823132023215294,
+        "anis": 0.137544475348307,
+        "phrase": "smooth fine texture with broad uniform pattern, vivid chromatic tone, mid-size region in the upper-center area",
+        "rank": 2
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.2510528564453125,
+        "cx": 0.7864491010042867,
+        "cy": 0.7349696044466532,
+        "location": "lower-right area",
+        "rough": 0.23441335558891296,
+        "lap": 0.2681911289691925,
+        "contrast": 0.052928391844034195,
+        "sat": 0.046630509197711945,
+        "val": 0.7160056233406067,
+        "gx_abs": 0.1822975128889084,
+        "gy_abs": 0.10966186225414276,
+        "anis": 0.24878598884926253,
+        "phrase": "mottled medium-grain texture with vertical striated pattern, muted neutral tone, mid-size region in the lower-right area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Granular, textured surface with fine, irregular patterns and a rough, uneven tone, in the central area",
+        "raw_text": "Granular, textured surface with fine, irregular patterns and a rough, uneven tone."
+      },
+      {
+        "label_id": 3,
+        "location": "upper-center area",
+        "phrase": "Granular, rough, and uneven surface with subtle directional grain, in the upper-center area",
+        "raw_text": "Granular, rough, and uneven surface with subtle directional grain."
+      },
+      {
+        "label_id": 1,
+        "location": "lower-right area",
+        "phrase": "Granular, rough, and uneven with a subtle vertical grain pattern, in the lower-right area",
+        "raw_text": "Granular, rough, and uneven with a subtle vertical grain pattern."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

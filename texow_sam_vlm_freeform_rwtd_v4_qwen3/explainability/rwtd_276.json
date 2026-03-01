@@ -1,0 +1,138 @@
+{
+  "image_id": "rwtd_276",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "grainy",
+      "canonical": "grainy",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Grainy, textured surface with vertical ridges and uneven tone, in the central area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse grainy texture with vertical striated pattern, muted neutral tone, mid-size region in the central area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 9604,
+    "unassigned_before_fill": 44080,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "grainy",
+        "prompt": "Grainy, textured surface with vertical ridges and uneven tone, in the central area",
+        "num_masks_used": 1,
+        "mask_area": 21451,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "coarse",
+        "prompt": "coarse grainy texture with vertical striated pattern, muted neutral tone, mid-size region in the central area",
+        "num_masks_used": 1,
+        "mask_area": 9609,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "Grainy, textured surface with vertical ridges and uneven tone, in the central area",
+      "coarse grainy texture with vertical striated pattern, muted neutral tone, mid-size region in the central area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\"num_regions\": 2, \"textures\": [\"grainy\", \"slatted\"]}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.6740570068359375,
+        "cx": 0.4802746651575175,
+        "cy": 0.4979594970982168,
+        "location": "central area",
+        "rough": 0.18091551959514618,
+        "lap": 0.16421391069889069,
+        "contrast": 0.03985266759991646,
+        "sat": 0.04173259064555168,
+        "val": 0.5362964272499084,
+        "gx_abs": 0.11473832279443741,
+        "gy_abs": 0.10567986965179443,
+        "anis": 0.04109648094665194,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the central area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.3259429931640625,
+        "cx": 0.5407924098434842,
+        "cy": 0.5042198031780476,
+        "location": "central area",
+        "rough": 0.629012942314148,
+        "lap": 0.6310926079750061,
+        "contrast": 0.13620395958423615,
+        "sat": 0.049389805644750595,
+        "val": 0.5426492094993591,
+        "gx_abs": 0.5296095013618469,
+        "gy_abs": 0.16580262780189514,
+        "anis": 0.5231521498557871,
+        "phrase": "coarse grainy texture with vertical striated pattern, muted neutral tone, mid-size region in the central area",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "central area",
+        "phrase": "Grainy, textured surface with vertical ridges and uneven tone, in the central area",
+        "raw_text": "Grainy, textured surface with vertical ridges and uneven tone."
+      },
+      {
+        "label_id": 1,
+        "location": "central area",
+        "phrase": "coarse grainy texture with vertical striated pattern, muted neutral tone, mid-size region in the central area",
+        "raw_text": "Grainy, textured surface with vertical ridges and uneven tone."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}

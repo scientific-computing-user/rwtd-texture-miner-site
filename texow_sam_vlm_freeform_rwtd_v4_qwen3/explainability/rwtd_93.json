@@ -1,0 +1,183 @@
+{
+  "image_id": "rwtd_93",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "textured",
+      "canonical": "textured",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Textured surface with repeating circular pattern and subtle grain, in the middle-left area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "mottled",
+      "canonical": "mottled",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "mottled medium-grain texture with woven undulating pattern, bright pale tone, dominant region in the middle-right area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "soft",
+      "canonical": "soft",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "Soft, granular texture with subtle patterned design, in the upper-center area",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 22084,
+    "unassigned_before_fill": 15180,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "textured",
+        "prompt": "Textured surface with repeating circular pattern and subtle grain, in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 25470,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "mottled",
+        "prompt": "mottled medium-grain texture with woven undulating pattern, bright pale tone, dominant region in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 24846,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "soft",
+        "prompt": "Soft, granular texture with subtle patterned design, in the upper-center area",
+        "num_masks_used": 1,
+        "mask_area": 22124,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "Textured surface with repeating circular pattern and subtle grain, in the middle-left area",
+      "mottled medium-grain texture with woven undulating pattern, bright pale tone, dominant region in the middle-right area",
+      "Soft, granular texture with subtle patterned design, in the upper-center area"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"patterned\",\n    \"textured\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.4613800048828125,
+        "cx": 0.2505920872168691,
+        "cy": 0.5573231601070497,
+        "location": "middle-left area",
+        "rough": 0.3687220513820648,
+        "lap": 0.29423630237579346,
+        "contrast": 0.11200574040412903,
+        "sat": 0.15666498243808746,
+        "val": 0.8544650673866272,
+        "gx_abs": 0.21227894723415375,
+        "gy_abs": 0.24946284294128418,
+        "anis": 0.08052945600515497,
+        "phrase": "coarse grainy texture with irregular speckled pattern, bright pale tone, dominant region in the middle-left area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.4099273681640625,
+        "cx": 0.7535382066468873,
+        "cy": 0.5702648317841933,
+        "location": "middle-right area",
+        "rough": 0.19789861142635345,
+        "lap": 0.12605567276477814,
+        "contrast": 0.04718330502510071,
+        "sat": 0.2203943431377411,
+        "val": 0.8275030851364136,
+        "gx_abs": 0.13600361347198486,
+        "gy_abs": 0.10993339121341705,
+        "anis": 0.10600322748782248,
+        "phrase": "mottled medium-grain texture with woven undulating pattern, bright pale tone, dominant region in the middle-right area",
+        "rank": 2
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.128692626953125,
+        "cx": 0.5865595372604816,
+        "cy": 0.07067286008546174,
+        "location": "upper-center area",
+        "rough": 0.07848218828439713,
+        "lap": 0.0541226826608181,
+        "contrast": 0.022700967267155647,
+        "sat": 0.4053778648376465,
+        "val": 0.5287356972694397,
+        "gx_abs": 0.04116113483905792,
+        "gy_abs": 0.05611089989542961,
+        "anis": 0.15368868769415853,
+        "phrase": "smooth fine texture with horizontal layered pattern, muted neutral tone, mid-size region in the upper-center area",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "location": "middle-left area",
+        "phrase": "Textured surface with repeating circular pattern and subtle grain, in the middle-left area",
+        "raw_text": "Textured surface with repeating circular pattern and subtle grain."
+      },
+      {
+        "label_id": 1,
+        "location": "middle-right area",
+        "phrase": "mottled medium-grain texture with woven undulating pattern, bright pale tone, dominant region in the middle-right area",
+        "raw_text": "Light yellow fabric with a subtle diamond pattern and soft, textured surface."
+      },
+      {
+        "label_id": 3,
+        "location": "upper-center area",
+        "phrase": "Soft, granular texture with subtle patterned design, in the upper-center area",
+        "raw_text": "Soft, granular texture with subtle patterned design."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  }
+}
