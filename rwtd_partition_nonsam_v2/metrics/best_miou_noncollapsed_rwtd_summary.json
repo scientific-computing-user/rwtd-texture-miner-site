@@ -1,0 +1,50 @@
+{
+  "gt_root": "data/rwtd_kaust256",
+  "pred_root": "outputs/rwtd_sweep2/sweep_v2_ws_ext_t35_mx95",
+  "threshold": 127,
+  "parity_mode": true,
+  "results": {
+    "non_aggregated": {
+      "num_images": 256,
+      "miou": 0.6440499211416062,
+      "ari": 0.2948165365994676,
+      "iou0_mean": 0.3341628476296261,
+      "iou1_mean": 0.4778989769023002,
+      "inversion_rate": 0.59765625,
+      "pred_fg_ratio_mean": 0.6275444030761719,
+      "pred_fg_ratio_median": 0.6422576904296875,
+      "gt_fg_ratio_mean": 0.4996822476387024,
+      "empty_pred_count": 0,
+      "full_pred_count": 0,
+      "near_empty_pred_count": 0,
+      "near_full_pred_count": 0
+    },
+    "aggregated": {
+      "num_images": 256,
+      "miou": 0.65504319152467,
+      "ari": 0.2783269394488244,
+      "iou0_mean": 0.34438405677909056,
+      "iou1_mean": 0.4923368881571542,
+      "inversion_rate": 0.61328125,
+      "pred_fg_ratio_mean": 0.6642788648605347,
+      "pred_fg_ratio_median": 0.6741409301757812,
+      "gt_fg_ratio_mean": 0.4996822476387024,
+      "empty_pred_count": 0,
+      "full_pred_count": 14,
+      "near_empty_pred_count": 0,
+      "near_full_pred_count": 23
+    }
+  },
+  "trivial_baselines": {
+    "all_foreground": {
+      "miou": 0.6575750708569983,
+      "ari": 0.0,
+      "inversion_rate": 0.52734375
+    },
+    "all_background": {
+      "miou": 0.0,
+      "ari": 0.0,
+      "inversion_rate": 0.0
+    }
+  }
+}
