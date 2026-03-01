@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>TexOW-SAM OpenWorldSAM RWTD (cov60)</title>
+  <style>
+    :root { --bg:#f2f7fb; --panel:#fff; --ink:#10263a; --muted:#5f7285; --line:#d8e2ed; --accent:#0b5ca2; --good:#0e8b4d; --bad:#a23636; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:linear-gradient(145deg,#eef5fb,#f7fbff); color:var(--ink); font-family:"Avenir Next","Segoe UI",system-ui,sans-serif; }
+    .wrap { max-width:1720px; margin:0 auto; padding:16px; }
+    .hero { background:linear-gradient(120deg,#092d4c,#0b5ca2 56%,#0f7d85); color:#fff; border-radius:16px; padding:16px; }
+    .hero h1 { margin:0 0 6px; font-size:28px; }
+    .hero p { margin:0; color:#daefff; font-size:14px; }
+    .links { margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; height:34px; padding:0 12px; border:1px solid #ffffff3d; border-radius:8px; color:#fff; text-decoration:none; background:#ffffff14; font-size:13px; }
+    .btn:hover { background:#ffffff22; }
+    .cards { margin-top:12px; display:grid; grid-template-columns:repeat(6,minmax(120px,1fr)); gap:10px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+    .k { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
+    .v { margin-top:4px; font-size:23px; font-weight:700; line-height:1.1; }
+    .d { margin-top:4px; font-size:12px; font-weight:700; }
+    .good { color:var(--good); }
+    .bad { color:var(--bad); }
+    .controls { position:sticky; top:8px; z-index:4; margin-top:12px; background:#ffffffdf; backdrop-filter:blur(4px); border:1px solid var(--line); border-radius:12px; padding:10px; display:grid; grid-template-columns:repeat(6,minmax(120px,1fr)); gap:10px; }
+    label { font-size:12px; color:var(--muted); display:flex; flex-direction:column; gap:4px; }
+    input,select { height:34px; border:1px solid var(--line); border-radius:8px; padding:4px 8px; background:#fff; color:var(--ink); }
+    .meta { margin:10px 2px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:13px; }
+    .calib { margin:10px 0; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:10px; }
+    .calib h3 { margin:0 0 8px; font-size:14px; }
+    .chips { display:flex; gap:6px; flex-wrap:wrap; }
+    .chip { border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; background:#f8fbff; }
+    .grid { display:grid; grid-template-columns:1fr; gap:10px; }
+    .sample { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:10px; }
+    .sample-top { display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+    .id { font-weight:700; font-size:14px; }
+    .metrics { font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap; }
+    .metrics b { color:var(--ink); }
+    .quad { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:8px; }
+    .panel { border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#f4f8fc; }
+    .panel .t { font-size:11px; color:var(--muted); padding:6px 8px; border-bottom:1px solid var(--line); background:#fff; }
+    .panel img { width:100%; display:block; aspect-ratio:1/1; object-fit:contain; background:#eef4fa; }
+    .empty { margin-top:12px; background:var(--panel); border:1px dashed var(--line); border-radius:12px; padding:16px; color:var(--muted); }
+    @media (max-width:1450px){ .cards,.controls{grid-template-columns:repeat(3,minmax(130px,1fr));} .quad{grid-template-columns:repeat(4,minmax(0,1fr));} }
+    @media (max-width:980px){ .cards,.controls{grid-template-columns:repeat(2,minmax(130px,1fr));} .quad{grid-template-columns:repeat(2,minmax(0,1fr));} .hero h1{font-size:23px;} }
+    @media (max-width:620px){ .quad{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>OpenWorldSAM + Calibrated Prompt Bank + Coverage Binary (RWTD)</h1>
+      <p>Training-free RWTD test run using calibrated DTD prompt bank and ranked-coverage binary conversion (target area ratio 0.60).</p>
+      <div class="links">
+        <a class="btn" href="../index.html">Home</a>
+        <a class="btn" href="./results.json">Results JSON</a>
+        <a class="btn" href="./metrics/rwtd_metrics.csv">Per-image CSV</a>
+        <a class="btn" href="./eval_summary.json">Eval Summary</a>
+      </div>
+    </section>
+
+    <section class="cards" id="cards"></section>
+    <section class="calib" id="calib"></section>
+
+    <section class="controls">
+      <label>Search Image ID<input id="q_id" type="text" placeholder="rwtd_16" /></label>
+      <label>Sort
+        <select id="q_sort">
+          <option value="rob_asc">Robust IoU (low to high)</option>
+          <option value="rob_desc">Robust IoU (high to low)</option>
+          <option value="agg_desc">Agg Robust IoU (high to low)</option>
+          <option value="raw_desc">Raw IoU (high to low)</option>
+          <option value="id">Image ID</option>
+        </select>
+      </label>
+      <label>Min Robust IoU<input id="q_min" type="number" min="0" max="1" step="0.01" value="0" /></label>
+      <label>Max Robust IoU<input id="q_max" type="number" min="0" max="1" step="0.01" value="1" /></label>
+      <label>Show Rows<input id="q_n" type="number" min="5" max="256" step="1" value="24" /></label>
+      <label>Only inversion-used<input id="q_inv" type="checkbox" /></label>
+    </section>
+
+    <div class="meta">
+      <div id="count">Loading...</div>
+      <div id="meta">Loading...</div>
+    </div>
+
+    <section class="grid" id="grid"><div class="empty">Loading results...</div></section>
+  </div>
+
+  <script>
+    const el = {
+      cards: document.getElementById('cards'),
+      calib: document.getElementById('calib'),
+      id: document.getElementById('q_id'),
+      sort: document.getElementById('q_sort'),
+      min: document.getElementById('q_min'),
+      max: document.getElementById('q_max'),
+      n: document.getElementById('q_n'),
+      inv: document.getElementById('q_inv'),
+      count: document.getElementById('count'),
+      meta: document.getElementById('meta'),
+      grid: document.getElementById('grid'),
+    };
+    const state = { payload:null, rows:[] };
+
+    function fmt(x, d=3){ if(x===null||x===undefined||Number.isNaN(Number(x))) return 'n/a'; return Number(x).toFixed(d); }
+
+    function renderCards() {
+      const p = state.payload;
+      const s = p.summary || {};
+      const ref = p.reference || {};
+      const mRob = Number(s.mean_robust_iou || 0);
+      const mRaw = Number(s.mean_iou || 0);
+      const mAgg = Number(s.mean_agg_iou_inv_robust || 0);
+      const tsNonAgg = Number(ref.texturesam_non_agg_miou || 0.47);
+      const tsAgg = Number(ref.texturesam_agg_miou || 0.75);
+      const deltaNonAgg = mRob - tsNonAgg;
+      const deltaAgg = mAgg - tsAgg;
+      const cards = [
+        {k:'Mean IoU (raw)', v:fmt(mRaw,4), d:'No inversion handling'},
+        {k:'Mean IoU (robust)', v:fmt(mRob,4), d:`vs TextureSAM non-agg 0.47: ${(deltaNonAgg>=0?'+':'') + deltaNonAgg.toFixed(4)}`, cls: deltaNonAgg>=0?'good':'bad'},
+        {k:'Mean IoU (agg robust)', v:fmt(mAgg,4), d:`vs TextureSAM agg 0.75: ${(deltaAgg>=0?'+':'') + deltaAgg.toFixed(4)}`, cls: deltaAgg>=0?'good':'bad'},
+        {k:'Median robust IoU', v:fmt(s.median_robust_iou,4), d:`Std: ${fmt(s.std_robust_iou,4)}`},
+        {k:'Calibration Bank', v:String((p.calibration||{}).num_bank_entries || 0), d:'DTD-calibrated prompt entries'},
+        {k:'Images', v:String(s.num_rows || state.rows.length), d:`Run: ${p.run_id || 'unknown'}`}
+      ];
+      el.cards.innerHTML = cards.map(c => `<div class="card"><div class="k">${c.k}</div><div class="v">${c.v}</div><div class="d ${c.cls||''}">${c.d}</div></div>`).join('');
+      el.meta.textContent = `Method: ${p.method || ''}`;
+    }
+
+    function renderCalibration(){
+      const calib = state.payload.calibration || {};
+      const top = Array.isArray(calib.top_prompts) ? calib.top_prompts : [];
+      const chips = top.map(e => `<span class="chip">#${e.rank} ${e.word} (${fmt(e.combined_score,3)})</span>`).join('');
+      el.calib.innerHTML = `<h3>Top Calibrated Texture Prompts</h3><div class="chips">${chips || '<span class="chip">No prompts</span>'}</span></div>`;
+    }
+
+    function renderRows(){
+      const needle = String(el.id.value || '').trim().toLowerCase();
+      const sort = el.sort.value;
+      const min = Number(el.min.value || 0);
+      const max = Number(el.max.value || 1);
+      const lim = Math.max(1, Math.min(256, Number(el.n.value || 24)));
+      const invOnly = !!el.inv.checked;
+
+      let rows = state.rows.filter((r) => {
+        const rob = Number(r.iou_inv_robust || 0);
+        if (needle && !String(r.image_id).toLowerCase().includes(needle)) return false;
+        if (rob < min || rob > max) return false;
+        if (invOnly && Number(r.used_inversion || 0) !== 1) return false;
+        return true;
+      });
+
+      if (sort === 'rob_desc') rows.sort((a,b)=>Number(b.iou_inv_robust)-Number(a.iou_inv_robust));
+      if (sort === 'rob_asc') rows.sort((a,b)=>Number(a.iou_inv_robust)-Number(b.iou_inv_robust));
+      if (sort === 'raw_desc') rows.sort((a,b)=>Number(b.iou)-Number(a.iou));
+      if (sort === 'agg_desc') rows.sort((a,b)=>Number(b.agg_iou_inv_robust)-Number(a.agg_iou_inv_robust));
+      if (sort === 'id') rows.sort((a,b)=>String(a.image_id).localeCompare(String(b.image_id), undefined, {numeric:true}));
+
+      const shown = rows.slice(0, lim);
+      el.count.textContent = `Showing ${shown.length} / ${rows.length} filtered (${state.rows.length} total)`;
+
+      if (!shown.length) {
+        el.grid.innerHTML = '<div class="empty">No samples match current filters.</div>';
+        return;
+      }
+
+      el.grid.innerHTML = shown.map((s) => `
+        <article class="sample">
+          <div class="sample-top">
+            <div class="id">${s.image_id}</div>
+            <div class="metrics">
+              <span>IoU: <b>${fmt(s.iou,4)}</b></span>
+              <span>IoU(inv): <b>${fmt(s.iou_inv,4)}</b></span>
+              <span>Robust: <b>${fmt(s.iou_inv_robust,4)}</b></span>
+              <span>Agg robust: <b>${fmt(s.agg_iou_inv_robust,4)}</b></span>
+              <span>inv-used: <b>${Number(s.used_inversion||0)}</b></span>
+            </div>
+          </div>
+          <div class="quad">
+            <div class="panel"><div class="t">Original</div><img loading="lazy" src="${s.original}" alt="${s.image_id} original" /></div>
+            <div class="panel"><div class="t">GT Mask</div><img loading="lazy" src="${s.gt_mask}" alt="${s.image_id} gt" /></div>
+            <div class="panel"><div class="t">Pred Binary</div><img loading="lazy" src="${s.pred_mask}" alt="${s.image_id} pred" /></div>
+            <div class="panel"><div class="t">Pred Edge</div><img loading="lazy" src="${s.pred_edge}" alt="${s.image_id} edge" /></div>
+            <div class="panel"><div class="t">Binary Overlay</div><img loading="lazy" src="${s.overlay_binary}" alt="${s.image_id} overlay binary" /></div>
+            <div class="panel"><div class="t">Edge Overlay</div><img loading="lazy" src="${s.overlay_edges}" alt="${s.image_id} overlay edge" /></div>
+            <div class="panel"><div class="t">Label Overlay</div><img loading="lazy" src="${s.overlay_labels}" alt="${s.image_id} overlay label" /></div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function bind(){
+      [el.id, el.sort, el.min, el.max, el.n, el.inv].forEach(node => node.addEventListener('input', renderRows));
+      el.sort.addEventListener('change', renderRows);
+    }
+
+    async function load(){
+      const res = await fetch('./results.json?v=' + Date.now());
+      if (!res.ok) throw new Error('Failed to load results.json');
+      state.payload = await res.json();
+      state.rows = Array.isArray(state.payload.samples) ? state.payload.samples : [];
+      renderCards();
+      renderCalibration();
+      renderRows();
+      bind();
+    }
+
+    load().catch((err) => {
+      el.grid.innerHTML = `<div class="empty">Failed to load report: ${String(err.message || err)}</div>`;
+      el.count.textContent = 'Load failed';
+    });
+  </script>
+</body>
+</html>
