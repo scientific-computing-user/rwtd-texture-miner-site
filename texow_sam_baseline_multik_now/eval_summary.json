@@ -1,0 +1,15 @@
+{
+  "run_id": "baseline_multik_now",
+  "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+  "run_root": "outputs/rwtd_runs/baseline_multik_now",
+  "num_rows": 256,
+  "num_images": 256,
+  "mean_iou": 0.34858033383211984,
+  "mean_robust_iou": 0.617651833513513,
+  "median_robust_iou": 0.7451505430994244,
+  "std_robust_iou": 0.3198858651934521,
+  "num_images_with_agg": 256,
+  "mean_agg_iou_inv_robust": 0.8905853245517175,
+  "median_agg_iou_inv_robust": 0.9279035102169759,
+  "std_agg_iou_inv_robust": 0.10397522187923311
+}
