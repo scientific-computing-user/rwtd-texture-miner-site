@@ -1,0 +1,15 @@
+{
+  "run_id": "ow_calibrated_dtd_run1",
+  "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+  "run_root": "/home/galoren/repo/outputs/rwtd_runs/ow_calibrated_dtd_run1",
+  "num_rows": 256,
+  "num_images": 256,
+  "mean_iou": 0.1279280550609511,
+  "mean_robust_iou": 0.25506479213541217,
+  "median_robust_iou": 0.07300850905072345,
+  "std_robust_iou": 0.3506395361260062,
+  "num_images_with_agg": 256,
+  "mean_agg_iou_inv_robust": 0.8235736156494962,
+  "median_agg_iou_inv_robust": 0.8610087304771326,
+  "std_agg_iou_inv_robust": 0.14540363431428407
+}
