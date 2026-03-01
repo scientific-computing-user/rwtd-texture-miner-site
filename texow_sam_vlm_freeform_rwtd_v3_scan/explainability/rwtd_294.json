@@ -1,0 +1,124 @@
+{
+  "image_id": "rwtd_294",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse grainy texture with vertical striated pattern, muted neutral tone, dominant region in the middle-right area",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-left area",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 0,
+    "unassigned_before_fill": 5810,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "coarse",
+        "prompt": "coarse grainy texture with vertical striated pattern, muted neutral tone, dominant region in the middle-right area",
+        "num_masks_used": 1,
+        "mask_area": 32751,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "smooth",
+        "prompt": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-left area",
+        "num_masks_used": 1,
+        "mask_area": 26975,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "coarse grainy texture with vertical striated pattern, muted neutral tone, dominant region in the middle-right area",
+      "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-left area"
+    ],
+    "backend": "heuristic_scan",
+    "raw_text": "",
+    "parse_ok": false,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.6193084716796875,
+        "cx": 0.6910749457592188,
+        "cy": 0.5016650265201308,
+        "location": "middle-right area",
+        "rough": 0.6589735150337219,
+        "lap": 0.47220703959465027,
+        "contrast": 0.15201005339622498,
+        "sat": 0.44383886456489563,
+        "val": 0.39701351523399353,
+        "gx_abs": 0.4986346364021301,
+        "gy_abs": 0.33012455701828003,
+        "anis": 0.20332791164641395,
+        "phrase": "coarse grainy texture with vertical striated pattern, muted neutral tone, dominant region in the middle-right area",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.3806915283203125,
+        "cx": 0.189159532505134,
+        "cy": 0.4972913370727264,
+        "location": "middle-left area",
+        "rough": 0.2570458948612213,
+        "lap": 0.3413551449775696,
+        "contrast": 0.05060955882072449,
+        "sat": 0.21326126158237457,
+        "val": 0.6645703315734863,
+        "gx_abs": 0.17045503854751587,
+        "gy_abs": 0.15526670217514038,
+        "anis": 0.04662964685449436,
+        "phrase": "smooth fine texture with broad uniform pattern, muted neutral tone, dominant region in the middle-left area",
+        "rank": 2
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "heuristic_scan",
+    "vlm_available": false
+  }
+}
