@@ -114,7 +114,8 @@
       const ref = p.reference || {};
       const mRob = Number(s.mean_robust_iou || 0);
       const mRaw = Number(s.mean_iou || 0);
-      const mAgg = Number(s.mean_agg_iou_inv_robust || 0);
+      const mAgg = Number(s.mean_oracle_agg_iou_inv_robust || s.mean_agg_iou_inv_robust || 0);
+      const mBF1 = Number(s.mean_boundary_f1 || 0);
       const tsNonAgg = Number(ref.texturesam_non_agg_miou || 0.47);
       const tsAgg = Number(ref.texturesam_agg_miou || 0.75);
       const deltaNonAgg = mRob - tsNonAgg;
@@ -122,7 +123,8 @@
       const cards = [
         {k:'Mean IoU (raw)', v:fmt(mRaw,4), d:'No inversion handling'},
         {k:'Mean IoU (robust)', v:fmt(mRob,4), d:`vs TextureSAM non-agg 0.47: ${(deltaNonAgg>=0?'+':'') + deltaNonAgg.toFixed(4)}`, cls: deltaNonAgg>=0?'good':'bad'},
-        {k:'Mean IoU (agg robust)', v:fmt(mAgg,4), d:`vs TextureSAM agg 0.75: ${(deltaAgg>=0?'+':'') + deltaAgg.toFixed(4)}`, cls: deltaAgg>=0?'good':'bad'},
+        {k:'Mean Boundary F1@2px', v:fmt(mBF1,4), d:'Primary boundary-quality signal'},
+        {k:'Oracle Agg IoU', v:fmt(mAgg,4), d:'GT-guided upper bound (not deployable)'},
         {k:'Median robust IoU', v:fmt(s.median_robust_iou,4), d:`Std: ${fmt(s.std_robust_iou,4)}`},
         {k:'Calibration Bank', v:String((p.calibration||{}).num_bank_entries || 0), d:'DTD-calibrated prompt entries'},
         {k:'Images', v:String(s.num_rows || state.rows.length), d:`Run: ${p.run_id || 'unknown'}`}
@@ -176,7 +178,9 @@
               <span>IoU: <b>${fmt(s.iou,4)}</b></span>
               <span>IoU(inv): <b>${fmt(s.iou_inv,4)}</b></span>
               <span>Robust: <b>${fmt(s.iou_inv_robust,4)}</b></span>
-              <span>Agg robust: <b>${fmt(s.agg_iou_inv_robust,4)}</b></span>
+              <span>Boundary F1: <b>${fmt(s.boundary_f1,4)}</b></span>
+              <span>ARI: <b>${fmt(s.ari,4)}</b></span>
+              <span>Oracle agg IoU: <b>${fmt(s.oracle_agg_iou_inv_robust,4)}</b></span>
               <span>inv-used: <b>${Number(s.used_inversion||0)}</b></span>
             </div>
           </div>
