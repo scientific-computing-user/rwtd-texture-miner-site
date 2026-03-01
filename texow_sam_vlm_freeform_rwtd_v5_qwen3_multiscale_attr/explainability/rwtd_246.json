@@ -1,0 +1,257 @@
+{
+  "image_id": "rwtd_246",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "granular",
+      "canonical": "granular",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "granular surface with structural pattern and dark gray finish",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "mid-scale",
+      "canonical": "mid-scale",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "mid-scale mixed granularity; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, moderate local contrast, coherent orientation flow; medium coverage",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth low-frequency texture; cross-directional woven lattice; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; medium coverage",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 340496,
+    "unassigned_before_fill": 2566,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "granular",
+        "prompt": "granular surface with structural pattern and dark gray finish",
+        "num_masks_used": 12,
+        "mask_area": 60323,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "mid-scale",
+        "prompt": "mid-scale mixed granularity; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, moderate local contrast, coherent orientation flow; medium coverage",
+        "num_masks_used": 12,
+        "mask_area": 51421,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "smooth",
+        "prompt": "smooth low-frequency texture; cross-directional woven lattice; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; medium coverage",
+        "num_masks_used": 12,
+        "mask_area": 45729,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "granular surface with structural pattern and dark gray finish",
+      "mid-scale mixed granularity; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, moderate local contrast, coherent orientation flow; medium coverage",
+      "smooth low-frequency texture; cross-directional woven lattice; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; medium coverage"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"high granularity with a rough, uneven surface\",\n    \"structured by vertical lines and a layered appearance\",\n    \"matte finish with a dark, muted color\",\n    \"a palette of dark gray and black tones\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.518524169921875,
+        "cx": 0.25840323770023577,
+        "cy": 0.49782306896038386,
+        "rough": 0.3053324222564697,
+        "lap": 0.33283597230911255,
+        "contrast": 0.0589173287153244,
+        "sat": 0.07047469168901443,
+        "val": 0.42193931341171265,
+        "hue_mean": 239.31168818317224,
+        "hue_concentration": 0.8499352510908128,
+        "orient_entropy": 0.9969498331072332,
+        "spec": 0.19766855239868164,
+        "gx_abs": 0.19602487981319427,
+        "gy_abs": 0.1881900429725647,
+        "anis": 0.020391754677482037,
+        "bbox_xyxy": [
+          0,
+          0,
+          139,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; branching vein-like filigree; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, sharp micro-contrast, multi-directional orientation flow; large continuous coverage",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.2431640625,
+        "cx": 0.6409163615245295,
+        "cy": 0.5196496771399323,
+        "rough": 0.046601902693510056,
+        "lap": 0.01849999465048313,
+        "contrast": 0.017495963722467422,
+        "sat": 0.020732194185256958,
+        "val": 0.55818772315979,
+        "hue_mean": 44.91545461773825,
+        "hue_concentration": 0.9888949434351826,
+        "orient_entropy": 0.5215191012529254,
+        "spec": 0.1476946473121643,
+        "gx_abs": 0.043102558702230453,
+        "gy_abs": 0.010175262577831745,
+        "anis": 0.6180184796378113,
+        "bbox_xyxy": [
+          130,
+          0,
+          202,
+          256
+        ],
+        "phrase": "mid-scale mixed granularity; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, moderate local contrast, coherent orientation flow; medium coverage",
+        "rank": 2
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.238311767578125,
+        "cx": 0.8818861595092641,
+        "cy": 0.4846868495125032,
+        "rough": 0.023065410554409027,
+        "lap": 0.020161762833595276,
+        "contrast": 0.005022265482693911,
+        "sat": 0.020877119153738022,
+        "val": 0.6877115368843079,
+        "hue_mean": 44.878784054813025,
+        "hue_concentration": 0.9947546313970305,
+        "orient_entropy": 0.9705072712268752,
+        "spec": 0.026013970375061035,
+        "gx_abs": 0.015433171764016151,
+        "gy_abs": 0.012496895156800747,
+        "anis": 0.10512583051480252,
+        "bbox_xyxy": [
+          191,
+          0,
+          256,
+          256
+        ],
+        "phrase": "smooth low-frequency texture; cross-directional woven lattice; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; medium coverage",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "bbox_xyxy": [
+          0,
+          0,
+          139,
+          256
+        ],
+        "phrase": "granular surface with structural pattern and dark gray finish",
+        "phrase_quality": 3.400000000000001,
+        "raw_text": "granular surface with structural pattern and dark gray finish"
+      },
+      {
+        "label_id": 2,
+        "bbox_xyxy": [
+          130,
+          0,
+          202,
+          256
+        ],
+        "phrase": "mid-scale mixed granularity; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, moderate local contrast, coherent orientation flow; medium coverage",
+        "phrase_quality": 3.08,
+        "raw_text": "fine granularity with a smooth finish and subtle color gradient."
+      },
+      {
+        "label_id": 3,
+        "bbox_xyxy": [
+          191,
+          0,
+          256,
+          256
+        ],
+        "phrase": "smooth low-frequency texture; cross-directional woven lattice; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; medium coverage",
+        "phrase_quality": 5.119999999999999,
+        "raw_text": "fine granularity with subtle structural pattern and soft finish in muted gray."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  },
+  "prompt_inference": [
+    {
+      "prompt": "granular surface with structural pattern and dark gray finish",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "mid-scale mixed granularity; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, moderate local contrast, coherent orientation flow; medium coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "smooth low-frequency texture; cross-directional woven lattice; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; medium coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    }
+  ]
+}

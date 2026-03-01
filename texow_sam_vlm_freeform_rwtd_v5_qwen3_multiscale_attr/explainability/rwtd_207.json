@@ -1,0 +1,257 @@
+{
+  "image_id": "rwtd_207",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "mid-scale",
+      "canonical": "mid-scale",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "mid-scale mixed granularity; branching vein-like filigree; matte diffuse finish, moderate chroma; olive-dominant palette; tight single-hue field, moderate local contrast, multi-directional orientation flow; large continuous coverage",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth low-frequency texture; broad, softly varying patches; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; large continuous coverage",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse, high-frequency granules; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, coherent orientation flow; small fragmented coverage",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 493849,
+    "unassigned_before_fill": 1773,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "mid-scale",
+        "prompt": "mid-scale mixed granularity; branching vein-like filigree; matte diffuse finish, moderate chroma; olive-dominant palette; tight single-hue field, moderate local contrast, multi-directional orientation flow; large continuous coverage",
+        "num_masks_used": 12,
+        "mask_area": 60710,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "smooth",
+        "prompt": "smooth low-frequency texture; broad, softly varying patches; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; large continuous coverage",
+        "num_masks_used": 12,
+        "mask_area": 62571,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "coarse",
+        "prompt": "coarse, high-frequency granules; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, coherent orientation flow; small fragmented coverage",
+        "num_masks_used": 12,
+        "mask_area": 40830,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "mid-scale mixed granularity; branching vein-like filigree; matte diffuse finish, moderate chroma; olive-dominant palette; tight single-hue field, moderate local contrast, multi-directional orientation flow; large continuous coverage",
+      "smooth low-frequency texture; broad, softly varying patches; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; large continuous coverage",
+      "coarse, high-frequency granules; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, coherent orientation flow; small fragmented coverage"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"gritty, coarse, rough, earthy\",\n    \"smooth, uniform, polished, neutral\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 3,
+        "area_ratio": 0.498382568359375,
+        "cx": 0.24827592417164038,
+        "cy": 0.4963138791736154,
+        "rough": 0.3968034088611603,
+        "lap": 0.43364396691322327,
+        "contrast": 0.07630085945129395,
+        "sat": 0.26030778884887695,
+        "val": 0.3732757866382599,
+        "hue_mean": 83.78476296479573,
+        "hue_concentration": 0.9557027641303356,
+        "orient_entropy": 0.9986223070593238,
+        "spec": 0.20319482684135437,
+        "gx_abs": 0.26098868250846863,
+        "gy_abs": 0.24252288043498993,
+        "anis": 0.03667396492657582,
+        "bbox_xyxy": [
+          0,
+          0,
+          130,
+          256
+        ],
+        "phrase": "mid-scale mixed granularity; branching vein-like filigree; matte diffuse finish, moderate chroma; olive-dominant palette; tight single-hue field, moderate local contrast, multi-directional orientation flow; large continuous coverage",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.4478912353515625,
+        "cx": 0.7771250959416915,
+        "cy": 0.5000202404403999,
+        "rough": 0.1857394427061081,
+        "lap": 0.2106427252292633,
+        "contrast": 0.0345723032951355,
+        "sat": 0.05021753907203674,
+        "val": 0.6163438558578491,
+        "hue_mean": 357.6397250251919,
+        "hue_concentration": 0.9113094821832206,
+        "orient_entropy": 0.9979285290457431,
+        "spec": 0.0934600830078125,
+        "gx_abs": 0.1228470429778099,
+        "gy_abs": 0.11281982064247131,
+        "anis": 0.04254811063885617,
+        "bbox_xyxy": [
+          140,
+          0,
+          256,
+          256
+        ],
+        "phrase": "smooth low-frequency texture; broad, softly varying patches; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; large continuous coverage",
+        "rank": 2
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.0537261962890625,
+        "cx": 0.5248107990711196,
+        "cy": 0.5340249817620886,
+        "rough": 0.3984522819519043,
+        "lap": 0.3007456660270691,
+        "contrast": 0.12088632583618164,
+        "sat": 0.12032343447208405,
+        "val": 0.4798012971878052,
+        "hue_mean": 45.651538468485796,
+        "hue_concentration": 0.6496463633222875,
+        "orient_entropy": 0.7954557046145203,
+        "spec": 0.24568891525268555,
+        "gx_abs": 0.34015628695487976,
+        "gy_abs": 0.13197341561317444,
+        "anis": 0.4409433027958975,
+        "bbox_xyxy": [
+          121,
+          0,
+          143,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, coherent orientation flow; small fragmented coverage",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 3,
+        "bbox_xyxy": [
+          0,
+          0,
+          130,
+          256
+        ],
+        "phrase": "mid-scale mixed granularity; branching vein-like filigree; matte diffuse finish, moderate chroma; olive-dominant palette; tight single-hue field, moderate local contrast, multi-directional orientation flow; large continuous coverage",
+        "phrase_quality": 4.959999999999999,
+        "raw_text": "granularity, structural pattern, finish, color cue"
+      },
+      {
+        "label_id": 2,
+        "bbox_xyxy": [
+          140,
+          0,
+          256,
+          256
+        ],
+        "phrase": "smooth low-frequency texture; broad, softly varying patches; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; large continuous coverage",
+        "phrase_quality": 3.8400000000000003,
+        "raw_text": "granular, structural, finish, color cue"
+      },
+      {
+        "label_id": 1,
+        "bbox_xyxy": [
+          121,
+          0,
+          143,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, coherent orientation flow; small fragmented coverage",
+        "phrase_quality": 5.18,
+        "raw_text": "granular, structural, finish, color cue"
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  },
+  "prompt_inference": [
+    {
+      "prompt": "mid-scale mixed granularity; branching vein-like filigree; matte diffuse finish, moderate chroma; olive-dominant palette; tight single-hue field, moderate local contrast, multi-directional orientation flow; large continuous coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "smooth low-frequency texture; broad, softly varying patches; matte diffuse finish, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, mixed orientation flow; large continuous coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "coarse, high-frequency granules; directional vertical striations; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, coherent orientation flow; small fragmented coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    }
+  ]
+}

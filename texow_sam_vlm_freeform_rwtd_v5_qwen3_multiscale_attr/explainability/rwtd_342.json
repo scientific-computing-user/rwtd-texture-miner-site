@@ -1,0 +1,188 @@
+{
+  "image_id": "rwtd_342",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse, high-frequency granules; branching vein-like filigree; matte diffuse finish, high chroma; emerald-dominant palette; moderate hue drift, sharp micro-contrast, multi-directional orientation flow; large continuous coverage",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth low-frequency texture; broad, softly varying patches; low-luminance matte finish, high chroma; burgundy-dominant palette; moderate hue drift, soft low-contrast transitions, coherent orientation flow; medium coverage",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 186560,
+    "unassigned_before_fill": 33681,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "coarse",
+        "prompt": "coarse, high-frequency granules; branching vein-like filigree; matte diffuse finish, high chroma; emerald-dominant palette; moderate hue drift, sharp micro-contrast, multi-directional orientation flow; large continuous coverage",
+        "num_masks_used": 12,
+        "mask_area": 28061,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "smooth",
+        "prompt": "smooth low-frequency texture; broad, softly varying patches; low-luminance matte finish, high chroma; burgundy-dominant palette; moderate hue drift, soft low-contrast transitions, coherent orientation flow; medium coverage",
+        "num_masks_used": 12,
+        "mask_area": 26688,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "coarse, high-frequency granules; branching vein-like filigree; matte diffuse finish, high chroma; emerald-dominant palette; moderate hue drift, sharp micro-contrast, multi-directional orientation flow; large continuous coverage",
+      "smooth low-frequency texture; broad, softly varying patches; low-luminance matte finish, high chroma; burgundy-dominant palette; moderate hue drift, soft low-contrast transitions, coherent orientation flow; medium coverage"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"The leaf exhibits a high granularity with fine, intricate vein patterns, showcasing a complex structural organization. The finish is smooth yet detailed, with a subtle sheen that enhances the natural texture. The palette is dominated by deep greens and earthy tones, creating a rich, organic appearance.\",\n    \"The surrounding ground displays a coarse texture with a mix of dark soil and scattered organic debris. The structural organization is irregular, with a rough, uneven surface. The finish is matte, lacking shine, and the palette consists of muted browns and dark greens, blending with the leaf's natural environment.\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.724761962890625,
+        "cx": 0.49592420403253307,
+        "cy": 0.5273986355669051,
+        "rough": 0.5774025917053223,
+        "lap": 0.5244393348693848,
+        "contrast": 0.12950249016284943,
+        "sat": 0.5707066655158997,
+        "val": 0.4119901955127716,
+        "hue_mean": 76.10254923604191,
+        "hue_concentration": 0.6703655514971847,
+        "orient_entropy": 0.992196003327184,
+        "spec": 0.40369608998298645,
+        "gx_abs": 0.3986705541610718,
+        "gy_abs": 0.33337414264678955,
+        "anis": 0.08919717962828276,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; branching vein-like filigree; matte diffuse finish, high chroma; emerald-dominant palette; moderate hue drift, sharp micro-contrast, multi-directional orientation flow; large continuous coverage",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.275238037109375,
+        "cx": 0.5107324624050752,
+        "cy": 0.4278533988160072,
+        "rough": 0.3368643522262573,
+        "lap": 0.24625879526138306,
+        "contrast": 0.07400918751955032,
+        "sat": 0.5253239274024963,
+        "val": 0.19025196135044098,
+        "hue_mean": 4.321308363730907,
+        "hue_concentration": 0.7364007439646809,
+        "orient_entropy": 0.9884710884196968,
+        "spec": 0.3038656860589981,
+        "gx_abs": 0.233408123254776,
+        "gy_abs": 0.19064044952392578,
+        "anis": 0.10085536332604522,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "phrase": "smooth low-frequency texture; broad, softly varying patches; low-luminance matte finish, high chroma; burgundy-dominant palette; moderate hue drift, soft low-contrast transitions, coherent orientation flow; medium coverage",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; branching vein-like filigree; matte diffuse finish, high chroma; emerald-dominant palette; moderate hue drift, sharp micro-contrast, multi-directional orientation flow; large continuous coverage",
+        "phrase_quality": 7.139999999999999,
+        "raw_text": "granular, structural pattern, finish, color cue"
+      },
+      {
+        "label_id": 2,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "phrase": "smooth low-frequency texture; broad, softly varying patches; low-luminance matte finish, high chroma; burgundy-dominant palette; moderate hue drift, soft low-contrast transitions, coherent orientation flow; medium coverage",
+        "phrase_quality": 3.7400000000000007,
+        "raw_text": "granular structure with intricate vein pattern and green coloration"
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  },
+  "prompt_inference": [
+    {
+      "prompt": "coarse, high-frequency granules; branching vein-like filigree; matte diffuse finish, high chroma; emerald-dominant palette; moderate hue drift, sharp micro-contrast, multi-directional orientation flow; large continuous coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "smooth low-frequency texture; broad, softly varying patches; low-luminance matte finish, high chroma; burgundy-dominant palette; moderate hue drift, soft low-contrast transitions, coherent orientation flow; medium coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    }
+  ]
+}

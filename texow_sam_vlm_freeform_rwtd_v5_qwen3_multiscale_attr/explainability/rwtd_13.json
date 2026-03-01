@@ -1,0 +1,188 @@
+{
+  "image_id": "rwtd_13",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse, high-frequency granules; directional horizontal bands; semi-gloss highlights, high chroma; amber-dominant palette; tight single-hue field, sharp micro-contrast, coherent orientation flow; large continuous coverage",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, moderate chroma; amber-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; large continuous coverage",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 360310,
+    "unassigned_before_fill": 8664,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "coarse",
+        "prompt": "coarse, high-frequency granules; directional horizontal bands; semi-gloss highlights, high chroma; amber-dominant palette; tight single-hue field, sharp micro-contrast, coherent orientation flow; large continuous coverage",
+        "num_masks_used": 12,
+        "mask_area": 38601,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "smooth",
+        "prompt": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, moderate chroma; amber-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; large continuous coverage",
+        "num_masks_used": 12,
+        "mask_area": 56742,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "coarse, high-frequency granules; directional horizontal bands; semi-gloss highlights, high chroma; amber-dominant palette; tight single-hue field, sharp micro-contrast, coherent orientation flow; large continuous coverage",
+      "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, moderate chroma; amber-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; large continuous coverage"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"The forest floor is covered in a dense layer of fallen leaves, exhibiting a high granularity due to the varied shapes and sizes of the leaves. The structural organization is irregular, with leaves scattered in a natural, random pattern. The finish is rough and uneven, with a matte appearance that reflects the natural decay of the foliage. The palette consists of warm autumnal tones, including shades of orange, yellow, and brown, creating a rich, earthy color scheme.\",\n    \"The tree trunks display a smooth, vertical structure with a light, almost white bark that has a subtle grain. The finish is smooth and slightly glossy, reflecting the soft light of the forest. The granularity is minimal, with the bark's surface being mostly uniform. The structural organization is linear and vertical, following the natural growth of the trees. The palette is composed of light gray and white tones",
+    "parse_ok": false,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 2,
+        "area_ratio": 0.6211700439453125,
+        "cx": 0.5011891671109968,
+        "cy": 0.6901465639192373,
+        "rough": 0.7682906985282898,
+        "lap": 0.756469190120697,
+        "contrast": 0.1642867773771286,
+        "sat": 0.6597463488578796,
+        "val": 0.6376851201057434,
+        "hue_mean": 24.192304509191388,
+        "hue_concentration": 0.9754631682077798,
+        "orient_entropy": 0.9411979878668354,
+        "spec": 0.3623148798942566,
+        "gx_abs": 0.34428250789642334,
+        "gy_abs": 0.6091554760932922,
+        "anis": 0.27780799048985183,
+        "bbox_xyxy": [
+          0,
+          96,
+          256,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; directional horizontal bands; semi-gloss highlights, high chroma; amber-dominant palette; tight single-hue field, sharp micro-contrast, coherent orientation flow; large continuous coverage",
+        "rank": 1
+      },
+      {
+        "label_id": 1,
+        "area_ratio": 0.3788299560546875,
+        "cx": 0.4980501146364213,
+        "cy": 0.18821539168694426,
+        "rough": 0.5790536403656006,
+        "lap": 0.578639566898346,
+        "contrast": 0.12070535868406296,
+        "sat": 0.47782623767852783,
+        "val": 0.5591385960578918,
+        "hue_mean": 26.783613452034558,
+        "hue_concentration": 0.9422137668387373,
+        "orient_entropy": 0.966907559689216,
+        "spec": 0.29576337337493896,
+        "gx_abs": 0.43433675169944763,
+        "gy_abs": 0.28409138321876526,
+        "anis": 0.2091303946043148,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          100
+        ],
+        "phrase": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, moderate chroma; amber-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; large continuous coverage",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 2,
+        "bbox_xyxy": [
+          0,
+          96,
+          256,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; directional horizontal bands; semi-gloss highlights, high chroma; amber-dominant palette; tight single-hue field, sharp micro-contrast, coherent orientation flow; large continuous coverage",
+        "phrase_quality": 5.02,
+        "raw_text": "granularity and structural pattern in the leaf surface"
+      },
+      {
+        "label_id": 1,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          100
+        ],
+        "phrase": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, moderate chroma; amber-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; large continuous coverage",
+        "phrase_quality": 3.580000000000001,
+        "raw_text": "granularity, structural pattern, finish, color cue"
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  },
+  "prompt_inference": [
+    {
+      "prompt": "coarse, high-frequency granules; directional horizontal bands; semi-gloss highlights, high chroma; amber-dominant palette; tight single-hue field, sharp micro-contrast, coherent orientation flow; large continuous coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, moderate chroma; amber-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; large continuous coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    }
+  ]
+}

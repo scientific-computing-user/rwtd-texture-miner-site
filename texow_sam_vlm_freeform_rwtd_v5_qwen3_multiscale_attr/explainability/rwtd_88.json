@@ -1,0 +1,188 @@
+{
+  "image_id": "rwtd_88",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, coherent orientation flow; large continuous coverage",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse, high-frequency granules; branching vein-like filigree; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, sharp micro-contrast, multi-directional orientation flow; medium coverage",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 2,
+    "num_labels_nonzero": 2,
+    "overlap_pixels": 244733,
+    "unassigned_before_fill": 16459,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "smooth",
+        "prompt": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, coherent orientation flow; large continuous coverage",
+        "num_masks_used": 12,
+        "mask_area": 41925,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "coarse",
+        "prompt": "coarse, high-frequency granules; branching vein-like filigree; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, sharp micro-contrast, multi-directional orientation flow; medium coverage",
+        "num_masks_used": 12,
+        "mask_area": 45031,
+        "calibration_score": 0.95
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 2,
+    "textures": [
+      "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, coherent orientation flow; large continuous coverage",
+      "coarse, high-frequency granules; branching vein-like filigree; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, sharp micro-contrast, multi-directional orientation flow; medium coverage"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"high granularity with a rough, granular surface\",\n    \"structured with a complex, interlocking pattern\",\n    \"smooth with a matte finish\",\n    \"predominantly earthy palette of beige and tan\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 2,
+      "k_edge": 2,
+      "k_final": 2,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.6944427490234375,
+        "cx": 0.4632994135009808,
+        "cy": 0.4940689624270969,
+        "rough": 0.44396767020225525,
+        "lap": 0.42540788650512695,
+        "contrast": 0.08761189877986908,
+        "sat": 0.15114285051822662,
+        "val": 0.5629388093948364,
+        "hue_mean": 21.40299029284421,
+        "hue_concentration": 0.8757235889594621,
+        "orient_entropy": 0.9917723527305586,
+        "spec": 0.20568865537643433,
+        "gx_abs": 0.3050772249698639,
+        "gy_abs": 0.25795257091522217,
+        "anis": 0.08369818205159031,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "phrase": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, coherent orientation flow; large continuous coverage",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.3055572509765625,
+        "cx": 0.5834097574110794,
+        "cy": 0.5134795231450883,
+        "rough": 0.9078961610794067,
+        "lap": 0.7320759296417236,
+        "contrast": 0.15510530769824982,
+        "sat": 0.12414325773715973,
+        "val": 0.5154895782470703,
+        "hue_mean": 24.58704184993684,
+        "hue_concentration": 0.8988523384548713,
+        "orient_entropy": 0.9942260865379686,
+        "spec": 0.260981023311615,
+        "gx_abs": 0.6204125881195068,
+        "gy_abs": 0.5301485061645508,
+        "anis": 0.07845216038611397,
+        "bbox_xyxy": [
+          48,
+          47,
+          256,
+          205
+        ],
+        "phrase": "coarse, high-frequency granules; branching vein-like filigree; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, sharp micro-contrast, multi-directional orientation flow; medium coverage",
+        "rank": 2
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "phrase": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, coherent orientation flow; large continuous coverage",
+        "phrase_quality": 3.7400000000000007,
+        "raw_text": "granular, structural pattern, finish, color cue"
+      },
+      {
+        "label_id": 2,
+        "bbox_xyxy": [
+          48,
+          47,
+          256,
+          205
+        ],
+        "phrase": "coarse, high-frequency granules; branching vein-like filigree; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, sharp micro-contrast, multi-directional orientation flow; medium coverage",
+        "phrase_quality": 6.219999999999999,
+        "raw_text": "The surface displays a granular, intricate structural pattern with a mottled coloration."
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 2,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  },
+  "prompt_inference": [
+    {
+      "prompt": "smooth low-frequency texture; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, coherent orientation flow; large continuous coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "coarse, high-frequency granules; branching vein-like filigree; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, sharp micro-contrast, multi-directional orientation flow; medium coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "image_id": "rwtd_59",
+  "mode": "vlm_freeform",
+  "prompt_strategy": "bank_topk_global",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "word": "mid-scale",
+      "canonical": "mid-scale",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "mid-scale mixed granularity; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, moderate local contrast, coherent orientation flow; large continuous coverage",
+      "combined_score": 1.0,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 2,
+      "word": "coarse",
+      "canonical": "coarse",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "coarse, high-frequency granules; speckled, cellular breakup; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, mixed orientation flow; medium coverage",
+      "combined_score": 0.95,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    },
+    {
+      "rank": 3,
+      "word": "smooth",
+      "canonical": "smooth",
+      "source": "vlm_freeform",
+      "template": "freeform",
+      "prompt": "smooth low-frequency texture; irregular mottled weave; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; medium coverage",
+      "combined_score": 0.9,
+      "mean_coverage": 0.0,
+      "mean_stability_iou": 0.0,
+      "failure_rate": 0.0,
+      "num_images": 0
+    }
+  ],
+  "merge": {
+    "num_prompts": 3,
+    "num_labels_nonzero": 3,
+    "overlap_pixels": 277107,
+    "unassigned_before_fill": 13554,
+    "unassigned_after_fill": 0,
+    "fill_mode": "nearest",
+    "prompt_stats": [
+      {
+        "label_id": 1,
+        "word": "mid-scale",
+        "prompt": "mid-scale mixed granularity; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, moderate local contrast, coherent orientation flow; large continuous coverage",
+        "num_masks_used": 12,
+        "mask_area": 34108,
+        "calibration_score": 1.0
+      },
+      {
+        "label_id": 2,
+        "word": "coarse",
+        "prompt": "coarse, high-frequency granules; speckled, cellular breakup; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, mixed orientation flow; medium coverage",
+        "num_masks_used": 12,
+        "mask_area": 48848,
+        "calibration_score": 0.95
+      },
+      {
+        "label_id": 3,
+        "word": "smooth",
+        "prompt": "smooth low-frequency texture; irregular mottled weave; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; medium coverage",
+        "num_masks_used": 12,
+        "mask_area": 31230,
+        "calibration_score": 0.9
+      }
+    ]
+  },
+  "vlm_freeform": {
+    "num_regions": 3,
+    "textures": [
+      "mid-scale mixed granularity; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, moderate local contrast, coherent orientation flow; large continuous coverage",
+      "coarse, high-frequency granules; speckled, cellular breakup; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, mixed orientation flow; medium coverage",
+      "smooth low-frequency texture; irregular mottled weave; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; medium coverage"
+    ],
+    "backend": "qwen3_vl",
+    "raw_text": "```json\n{\n  \"num_regions\": 2,\n  \"textures\": [\n    \"granularity: coarse, composed of small pebbles, structural organization: irregular, finish: rough, palette: dark gray and light gray\",\n    \"granularity: fine, composed of smooth stones, structural organization: rounded, finish: smooth, palette: light gray and dark gray\"\n  ]\n}\n```",
+    "parse_ok": true,
+    "scan_meta": {
+      "k_silhouette": 3,
+      "k_edge": 2,
+      "k_final": 3,
+      "num_patches": 659,
+      "patch_sizes": [
+        24,
+        40,
+        64,
+        96
+      ],
+      "stride_ratio": 0.5
+    },
+    "scan_regions": [
+      {
+        "label_id": 1,
+        "area_ratio": 0.66131591796875,
+        "cx": 0.3958359347430712,
+        "cy": 0.5651848131961599,
+        "rough": 0.4601951837539673,
+        "lap": 0.3704293370246887,
+        "contrast": 0.12344714254140854,
+        "sat": 0.09046247601509094,
+        "val": 0.5551400184631348,
+        "hue_mean": 221.90011673992572,
+        "hue_concentration": 0.5149427290673217,
+        "orient_entropy": 0.9796881637503343,
+        "spec": 0.3036835193634033,
+        "gx_abs": 0.33236560225486755,
+        "gy_abs": 0.24747134745121002,
+        "anis": 0.14641031144424196,
+        "bbox_xyxy": [
+          0,
+          0,
+          214,
+          256
+        ],
+        "phrase": "mid-scale mixed granularity; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, moderate local contrast, coherent orientation flow; large continuous coverage",
+        "rank": 1
+      },
+      {
+        "label_id": 2,
+        "area_ratio": 0.1763458251953125,
+        "cx": 0.8912306776132621,
+        "cy": 0.6165413712426218,
+        "rough": 0.6630247831344604,
+        "lap": 0.65494304895401,
+        "contrast": 0.13290537893772125,
+        "sat": 0.04573105275630951,
+        "val": 0.6743561029434204,
+        "hue_mean": 35.66586991762824,
+        "hue_concentration": 0.5901527989063352,
+        "orient_entropy": 0.995701583027271,
+        "spec": 0.23936939239501953,
+        "gx_abs": 0.4491252899169922,
+        "gy_abs": 0.39230549335479736,
+        "anis": 0.06752751404428652,
+        "bbox_xyxy": [
+          192,
+          47,
+          256,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; speckled, cellular breakup; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, mixed orientation flow; medium coverage",
+        "rank": 2
+      },
+      {
+        "label_id": 3,
+        "area_ratio": 0.1623382568359375,
+        "cx": 0.4993437021391882,
+        "cy": 0.10785990869700639,
+        "rough": 0.38571983575820923,
+        "lap": 0.466873437166214,
+        "contrast": 0.08008670806884766,
+        "sat": 0.07141096144914627,
+        "val": 0.6946735382080078,
+        "hue_mean": 43.6308368232103,
+        "hue_concentration": 0.8249176349864253,
+        "orient_entropy": 0.9969078693404226,
+        "spec": 0.17199313640594482,
+        "gx_abs": 0.25582271814346313,
+        "gy_abs": 0.23294351994991302,
+        "anis": 0.04681000773046735,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          81
+        ],
+        "phrase": "smooth low-frequency texture; irregular mottled weave; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; medium coverage",
+        "rank": 3
+      }
+    ],
+    "qwen_region_details": [
+      {
+        "label_id": 1,
+        "bbox_xyxy": [
+          0,
+          0,
+          214,
+          256
+        ],
+        "phrase": "mid-scale mixed granularity; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, moderate local contrast, coherent orientation flow; large continuous coverage",
+        "phrase_quality": 3.0000000000000004,
+        "raw_text": "granularity and structural pattern in the surface"
+      },
+      {
+        "label_id": 2,
+        "bbox_xyxy": [
+          192,
+          47,
+          256,
+          256
+        ],
+        "phrase": "coarse, high-frequency granules; speckled, cellular breakup; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, mixed orientation flow; medium coverage",
+        "phrase_quality": 5.559999999999999,
+        "raw_text": "granular, structural, finish, color cue"
+      },
+      {
+        "label_id": 3,
+        "bbox_xyxy": [
+          0,
+          0,
+          256,
+          81
+        ],
+        "phrase": "smooth low-frequency texture; irregular mottled weave; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; medium coverage",
+        "phrase_quality": 3.8200000000000007,
+        "raw_text": "granular surface with structural pattern and neutral color"
+      }
+    ]
+  },
+  "selection": {
+    "strategy": "vlm_freeform",
+    "num_prompts": 3,
+    "vlm_backend": "qwen3_vl",
+    "vlm_available": true
+  },
+  "prompt_inference": [
+    {
+      "prompt": "mid-scale mixed granularity; broad, softly varying patches; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, moderate local contrast, coherent orientation flow; large continuous coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "coarse, high-frequency granules; speckled, cellular breakup; semi-gloss highlights, desaturated; gray-dominant palette; moderate hue drift, sharp micro-contrast, mixed orientation flow; medium coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    },
+    {
+      "prompt": "smooth low-frequency texture; irregular mottled weave; semi-gloss highlights, desaturated; gray-dominant palette; tight single-hue field, soft low-contrast transitions, multi-directional orientation flow; medium coverage",
+      "num_windows_total": 14,
+      "num_windows_attempted": 14,
+      "num_windows_skipped_low_complexity": 0,
+      "num_masks_before_dedup": 14,
+      "num_masks_after_dedup": 12,
+      "used_full_image_fallback": false
+    }
+  ]
+}
