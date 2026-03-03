@@ -31,7 +31,6 @@ const el = {
   focus: document.getElementById("focus"),
   thumbGrid: document.getElementById("thumb-grid"),
   thumbMeta: document.getElementById("thumb-meta"),
-  tpl: document.getElementById("method-card-template"),
 };
 
 const imageCache = new Map();
@@ -118,15 +117,30 @@ async function drawMethodCanvas(canvas, originalSrc, maskSrc, colorHex, alpha) {
   const h = canvas.height;
 
   ctx.clearRect(0, 0, w, h);
-  ctx.drawImage(orig, 0, 0, w, h);
+  ctx.fillStyle = "#ebf3fb";
+  ctx.fillRect(0, 0, w, h);
+  drawImageContain(ctx, orig, w, h);
   ctx.globalAlpha = alpha;
-  ctx.drawImage(tinted, 0, 0, w, h);
+  drawImageContain(ctx, tinted, w, h);
   ctx.globalAlpha = 1.0;
 
   // subtle frame for foreground structure
   ctx.strokeStyle = "rgba(255,255,255,0.45)";
   ctx.lineWidth = 1;
   ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
+}
+
+function drawImageContain(ctx, img, boxW, boxH) {
+  const iw = img.naturalWidth || img.width;
+  const ih = img.naturalHeight || img.height;
+  if (!iw || !ih) return;
+
+  const scale = Math.min(boxW / iw, boxH / ih);
+  const dw = iw * scale;
+  const dh = ih * scale;
+  const dx = (boxW - dw) / 2;
+  const dy = (boxH - dh) / 2;
+  ctx.drawImage(img, dx, dy, dw, dh);
 }
 
 function setupControls() {
@@ -282,6 +296,14 @@ async function renderFocus() {
   }
 
   const baseline = image.metrics.baseline_v5;
+  const preferredMethods = [
+    "baseline_v5",
+    "reranker_cv_refined",
+    "reranker_in_sample_refined",
+  ];
+  const focusMethods = preferredMethods
+    .map((id) => state.data.methods.find((m) => m.id === id))
+    .filter(Boolean);
 
   el.focus.innerHTML = `
     <div class="focus-head">
@@ -293,55 +315,57 @@ async function renderFocus() {
         Best IoU: <b>${qMethod(image.best_iou_method).name}</b> | Best ARI: <b>${qMethod(image.best_ari_method).name}</b>
       </div>
     </div>
-    <div class="focus-main">
-      <div class="reference-stack">
-        <div class="reference-box">
-          <img src="${image.original}" alt="${image.id} original" />
-          <div class="title">Original</div>
+    <div class="compare-strip-wrap">
+      <div class="compare-strip" id="compare-strip">
+        <div class="compare-card compare-ref">
+          <h3>Original</h3>
+          <div class="compare-media">
+            <img src="${image.original}" alt="${image.id} original" />
+          </div>
+          <div class="compare-meta">Input RGB image</div>
         </div>
-        <div class="reference-box">
-          <img src="${image.gt}" alt="${image.id} ground truth" />
-          <div class="title">Ground Truth Binary Mask</div>
+        <div class="compare-card compare-ref">
+          <h3>Ground Truth</h3>
+          <div class="compare-media">
+            <img src="${image.gt}" alt="${image.id} ground truth" />
+          </div>
+          <div class="compare-meta">Binary target mask</div>
         </div>
       </div>
-      <div class="methods-grid" id="methods-grid"></div>
     </div>
   `;
 
-  const container = document.getElementById("methods-grid");
+  const container = document.getElementById("compare-strip");
   const tasks = [];
 
-  for (const method of state.data.methods) {
-    const frag = el.tpl.content.cloneNode(true);
-    const card = frag.querySelector(".method-card");
-    const h3 = frag.querySelector("h3");
-    const p = frag.querySelector("header p");
-    const canvas = frag.querySelector("canvas");
-    const metrics = frag.querySelector(".method-metrics");
-    const links = frag.querySelector(".method-links");
-
+  for (const method of focusMethods) {
     const m = image.metrics[method.id];
     const dI = m.iou - baseline.iou;
     const dA = m.ari - baseline.ari;
-
-    h3.textContent = method.name;
-    p.textContent = `mIoU ${fmt(method.miou)} | ARI ${fmt(method.ari)}`;
-
-    metrics.innerHTML = `
-      <span>IoU <b>${fmt(m.iou)}</b> <b class="${dI >= 0 ? "delta-up" : "delta-dn"}">${dI >= 0 ? "+" : ""}${fmt(dI)}</b></span>
-      <span>ARI <b>${fmt(m.ari)}</b> <b class="${dA >= 0 ? "delta-up" : "delta-dn"}">${dA >= 0 ? "+" : ""}${fmt(dA)}</b></span>
+    const card = document.createElement("article");
+    card.className = "compare-card compare-method";
+    if (method.id === state.selectedMethod) {
+      card.classList.add("selected");
+    }
+    card.innerHTML = `
+      <h3>${esc(method.name)}</h3>
+      <div class="compare-media">
+        <canvas width="320" height="320"></canvas>
+      </div>
+      <div class="compare-meta">IoU <b>${fmt(m.iou)}</b> | ARI <b>${fmt(m.ari)}</b></div>
+      <div class="compare-delta">
+        <span>ΔIoU <b class="${dI >= 0 ? "delta-up" : "delta-dn"}">${dI >= 0 ? "+" : ""}${fmt(dI)}</b></span>
+        <span>ΔARI <b class="${dA >= 0 ? "delta-up" : "delta-dn"}">${dA >= 0 ? "+" : ""}${fmt(dA)}</b></span>
+      </div>
+      <div class="compare-link">
+        <a href="${image.masks[method.id]}" target="_blank" rel="noopener">Open Mask PNG</a>
+      </div>
     `;
+    container.appendChild(card);
 
-    links.innerHTML = `<a href="${image.masks[method.id]}" target="_blank" rel="noopener">Open Mask PNG</a>`;
-    container.appendChild(frag);
-
+    const canvas = card.querySelector("canvas");
     const color = methodColors[method.id] || "#0b67b0";
     tasks.push(drawMethodCanvas(canvas, image.original, image.masks[method.id], color, state.alpha));
-
-    if (method.id === state.selectedMethod) {
-      card.style.borderColor = "#0b67b0";
-      card.style.boxShadow = "0 0 0 2px #0b67b032";
-    }
   }
 
   await Promise.all(tasks);
