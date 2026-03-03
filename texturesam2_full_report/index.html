@@ -48,6 +48,56 @@
       </p>
     </section>
 
+    <section class="panel abstract-panel">
+      <h2>Abstract</h2>
+      <p>
+        <strong>Core question:</strong> Why does TextureSAM underperform on RWTD, and what is the most reliable way
+        to make it substantially better?
+      </p>
+      <p>
+        <strong>Primary incentive:</strong> RWTD requires one coherent binary region per image, but baseline TextureSAM
+        often produces fragmented masks. This means the bottleneck is not only coverage, but turning fragmented high-recall
+        proposals into one consistent output.
+      </p>
+      <p>
+        <strong>Main intuition:</strong> keep the proposal diversity from SAM/OpenWorldSAM, then add a stronger
+        consolidation/selection layer that explicitly rewards texture consistency, boundary quality, and low fragmentation.
+      </p>
+      <div class="abstract-grid">
+        <article class="abstract-card">
+          <h3>Thread 1: Diagnose the failure mode</h3>
+          <p>Fragmentation was identified as the main barrier to higher mIoU/ARI on RWTD.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Thread 2: Build a principled consolidator</h3>
+          <p>TextureSAM-v2 merged compatible fragments and selected a single coherent component with a global score.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Thread 3: Test texture descriptor alternatives</h3>
+          <p>Both handcrafted and DTD-CNN descriptors were implemented and compared under the same evaluation protocol.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Thread 4: Increase candidate quality and diversity</h3>
+          <p>v2/v3/v4/v5 prompt banks were pooled to expose stronger and more diverse candidate masks per image.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Thread 5: Learn selection and refine boundaries</h3>
+          <p>A learned reranker + edge-aware refinement delivered the largest gains while CV preserved robustness claims.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Final conclusion</h3>
+          <p>
+            Best deployable method: <strong>TextureSAM-2 reranker (CV + edge-aware refine)</strong>.<br />
+            Best raw upper-bound: <strong>in-sample + refine</strong>.
+          </p>
+        </article>
+      </div>
+      <p class="note">
+        This abstract is the thread line for reading the full report: diagnose -> design -> ablate -> scale candidates ->
+        learn selection -> validate robustness.
+      </p>
+    </section>
+
     <section class="panel">
       <h2>Executive Summary</h2>
       <ol class="flat-list">
