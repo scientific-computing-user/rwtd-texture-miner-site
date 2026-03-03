@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TextureSAM-2 Full Research Report</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <header class="hero shell">
+    <p class="kicker">RWTD Kaust256 Research Record</p>
+    <h1>TextureSAM-2: Full Report From Baseline Failure to Supercharged Results</h1>
+    <p class="subtitle">
+      End-to-end technical report of what changed, why it improved, what was trained, what was tested,
+      and which method is best for robustness.
+    </p>
+    <div class="hero-links">
+      <a class="btn" href="../texturesam2_supercharged_v2/index.html">Open Visual Compare</a>
+      <a class="btn ghost" href="./assets/data/report_data.json">Raw Report Data (JSON)</a>
+      <a class="btn ghost" href="../index.html">Back to Home</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="panel metrics-panel">
+      <h2>Topline</h2>
+      <div class="metric-grid">
+        <article class="metric">
+          <h3>Original TextureSAM Baseline</h3>
+          <p class="big">mIoU <span id="m_baseline_iou">0.467954</span></p>
+          <p class="big">ARI <span id="m_baseline_ari">0.273033</span></p>
+        </article>
+        <article class="metric">
+          <h3>Best Robust (Grouped CV + Refine)</h3>
+          <p class="big">mIoU <span id="m_best_cv_iou">0.823782</span></p>
+          <p class="big">ARI <span id="m_best_cv_ari">0.666729</span></p>
+        </article>
+        <article class="metric">
+          <h3>Best Raw Benchmark (In-sample + Refine)</h3>
+          <p class="big">mIoU <span id="m_best_in_iou">0.889516</span></p>
+          <p class="big">ARI <span id="m_best_in_ari">0.776114</span></p>
+        </article>
+      </div>
+      <p class="note">
+        Interpretation: in-sample is an upper bound, CV is the deployment-quality estimate.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Executive Summary</h2>
+      <ol class="flat-list">
+        <li>Original TextureSAM on RWTD fails mainly by <strong>fragmentation</strong>, not pure coverage.</li>
+        <li>First improvement was TextureSAM-v2 consolidation (graph merge + global single-mask objective).</li>
+        <li>DTD-trained descriptor branch was added and tested; it improved IoU but underperformed handcrafted on ARI.</li>
+        <li>Largest leap came from a new <strong>multi-bank reranker</strong> over v2/v3/v4/v5 prompt mask banks.</li>
+        <li>Edge-aware refinement (GrabCut seeded by selected mask) gave additional gains on both mIoU and ARI.</li>
+        <li>For robustness: use <strong>CV+Refine</strong> as the primary deployable method; avoid in-sample as final claim metric.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>What Changed vs Original TextureSAM (Step-by-Step, Easy Version)</h2>
+      <div class="steps">
+        <article>
+          <h3>Step 1: Keep high-recall SAM proposals</h3>
+          <p>Instead of suppressing many masks, keep rich fragmented proposals to preserve coverage.</p>
+        </article>
+        <article>
+          <h3>Step 2: Build texture descriptors per mask</h3>
+          <p>Two modes were implemented: handcrafted filter-bank descriptors and a DTD-trained small CNN embedding.</p>
+        </article>
+        <article>
+          <h3>Step 3: Merge texture-consistent neighbors</h3>
+          <p>Construct a proposal graph, score edges by texture similarity + weak boundary + low heterogeneity, then union-find merge.</p>
+        </article>
+        <article>
+          <h3>Step 4: Enforce one coherent binary region</h3>
+          <p>Select final component by <code>S(C)=Delta(in,out)-lambda*Var(C)-mu*Frag(C)</code> and postprocess holes/components.</p>
+        </article>
+        <article>
+          <h3>Step 5: Scale candidate diversity with v2/v3/v4/v5 prompt banks</h3>
+          <p>Pool proposals from four upstream runs, plus per-run union masks, to increase candidate quality per image.</p>
+        </article>
+        <article>
+          <h3>Step 6: Learn a quality reranker</h3>
+          <p>Train RandomForest to predict candidate IoU from texture/shape/consensus features; pick top candidate.</p>
+        </article>
+        <article>
+          <h3>Step 7: Add edge-aware refinement</h3>
+          <p>Run GrabCut with selected mask as seed and keep largest component for cleaner boundaries.</p>
+        </article>
+        <article>
+          <h3>Step 8: Verify with tests and ablations</h3>
+          <p>Unit tests passed (5/5), descriptor modes compared, CV and in-sample modes both measured.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure 1: Score Progression Across Stages</h2>
+      <img src="./assets/figures/fig_01_stage_progression.png" alt="Stage-by-stage mIoU and ARI progression chart" />
+      <p class="caption">mIoU and ARI both increase sharply after introducing multi-bank reranking and refinement.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Detailed Pipeline and Training Stages</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>What was added</th>
+              <th>Training involved?</th>
+              <th>Main effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TextureSAM-v2 Consolidator</td>
+              <td>Graph merge + global objective + morphological cleanup</td>
+              <td>No (handcrafted mode)</td>
+              <td>Strong mIoU lift; moderate ARI lift</td>
+            </tr>
+            <tr>
+              <td>DTD Descriptor Branch</td>
+              <td>Small CNN trained on DTD (47 classes, 128-d embedding)</td>
+              <td>Yes (classification training)</td>
+              <td>mIoU improved; ARI slightly below handcrafted in this run</td>
+            </tr>
+            <tr>
+              <td>Multi-bank Reranker</td>
+              <td>RandomForest candidate scoring from 4 proposal banks</td>
+              <td>Yes (supervised on RWTD candidate IoU labels)</td>
+              <td>Largest jump on both mIoU and ARI</td>
+            </tr>
+            <tr>
+              <td>Edge-aware Refine</td>
+              <td>GrabCut seeded by selected mask + largest component</td>
+              <td>No</td>
+              <td>Additional boundary + ARI gains</td>
+            </tr>
+            <tr>
+              <td>MPCL Module</td>
+              <td>Multi-Prompt Consistency Loss implementation + tests</td>
+              <td>Ready, but not run in SAM fine-tune loop here</td>
+              <td>Training-time anti-fragmentation mechanism prepared</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        DTD checkpoint details: image size 96, embedding 128, best val accuracy 0.0931 after 3 epochs in this run.
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure 2: Proposal Bank Quality (v2/v3/v4/v5)</h2>
+      <img src="./assets/figures/fig_02_promptbank_quality.png" alt="Prompt bank quality bars and boundary F1 line" />
+      <p class="caption">
+        v2-v5 banks provide complementary candidates; oracle aggregation upper-bounds stay high,
+        justifying a stronger consolidation/reranking layer.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>What Are v2/v3/v4/v5 Prompts?</h2>
+      <div class="table-wrap">
+        <table id="prompt_banks_table">
+          <thead>
+            <tr>
+              <th>Run</th>
+              <th>Prompt strategy</th>
+              <th>Mean robust IoU</th>
+              <th>Oracle aggregation IoU</th>
+              <th>Boundary F1</th>
+              <th>Avg masks/prompt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>v2</td>
+              <td>Heuristic freeform texture text</td>
+              <td>0.3347</td>
+              <td>0.7172</td>
+              <td>0.1252</td>
+              <td>1.0</td>
+            </tr>
+            <tr>
+              <td>v3_scan</td>
+              <td>Heuristic multi-scale transition scan</td>
+              <td>0.5158</td>
+              <td>0.7843</td>
+              <td>0.2003</td>
+              <td>1.0</td>
+            </tr>
+            <tr>
+              <td>v4_qwen3</td>
+              <td>Qwen3-VL region descriptions + scan</td>
+              <td>0.4953</td>
+              <td>0.7802</td>
+              <td>0.2068</td>
+              <td>1.0</td>
+            </tr>
+            <tr>
+              <td>v5_qwen3_multiscale_attr</td>
+              <td>Qwen3 attribute descriptors + multi-crop fusion</td>
+              <td>0.4680</td>
+              <td>0.7609</td>
+              <td>0.2621</td>
+              <td>12.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        In TextureSAM-2 reranking, these four banks are pooled into one candidate set (avg 35.67 candidates/image).
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure 3: CV vs In-sample (Generalization Gap Proxy)</h2>
+      <img src="./assets/figures/fig_03_cv_vs_insample_scatter.png" alt="Scatter plots comparing CV and in-sample IoU and ARI" />
+      <p class="caption">
+        In-sample is often better but not always; CV remains the cleaner estimate for deployment robustness.
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure 4: Per-image Gains vs Baseline</h2>
+      <img src="./assets/figures/fig_04_delta_hist_baseline_to_cv.png" alt="Histograms of per-image IoU and ARI gains" />
+      <p class="caption">
+        CV+Refine improves IoU on 209/256 images and ARI on 204/256 images versus baseline v5 masks.
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure 5: Qualitative Success and Failure Cases</h2>
+      <img src="./assets/figures/fig_05_qualitative_cases.png" alt="Qualitative panel with original image and mask overlays" />
+      <p class="caption">
+        The page includes both large improvements and hard failure examples to avoid cherry-picking.
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure 6: Final Pipeline Diagram</h2>
+      <img src="./assets/figures/fig_06_pipeline_diagram.svg" alt="Pipeline diagram from proposal generation to final binary mask" />
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure 7: Chronological Timeline</h2>
+      <img src="./assets/figures/fig_07_timeline.png" alt="Timeline of runs and report stages" />
+      <p class="caption">
+        Prompt banks were generated on March 1, 2026; TextureSAM-v2 and supercharged reranker experiments were run on March 3, 2026.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Robustness Question: Best Method for Any Texture Image?</h2>
+      <div class="callout">
+        <p>
+          <strong>Recommendation:</strong> For practical deployment, the best default is
+          <strong>TextureSAM-2 Reranker (CV + edge-aware refine)</strong>.
+        </p>
+        <p>
+          It is the strongest method with held-out evaluation and avoids the optimism of in-sample fitting.
+        </p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>RWTD score</th>
+              <th>Generalization risk</th>
+              <th>Use when</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reranker In-sample + Refine</td>
+              <td>Highest (0.8895 / 0.7761)</td>
+              <td>Higher (trained and evaluated on same images)</td>
+              <td>Upper-bound analysis, not final deployment claim</td>
+            </tr>
+            <tr>
+              <td><strong>Reranker CV + Refine</strong></td>
+              <td><strong>Best robust RWTD result (0.8238 / 0.6667)</strong></td>
+              <td><strong>Moderate (held-out folds)</strong></td>
+              <td><strong>Primary deployment candidate</strong></td>
+            </tr>
+            <tr>
+              <td>Handcrafted Consolidator (no reranker)</td>
+              <td>0.6551 / 0.2963</td>
+              <td>Lower model-overfit risk (no learned selector)</td>
+              <td>Fallback when no supervised reranker retraining is available</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        Important: all quantitative results here are RWTD-based. For truly arbitrary texture domains,
+        cross-dataset validation should be run before final model lock.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Reproducibility Commands (Exact)</h2>
+      <pre><code>cd /home/galoren/TextureSAM-v2
+
+# 1) TextureSAM-v2 handcrafted consolidator
+python3 scripts/run_rwtd_eval.py \
+  --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
+  --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
+  --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks \
+  --descriptor-mode handcrafted \
+  --out-dir /home/galoren/TextureSAM-v2/reports/rwtd_v5_handcrafted
+
+# 2) TextureSAM-v2 DTD mode
+python3 scripts/run_rwtd_eval.py \
+  --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
+  --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
+  --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks \
+  --descriptor-mode dtd_cnn \
+  --dtd-checkpoint /home/galoren/TextureSAM-v2/artifacts/dtd_small_cnn.pt \
+  --out-dir /home/galoren/TextureSAM-v2/reports/rwtd_v5_dtd
+
+# 3) Supercharged reranker (robust)
+python3 scripts/run_multibank_reranker.py \
+  --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v2/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v3_scan/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v4_qwen3/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
+  --mode cv --cv-folds 5 \
+  --n-estimators 500 --max-depth 18 --min-samples-leaf 2 \
+  --apply-refine --refine-iters 2 --refine-min-area 50 \
+  --out-dir /home/galoren/TextureSAM-v2/reports/reranker_cv_refined
+
+# 4) Unit tests
+python3 -m unittest discover -s tests -p 'test_*.py'</code></pre>
+    </section>
+
+    <section class="panel">
+      <h2>Artifact Links</h2>
+      <ul class="flat-list">
+        <li><a href="../texturesam2_supercharged_v2/index.html">Interactive visual comparison page</a></li>
+        <li><a href="../texturesam2_supercharged_v2/assets/metrics/comparison_supercharged_v2.json">comparison_supercharged_v2.json</a></li>
+        <li><a href="../texturesam2_supercharged_v2/assets/metrics/report_supercharged_v2.md">report_supercharged_v2.md</a></li>
+        <li><a href="./assets/data/report_data.json">Full report machine-readable data</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+{
+  "best_cv": "texturesam2_reranker_cv_refined",
+  "best_in_sample": "texturesam2_reranker_in_sample_refined",
+  "comparison": {
+    "baseline_v5_masks": {
+      "ari": 0.2730329517405916,
+      "delta_ari_vs_baseline": 0.0,
+      "delta_miou_vs_baseline": 0.0,
+      "miou": 0.4679543554428983,
+      "path": "/home/galoren/TextureSAM-v2/reports/rwtd_v5_handcrafted/summary.json"
+    },
+    "texturesam2_reranker_cv": {
+      "ari": 0.6491638816961725,
+      "delta_ari_vs_baseline": 0.37613092995558084,
+      "delta_miou_vs_baseline": 0.35022562958630543,
+      "miou": 0.8181799850292037,
+      "path": "/home/galoren/TextureSAM-v2/reports/reranker_cv/summary.json"
+    },
+    "texturesam2_reranker_cv_refined": {
+      "ari": 0.6667291364925519,
+      "delta_ari_vs_baseline": 0.39369618475196033,
+      "delta_miou_vs_baseline": 0.3558277937413127,
+      "miou": 0.823782149184211,
+      "path": "/home/galoren/TextureSAM-v2/reports/reranker_cv_refined/summary.json"
+    },
+    "texturesam2_reranker_in_sample": {
+      "ari": 0.7617877457236719,
+      "delta_ari_vs_baseline": 0.4887547939830803,
+      "delta_miou_vs_baseline": 0.41646054513260233,
+      "miou": 0.8844149005755007,
+      "path": "/home/galoren/TextureSAM-v2/reports/reranker_in_sample/summary.json"
+    },
+    "texturesam2_reranker_in_sample_refined": {
+      "ari": 0.7761144974071337,
+      "delta_ari_vs_baseline": 0.5030815456665421,
+      "delta_miou_vs_baseline": 0.42156143641361543,
+      "miou": 0.8895157918565137,
+      "path": "/home/galoren/TextureSAM-v2/reports/reranker_in_sample_refined/summary.json"
+    },
+    "texturesam_v2_dtd": {
+      "ari": 0.2704395317470859,
+      "delta_ari_vs_baseline": -0.002593419993505708,
+      "delta_miou_vs_baseline": 0.18032353401367796,
+      "miou": 0.6482778894565763,
+      "path": "/home/galoren/TextureSAM-v2/reports/rwtd_v5_dtd/summary.json"
+    },
+    "texturesam_v2_handcrafted": {
+      "ari": 0.2963286448793299,
+      "delta_ari_vs_baseline": 0.023295693138738305,
+      "delta_miou_vs_baseline": 0.18715623057992936,
+      "miou": 0.6551105860228277,
+      "path": "/home/galoren/TextureSAM-v2/reports/rwtd_v5_handcrafted/summary.json"
+    }
+  },
+  "dataset": "rwtd_kaust256",
+  "dtd_meta": {
+    "best_val_acc": 0.09308510638297872,
+    "emb_dim": 128,
+    "image_size": 96,
+    "num_classes": 47
+  },
+  "run_summaries_v2_to_v5": {
+    "v2": {
+      "avg_masks_per_image": 2.5234375,
+      "avg_masks_per_prompt": 1.0,
+      "avg_num_prompts": 2.5234375,
+      "backend_counts": {
+        "heuristic": 256
+      },
+      "date_utc": "2026-03-01T19:08:14.608531+00:00",
+      "mean_boundary_f1": 0.1252050155614588,
+      "mean_oracle_agg_iou_inv_robust": 0.7171817729732697,
+      "mean_robust_iou": 0.33473362582761146,
+      "method": "VLM freeform texture descriptions -> OpenWorldSAM sentence prompts -> merge/fill -> edge+binary",
+      "title": "TexOW-SAM VLM-Freeform OpenWorldSAM RWTD v2"
+    },
+    "v3_scan": {
+      "avg_masks_per_image": 2.1640625,
+      "avg_masks_per_prompt": 1.0,
+      "avg_num_prompts": 2.1640625,
+      "backend_counts": {
+        "heuristic_scan": 256
+      },
+      "date_utc": "2026-03-01T19:36:00.058036+00:00",
+      "mean_boundary_f1": 0.20033133392332192,
+      "mean_oracle_agg_iou_inv_robust": 0.7843402516825485,
+      "mean_robust_iou": 0.5157737612005795,
+      "method": "Patch/transition multi-scale texture scan -> unique regional texture prompts -> OpenWorldSAM -> merge/fill",
+      "title": "TexOW-SAM VLM-Freeform OpenWorldSAM RWTD v3 (Scan)"
+    },
+    "v4_qwen3": {
+      "avg_masks_per_image": 2.1640625,
+      "avg_masks_per_prompt": 1.0,
+      "avg_num_prompts": 2.1640625,
+      "backend_counts": {
+        "qwen3_vl": 256
+      },
+      "date_utc": "2026-03-01T20:31:49.799731+00:00",
+      "mean_boundary_f1": 0.20683444464156822,
+      "mean_oracle_agg_iou_inv_robust": 0.7801630200226308,
+      "mean_robust_iou": 0.49530202896979975,
+      "method": "Qwen3-VL + multi-scale transition scan + regional prompting -> OpenWorldSAM",
+      "title": "TexOW-SAM VLM-Freeform OpenWorldSAM RWTD v4 (Qwen3-VL)"
+    },
+    "v5_qwen3_multiscale_attr": {
+      "avg_masks_per_image": 25.875,
+      "avg_masks_per_prompt": 11.954427083333332,
+      "avg_num_prompts": 2.1640625,
+      "backend_counts": {
+        "qwen3_vl": 256
+      },
+      "date_utc": "2026-03-01T22:25:57.811178+00:00",
+      "mean_boundary_f1": 0.26209480810139035,
+      "mean_oracle_agg_iou_inv_robust": 0.7609394007431838,
+      "mean_robust_iou": 0.46795435544445796,
+      "method": "Qwen3 attribute-only region descriptors + scan-guided multi-scale crop OpenWorldSAM fusion",
+      "title": "TexOW-SAM VLM-Freeform OpenWorldSAM RWTD v5 (Qwen3 + multi-crop + attribute descriptors)"
+    }
+  },
+  "stats": {
+    "baseline_to_cv": {
+      "improved_ari_count": 204,
+      "improved_iou_count": 209,
+      "mean_delta_ari": 0.39369618475196033,
+      "mean_delta_iou": 0.3558277937413126,
+      "worse_ari_count": 52,
+      "worse_iou_count": 47
+    },
+    "cv_to_in_sample": {
+      "equal_ari_count": 120,
+      "equal_iou_count": 120,
+      "improved_ari_count": 119,
+      "improved_iou_count": 119,
+      "mean_delta_ari": 0.1093853609145818,
+      "mean_delta_iou": 0.0657336426723028,
+      "worse_ari_count": 17,
+      "worse_iou_count": 17
+    },
+    "num_images": 256,
+    "qualitative_ids": [
+      "rwtd_410",
+      "rwtd_38",
+      "rwtd_328",
+      "rwtd_471"
+    ],
+    "run_selection_counts": {
+      "cv_refined": {
+        "0": 79,
+        "1": 46,
+        "2": 72,
+        "3": 59
+      },
+      "in_sample_refined": {
+        "0": 62,
+        "1": 46,
+        "2": 80,
+        "3": 68
+      }
+    }
+  },
+  "summaries": {
+    "reranker_cv": {
+      "avg_candidates_per_image": 35.66796875,
+      "cv_folds": 5,
+      "max_depth": 18,
+      "min_samples_leaf": 2,
+      "mode": "cv",
+      "n_estimators": 500,
+      "num_candidates_total": 9131,
+      "num_images": 256,
+      "proposal_roots": [
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v2/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v3_scan/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v4_qwen3/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks"
+      ],
+      "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+      "selected_ari": 0.6491638816961725,
+      "selected_miou": 0.8181799850292037
+    },
+    "reranker_cv_refined": {
+      "apply_refine": true,
+      "avg_candidates_per_image": 35.66796875,
+      "cv_folds": 5,
+      "max_depth": 18,
+      "min_samples_leaf": 2,
+      "mode": "cv",
+      "n_estimators": 500,
+      "num_candidates_total": 9131,
+      "num_images": 256,
+      "proposal_roots": [
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v2/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v3_scan/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v4_qwen3/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks"
+      ],
+      "refine_iters": 2,
+      "refine_min_area": 50,
+      "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+      "selected_ari": 0.6667291364925519,
+      "selected_miou": 0.823782149184211
+    },
+    "reranker_in_sample": {
+      "avg_candidates_per_image": 35.66796875,
+      "cv_folds": 5,
+      "max_depth": 24,
+      "min_samples_leaf": 1,
+      "mode": "in_sample",
+      "n_estimators": 900,
+      "num_candidates_total": 9131,
+      "num_images": 256,
+      "proposal_roots": [
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v2/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v3_scan/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v4_qwen3/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks"
+      ],
+      "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+      "selected_ari": 0.7617877457236719,
+      "selected_miou": 0.8844149005755007
+    },
+    "reranker_in_sample_refined": {
+      "apply_refine": true,
+      "avg_candidates_per_image": 35.66796875,
+      "cv_folds": 5,
+      "max_depth": 24,
+      "min_samples_leaf": 1,
+      "mode": "in_sample",
+      "n_estimators": 900,
+      "num_candidates_total": 9131,
+      "num_images": 256,
+      "proposal_roots": [
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v2/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v3_scan/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v4_qwen3/predictions/prompt_masks",
+        "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks"
+      ],
+      "refine_iters": 2,
+      "refine_min_area": 50,
+      "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+      "selected_ari": 0.7761144974071337,
+      "selected_miou": 0.8895157918565137
+    },
+    "v2_dtd": {
+      "baseline_ari": 0.2730329517405916,
+      "baseline_masks_root": "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks",
+      "baseline_miou": 0.4679543554428983,
+      "config": {
+        "close_kernel": 5,
+        "descriptor_mode": "dtd_cnn",
+        "dtd_checkpoint": "/home/galoren/TextureSAM-v2/artifacts/dtd_small_cnn.pt",
+        "dtd_device": "cuda",
+        "hole_area_threshold": 64,
+        "keep_largest_component": true,
+        "merge": {
+          "adjacency_dilation": 3,
+          "merge_threshold": 0.5,
+          "w_boundary": 0.3,
+          "w_hetero": 0.2,
+          "w_texture": 0.65
+        },
+        "min_area": 32,
+        "objective_lambda": 0.45,
+        "objective_mu": 0.3
+      },
+      "delta_ari_vs_baseline": -0.002593419993505708,
+      "delta_ari_vs_union": 0.03455545749642852,
+      "delta_miou_vs_baseline": 0.18032353401367796,
+      "delta_miou_vs_union": -0.010720651644707258,
+      "descriptor_mode": "dtd_cnn",
+      "mean_merged_components": 1.21875,
+      "mean_proposal_count": 25.875,
+      "num_images": 256,
+      "prompt_masks_root": "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks",
+      "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+      "union_ari": 0.23588407425065738,
+      "union_miou": 0.6589985411012835,
+      "v2_ari": 0.2704395317470859,
+      "v2_miou": 0.6482778894565763
+    },
+    "v2_handcrafted": {
+      "baseline_ari": 0.2730329517405916,
+      "baseline_masks_root": "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks",
+      "baseline_miou": 0.4679543554428983,
+      "config": {
+        "close_kernel": 5,
+        "descriptor_mode": "handcrafted",
+        "dtd_checkpoint": null,
+        "dtd_device": "cuda",
+        "hole_area_threshold": 64,
+        "keep_largest_component": true,
+        "merge": {
+          "adjacency_dilation": 3,
+          "merge_threshold": 0.5,
+          "w_boundary": 0.3,
+          "w_hetero": 0.2,
+          "w_texture": 0.65
+        },
+        "min_area": 32,
+        "objective_lambda": 0.45,
+        "objective_mu": 0.3
+      },
+      "delta_ari_vs_baseline": 0.023295693138738305,
+      "delta_ari_vs_union": 0.060444570628672534,
+      "delta_miou_vs_baseline": 0.18715623057992936,
+      "delta_miou_vs_union": -0.0038879550784558514,
+      "descriptor_mode": "handcrafted",
+      "mean_merged_components": 1.265625,
+      "mean_proposal_count": 25.875,
+      "num_images": 256,
+      "prompt_masks_root": "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks",
+      "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+      "union_ari": 0.23588407425065738,
+      "union_miou": 0.6589985411012835,
+      "v2_ari": 0.2963286448793299,
+      "v2_miou": 0.6551105860228277
+    }
+  },
+  "tests": {
+    "framework": "python -m unittest discover -s tests -p test_*.py",
+    "result": "passed",
+    "tests_run": 5
+  }
+}
