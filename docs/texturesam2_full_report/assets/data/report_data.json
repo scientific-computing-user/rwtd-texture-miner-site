@@ -1,0 +1,110 @@
+{
+  "bootstrap_ci": {
+    "baseline": {
+      "ari": [
+        0.2730329517405916,
+        0.23244336804585103,
+        0.31331628899044356
+      ],
+      "iou": [
+        0.4679543554428983,
+        0.42982826323790346,
+        0.5053518939057968
+      ]
+    },
+    "robust_cv_refined": {
+      "ari": [
+        0.6667291364925519,
+        0.6256619536518587,
+        0.7058664253392077
+      ],
+      "iou": [
+        0.823782149184211,
+        0.8007641821384418,
+        0.8467692776045623
+      ]
+    },
+    "upper_in_sample_refined": {
+      "ari": [
+        0.7761144974071337,
+        0.7440063009962875,
+        0.8069187154094608
+      ],
+      "iou": [
+        0.8895157918565139,
+        0.8732805428007282,
+        0.9044446739474254
+      ]
+    }
+  },
+  "consistency": {
+    "baseline_to_cv": {
+      "improved_ari_count": 204,
+      "improved_iou_count": 209,
+      "mean_delta_ari": 0.39369618475196033,
+      "mean_delta_iou": 0.3558277937413126,
+      "worse_ari_count": 52,
+      "worse_iou_count": 47
+    },
+    "insample_vs_cv": {
+      "equal_ari_count": 120,
+      "equal_iou_count": 120,
+      "improved_ari_count": 119,
+      "improved_iou_count": 119,
+      "mean_delta_ari": 0.1093853609145818,
+      "mean_delta_iou": 0.0657336426723028,
+      "worse_ari_count": 17,
+      "worse_iou_count": 17
+    },
+    "num_images": 256
+  },
+  "core_methods": [
+    {
+      "ari": 0.2730329517405916,
+      "id": "baseline_v5_masks",
+      "miou": 0.4679543554428983,
+      "name": "TextureSAM Baseline",
+      "role": "baseline"
+    },
+    {
+      "ari": 0.6667291364925519,
+      "id": "texturesam2_reranker_cv_refined",
+      "miou": 0.823782149184211,
+      "name": "TextureSAM-2 Robust (CV + Refine)",
+      "role": "main_claim"
+    },
+    {
+      "ari": 0.7761144974071337,
+      "id": "texturesam2_reranker_in_sample_refined",
+      "miou": 0.8895157918565137,
+      "name": "TextureSAM-2 Upper-Bound (In-sample + Refine)",
+      "role": "optimistic_ceiling"
+    }
+  ],
+  "dataset": "rwtd_kaust256",
+  "gains": {
+    "robust_vs_baseline": {
+      "delta_ari": 0.39369618475196033,
+      "delta_miou": 0.3558277937413127
+    },
+    "upper_vs_robust": {
+      "delta_ari": 0.10938536091458173,
+      "delta_miou": 0.06573364267230275
+    }
+  },
+  "notes": {
+    "archived_all_methods": "Older ablations and additional methods remain in archived metrics/report files.",
+    "positioning": "Main claim uses grouped-CV robust result. In-sample is shown only as an optimistic upper-bound."
+  },
+  "selected_case_ids": [
+    "rwtd_410",
+    "rwtd_282",
+    "rwtd_38",
+    "rwtd_485"
+  ],
+  "tests": {
+    "framework": "python -m unittest discover -s tests -p test_*.py",
+    "result": "passed",
+    "tests_run": 5
+  }
+}

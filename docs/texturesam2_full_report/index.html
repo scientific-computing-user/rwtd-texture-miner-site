@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TextureSAM-2 Report: Baseline to Robust Result</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+
+  <header class="hero shell">
+    <p class="kicker">RWTD Kaust256 | Conference-Oriented Narrative</p>
+    <h1>TextureSAM-2: From Fragmented Baseline to a Robust Texture Segmentation Method</h1>
+    <p class="subtitle">
+      This page intentionally focuses on one clean story: baseline failure mode, principled method,
+      robust result, and confidence evidence.
+    </p>
+    <div class="hero-links">
+      <a class="btn" href="../texturesam2_supercharged_v2/index.html">Open Focused Visual Comparison</a>
+      <a class="btn ghost" href="./assets/data/report_data.json">Core Report Data (JSON)</a>
+      <a class="btn ghost" href="../index.html">Home</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="panel metrics-panel">
+      <h2>Topline (Only 3 Methods)</h2>
+      <div class="metric-grid">
+        <article class="metric">
+          <h3>TextureSAM Baseline</h3>
+          <p class="big">mIoU <span id="m_baseline_iou">0.467954</span></p>
+          <p class="big">ARI <span id="m_baseline_ari">0.273033</span></p>
+        </article>
+        <article class="metric">
+          <h3>TextureSAM-2 Robust (CV + Refine)</h3>
+          <p class="big">mIoU <span id="m_best_cv_iou">0.823782</span></p>
+          <p class="big">ARI <span id="m_best_cv_ari">0.666729</span></p>
+        </article>
+        <article class="metric">
+          <h3>TextureSAM-2 Upper-Bound (In-sample + Refine)</h3>
+          <p class="big">mIoU <span id="m_best_in_iou">0.889516</span></p>
+          <p class="big">ARI <span id="m_best_in_ari">0.776114</span></p>
+        </article>
+      </div>
+      <p class="note">
+        Main claim uses the robust grouped-CV result. In-sample is reported as an optimistic ceiling, not as deployment evidence.
+      </p>
+    </section>
+
+    <section class="panel abstract-panel">
+      <h2>Abstract</h2>
+      <p><strong>Research question:</strong> Can we convert high-recall but fragmented SAM texture proposals into one coherent binary mask without overfitting to RWTD?</p>
+      <p><strong>Incentive:</strong> RWTD scoring penalizes fragmentation heavily (especially ARI), so good coverage alone is insufficient.</p>
+      <p><strong>Intuition:</strong> keep proposal diversity, then enforce coherence with texture-aware consolidation and robust candidate selection.</p>
+      <div class="abstract-grid">
+        <article class="abstract-card">
+          <h3>Problem</h3>
+          <p>Baseline masks fragment texture regions; boundaries and region consistency are unstable.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Method</h3>
+          <p>Texture-aware merge + global coherence objective + learned reranking over diverse proposal banks.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Robustness stance</h3>
+          <p>Use GroupKFold CV + held-out scoring for the main claim; keep in-sample as upper-bound only.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Main gain</h3>
+          <p>Robust result vs baseline: +0.3558 mIoU and +0.3937 ARI.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Trust evidence</h3>
+          <p>Improvements are broad across images, not concentrated in a few cherry-picked examples.</p>
+        </article>
+        <article class="abstract-card">
+          <h3>Takeaway</h3>
+          <p>The key contribution is solving texture-region coherence, not benchmark-specific tuning tricks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Main Thread to Follow</h2>
+      <ol class="flat-list">
+        <li><strong>Diagnose the right bottleneck:</strong> fragmentation, not just pixel coverage.</li>
+        <li><strong>Design a coherence-first method:</strong> texture-consistent merging and single-mask objective.</li>
+        <li><strong>Improve candidate quality safely:</strong> multi-bank proposals, then robust CV reranking.</li>
+        <li><strong>Validate trust:</strong> held-out evaluation, per-image gain distributions, and explicit failure cases.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Method We Present at Conference</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>What it does</th>
+              <th>Why it improves generalization</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Texture-aware consolidation</td>
+              <td>Merge adjacent mask fragments using texture similarity, weak boundary cues, and heterogeneity penalty; pick one coherent component with a global objective.</td>
+              <td>Targets the structural failure mode (fragmentation) directly, independent of any single prompt template.</td>
+            </tr>
+            <tr>
+              <td>Multi-bank proposal pooling</td>
+              <td>Pool prompt masks from complementary upstream runs (v2/v3/v4/v5) plus run-level unions.</td>
+              <td>Increases proposal diversity so final selection is less brittle to one generator style.</td>
+            </tr>
+            <tr>
+              <td>Robust reranker + edge refine</td>
+              <td>Train candidate-quality model with GroupKFold CV; choose top candidate, then apply edge-aware refinement.</td>
+              <td>CV protects against same-image overfitting; refinement improves boundary fidelity in a model-agnostic way.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        Global selection objective: <code>S(C) = Delta(in,out) - lambda * Var(C) - mu * Frag(C)</code>.
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure A: Core Results With 95% Bootstrap CIs</h2>
+      <img src="./assets/figures/fig_core_results_ci.png" alt="Core results with confidence intervals" />
+      <p class="caption">Only baseline, robust main claim, and upper-bound are shown to keep the narrative clean.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Core Results Table</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>mIoU</th>
+              <th>ARI</th>
+              <th>Role in claim</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TextureSAM Baseline</td>
+              <td>0.467954</td>
+              <td>0.273033</td>
+              <td>Reference point</td>
+            </tr>
+            <tr>
+              <td><strong>TextureSAM-2 Robust (CV + Refine)</strong></td>
+              <td><strong>0.823782</strong></td>
+              <td><strong>0.666729</strong></td>
+              <td><strong>Main result (deployment-facing)</strong></td>
+            </tr>
+            <tr>
+              <td>TextureSAM-2 Upper-Bound (In-sample + Refine)</td>
+              <td>0.889516</td>
+              <td>0.776114</td>
+              <td>Optimistic ceiling</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure B: Consistency Evidence Across Images</h2>
+      <img src="./assets/figures/fig_consistency_hist.png" alt="Histogram of per-image gains" />
+      <p class="caption">
+        Robust method improves IoU on 209/256 images and ARI on 204/256 images versus baseline.
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure C: Robust Result vs Upper-Bound</h2>
+      <img src="./assets/figures/fig_cv_vs_upper_scatter.png" alt="CV versus in-sample scatter" />
+      <p class="caption">
+        In-sample remains above CV on many images, which is expected; this is why CV is used as the main claim.
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Figure D: Qualitative Gains and Hard Cases</h2>
+      <img src="./assets/figures/fig_qualitative_core_cases.png" alt="Qualitative core cases" />
+      <p class="caption">
+        We include both strong wins and hard failures to show realistic behavior rather than cherry-picked success.
+      </p>
+    </section>
+
+    <section class="panel figure-panel">
+      <h2>Method Diagram</h2>
+      <img src="./assets/figures/fig_06_pipeline_diagram.svg" alt="Pipeline diagram" />
+    </section>
+
+    <section class="panel">
+      <h2>Why We Trust the Improvement</h2>
+      <ol class="flat-list">
+        <li><strong>Held-out protocol:</strong> grouped CV is used for the main claim, reducing benchmark memorization risk.</li>
+        <li><strong>Distributional evidence:</strong> gains are widespread across the dataset, not isolated to a few samples.</li>
+        <li><strong>Failure transparency:</strong> failure cases are explicitly shown and linked in the visual page.</li>
+        <li><strong>Upper-bound separation:</strong> in-sample results are clearly labeled as non-deployment ceiling.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>What We Intentionally De-emphasize</h2>
+      <p>
+        Additional ablations and intermediary experiments (descriptor variants, broader sweeps, archived method variants)
+        are kept for reproducibility, but not used as main claim figures. This avoids presenting a benchmark-tuned narrative.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Reproducibility (Core Claim Only)</h2>
+      <pre><code>cd /home/galoren/TextureSAM-v2
+
+# Robust main result
+python3 scripts/run_multibank_reranker.py \
+  --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v2/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v3_scan/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v4_qwen3/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
+  --mode cv --cv-folds 5 \
+  --n-estimators 500 --max-depth 18 --min-samples-leaf 2 \
+  --apply-refine --refine-iters 2 --refine-min-area 50 \
+  --out-dir /home/galoren/TextureSAM-v2/reports/reranker_cv_refined
+
+# Upper-bound reference (not main claim)
+python3 scripts/run_multibank_reranker.py \
+  --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v2/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v3_scan/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v4_qwen3/predictions/prompt_masks \
+  --proposal-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
+  --mode in_sample \
+  --n-estimators 900 --max-depth 24 --min-samples-leaf 1 \
+  --apply-refine --refine-iters 2 --refine-min-area 50 \
+  --out-dir /home/galoren/TextureSAM-v2/reports/reranker_in_sample_refined</code></pre>
+    </section>
+
+    <section class="panel">
+      <h2>Links</h2>
+      <ul class="flat-list">
+        <li><a href="../texturesam2_supercharged_v2/index.html">Focused visual comparison (3 methods)</a></li>
+        <li><a href="../texturesam2_supercharged_v2/data_all_methods_backup.json">Archived full method set (all prior methods)</a></li>
+        <li><a href="./assets/data/report_data.json">Core report data JSON</a></li>
+        <li><a href="../texturesam2_supercharged_v2/assets/metrics/comparison_supercharged_v2.json">Original full comparison JSON</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

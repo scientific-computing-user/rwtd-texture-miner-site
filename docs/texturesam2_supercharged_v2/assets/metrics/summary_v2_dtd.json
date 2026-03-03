@@ -1,0 +1,37 @@
+{
+  "baseline_ari": 0.2730329517405916,
+  "baseline_masks_root": "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks",
+  "baseline_miou": 0.4679543554428983,
+  "config": {
+    "close_kernel": 5,
+    "descriptor_mode": "dtd_cnn",
+    "dtd_checkpoint": "/home/galoren/TextureSAM-v2/artifacts/dtd_small_cnn.pt",
+    "dtd_device": "cuda",
+    "hole_area_threshold": 64,
+    "keep_largest_component": true,
+    "merge": {
+      "adjacency_dilation": 3,
+      "merge_threshold": 0.5,
+      "w_boundary": 0.3,
+      "w_hetero": 0.2,
+      "w_texture": 0.65
+    },
+    "min_area": 32,
+    "objective_lambda": 0.45,
+    "objective_mu": 0.3
+  },
+  "delta_ari_vs_baseline": -0.002593419993505708,
+  "delta_ari_vs_union": 0.03455545749642852,
+  "delta_miou_vs_baseline": 0.18032353401367796,
+  "delta_miou_vs_union": -0.010720651644707258,
+  "descriptor_mode": "dtd_cnn",
+  "mean_merged_components": 1.21875,
+  "mean_proposal_count": 25.875,
+  "num_images": 256,
+  "prompt_masks_root": "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks",
+  "rwtd_root": "/home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256",
+  "union_ari": 0.23588407425065738,
+  "union_miou": 0.6589985411012835,
+  "v2_ari": 0.2704395317470859,
+  "v2_miou": 0.6482778894565763
+}

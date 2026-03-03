@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TextureSAM-2 Focused Comparison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=20260303-comparefix1" />
+</head>
+<body>
+  <div class="ambient"></div>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-left">
+        <p class="eyebrow">RWTD Kaust256 Visual Inspector</p>
+        <h1>TextureSAM-2 Focused Comparison</h1>
+        <p class="sub">Conference-focused view of Baseline vs Robust Best vs Upper-Bound Best on RWTD.</p>
+        <div class="hero-links">
+          <a href="../index.html">Home</a>
+          <a href="./data.json">Data JSON</a>
+          <a href="./data_all_methods_backup.json">All Methods (Archive)</a>
+          <a href="./assets/metrics/comparison_supercharged_v2.json">Comparison JSON</a>
+          <a href="./assets/metrics/report_supercharged_v2.md">Report</a>
+          <a href="../texturesam2_full_report/index.html">Full Narrative Report</a>
+        </div>
+      </div>
+      <div class="hero-right" id="top-summary"></div>
+    </header>
+
+    <section class="controls card">
+      <label>
+        Highlight Method
+        <select id="method-select"></select>
+      </label>
+      <label>
+        Sort Images By
+        <select id="sort-select">
+          <option value="metric_desc">Selected Metric (High to Low)</option>
+          <option value="metric_asc">Selected Metric (Low to High)</option>
+          <option value="id_asc">Image ID</option>
+        </select>
+      </label>
+      <label>
+        Metric
+        <select id="metric-select">
+          <option value="iou">IoU</option>
+          <option value="ari">ARI</option>
+        </select>
+      </label>
+      <label>
+        Search ID
+        <input id="search-input" type="text" placeholder="rwtd_125" />
+      </label>
+      <label>
+        Overlay Opacity
+        <input id="alpha-input" type="range" min="0" max="100" value="56" />
+      </label>
+      <label>
+        Thumbnail Count
+        <input id="thumb-count" type="number" min="24" max="256" step="8" value="96" />
+      </label>
+    </section>
+
+    <section class="scoreboard card">
+      <h2>Method Scoreboard</h2>
+      <div id="score-grid" class="score-grid"></div>
+    </section>
+
+    <section class="focus card" id="focus"></section>
+
+    <section class="thumbs card">
+      <div class="thumb-head">
+        <h2>Image Browser</h2>
+        <p id="thumb-meta"></p>
+      </div>
+      <div id="thumb-grid" class="thumb-grid"></div>
+    </section>
+  </main>
+
+  <script src="./app.js?v=20260303-comparefix1"></script>
+</body>
+</html>
