@@ -1,0 +1,56 @@
+{
+  "best_cv": "texturesam2_reranker_cv_refined",
+  "best_in_sample": "texturesam2_reranker_in_sample_refined",
+  "comparison": {
+    "baseline_v5_masks": {
+      "ari": 0.2730329517405916,
+      "delta_ari_vs_baseline": 0.0,
+      "delta_miou_vs_baseline": 0.0,
+      "miou": 0.4679543554428983,
+      "path": "/home/galoren/TextureSAM-v2/reports/rwtd_v5_handcrafted/summary.json"
+    },
+    "texturesam2_reranker_cv": {
+      "ari": 0.6491638816961725,
+      "delta_ari_vs_baseline": 0.37613092995558084,
+      "delta_miou_vs_baseline": 0.35022562958630543,
+      "miou": 0.8181799850292037,
+      "path": "/home/galoren/TextureSAM-v2/reports/reranker_cv/summary.json"
+    },
+    "texturesam2_reranker_cv_refined": {
+      "ari": 0.6667291364925519,
+      "delta_ari_vs_baseline": 0.39369618475196033,
+      "delta_miou_vs_baseline": 0.3558277937413127,
+      "miou": 0.823782149184211,
+      "path": "/home/galoren/TextureSAM-v2/reports/reranker_cv_refined/summary.json"
+    },
+    "texturesam2_reranker_in_sample": {
+      "ari": 0.7617877457236719,
+      "delta_ari_vs_baseline": 0.4887547939830803,
+      "delta_miou_vs_baseline": 0.41646054513260233,
+      "miou": 0.8844149005755007,
+      "path": "/home/galoren/TextureSAM-v2/reports/reranker_in_sample/summary.json"
+    },
+    "texturesam2_reranker_in_sample_refined": {
+      "ari": 0.7761144974071337,
+      "delta_ari_vs_baseline": 0.5030815456665421,
+      "delta_miou_vs_baseline": 0.42156143641361543,
+      "miou": 0.8895157918565137,
+      "path": "/home/galoren/TextureSAM-v2/reports/reranker_in_sample_refined/summary.json"
+    },
+    "texturesam_v2_dtd": {
+      "ari": 0.2704395317470859,
+      "delta_ari_vs_baseline": -0.002593419993505708,
+      "delta_miou_vs_baseline": 0.18032353401367796,
+      "miou": 0.6482778894565763,
+      "path": "/home/galoren/TextureSAM-v2/reports/rwtd_v5_dtd/summary.json"
+    },
+    "texturesam_v2_handcrafted": {
+      "ari": 0.2963286448793299,
+      "delta_ari_vs_baseline": 0.023295693138738305,
+      "delta_miou_vs_baseline": 0.18715623057992936,
+      "miou": 0.6551105860228277,
+      "path": "/home/galoren/TextureSAM-v2/reports/rwtd_v5_handcrafted/summary.json"
+    }
+  },
+  "dataset": "rwtd_kaust256"
+}
