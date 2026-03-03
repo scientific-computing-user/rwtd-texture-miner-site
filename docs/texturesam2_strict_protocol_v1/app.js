@@ -12,7 +12,8 @@ const state = {
 const methodColors = {
   baseline_v5: "#d66a0e",
   strict_handcrafted: "#12925b",
-  strict_dtd: "#6f59cf",
+  strict_ptd_heuristic: "#2f80ed",
+  strict_ptd_learned: "#6f59cf",
 };
 
 const el = {
@@ -185,12 +186,12 @@ function setupControls() {
 
 function renderTopSummary() {
   const methods = state.data.methods;
-  const strictH = methods.find((m) => m.id === "strict_handcrafted");
-  const strictD = methods.find((m) => m.id === "strict_dtd");
   const baseline = methods.find((m) => m.id === "baseline_v5");
-  const strictBest = [strictH, strictD].filter(Boolean).sort((a, b) => b.miou - a.miou)[0];
+  const strictBest = methods
+    .filter((m) => m.id !== "baseline_v5")
+    .sort((a, b) => b.miou - a.miou)[0];
 
-  if (!strictH || !strictD || !baseline || !strictBest) {
+  if (!baseline || !strictBest) {
     el.topSummary.innerHTML = `<div class="top-pill"><span>Images</span><b>${state.data.num_images}</b></div>`;
     return;
   }
@@ -296,7 +297,7 @@ async function renderFocus() {
   const preferredMethods = [
     "baseline_v5",
     "strict_handcrafted",
-    "strict_dtd",
+    "strict_ptd_learned",
   ];
   const focusMethods = preferredMethods
     .map((id) => state.data.methods.find((m) => m.id === id))
@@ -379,7 +380,7 @@ async function init() {
   if (!res.ok) throw new Error("Failed to load data.json");
   state.data = await res.json();
 
-  state.selectedMethod = "strict_handcrafted";
+  state.selectedMethod = "strict_ptd_learned";
   state.selectedImageId = state.data.images[0].id;
 
   setupControls();

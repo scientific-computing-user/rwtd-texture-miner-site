@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TextureSAM-2 Strict Report (No RWTD Supervision)</title>
+  <title>TextureSAM-2 Strict PTD-v2 Report (No RWTD Supervision)</title>
   <style>
     :root { color-scheme: light; }
     body { margin: 0; font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(180deg, #f5f8fc 0%, #eef4fb 100%); color: #10243d; }
-    .wrap { max-width: 1024px; margin: 34px auto; padding: 0 16px; }
+    .wrap { max-width: 1060px; margin: 34px auto; padding: 0 16px; }
     .panel { background: #fff; border: 1px solid #d5e0ea; border-radius: 14px; padding: 22px; margin-bottom: 14px; box-shadow: 0 8px 24px rgba(8, 26, 46, .06); }
     h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.1; }
     h2 { margin: 0 0 10px; font-size: 22px; }
@@ -16,35 +16,109 @@
     table { width: 100%; border-collapse: collapse; }
     th, td { border: 1px solid #dce5ee; padding: 9px 10px; font-size: 14px; }
     th { background: #f5f9fd; text-align: left; }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
-    ul { margin: 0; padding-left: 18px; color: #31465f; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; word-break: break-word; }
+    ul, ol { margin: 0; padding-left: 18px; color: #31465f; }
+    li { margin-bottom: 8px; }
+    .callout { border: 1px solid #8fb7dd; background: #f1f8ff; border-radius: 12px; padding: 12px; color: #234b73; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .small { font-size: 13px; }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="panel">
-      <h1>TextureSAM-2 Strict Protocol Report</h1>
-      <p>RWTD Kaust256 evaluation under a strict protocol that does not use RWTD labels for model training or hyperparameter search.</p>
+      <h1>TextureSAM-2 Strict PTD-v2 Report</h1>
+      <p>RWTD Kaust256 evaluation under a strict protocol: no RWTD-label training, no RWTD-label hyperparameter search, one-shot final evaluation only.</p>
       <p class="links">
         <a href="./index.html">Visual Compare</a>
         <a href="./data.json">Data JSON</a>
-        <a href="./assets/metrics/strict_summary.json">Strict Summary JSON</a>
+        <a href="./assets/metrics/strict_summary_ptd_v2.json">Strict PTD-v2 Summary JSON</a>
+        <a href="./assets/metrics/per_image_strict_ptd_v2.csv">Per-image CSV</a>
         <a href="../index.html">Home</a>
       </p>
     </section>
 
     <section class="panel">
-      <h2>Protocol</h2>
+      <h2>Abstract</h2>
+      <p><strong>Question:</strong> How do we turn many fragmented SAM texture proposals into one coherent binary mask, without cheating on RWTD test labels?</p>
+      <p><strong>Incentive:</strong> RWTD is binary-mask evaluation, and ARI strongly penalizes fragmentation. Coverage alone is not enough.</p>
+      <p><strong>Intuition:</strong> keep high-recall proposals from SAM, then learn which fragments belong together from a large external texture dataset (PTD), not from RWTD labels.</p>
+      <p><strong>Main thread:</strong> diagnose fragmentation, build PTD-only consolidation models, freeze everything, run RWTD once.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Leakage-Safe Protocol</h2>
+      <div class="callout small"><strong>Leakage statement:</strong> RWTD labels are used only for the final metric computation step. They are not used to train weights and not used for parameter search.</div>
       <ul>
-        <li>No RWTD labels used for training.</li>
-        <li>No RWTD labels used for hyperparameter sweeps.</li>
-        <li>Frozen configuration applied once to all 256 RWTD images.</li>
-        <li>RWTD labels used only for final metric computation.</li>
+        <li>External training data: PTD only (246,285 images, 56 texture classes).</li>
+        <li>RWTD role: final test set only.</li>
+        <li>Frozen pipeline: configuration and learned models fixed before final RWTD scoring.</li>
       </ul>
     </section>
 
     <section class="panel">
-      <h2>Results</h2>
+      <h2>Step-by-Step Pipeline (Easy Words)</h2>
+      <ol>
+        <li>SAM generates many candidate masks per image (high recall, deliberately over-complete).</li>
+        <li>For each mask, we compute texture embeddings (handcrafted or PTD-trained encoder features).</li>
+        <li>We build a mask-neighborhood graph and merge pieces that look texture-consistent and spatially connected.</li>
+        <li>From merged components, we pick one coherent foreground component as the final binary prediction.</li>
+        <li>In strict PTD learned mode, both merge decisions and final component scoring are learned on PTD-derived synthetic segmentation tasks.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>How We Generate Many Candidate Masks</h2>
+      <ul>
+        <li>Source: prompt-mask bank from the v5 SAM run at <span class="mono">texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks</span>.</li>
+        <li>Average candidate count used by consolidation: <strong>25.875 masks/image</strong> (from strict summaries).</li>
+        <li>Why so many: the method favors recall first, then solves coherence by consolidation.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>What Are v2/v3/v4/v5 Prompts, and Why Those Texts?</h2>
+      <div class="grid">
+        <article>
+          <p><strong>What they are:</strong> versioned prompt templates for upstream SAM/VLM proposal generation runs.</p>
+          <p><strong>How they differ:</strong> different wording, scan strategy, and attribute phrasing produce complementary proposal sets.</p>
+        </article>
+        <article>
+          <p><strong>Why those texts:</strong> they intentionally diversify candidate masks so true regions are less likely to be missed.</p>
+          <p><strong>Why this is valid:</strong> strict PTD-v2 does not train on RWTD labels; proposal diversity is an input-generation strategy, not test-label fitting.</p>
+        </article>
+      </div>
+      <p class="small">In this strict PTD-v2 page we evaluate from the frozen v5 proposal bank for clean protocol control.</p>
+    </section>
+
+    <section class="panel">
+      <h2>What Differs Between the Two Core Strict Methods?</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>What it does</th>
+            <th>Training data used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Strict Handcrafted</td>
+            <td>Texture-aware merging with fixed handcrafted rules/thresholds.</td>
+            <td>None (no learned merge/scorer).</td>
+          </tr>
+          <tr>
+            <td>Strict PTD Learned</td>
+            <td>Same pipeline skeleton, but merge and final foreground scoring are learned models.</td>
+            <td>PTD-derived synthetic segmentation only.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Strict PTD-v2 Results (RWTD, 256 Images)</h2>
       <table>
         <thead>
           <tr>
@@ -64,32 +138,55 @@
             <td>+0.000000</td>
           </tr>
           <tr>
-            <td><strong>TextureSAM-v2 strict handcrafted</strong></td>
-            <td><strong>0.655111</strong></td>
-            <td><strong>0.296329</strong></td>
-            <td><strong>+0.187156</strong></td>
-            <td><strong>+0.023296</strong></td>
+            <td>TextureSAM-v2 strict handcrafted</td>
+            <td>0.655111</td>
+            <td>0.296329</td>
+            <td>+0.187156</td>
+            <td>+0.023296</td>
           </tr>
           <tr>
-            <td>TextureSAM-v2 strict DTD-CNN</td>
-            <td>0.648278</td>
-            <td>0.270440</td>
-            <td>+0.180324</td>
-            <td>-0.002593</td>
+            <td>TextureSAM-v2 strict PTD heuristic</td>
+            <td>0.653423</td>
+            <td>0.289793</td>
+            <td>+0.185468</td>
+            <td>+0.016760</td>
+          </tr>
+          <tr>
+            <td><strong>TextureSAM-v2 strict PTD learned</strong></td>
+            <td><strong>0.717714</strong></td>
+            <td><strong>0.376768</strong></td>
+            <td><strong>+0.249759</strong></td>
+            <td><strong>+0.103735</strong></td>
           </tr>
         </tbody>
       </table>
+      <p class="small">Best strict method vs strict handcrafted: +0.062603 mIoU, +0.080439 ARI.</p>
     </section>
 
     <section class="panel">
-      <h2>Frozen Config</h2>
-      <p class="mono">min_area=32, close_kernel=5, hole_area_threshold=64, merge_threshold=0.50, adjacency_dilation=3, w_texture=0.65, w_boundary=0.30, w_hetero=0.20, objective_lambda=0.45, objective_mu=0.30</p>
+      <h2>PTD Learned-Model Training Signals</h2>
+      <ul>
+        <li>Pairwise merge validation AUC: 0.995264</li>
+        <li>Pairwise merge best F1: 0.979513</li>
+        <li>Global component scorer validation MAE: 0.103306</li>
+      </ul>
+      <p class="small">Raw metrics file: <a href="./assets/metrics/ptd_learned_metrics.json">ptd_learned_metrics.json</a>.</p>
     </section>
 
     <section class="panel">
-      <h2>Repro Command</h2>
+      <h2>Why This Is Not Benchmark Manipulation</h2>
+      <ul>
+        <li>No RWTD-label training.</li>
+        <li>No RWTD-label hyperparameter tuning.</li>
+        <li>External learning comes from PTD and PTD-derived synthetic masks.</li>
+        <li>Method is designed around a general texture-coherence principle, then tested on RWTD once.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Repro Command (Strict PTD-v2)</h2>
       <p class="mono">cd /home/galoren/TextureSAM-v2</p>
-      <p class="mono">PYTHONPATH=. python3 scripts/run_strict_no_rwtd_supervision.py --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks --out-root /home/galoren/TextureSAM-v2/reports/strict_no_rwtd_supervision_v1</p>
+      <p class="mono">PYTHONPATH=. python3 scripts/run_strict_ptd_v2.py --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks --ptd-root /home/galoren/PTD --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v2</p>
     </section>
   </main>
 </body>

@@ -1,0 +1,59 @@
+{
+  "artifacts": {
+    "per_image_compare": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v2/per_image_strict_ptd_v2.csv",
+    "strict_handcrafted_masks_dir": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v2/strict_handcrafted/masks",
+    "strict_handcrafted_summary": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v2/strict_handcrafted/summary.json",
+    "strict_ptd_heuristic_masks_dir": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v2/strict_ptd_heuristic/masks",
+    "strict_ptd_heuristic_summary": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v2/strict_ptd_heuristic/summary.json",
+    "strict_ptd_learned_masks_dir": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v2/strict_ptd_learned/masks",
+    "strict_ptd_learned_summary": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v2/strict_ptd_learned/summary.json"
+  },
+  "baseline": {
+    "ari": 0.2730329517405916,
+    "miou": 0.4679543554428983
+  },
+  "dataset": "rwtd_kaust256",
+  "num_images": 256,
+  "proposal_source": "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks",
+  "protocol": {
+    "external_training_data": {
+      "global_scorer": "PTD-derived synthetic masks only",
+      "merge_model": "PTD-derived synthetic masks only",
+      "texture_encoder": "PTD only"
+    },
+    "frozen_after_ptd_validation_only": true,
+    "name": "strict_ptd_v2",
+    "uses_rwtd_labels_for_final_metric_reporting": true,
+    "uses_rwtd_labels_for_hyperparameter_search": false,
+    "uses_rwtd_labels_for_training": false
+  },
+  "strict_handcrafted_reference": {
+    "ari": 0.2963286448793299,
+    "delta_ari_vs_baseline": 0.023295693138738305,
+    "delta_miou_vs_baseline": 0.18715623057992936,
+    "miou": 0.6551105860228277
+  },
+  "strict_ptd_heuristic": {
+    "ari": 0.2897934483760789,
+    "delta_ari_vs_baseline": 0.016760496635487288,
+    "delta_ari_vs_handcrafted": -0.006535196503251017,
+    "delta_miou_vs_baseline": 0.18546842265247632,
+    "delta_miou_vs_handcrafted": -0.0016878079274530444,
+    "miou": 0.6534227780953746
+  },
+  "strict_ptd_learned": {
+    "ari": 0.3767677639014785,
+    "delta_ari_vs_baseline": 0.10373481216088687,
+    "delta_ari_vs_handcrafted": 0.08043911902214856,
+    "delta_miou_vs_baseline": 0.2497593932624823,
+    "delta_miou_vs_handcrafted": 0.06260316268255295,
+    "miou": 0.7177137487053806
+  },
+  "training": {
+    "ptd_encoder_ckpt": "/home/galoren/TextureSAM-v2/artifacts/ptd_convnext_tiny.pt",
+    "ptd_encoder_metrics": null,
+    "ptd_learned_bundle": "/home/galoren/TextureSAM-v2/artifacts/ptd_learned_bundle.pkl",
+    "ptd_learned_metrics": null,
+    "ptd_learned_metrics_json": "/home/galoren/TextureSAM-v2/artifacts/ptd_learned_metrics.json"
+  }
+}

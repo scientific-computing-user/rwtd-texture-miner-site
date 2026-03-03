@@ -1,0 +1,11 @@
+{
+  "comp_train_examples": 15982,
+  "comp_val_examples": 2856,
+  "num_samples_generated": 1200,
+  "pair_threshold": 0.48,
+  "pair_train_examples": 22932,
+  "pair_val_auc": 0.9952636735391639,
+  "pair_val_examples": 4151,
+  "pair_val_f1_best": 0.9795132201015584,
+  "score_val_mae": 0.10330611676593926
+}
