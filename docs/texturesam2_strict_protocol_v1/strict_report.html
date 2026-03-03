@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TextureSAM-2 Strict Report (No RWTD Supervision)</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(180deg, #f5f8fc 0%, #eef4fb 100%); color: #10243d; }
+    .wrap { max-width: 1024px; margin: 34px auto; padding: 0 16px; }
+    .panel { background: #fff; border: 1px solid #d5e0ea; border-radius: 14px; padding: 22px; margin-bottom: 14px; box-shadow: 0 8px 24px rgba(8, 26, 46, .06); }
+    h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.1; }
+    h2 { margin: 0 0 10px; font-size: 22px; }
+    p { margin: 0 0 10px; color: #4f6278; }
+    .links a { margin-right: 12px; color: #0f4c8d; text-decoration: none; font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #dce5ee; padding: 9px 10px; font-size: 14px; }
+    th { background: #f5f9fd; text-align: left; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+    ul { margin: 0; padding-left: 18px; color: #31465f; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel">
+      <h1>TextureSAM-2 Strict Protocol Report</h1>
+      <p>RWTD Kaust256 evaluation under a strict protocol that does not use RWTD labels for model training or hyperparameter search.</p>
+      <p class="links">
+        <a href="./index.html">Visual Compare</a>
+        <a href="./data.json">Data JSON</a>
+        <a href="./assets/metrics/strict_summary.json">Strict Summary JSON</a>
+        <a href="../index.html">Home</a>
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Protocol</h2>
+      <ul>
+        <li>No RWTD labels used for training.</li>
+        <li>No RWTD labels used for hyperparameter sweeps.</li>
+        <li>Frozen configuration applied once to all 256 RWTD images.</li>
+        <li>RWTD labels used only for final metric computation.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>mIoU</th>
+            <th>ARI</th>
+            <th>Delta mIoU vs baseline</th>
+            <th>Delta ARI vs baseline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TextureSAM baseline (v5)</td>
+            <td>0.467954</td>
+            <td>0.273033</td>
+            <td>+0.000000</td>
+            <td>+0.000000</td>
+          </tr>
+          <tr>
+            <td><strong>TextureSAM-v2 strict handcrafted</strong></td>
+            <td><strong>0.655111</strong></td>
+            <td><strong>0.296329</strong></td>
+            <td><strong>+0.187156</strong></td>
+            <td><strong>+0.023296</strong></td>
+          </tr>
+          <tr>
+            <td>TextureSAM-v2 strict DTD-CNN</td>
+            <td>0.648278</td>
+            <td>0.270440</td>
+            <td>+0.180324</td>
+            <td>-0.002593</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Frozen Config</h2>
+      <p class="mono">min_area=32, close_kernel=5, hole_area_threshold=64, merge_threshold=0.50, adjacency_dilation=3, w_texture=0.65, w_boundary=0.30, w_hetero=0.20, objective_lambda=0.45, objective_mu=0.30</p>
+    </section>
+
+    <section class="panel">
+      <h2>Repro Command</h2>
+      <p class="mono">cd /home/galoren/TextureSAM-v2</p>
+      <p class="mono">PYTHONPATH=. python3 scripts/run_strict_no_rwtd_supervision.py --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks --out-root /home/galoren/TextureSAM-v2/reports/strict_no_rwtd_supervision_v1</p>
+    </section>
+  </main>
+</body>
+</html>

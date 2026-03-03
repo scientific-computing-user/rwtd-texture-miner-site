@@ -1,0 +1,51 @@
+{
+  "artifacts": {
+    "dtd_masks_dir": "/home/galoren/TextureSAM-v2/reports/strict_no_rwtd_supervision_v1/dtd_cnn/masks",
+    "dtd_summary": "/home/galoren/TextureSAM-v2/reports/strict_no_rwtd_supervision_v1/dtd_cnn/summary.json",
+    "handcrafted_masks_dir": "/home/galoren/TextureSAM-v2/reports/strict_no_rwtd_supervision_v1/handcrafted/masks",
+    "handcrafted_summary": "/home/galoren/TextureSAM-v2/reports/strict_no_rwtd_supervision_v1/handcrafted/summary.json",
+    "per_image_strict": "/home/galoren/TextureSAM-v2/reports/strict_no_rwtd_supervision_v1/per_image_strict.csv"
+  },
+  "baseline": {
+    "ari": 0.2730329517405916,
+    "miou": 0.4679543554428983
+  },
+  "dataset": "rwtd_kaust256",
+  "num_images": 256,
+  "proposal_source": "/home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks",
+  "protocol": {
+    "external_training_data": {
+      "dtd_cnn": "DTD (train/val only)",
+      "handcrafted": "none"
+    },
+    "frozen_config": {
+      "close_kernel": 5,
+      "hole_area_threshold": 64,
+      "merge_dilation": 3,
+      "merge_threshold": 0.5,
+      "min_area": 32,
+      "objective_lambda": 0.45,
+      "objective_mu": 0.3,
+      "w_boundary": 0.3,
+      "w_hetero": 0.2,
+      "w_texture": 0.65
+    },
+    "name": "strict_no_rwtd_supervision_v1",
+    "selection_model": "none",
+    "uses_rwtd_labels_for_final_metric_reporting": true,
+    "uses_rwtd_labels_for_hyperparameter_search": false,
+    "uses_rwtd_labels_for_training": false
+  },
+  "strict_dtd_cnn": {
+    "ari": 0.2704395317470859,
+    "delta_ari_vs_baseline": -0.002593419993505708,
+    "delta_miou_vs_baseline": 0.18032353401367796,
+    "miou": 0.6482778894565763
+  },
+  "strict_handcrafted": {
+    "ari": 0.2963286448793299,
+    "delta_ari_vs_baseline": 0.023295693138738305,
+    "delta_miou_vs_baseline": 0.18715623057992936,
+    "miou": 0.6551105860228277
+  }
+}
