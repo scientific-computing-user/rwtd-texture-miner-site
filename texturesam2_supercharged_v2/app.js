@@ -179,6 +179,11 @@ function renderTopSummary() {
   const bestINS = methods.find((m) => m.id === "reranker_in_sample_refined");
   const baseline = methods.find((m) => m.id === "baseline_v5");
 
+  if (!bestCV || !bestINS || !baseline) {
+    el.topSummary.innerHTML = `<div class="top-pill"><span>Images</span><b>${state.data.num_images}</b></div>`;
+    return;
+  }
+
   const deltaCV = {
     iou: bestCV.miou - baseline.miou,
     ari: bestCV.ari - baseline.ari,
@@ -186,9 +191,9 @@ function renderTopSummary() {
 
   el.topSummary.innerHTML = `
     <div class="top-pill"><span>Images</span><b>${state.data.num_images}</b></div>
-    <div class="top-pill"><span>Best CV mIoU / ARI</span><b>${fmt(bestCV.miou, 4)} / ${fmt(bestCV.ari, 4)}</b></div>
-    <div class="top-pill"><span>CV Gain vs Baseline</span><b>+${fmt(deltaCV.iou, 4)} / +${fmt(deltaCV.ari, 4)}</b></div>
-    <div class="top-pill"><span>Best In-sample mIoU / ARI</span><b>${fmt(bestINS.miou, 4)} / ${fmt(bestINS.ari, 4)}</b></div>
+    <div class="top-pill"><span>Robust Best (CV+Refine)</span><b>${fmt(bestCV.miou, 4)} / ${fmt(bestCV.ari, 4)}</b></div>
+    <div class="top-pill"><span>Robust Gain vs Baseline</span><b>+${fmt(deltaCV.iou, 4)} / +${fmt(deltaCV.ari, 4)}</b></div>
+    <div class="top-pill"><span>Upper-Bound (In-sample+Refine)</span><b>${fmt(bestINS.miou, 4)} / ${fmt(bestINS.ari, 4)}</b></div>
   `;
 }
 
