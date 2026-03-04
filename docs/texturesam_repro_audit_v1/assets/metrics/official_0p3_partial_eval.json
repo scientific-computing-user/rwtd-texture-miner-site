@@ -4,15 +4,15 @@
   "noagg_official": {
     "script": "eval_no_agg_masks.py (official import)",
     "num_gt_images": 256,
-    "num_pred_image_ids": 2,
-    "num_gt_instances_evaluated": 4,
-    "overall_average_iou": 0.4290775000101314,
-    "overall_average_rand_index": 0.6680849034589673
+    "num_pred_image_ids": 20,
+    "num_gt_instances_evaluated": 40,
+    "overall_average_iou": 0.39186368628566937,
+    "overall_average_rand_index": 0.5409783108784214
   },
   "agg_like_custom": {
-    "num_images": 2,
-    "mean_iou": 0.9704289769620036,
-    "mean_iou_inverse": 0.9000035081347805,
-    "mean_iou_rwtd_average": 0.9352162425483921
+    "num_images": 20,
+    "mean_iou": 0.8054261628672226,
+    "mean_iou_inverse": 0.6753874021881907,
+    "mean_iou_rwtd_average": 0.7404067825277066
   }
 }
