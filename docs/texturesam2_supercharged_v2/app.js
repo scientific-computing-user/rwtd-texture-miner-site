@@ -11,6 +11,7 @@ const state = {
 
 const methodColors = {
   strict_ptd_v9_v7_v8_gate: "#0b7a4f",
+  strict_ptd_v10_meta_selector: "#b66a00",
 };
 
 const el = {
