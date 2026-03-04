@@ -11,15 +11,9 @@ const state = {
 
 const methodColors = {
   baseline_v5: "#d66a0e",
-  v2_handcrafted: "#0f83c7",
-  v2_dtd: "#6f59cf",
-  reranker_cv: "#1ea26b",
-  reranker_cv_refined: "#12925b",
-  reranker_in_sample: "#c93c5d",
-  reranker_in_sample_refined: "#8f2442",
-  strict_handcrafted: "#0b8f8d",
-  strict_ptd_heuristic: "#3b82f6",
-  strict_ptd_learned: "#7c3aed",
+  strict_handcrafted: "#12925b",
+  strict_ptd_heuristic: "#2f80ed",
+  strict_ptd_learned: "#6f59cf",
 };
 
 const el = {
@@ -192,25 +186,26 @@ function setupControls() {
 
 function renderTopSummary() {
   const methods = state.data.methods;
-  const bestCV = methods.find((m) => m.id === "reranker_cv_refined");
-  const bestINS = methods.find((m) => m.id === "reranker_in_sample_refined");
   const baseline = methods.find((m) => m.id === "baseline_v5");
+  const strictBest = methods
+    .filter((m) => m.id !== "baseline_v5")
+    .sort((a, b) => b.miou - a.miou)[0];
 
-  if (!bestCV || !bestINS || !baseline) {
+  if (!baseline || !strictBest) {
     el.topSummary.innerHTML = `<div class="top-pill"><span>Images</span><b>${state.data.num_images}</b></div>`;
     return;
   }
 
-  const deltaCV = {
-    iou: bestCV.miou - baseline.miou,
-    ari: bestCV.ari - baseline.ari,
+  const deltaStrict = {
+    iou: strictBest.miou - baseline.miou,
+    ari: strictBest.ari - baseline.ari,
   };
 
   el.topSummary.innerHTML = `
     <div class="top-pill"><span>Images</span><b>${state.data.num_images}</b></div>
-    <div class="top-pill"><span>Robust Best (CV+Refine)</span><b>${fmt(bestCV.miou, 4)} / ${fmt(bestCV.ari, 4)}</b></div>
-    <div class="top-pill"><span>Robust Gain vs Baseline</span><b>+${fmt(deltaCV.iou, 4)} / +${fmt(deltaCV.ari, 4)}</b></div>
-    <div class="top-pill"><span>Upper-Bound (In-sample+Refine)</span><b>${fmt(bestINS.miou, 4)} / ${fmt(bestINS.ari, 4)}</b></div>
+    <div class="top-pill"><span>Strict Best</span><b>${esc(strictBest.name)}: ${fmt(strictBest.miou, 4)} / ${fmt(strictBest.ari, 4)}</b></div>
+    <div class="top-pill"><span>Strict Gain vs Baseline</span><b>${deltaStrict.iou >= 0 ? "+" : ""}${fmt(deltaStrict.iou, 4)} / ${deltaStrict.ari >= 0 ? "+" : ""}${fmt(deltaStrict.ari, 4)}</b></div>
+    <div class="top-pill"><span>Protocol</span><b>No RWTD-label training/tuning</b></div>
   `;
 }
 
@@ -301,9 +296,12 @@ async function renderFocus() {
   const baseline = image.metrics.baseline_v5;
   const preferredMethods = [
     "baseline_v5",
-    "reranker_cv_refined",
-    "reranker_in_sample_refined",
+    "strict_handcrafted",
+    "strict_ptd_learned",
   ];
+  if (state.selectedMethod && !preferredMethods.includes(state.selectedMethod) && state.selectedMethod !== "baseline_v5") {
+    preferredMethods[1] = state.selectedMethod;
+  }
   const focusMethods = preferredMethods
     .map((id) => state.data.methods.find((m) => m.id === id))
     .filter(Boolean);
@@ -385,7 +383,7 @@ async function init() {
   if (!res.ok) throw new Error("Failed to load data.json");
   state.data = await res.json();
 
-  state.selectedMethod = "reranker_cv_refined";
+  state.selectedMethod = "strict_ptd_learned";
   state.selectedImageId = state.data.images[0].id;
 
   setupControls();
