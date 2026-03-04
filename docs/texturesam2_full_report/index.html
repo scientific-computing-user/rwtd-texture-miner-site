@@ -85,6 +85,46 @@
     </section>
 
     <section class="panel">
+      <h2>RWTD Direct Comparison: Official vs Our Kept Model</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>RWTD mIoU</th>
+              <th>RWTD ARI</th>
+              <th>Delta mIoU vs TextureSAM η≤0.3</th>
+              <th>Delta ARI vs TextureSAM η≤0.3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TextureSAM η≤0.3 (official)</td>
+              <td>0.47</td>
+              <td>0.62</td>
+              <td>+0.00</td>
+              <td>+0.00</td>
+            </tr>
+            <tr>
+              <td>TextureSAM η≤1.0 (official)</td>
+              <td>0.42</td>
+              <td>0.54</td>
+              <td>-0.05</td>
+              <td>-0.08</td>
+            </tr>
+            <tr>
+              <td><strong>TextureSAM-v2 Strict PTD Learned (ours)</strong></td>
+              <td><strong>0.717714</strong></td>
+              <td><strong>0.376768</strong></td>
+              <td><strong>+0.247714</strong></td>
+              <td><strong>-0.243232</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
       <h2>Strict Protocol</h2>
       <div class="callout">
         <strong>Leakage statement:</strong> RWTD labels are used only for final metric computation. External training data is PTD only.
@@ -105,17 +145,12 @@
           <p class="big">ARI 0.273033</p>
         </article>
         <article class="metric">
-          <h3>Strict Handcrafted</h3>
-          <p class="big">mIoU 0.655111</p>
-          <p class="big">ARI 0.296329</p>
-        </article>
-        <article class="metric">
-          <h3>Strict PTD Learned</h3>
+          <h3>TextureSAM-v2 Strict PTD Learned</h3>
           <p class="big">mIoU 0.717714</p>
           <p class="big">ARI 0.376768</p>
         </article>
       </div>
-      <p class="note">Best strict method gain vs baseline: +0.249759 mIoU and +0.103735 ARI.</p>
+      <p class="note">Kept method gain vs baseline: +0.249759 mIoU and +0.103735 ARI.</p>
       <div class="table-wrap" style="margin-top:12px;">
         <table>
           <thead>
@@ -134,20 +169,6 @@
               <td>0.273033</td>
               <td>+0.000000</td>
               <td>+0.000000</td>
-            </tr>
-            <tr>
-              <td>TextureSAM-v2 strict handcrafted</td>
-              <td>0.655111</td>
-              <td>0.296329</td>
-              <td>+0.187156</td>
-              <td>+0.023296</td>
-            </tr>
-            <tr>
-              <td>TextureSAM-v2 strict PTD heuristic</td>
-              <td>0.653423</td>
-              <td>0.289793</td>
-              <td>+0.185468</td>
-              <td>+0.016760</td>
             </tr>
             <tr>
               <td><strong>TextureSAM-v2 strict PTD learned</strong></td>
@@ -198,6 +219,9 @@ PYTHONPATH=. python3 scripts/run_strict_ptd_v2.py \
         <li><a href="../texturesam2_strict_protocol_v1/index.html">Strict PTD-v2 visual comparison</a></li>
         <li><a href="../texturesam2_supercharged_v2/index.html">Strict-only gallery with official reference table</a></li>
         <li><a href="../texturesam2_strict_protocol_v1/strict_report.html">Detailed strict report</a></li>
+        <li><a href="https://drive.google.com/file/d/1dliu1k4PWkZJzeqJtJDI_s9m2Sh6-b-R/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Official Kaust256.zip (RWTD)</a></li>
+        <li><a href="https://drive.google.com/file/d/1Sv0il6Ret6c88QMG2o5jB5SHSTdNBhdh/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Official checkpoints.zip</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1pUJLa898WYEcb4Y_sOaXsSVe-CsPkwRv?usp=drive_link" target="_blank" rel="noopener noreferrer">Official TextureSAM Drive Folder</a></li>
         <li><a href="https://openaccess.thecvf.com/content/WACV2026/papers/Cohen_Decoupling_Shape_and_Texture_in_SAM-2_via_Controlled_Texture_Replacement_WACV_2026_paper.pdf" target="_blank" rel="noopener noreferrer">TextureSAM paper (WACV 2026)</a></li>
         <li><a href="https://github.com/Scientific-Computing-Lab/TextureSAM" target="_blank" rel="noopener noreferrer">TextureSAM official repository</a></li>
       </ul>

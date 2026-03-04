@@ -169,7 +169,7 @@ input[type="range"] { padding: 0; }
 
 .score-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 10px;
 }
 
@@ -254,9 +254,9 @@ input[type="range"] { padding: 0; }
 
 .compare-strip {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
-  min-width: 980px;
+  min-width: 820px;
 }
 
 .compare-card {
@@ -395,14 +395,14 @@ input[type="range"] { padding: 0; }
 
 @media (max-width: 1680px) {
   .controls { grid-template-columns: repeat(3, minmax(120px, 1fr)); }
-  .score-grid { grid-template-columns: repeat(4, minmax(140px, 1fr)); }
+  .score-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
   .thumb-grid { grid-template-columns: repeat(10, minmax(0, 1fr)); }
 }
 
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; }
   .thumb-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .compare-strip { min-width: 900px; }
+  .compare-strip { min-width: 760px; }
 }
 
 @media (max-width: 680px) {
@@ -410,5 +410,5 @@ input[type="range"] { padding: 0; }
   .controls { grid-template-columns: 1fr; }
   .score-grid { grid-template-columns: 1fr; }
   .thumb-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .compare-strip { min-width: 760px; }
+  .compare-strip { min-width: 680px; }
 }

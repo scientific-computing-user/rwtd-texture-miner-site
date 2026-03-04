@@ -93,7 +93,7 @@
     </section>
 
     <section class="panel">
-      <h2>What Differs Between the Two Core Strict Methods?</h2>
+      <h2>Kept Model (Simplicity Policy)</h2>
       <table>
         <thead>
           <tr>
@@ -104,14 +104,9 @@
         </thead>
         <tbody>
           <tr>
-            <td>Strict Handcrafted</td>
-            <td>Texture-aware merging with fixed handcrafted rules/thresholds.</td>
-            <td>None (no learned merge/scorer).</td>
-          </tr>
-          <tr>
-            <td>Strict PTD Learned</td>
-            <td>Same pipeline skeleton, but merge and final foreground scoring are learned models.</td>
-            <td>PTD-derived synthetic segmentation only.</td>
+            <td><strong>TextureSAM-v2 Strict PTD Learned</strong></td>
+            <td>Texture-aware consolidation with learned pairwise merge and global foreground scoring.</td>
+            <td>PTD-derived synthetic segmentation only (no RWTD-label training/tuning).</td>
           </tr>
         </tbody>
       </table>
@@ -138,20 +133,6 @@
             <td>+0.000000</td>
           </tr>
           <tr>
-            <td>TextureSAM-v2 strict handcrafted</td>
-            <td>0.655111</td>
-            <td>0.296329</td>
-            <td>+0.187156</td>
-            <td>+0.023296</td>
-          </tr>
-          <tr>
-            <td>TextureSAM-v2 strict PTD heuristic</td>
-            <td>0.653423</td>
-            <td>0.289793</td>
-            <td>+0.185468</td>
-            <td>+0.016760</td>
-          </tr>
-          <tr>
             <td><strong>TextureSAM-v2 strict PTD learned</strong></td>
             <td><strong>0.717714</strong></td>
             <td><strong>0.376768</strong></td>
@@ -160,7 +141,20 @@
           </tr>
         </tbody>
       </table>
-      <p class="small">Best strict method vs strict handcrafted: +0.062603 mIoU, +0.080439 ARI.</p>
+      <p class="small">Kept strict model gain vs baseline: +0.249759 mIoU, +0.103735 ARI.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Official TextureSAM Assets (GitHub Drive Link)</h2>
+      <p class="small">From the official TextureSAM Google Drive folder linked in their repo README.</p>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1dliu1k4PWkZJzeqJtJDI_s9m2Sh6-b-R/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Kaust256.zip (RWTD images/labels)</a></li>
+        <li><a href="https://drive.google.com/file/d/1Sv0il6Ret6c88QMG2o5jB5SHSTdNBhdh/view?usp=drive_link" target="_blank" rel="noopener noreferrer">checkpoints.zip (TextureSAM checkpoints)</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1pUJLa898WYEcb4Y_sOaXsSVe-CsPkwRv?usp=drive_link" target="_blank" rel="noopener noreferrer">TextureSAM Datasets and checkpoints (root folder)</a></li>
+      </ul>
+      <p class="small">
+        Folder listing currently exposes dataset/checkpoint archives; per-image RWTD prediction runs and evaluation CSVs are not published there as standalone artifacts.
+      </p>
     </section>
 
     <section class="panel">

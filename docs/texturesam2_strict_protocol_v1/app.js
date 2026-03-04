@@ -11,8 +11,6 @@ const state = {
 
 const methodColors = {
   baseline_v5: "#d66a0e",
-  strict_handcrafted: "#12925b",
-  strict_ptd_heuristic: "#2f80ed",
   strict_ptd_learned: "#6f59cf",
 };
 
@@ -312,12 +310,8 @@ async function renderFocus() {
   const baseline = image.metrics.baseline_v5;
   const preferredMethods = [
     "baseline_v5",
-    "strict_handcrafted",
     "strict_ptd_learned",
   ];
-  if (state.selectedMethod && !preferredMethods.includes(state.selectedMethod) && state.selectedMethod !== "baseline_v5") {
-    preferredMethods[1] = state.selectedMethod;
-  }
   const focusMethods = preferredMethods
     .map((id) => state.data.methods.find((m) => m.id === id))
     .filter(Boolean);
