@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TextureSAM Reproduction Audit v1</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --ink: #14213d;
+      --muted: #5c6b80;
+      --accent: #1d4ed8;
+      --good: #0f766e;
+      --warn: #b45309;
+      --bad: #b91c1c;
+      --line: #dde4ef;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 15%, #dbeafe 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, #d1fae5 0%, transparent 35%),
+        var(--bg);
+    }
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .hero {
+      background: linear-gradient(120deg, #0f172a, #1e3a8a 60%, #0f766e);
+      color: #fff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.22);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+      letter-spacing: 0.2px;
+    }
+    .hero p {
+      margin: 0;
+      opacity: 0.95;
+      line-height: 1.45;
+    }
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-bottom: 14px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: #0f172a;
+    }
+    .kpi {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 2px 0;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      background: #f2f6fc;
+      color: #334155;
+    }
+    tr:last-child td { border-bottom: none; }
+    .good { color: var(--good); font-weight: 600; }
+    .warn { color: var(--warn); font-weight: 600; }
+    .bad { color: var(--bad); font-weight: 600; }
+    pre {
+      background: #0b1020;
+      color: #d8e2ff;
+      padding: 12px;
+      border-radius: 10px;
+      overflow: auto;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+    .links a { color: var(--accent); text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>TextureSAM Reproduction Audit v1</h1>
+      <p>
+        Goal: reconcile website baseline metrics with official TextureSAM paper/repo RWTD numbers.
+        This page isolates metric-definition mismatch, label-source mismatch, and checkpoint/protocol mismatch.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Official RWTD Table (Repo)</h2>
+        <div class="kpi">TextureSAM η≤0.3: 0.47 / 0.62 / 0.75</div>
+        <div class="muted">(mIoU no-agg / ARI no-agg / mIoU aggregated)</div>
+      </article>
+      <article class="card">
+        <h2>Local v5 (Clean Labels)</h2>
+        <div class="kpi" id="kpi-local">Loading...</div>
+        <div class="muted">Robust binary metric used in our strict pipeline.</div>
+      </article>
+      <article class="card">
+        <h2>Official Checkpoint Repro</h2>
+        <div class="kpi warn">Running (CPU)</div>
+        <div class="muted">`sam2.1_hiera_small_0.3.pt` smoke test passed; full run in progress.</div>
+      </article>
+    </section>
+
+    <section class="card" style="margin-bottom:14px;">
+      <h2>Core Discrepancy Findings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Audit Item</th>
+            <th>Result</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Metric Protocol</td>
+            <td>Official no-agg on v5 prompt masks: mIoU 0.2214, ARI 0.1736</td>
+            <td class="bad">Large mismatch vs paper protocol</td>
+          </tr>
+          <tr>
+            <td>Aggregation Gap</td>
+            <td>Agg-like on same prompt masks: RWTD-avg mIoU 0.6651</td>
+            <td class="warn">Coverage exists, consolidation differs</td>
+          </tr>
+          <tr>
+            <td>Label Source</td>
+            <td>Local JPEG-label vs official PNG-label mean IoU: 0.9527 (with outliers)</td>
+            <td class="warn">Subset of images strongly affected</td>
+          </tr>
+          <tr>
+            <td>Checkpoint/Inference</td>
+            <td>Official checkpoint now downloaded; full official run started</td>
+            <td class="good">Exact reproduction path is active</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Official-Style Eval on v5 Prompt Proposals</h2>
+        <pre id="prompt-json">Loading...</pre>
+      </article>
+      <article class="card">
+        <h2>Official-Style Eval on v5 Single Masks</h2>
+        <pre id="single-json">Loading...</pre>
+      </article>
+    </section>
+
+    <section class="card links">
+      <h2>Artifacts</h2>
+      <p><a href="assets/metrics/audit_report.md">Full audit report (Markdown)</a></p>
+      <p><a href="assets/metrics/v5_prompt_combined_upstream_eval.json">v5 prompt combined eval JSON</a></p>
+      <p><a href="assets/metrics/v5_single_combined_upstream_eval.json">v5 single combined eval JSON</a></p>
+      <p><a href="assets/metrics/cleanlabel_recompute_summary.json">clean-label recompute summary JSON</a></p>
+    </section>
+  </div>
+
+  <script>
+    const fmt = (x) => (typeof x === 'number' ? x.toFixed(4) : String(x));
+
+    async function loadJson(path) {
+      const r = await fetch(path, { cache: 'no-store' });
+      if (!r.ok) throw new Error(`failed ${path}`);
+      return r.json();
+    }
+
+    async function main() {
+      try {
+        const [promptEval, singleEval, clean] = await Promise.all([
+          loadJson('assets/metrics/v5_prompt_combined_upstream_eval.json'),
+          loadJson('assets/metrics/v5_single_combined_upstream_eval.json'),
+          loadJson('assets/metrics/cleanlabel_recompute_summary.json')
+        ]);
+
+        document.getElementById('prompt-json').textContent = JSON.stringify(promptEval, null, 2);
+        document.getElementById('single-json').textContent = JSON.stringify(singleEval, null, 2);
+
+        const b = clean.baseline_v5;
+        document.getElementById('kpi-local').textContent = `mIoU ${fmt(b.miou)} / ARI ${fmt(b.ari)}`;
+      } catch (e) {
+        document.getElementById('prompt-json').textContent = String(e);
+        document.getElementById('single-json').textContent = String(e);
+        document.getElementById('kpi-local').textContent = 'Failed to load';
+      }
+    }
+
+    main();
+  </script>
+</body>
+</html>

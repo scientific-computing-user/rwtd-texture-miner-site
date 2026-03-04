@@ -63,7 +63,7 @@
       "ari": 0.2730329517405916,
       "id": "baseline_v5_masks",
       "miou": 0.4679543554428983,
-      "name": "TextureSAM Baseline",
+      "name": "v5 Prompt-Proxy Baseline (Not Paper SAM-2/TextureSAM)",
       "role": "baseline"
     },
     {

@@ -27,7 +27,7 @@
 ## Results (RWTD 256)
 | Method | mIoU | ARI | Delta mIoU vs baseline | Delta ARI vs baseline |
 |---|---:|---:|---:|---:|
-| TextureSAM baseline (v5) | 0.467954 | 0.273033 | +0.000000 | +0.000000 |
+| v5 prompt-proxy baseline (not paper SAM-2/TextureSAM) | 0.467954 | 0.273033 | +0.000000 | +0.000000 |
 | TextureSAM-v2 strict handcrafted | 0.655111 | 0.296329 | +0.187156 | +0.023296 |
 | TextureSAM-v2 strict PTD heuristic | 0.653423 | 0.289793 | +0.185468 | +0.016760 |
 | **TextureSAM-v2 strict PTD learned** | **0.717714** | **0.376768** | **+0.249759** | **+0.103735** |

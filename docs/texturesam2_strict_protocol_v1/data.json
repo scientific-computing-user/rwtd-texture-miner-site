@@ -17,7 +17,7 @@
   "methods": [
     {
       "id": "baseline_v5",
-      "name": "TextureSAM Baseline (v5)",
+      "name": "v5 Prompt-Proxy Baseline (Not Paper SAM-2/TextureSAM)",
       "miou": 0.4679543554428983,
       "ari": 0.2730329517405916
     },
