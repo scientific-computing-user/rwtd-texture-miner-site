@@ -18,7 +18,7 @@
       Any prior exploratory RWTD-supervised rows were removed.
     </p>
     <div class="hero-links">
-      <a class="btn" href="../texturesam2_strict_protocol_v1/index.html">Open Strict PTD-v4 Visual Compare</a>
+      <a class="btn" href="../texturesam2_strict_protocol_v1/index.html">Open Strict PTD-v7 Visual Compare</a>
       <a class="btn" href="../texturesam2_supercharged_v2/index.html">Open Strict-Only Visual Comparison</a>
       <a class="btn ghost" href="../texturesam2_strict_protocol_v1/strict_report.html">Open Strict Report Page</a>
       <a class="btn ghost" href="../index.html">Home</a>
@@ -113,11 +113,11 @@
               <td>-0.08</td>
             </tr>
             <tr>
-              <td><strong>TextureSAM-v2 Strict PTD-v4 Set Selector (ours)</strong></td>
-              <td><strong>0.486418</strong></td>
-              <td><strong>0.723768</strong></td>
-              <td><strong>+0.016418</strong></td>
-              <td><strong>+0.103768</strong></td>
+              <td><strong>TextureSAM-v2 Strict PTD-v7 Dual-AI Gate (ours)</strong></td>
+              <td><strong>0.496094</strong></td>
+              <td><strong>0.724123</strong></td>
+              <td><strong>+0.027677</strong></td>
+              <td><strong>+0.107831</strong></td>
             </tr>
           </tbody>
         </table>
@@ -203,9 +203,9 @@
       <h2>Strict RWTD Results (No RWTD Supervision)</h2>
       <div class="metric-grid">
         <article class="metric">
-          <h3>TextureSAM-v2 Strict PTD-v4 Set Selector</h3>
-          <p class="big">mIoU 0.784300</p>
-          <p class="big">ARI 0.690965</p>
+          <h3>TextureSAM-v2 Strict PTD-v7 Dual-AI Gate</h3>
+          <p class="big">mIoU 0.813582</p>
+          <p class="big">ARI 0.708459</p>
         </article>
       </div>
       <p class="note">Only the kept strict model is shown on this page.</p>
@@ -220,9 +220,9 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>TextureSAM-v2 strict PTD-v4 set selector</strong></td>
-              <td><strong>0.784300</strong></td>
-              <td><strong>0.690965</strong></td>
+              <td><strong>TextureSAM-v2 strict PTD-v7 dual-AI gate</strong></td>
+              <td><strong>0.813582</strong></td>
+              <td><strong>0.708459</strong></td>
             </tr>
           </tbody>
         </table>
@@ -235,7 +235,7 @@
         <li><strong>High-recall proposal bank:</strong> official TextureSAM η≤0.3 auto-masks provide candidate fragments per image.</li>
         <li><strong>Texture descriptors:</strong> each candidate gets texture features (handcrafted/PTD encoder based).</li>
         <li><strong>Texture-aware merging:</strong> adjacent, texture-consistent fragments are consolidated.</li>
-        <li><strong>Component-set selection:</strong> a PTD-v4 selector can keep multiple coherent components when evidence supports it.</li>
+        <li><strong>Component-set selection:</strong> a PTD-v7 dual-AI gate keeps v4 predictions by default and applies v6 rescue only on low-coverage evidence.</li>
       </ol>
     </section>
 
@@ -244,7 +244,7 @@
       <ul class="flat-list">
         <li><strong>v2/v3/v4/v5 prompts:</strong> versioned prompt-template families designed to diversify candidate masks.</li>
         <li><strong>Why diverse prompts:</strong> better proposal coverage before consolidation reduces miss risk.</li>
-        <li><strong>Strict PTD-v4 setting:</strong> uses the frozen official η≤0.3 proposal bank for protocol control.</li>
+        <li><strong>Strict PTD-v7 setting:</strong> uses the frozen official η≤0.3 proposal bank for protocol control.</li>
         <li><strong>Average candidate count:</strong> 3.84375 proposal masks per image.</li>
       </ul>
     </section>
@@ -252,17 +252,18 @@
     <section class="panel">
       <h2>Reproducibility (Strict Only)</h2>
       <pre><code>cd /home/galoren/TextureSAM-v2
-PYTHONPATH=. python3 scripts/run_strict_ptd_v4_set_selector.py \
+PYTHONPATH=. python3 scripts/run_strict_ptd_v7_dualgate.py \
   --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root \
   --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle \
-  --baseline-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle \
-  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_on_official0p3</code></pre>
+  --v4-masks-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_on_official0p3_fallbackfix/strict_ptd_v4_set/masks \
+  --v6-masks-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v6_on_official0p3/strict_ptd_v6_coverage/masks \
+  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v7_dualgate_on_official0p3</code></pre>
     </section>
 
     <section class="panel">
       <h2>Links</h2>
       <ul class="flat-list">
-        <li><a href="../texturesam2_strict_protocol_v1/index.html">Strict PTD-v4 visual comparison</a></li>
+        <li><a href="../texturesam2_strict_protocol_v1/index.html">Strict PTD-v7 visual comparison</a></li>
         <li><a href="../texturesam2_supercharged_v2/index.html">Strict-only gallery with official reference table</a></li>
         <li><a href="../texturesam2_strict_protocol_v1/strict_report.html">Detailed strict report</a></li>
         <li><a href="https://drive.google.com/file/d/1dliu1k4PWkZJzeqJtJDI_s9m2Sh6-b-R/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Official Kaust256.zip (RWTD)</a></li>

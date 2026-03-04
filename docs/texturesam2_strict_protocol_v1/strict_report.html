@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TextureSAM-2 Strict PTD-v4 Report (Official 0.3 Proposals, No RWTD Supervision)</title>
+  <title>TextureSAM-2 Strict PTD-v7 Report (Official 0.3 Proposals, No RWTD Supervision)</title>
   <style>
     :root { color-scheme: light; }
     body { margin: 0; font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(180deg, #f5f8fc 0%, #eef4fb 100%); color: #10243d; }
@@ -28,14 +28,14 @@
 <body>
   <main class="wrap">
     <section class="panel">
-      <h1>TextureSAM-2 Strict PTD-v4 Report</h1>
+      <h1>TextureSAM-2 Strict PTD-v7 Report</h1>
       <p>RWTD Kaust256 evaluation under a strict protocol: no RWTD-label training, no RWTD-label hyperparameter search, one-shot final evaluation only. Proposal source is official TextureSAM η≤0.3 auto-masks.</p>
       <p class="links">
         <a href="./index.html">Visual Compare</a>
         <a href="./data.json">Data JSON</a>
-        <a href="./assets/metrics/strict_summary_ptd_v4_set.json">Strict PTD-v4 Summary JSON</a>
-        <a href="./assets/metrics/per_image_strict_ptd_v4_set.csv">Per-image CSV</a>
-        <a href="./assets/metrics/strict_ptd_v4_on_official0p3_single_combined_upstream_eval.json">Upstream-Protocol Eval JSON</a>
+        <a href="./assets/metrics/strict_summary_ptd_v7_dualgate.json">Strict PTD-v7 Summary JSON</a>
+        <a href="./assets/metrics/per_image_strict_ptd_v7_dualgate.csv">Per-image CSV</a>
+        <a href="./assets/metrics/strict_ptd_v7_dualgate_single_combined_upstream_eval.json">Upstream-Protocol Eval JSON</a>
         <a href="../index.html">Home</a>
       </p>
     </section>
@@ -64,8 +64,8 @@
         <li>SAM generates many candidate masks per image (high recall, deliberately over-complete).</li>
         <li>For each mask, we compute texture embeddings (handcrafted or PTD-trained encoder features).</li>
         <li>We build a mask-neighborhood graph and merge pieces that look texture-consistent and spatially connected.</li>
-        <li>From merged components, PTD-v4 can select a coherent foreground component set (not forced single-component).</li>
-        <li>In strict PTD-v4 mode, merge is PTD-v3 learned and foreground selection is PTD-v4 learned component-set scoring.</li>
+        <li>From merged components, PTD-v7 uses a dual-AI decision gate: v4 primary prediction plus v6 rescue on low-coverage evidence.</li>
+        <li>In strict PTD-v7 mode, merge remains PTD-v3 learned while foreground decision uses v4+v6 AI gating.</li>
       </ol>
     </section>
 
@@ -87,10 +87,10 @@
         </article>
         <article>
           <p><strong>Why those texts:</strong> they intentionally diversify candidate masks so true regions are less likely to be missed.</p>
-          <p><strong>Why this is valid:</strong> strict PTD-v4 does not train on RWTD labels; proposal diversity is an input-generation strategy, not test-label fitting.</p>
+          <p><strong>Why this is valid:</strong> strict PTD-v7 does not train on RWTD labels; proposal diversity and dual-gate logic are fixed pre-test.</p>
         </article>
       </div>
-      <p class="small">In this strict PTD-v4 page we evaluate from the frozen v5 proposal bank for clean protocol control.</p>
+      <p class="small">In this strict PTD-v7 page we evaluate from the frozen official η≤0.3 proposal bank for clean protocol control.</p>
     </section>
 
     <section class="panel">
@@ -105,8 +105,8 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>TextureSAM-v2 Strict PTD-v4 Set Selector</strong></td>
-            <td>PTD-v3 learned merge + PTD-v4 learned component-set foreground selection (multi-component aware).</td>
+            <td><strong>TextureSAM-v2 Strict PTD-v7 Dual-AI Gate</strong></td>
+            <td>PTD-v3 learned merge + PTD-v7 dual-AI gate (v4 primary + v6 rescue for low-coverage cases).</td>
             <td>PTD-derived synthetic segmentation only (no RWTD-label training/tuning).</td>
           </tr>
         </tbody>
@@ -114,7 +114,7 @@
     </section>
 
     <section class="panel">
-      <h2>Strict PTD-v4 Results (RWTD, 256 Images, Robust Binary Metric)</h2>
+      <h2>Strict PTD-v7 Results (RWTD, 256 Images, Robust Binary Metric)</h2>
       <table>
         <thead>
           <tr>
@@ -125,9 +125,9 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>TextureSAM-v2 strict PTD-v4 set selector</strong></td>
-            <td><strong>0.784300</strong></td>
-            <td><strong>0.690965</strong></td>
+            <td><strong>TextureSAM-v2 strict PTD-v7 dual-AI gate</strong></td>
+            <td><strong>0.813582</strong></td>
+            <td><strong>0.708459</strong></td>
           </tr>
         </tbody>
       </table>
@@ -150,9 +150,9 @@
             <td>0.616292</td>
           </tr>
           <tr>
-            <td><strong>TextureSAM-v2 strict PTD-v4 on official η≤0.3 proposals</strong></td>
-            <td><strong>0.486418</strong></td>
-            <td><strong>0.723768</strong></td>
+            <td><strong>TextureSAM-v2 strict PTD-v7 on official η≤0.3 proposals</strong></td>
+            <td><strong>0.496094</strong></td>
+            <td><strong>0.724123</strong></td>
           </tr>
         </tbody>
       </table>
@@ -231,13 +231,13 @@
     </section>
 
     <section class="panel">
-      <h2>PTD-v4 Training Signals</h2>
+      <h2>PTD-v6 Rescue-Model Training Signals</h2>
       <ul>
-        <li>Set-selector validation AUC: 0.999218</li>
-        <li>Set-selector best F1: 0.988878</li>
-        <li>Selector threshold: 0.30</li>
+        <li>Validation AUC (classifier): 0.997351</li>
+        <li>Best F1 (classifier): 0.983883</li>
+        <li>Selector threshold: 0.35</li>
       </ul>
-      <p class="small">Raw metrics file: <a href="./assets/metrics/ptd_v4_set_metrics.json">ptd_v4_set_metrics.json</a>.</p>
+      <p class="small">Raw metrics file: <a href="./assets/metrics/ptd_v4_set_metrics.json">ptd_v4_set_metrics.json</a> (legacy) and v6 training log in TextureSAM-v2 artifacts.</p>
     </section>
 
     <section class="panel">
@@ -251,9 +251,9 @@
     </section>
 
     <section class="panel">
-      <h2>Repro Command (Strict PTD-v4)</h2>
+      <h2>Repro Command (Strict PTD-v7 Dual Gate)</h2>
       <p class="mono">cd /home/galoren/TextureSAM-v2</p>
-      <p class="mono">PYTHONPATH=. python3 scripts/run_strict_ptd_v4_set_selector.py --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle --baseline-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_on_official0p3</p>
+      <p class="mono">PYTHONPATH=. python3 scripts/run_strict_ptd_v7_dualgate.py --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle --v4-masks-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_on_official0p3_fallbackfix/strict_ptd_v4_set/masks --v6-masks-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v6_on_official0p3/strict_ptd_v6_coverage/masks --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v7_dualgate_on_official0p3</p>
     </section>
   </main>
 </body>
