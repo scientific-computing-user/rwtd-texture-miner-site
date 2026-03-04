@@ -96,3 +96,9 @@ This audit checks the discrepancy between:
 - Initial confirmed progress:
   - `image_id=2`, `num_masks=4`, `time=241.50s` (CPU)
   - Indicates expected total runtime on CPU is long (many hours for all 256 images).
+- Live ETA update (March 4, 2026, 00:55 UTC):
+  - Processed: `5 / 256`
+  - Mean time/image: `241.67s`
+  - Estimated remaining time: `~16.85 hours`
+- Auto-publish watcher is active:
+  - On completion it will run full upstream evaluation and push updated artifacts to GitHub Pages automatically.
