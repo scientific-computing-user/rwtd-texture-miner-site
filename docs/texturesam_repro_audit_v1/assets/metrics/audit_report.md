@@ -9,6 +9,30 @@ This audit checks the discrepancy between:
 - Paper/official repo RWTD table values (TextureSAM `eta<=0.3`: `mIoU 0.47`, `ARI 0.62`, aggregated `mIoU ~0.75`)
 - Local website numbers from the v5 prompt-based pipeline
 
+## Direct RWTD Comparison (Requested)
+
+Official TextureSAM paper/repo RWTD references:
+
+- SAM-2: `mIoU 0.26`, `ARI 0.36`
+- SAM-2*: `mIoU 0.14`, `ARI 0.19`
+- TextureSAM `eta<=0.3`: `mIoU 0.47`, `ARI 0.62` (primary reference)
+- TextureSAM `eta<=1.0`: `mIoU 0.42`, `ARI 0.54`
+
+Our RWTD results (current):
+
+- v5 prompt-proxy baseline: `mIoU 0.4680`, `ARI 0.2730`
+- TextureSAM-v2 strict PTD-v2 learned: `mIoU 0.7177`, `ARI 0.3768`
+- TextureSAM-v2 strict PTD-v3 graph: `mIoU 0.6857`, `ARI 0.5245`
+- TextureSAM-v2 strict PTD-v3 fusion: `mIoU 0.7179`, `ARI 0.3811`
+- TextureSAM-2 robust CV+refine (exploratory): `mIoU 0.8238`, `ARI 0.6667`
+
+Delta vs official TextureSAM `eta<=0.3` (`0.47 / 0.62`):
+
+- strict PTD-v2 learned: `+0.2477 mIoU`, `-0.2432 ARI`
+- strict PTD-v3 graph: `+0.2157 mIoU`, `-0.0955 ARI`
+- strict PTD-v3 fusion: `+0.2479 mIoU`, `-0.2389 ARI`
+- robust CV+refine (exploratory): `+0.3538 mIoU`, `+0.0467 ARI`
+
 ## What was verified
 
 1. Upstream source of truth

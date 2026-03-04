@@ -141,6 +141,100 @@
     </section>
 
     <section class="card" style="margin-bottom:14px;">
+      <h2>Direct Comparison: Official TextureSAM vs Our Methods (RWTD)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Protocol</th>
+            <th>RWTD mIoU</th>
+            <th>RWTD ARI</th>
+            <th>Δ mIoU vs TextureSAM η≤0.3 (0.47)</th>
+            <th>Δ ARI vs TextureSAM η≤0.3 (0.62)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SAM-2 (official)</td>
+            <td>Paper/Repo Table 1</td>
+            <td>0.26</td>
+            <td>0.36</td>
+            <td class="bad">-0.21</td>
+            <td class="bad">-0.26</td>
+          </tr>
+          <tr>
+            <td>SAM-2* (official)</td>
+            <td>Paper/Repo Table 1</td>
+            <td>0.14</td>
+            <td>0.19</td>
+            <td class="bad">-0.33</td>
+            <td class="bad">-0.43</td>
+          </tr>
+          <tr>
+            <td>TextureSAM η≤0.3 (official reference)</td>
+            <td>Paper/Repo Table 1</td>
+            <td><strong>0.47</strong></td>
+            <td><strong>0.62</strong></td>
+            <td>+0.00</td>
+            <td>+0.00</td>
+          </tr>
+          <tr>
+            <td>TextureSAM η≤1.0 (official)</td>
+            <td>Paper/Repo Table 1</td>
+            <td>0.42</td>
+            <td>0.54</td>
+            <td class="bad">-0.05</td>
+            <td class="bad">-0.08</td>
+          </tr>
+          <tr>
+            <td>v5 prompt-proxy baseline (ours)</td>
+            <td>Local proxy pipeline</td>
+            <td>0.4680</td>
+            <td>0.2730</td>
+            <td class="bad">-0.0020</td>
+            <td class="bad">-0.3470</td>
+          </tr>
+          <tr>
+            <td>TextureSAM-v2 strict PTD-v2 learned (ours)</td>
+            <td>No RWTD supervision (strict)</td>
+            <td>0.7177</td>
+            <td>0.3768</td>
+            <td class="good">+0.2477</td>
+            <td class="bad">-0.2432</td>
+          </tr>
+          <tr>
+            <td>TextureSAM-v2 strict PTD-v3 graph (ours)</td>
+            <td>No RWTD supervision (strict)</td>
+            <td>0.6857</td>
+            <td>0.5245</td>
+            <td class="good">+0.2157</td>
+            <td class="bad">-0.0955</td>
+          </tr>
+          <tr>
+            <td>TextureSAM-v2 strict PTD-v3 fusion (ours)</td>
+            <td>No RWTD supervision (strict)</td>
+            <td>0.7179</td>
+            <td>0.3811</td>
+            <td class="good">+0.2479</td>
+            <td class="bad">-0.2389</td>
+          </tr>
+          <tr>
+            <td>TextureSAM-2 robust CV+refine (ours)</td>
+            <td>Exploratory RWTD-CV (not strict)</td>
+            <td>0.8238</td>
+            <td>0.6667</td>
+            <td class="good">+0.3538</td>
+            <td class="good">+0.0467</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin-top:10px;">
+        Official rows are copied from Table 1 in the TextureSAM paper/repo. Strict rows are our no-RWTD-supervision methods.
+        Exploratory RWTD-CV rows are shown separately and should not be treated as strict external-generalization claims.
+      </p>
+    </section>
+
+    <section class="card" style="margin-bottom:14px;">
       <h2>Core Discrepancy Findings</h2>
       <table>
         <thead>
@@ -168,8 +262,8 @@
           </tr>
           <tr>
             <td>Checkpoint/Inference</td>
-            <td>Official checkpoint now downloaded; full official run started</td>
-            <td class="good">Exact reproduction path is active</td>
+            <td>Official repo table is baseline source-of-truth; local full rerun intentionally stopped</td>
+            <td class="good">No duplicated baseline computation</td>
           </tr>
         </tbody>
       </table>
@@ -195,8 +289,8 @@
       <p><a href="assets/metrics/v5_prompt_combined_upstream_eval.json">v5 prompt combined eval JSON</a></p>
       <p><a href="assets/metrics/v5_single_combined_upstream_eval.json">v5 single combined eval JSON</a></p>
       <p><a href="assets/metrics/cleanlabel_recompute_summary.json">clean-label recompute summary JSON</a></p>
-      <p><a href="assets/metrics/official_0p3_manifest_partial.csv">official 0.3 run progress manifest (partial)</a></p>
-      <p><a href="assets/metrics/official_0p3_partial_eval.json">official 0.3 partial eval JSON (in progress)</a></p>
+      <p><a href="assets/metrics/official_0p3_manifest_partial.csv">archived local official-0.3 partial run manifest</a></p>
+      <p><a href="assets/metrics/official_0p3_partial_eval.json">archived local official-0.3 partial eval</a></p>
     </section>
   </div>
 
