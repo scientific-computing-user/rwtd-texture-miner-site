@@ -10,7 +10,7 @@ const state = {
 };
 
 const methodColors = {
-  strict_ptd_learned: "#6f59cf",
+  strict_ptd_v9_v7_v8_gate: "#0b7a4f",
 };
 
 const el = {

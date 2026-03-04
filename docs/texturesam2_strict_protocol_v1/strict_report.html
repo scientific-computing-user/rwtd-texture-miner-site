@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TextureSAM-2 Strict PTD-v7 Report (Official 0.3 Proposals, No RWTD Supervision)</title>
+  <title>TextureSAM-2 Strict PTD-v9 Report (Official 0.3 Proposals, No RWTD Supervision)</title>
   <style>
     :root { color-scheme: light; }
     body { margin: 0; font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(180deg, #f5f8fc 0%, #eef4fb 100%); color: #10243d; }
@@ -28,24 +28,24 @@
 <body>
   <main class="wrap">
     <section class="panel">
-      <h1>TextureSAM-2 Strict PTD-v7 Report</h1>
+      <h1>TextureSAM-2 Strict PTD-v9 Report</h1>
       <p>RWTD Kaust256 evaluation under a strict protocol: no RWTD-label training, no RWTD-label hyperparameter search, one-shot final evaluation only. Proposal source is official TextureSAM η≤0.3 auto-masks.</p>
       <p class="links">
         <a href="./index.html">Visual Compare</a>
         <a href="./data.json">Data JSON</a>
-        <a href="./assets/metrics/strict_summary_ptd_v7_dualgate.json">Strict PTD-v7 Summary JSON</a>
-        <a href="./assets/metrics/per_image_strict_ptd_v7_dualgate.csv">Per-image CSV</a>
-        <a href="./assets/metrics/strict_ptd_v7_dualgate_single_combined_upstream_eval.json">Upstream-Protocol Eval JSON</a>
+        <a href="./assets/metrics/strict_summary_ptd_v9_v7_v8_gate.json">Strict PTD-v9 Summary JSON</a>
+        <a href="./assets/metrics/per_image_strict_ptd_v9_v7_v8_gate.csv">Per-image CSV</a>
+        <a href="./assets/metrics/strict_ptd_v9_v7_v8_gate_single_combined_upstream_eval.json">Upstream-Protocol Eval JSON</a>
         <a href="../index.html">Home</a>
       </p>
     </section>
 
     <section class="panel">
       <h2>Abstract</h2>
-      <p><strong>Question:</strong> How do we turn many fragmented SAM texture proposals into one coherent binary mask, without cheating on RWTD test labels?</p>
-      <p><strong>Incentive:</strong> RWTD is binary-mask evaluation, and ARI strongly penalizes fragmentation. Coverage alone is not enough.</p>
-      <p><strong>Intuition:</strong> keep high-recall proposals from SAM, then learn which fragments belong together from a large external texture dataset (PTD), not from RWTD labels.</p>
-      <p><strong>Main thread:</strong> diagnose fragmentation, build PTD-only consolidation models, freeze everything, run RWTD once.</p>
+      <p><strong>Question:</strong> How do we turn fragmented SAM texture proposals into robust RWTD masks, without RWTD leakage?</p>
+      <p><strong>Incentive:</strong> RWTD evaluation rewards accurate texture regions and penalizes fragmentation (ARI).</p>
+      <p><strong>Intuition:</strong> keep high-recall proposals, then use PTD-trained AI consolidation; only switch to aggressive multi-region behavior when low-coverage evidence is clear.</p>
+      <p><strong>Main thread:</strong> PTD-only learned modules (v3, v8) + conservative v9 gate to preserve robustness while fixing under-coverage failures.</p>
     </section>
 
     <section class="panel">
@@ -61,36 +61,12 @@
     <section class="panel">
       <h2>Step-by-Step Pipeline (Easy Words)</h2>
       <ol>
-        <li>SAM generates many candidate masks per image (high recall, deliberately over-complete).</li>
-        <li>For each mask, we compute texture embeddings (handcrafted or PTD-trained encoder features).</li>
-        <li>We build a mask-neighborhood graph and merge pieces that look texture-consistent and spatially connected.</li>
-        <li>From merged components, PTD-v7 uses a dual-AI decision gate: v4 primary prediction plus v6 rescue on low-coverage evidence.</li>
-        <li>In strict PTD-v7 mode, merge remains PTD-v3 learned while foreground decision uses v4+v6 AI gating.</li>
+        <li>SAM generates candidate masks from official TextureSAM η≤0.3 settings.</li>
+        <li>PTD texture embeddings + graph merge produce coherent components (v3).</li>
+        <li>v8 partition model proposes multi-region unions when texture class repeats across disconnected regions.</li>
+        <li>v9 conservative gate keeps v7 by default and only switches to v8 when proposal-union coverage evidence indicates under-segmentation.</li>
+        <li>Final mask is emitted per image with no RWTD-label tuning.</li>
       </ol>
-    </section>
-
-    <section class="panel">
-      <h2>How We Generate Many Candidate Masks</h2>
-      <ul>
-        <li>Source: official TextureSAM η≤0.3 automatic masks at <span class="mono">reports/repro_upstream_eval/official_0p3_masks</span>.</li>
-        <li>Average candidate count used by consolidation: <strong>3.84375 masks/image</strong> (from strict summary).</li>
-        <li>Why so many: the method favors recall first, then solves coherence by consolidation.</li>
-      </ul>
-    </section>
-
-    <section class="panel">
-      <h2>What Are v2/v3/v4/v5 Prompts, and Why Those Texts?</h2>
-      <div class="grid">
-        <article>
-          <p><strong>What they are:</strong> versioned prompt templates for upstream SAM/VLM proposal generation runs.</p>
-          <p><strong>How they differ:</strong> different wording, scan strategy, and attribute phrasing produce complementary proposal sets.</p>
-        </article>
-        <article>
-          <p><strong>Why those texts:</strong> they intentionally diversify candidate masks so true regions are less likely to be missed.</p>
-          <p><strong>Why this is valid:</strong> strict PTD-v7 does not train on RWTD labels; proposal diversity and dual-gate logic are fixed pre-test.</p>
-        </article>
-      </div>
-      <p class="small">In this strict PTD-v7 page we evaluate from the frozen official η≤0.3 proposal bank for clean protocol control.</p>
     </section>
 
     <section class="panel">
@@ -105,8 +81,8 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>TextureSAM-v2 Strict PTD-v7 Dual-AI Gate</strong></td>
-            <td>PTD-v3 learned merge + PTD-v7 dual-AI gate (v4 primary + v6 rescue for low-coverage cases).</td>
+            <td><strong>TextureSAM-v2 Strict PTD-v9 Conservative Gate</strong></td>
+            <td>v7 robust path by default + v8 multi-region rescue when low-coverage criteria are met.</td>
             <td>PTD-derived synthetic segmentation only (no RWTD-label training/tuning).</td>
           </tr>
         </tbody>
@@ -114,7 +90,7 @@
     </section>
 
     <section class="panel">
-      <h2>Strict PTD-v7 Results (RWTD, 256 Images, Robust Binary Metric)</h2>
+      <h2>Strict Results (RWTD, 256 Images, Robust Binary Metric)</h2>
       <table>
         <thead>
           <tr>
@@ -125,9 +101,14 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>TextureSAM-v2 strict PTD-v7 dual-AI gate</strong></td>
-            <td><strong>0.813582</strong></td>
-            <td><strong>0.708459</strong></td>
+            <td>TextureSAM-v2 strict PTD-v7 dual-AI gate</td>
+            <td>0.813582</td>
+            <td>0.708459</td>
+          </tr>
+          <tr>
+            <td><strong>TextureSAM-v2 strict PTD-v9 conservative gate</strong></td>
+            <td><strong>0.844814</strong></td>
+            <td><strong>0.717345</strong></td>
           </tr>
         </tbody>
       </table>
@@ -150,9 +131,14 @@
             <td>0.616292</td>
           </tr>
           <tr>
-            <td><strong>TextureSAM-v2 strict PTD-v7 on official η≤0.3 proposals</strong></td>
-            <td><strong>0.496094</strong></td>
-            <td><strong>0.724123</strong></td>
+            <td>TextureSAM-v2 strict PTD-v7 on official η≤0.3 proposals</td>
+            <td>0.496094</td>
+            <td>0.724123</td>
+          </tr>
+          <tr>
+            <td><strong>TextureSAM-v2 strict PTD-v9 on official η≤0.3 proposals</strong></td>
+            <td><strong>0.511786</strong></td>
+            <td>0.721708</td>
           </tr>
         </tbody>
       </table>
@@ -218,42 +204,10 @@
     </section>
 
     <section class="panel">
-      <h2>Official TextureSAM Assets (GitHub Drive Link)</h2>
-      <p class="small">From the official TextureSAM Google Drive folder linked in their repo README.</p>
-      <ul>
-        <li><a href="https://drive.google.com/file/d/1dliu1k4PWkZJzeqJtJDI_s9m2Sh6-b-R/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Kaust256.zip (RWTD images/labels)</a></li>
-        <li><a href="https://drive.google.com/file/d/1Sv0il6Ret6c88QMG2o5jB5SHSTdNBhdh/view?usp=drive_link" target="_blank" rel="noopener noreferrer">checkpoints.zip (TextureSAM checkpoints)</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1pUJLa898WYEcb4Y_sOaXsSVe-CsPkwRv?usp=drive_link" target="_blank" rel="noopener noreferrer">TextureSAM Datasets and checkpoints (root folder)</a></li>
-      </ul>
-      <p class="small">
-        Folder listing currently exposes dataset/checkpoint archives; per-image RWTD prediction runs and evaluation CSVs are not published there as standalone artifacts.
-      </p>
-    </section>
-
-    <section class="panel">
-      <h2>PTD-v6 Rescue-Model Training Signals</h2>
-      <ul>
-        <li>Validation AUC (classifier): 0.997351</li>
-        <li>Best F1 (classifier): 0.983883</li>
-        <li>Selector threshold: 0.35</li>
-      </ul>
-      <p class="small">Raw metrics file: <a href="./assets/metrics/ptd_v4_set_metrics.json">ptd_v4_set_metrics.json</a> (legacy) and v6 training log in TextureSAM-v2 artifacts.</p>
-    </section>
-
-    <section class="panel">
-      <h2>Why This Is Not Benchmark Manipulation</h2>
-      <ul>
-        <li>No RWTD-label training.</li>
-        <li>No RWTD-label hyperparameter tuning.</li>
-        <li>External learning comes from PTD and PTD-derived synthetic masks.</li>
-        <li>Method is designed around a general texture-coherence principle, then tested on RWTD once.</li>
-      </ul>
-    </section>
-
-    <section class="panel">
-      <h2>Repro Command (Strict PTD-v7 Dual Gate)</h2>
+      <h2>Repro Commands</h2>
       <p class="mono">cd /home/galoren/TextureSAM-v2</p>
-      <p class="mono">PYTHONPATH=. python3 scripts/run_strict_ptd_v7_dualgate.py --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle --v4-masks-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_on_official0p3_fallbackfix/strict_ptd_v4_set/masks --v6-masks-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v6_on_official0p3/strict_ptd_v6_coverage/masks --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v7_dualgate_on_official0p3</p>
+      <p class="mono">PYTHONPATH=. python3 scripts/run_strict_ptd_v8_partition.py --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle --baseline-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_masks --ptd-root /home/galoren/repo/data/ptd --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v8_on_official0p3_fast</p>
+      <p class="mono">PYTHONPATH=. python3 scripts/run_strict_ptd_v9_v7_v8_gate.py --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle --v7-masks-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v7_dualgate_on_official0p3/strict_ptd_v7_dualgate/masks --v8-masks-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v8_on_official0p3_fast/strict_ptd_v8_partition/masks --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v9_v7v8_on_official0p3</p>
     </section>
   </main>
 </body>

@@ -1,0 +1,6 @@
+{
+  "miou": 0.8448140304210685,
+  "ari": 0.7173450233766954,
+  "num_images": 256,
+  "method": "TextureSAM-v2 Strict PTD-v9 Conservative Gate (v7 + v8, PTD-only, No RWTD Supervision)"
+}
