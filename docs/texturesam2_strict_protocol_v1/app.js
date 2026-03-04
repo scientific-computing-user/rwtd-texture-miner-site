@@ -211,19 +211,35 @@ function renderTopSummary() {
 
 function renderScoreboard() {
   const baseline = qMethod("baseline_v5");
+  const winner = [...state.data.methods].sort((a, b) => {
+    if (b.miou !== a.miou) return b.miou - a.miou;
+    if (b.ari !== a.ari) return b.ari - a.ari;
+    return a.name.localeCompare(b.name);
+  })[0];
+  const bestMiou = Math.max(...state.data.methods.map((m) => m.miou));
+  const bestAri = Math.max(...state.data.methods.map((m) => m.ari));
+  const bestDeltaI = Math.max(...state.data.methods.map((m) => m.miou - baseline.miou));
+  const bestDeltaA = Math.max(...state.data.methods.map((m) => m.ari - baseline.ari));
   const cards = state.data.methods.map((m) => {
     const dI = m.miou - baseline.miou;
     const dA = m.ari - baseline.ari;
     const clsI = dI >= 0 ? "delta-up" : "delta-dn";
     const clsA = dA >= 0 ? "delta-up" : "delta-dn";
+    const bestIClass = m.miou >= bestMiou - 1e-12 ? "best-score" : "";
+    const bestAClass = m.ari >= bestAri - 1e-12 ? "best-score" : "";
+    const bestDIClass = dI >= bestDeltaI - 1e-12 ? " best-score" : "";
+    const bestDAClass = dA >= bestDeltaA - 1e-12 ? " best-score" : "";
+    const isWinner = winner && m.id === winner.id;
+    const winnerBadge = isWinner ? '<div class="winner-badge">WINNER</div>' : "";
 
     return `
-      <div class="score-cell">
+      <div class="score-cell ${isWinner ? "winner" : ""}">
         <h3>${esc(m.name)}</h3>
-        <div class="score-main"><span>mIoU</span><b>${fmt(m.miou)}</b></div>
-        <div class="score-main"><span>ARI</span><b>${fmt(m.ari)}</b></div>
-        <div class="score-main"><span>ΔIoU</span><b class="${clsI}">${dI >= 0 ? "+" : ""}${fmt(dI)}</b></div>
-        <div class="score-main"><span>ΔARI</span><b class="${clsA}">${dA >= 0 ? "+" : ""}${fmt(dA)}</b></div>
+        ${winnerBadge}
+        <div class="score-main"><span>mIoU</span><b class="${bestIClass}">${fmt(m.miou)}</b></div>
+        <div class="score-main"><span>ARI</span><b class="${bestAClass}">${fmt(m.ari)}</b></div>
+        <div class="score-main"><span>ΔIoU</span><b class="${clsI}${bestDIClass}">${dI >= 0 ? "+" : ""}${fmt(dI)}</b></div>
+        <div class="score-main"><span>ΔARI</span><b class="${clsA}${bestDAClass}">${dA >= 0 ? "+" : ""}${fmt(dA)}</b></div>
       </div>
     `;
   });

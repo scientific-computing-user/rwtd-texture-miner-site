@@ -208,6 +208,12 @@ input[type="range"] { padding: 0; }
   font-size: 22px;
 }
 
+.score-note {
+  margin: -4px 0 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .score-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(160px, 1fr));
@@ -219,6 +225,25 @@ input[type="range"] { padding: 0; }
   border-radius: 12px;
   padding: 10px;
   background: #f8fbff;
+}
+
+.score-cell.winner {
+  border: 2px solid #0f5b2f;
+  background: #f2fbf4;
+  box-shadow: 0 0 0 2px #0f5b2f1f inset;
+}
+
+.winner-badge {
+  display: inline-block;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #0f5b2f;
+  color: #0f5b2f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
 }
 
 .score-cell h3 {
@@ -238,6 +263,11 @@ input[type="range"] { padding: 0; }
 .score-main b {
   color: var(--ink);
   font-size: 15px;
+}
+
+.best-score {
+  color: #0f5b2f !important;
+  font-weight: 800;
 }
 
 .focus {
