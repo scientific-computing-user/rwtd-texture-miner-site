@@ -21,14 +21,14 @@ Official TextureSAM paper/repo RWTD references:
 Our RWTD results (current):
 
 - local proxy diagnostic (archived): `mIoU 0.4680`, `ARI 0.2730`
-- TextureSAM-v2 strict PTD-v2 learned: `mIoU 0.7177`, `ARI 0.3768`
+- TextureSAM-v2 strict PTD-v4 set selector: `mIoU 0.7740`, `ARI 0.5511`
 - TextureSAM-v2 strict PTD-v3 graph: `mIoU 0.6857`, `ARI 0.5245`
 - TextureSAM-v2 strict PTD-v3 fusion: `mIoU 0.7179`, `ARI 0.3811`
 - TextureSAM-2 robust CV+refine (exploratory): `mIoU 0.8238`, `ARI 0.6667`
 
 Delta vs official TextureSAM `eta<=0.3` (`0.47 / 0.62`):
 
-- strict PTD-v2 learned: `+0.2477 mIoU`, `-0.2432 ARI`
+- strict PTD-v4 set selector: `+0.3040 mIoU`, `-0.0689 ARI`
 - strict PTD-v3 graph: `+0.2157 mIoU`, `-0.0955 ARI`
 - strict PTD-v3 fusion: `+0.2479 mIoU`, `-0.2389 ARI`
 - robust CV+refine (exploratory): `+0.3538 mIoU`, `+0.0467 ARI`

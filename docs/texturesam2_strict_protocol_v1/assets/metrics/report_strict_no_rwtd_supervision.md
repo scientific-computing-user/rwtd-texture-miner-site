@@ -11,13 +11,13 @@ Dataset: `rwtd_kaust256` (256 images)
 
 ## Methods compared
 
-1. TextureSAM-v2 strict PTD learned consolidator (frozen strict config)
+1. TextureSAM-v2 strict PTD-v4 set-selector consolidator (frozen strict config)
 
 ## Results
 
 | Method | mIoU | ARI |
 |---|---:|---:|
-| **TextureSAM-v2 strict PTD learned** | **0.717714** | **0.376768** |
+| **TextureSAM-v2 strict PTD-v4 set selector** | **0.774049** | **0.551079** |
 
 ## Fixed configuration (frozen)
 
@@ -36,9 +36,10 @@ Dataset: `rwtd_kaust256` (256 images)
 
 ```bash
 cd /home/galoren/TextureSAM-v2
-PYTHONPATH=. python3 scripts/run_strict_no_rwtd_supervision.py \
+PYTHONPATH=. python3 scripts/run_strict_ptd_v4_set_selector.py \
   --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
   --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
   --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks \
-  --out-root /home/galoren/TextureSAM-v2/reports/strict_no_rwtd_supervision_v1
+  --ptd-root /home/galoren/repo/data/ptd \
+  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_set_full256
 ```

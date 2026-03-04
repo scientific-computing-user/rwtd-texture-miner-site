@@ -1,0 +1,8 @@
+{
+  "num_samples_generated": 270,
+  "selector_threshold": 0.3,
+  "train_examples": 1734,
+  "val_auc": 0.9992183428869202,
+  "val_examples": 898,
+  "val_f1_best": 0.9888776541961577
+}
