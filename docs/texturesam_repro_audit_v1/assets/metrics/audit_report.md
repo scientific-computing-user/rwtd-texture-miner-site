@@ -92,13 +92,6 @@ This audit checks the discrepancy between:
 
 ## Current run status
 
-- Full official `0.3` checkpoint inference has been launched with resume mode.
-- Initial confirmed progress:
-  - `image_id=2`, `num_masks=4`, `time=241.50s` (CPU)
-  - Indicates expected total runtime on CPU is long (many hours for all 256 images).
-- Live ETA update (March 4, 2026, 00:55 UTC):
-  - Processed: `5 / 256`
-  - Mean time/image: `241.67s`
-  - Estimated remaining time: `~16.85 hours`
-- Auto-publish watcher is active:
-  - On completion it will run full upstream evaluation and push updated artifacts to GitHub Pages automatically.
+- A local full rerun of official `0.3` checkpoint inference was started and validated, then intentionally stopped.
+- Reason: the user requested to avoid duplicating work already reported in the official TextureSAM repository.
+- Therefore, baseline source-of-truth is now the official repo/paper table, while this page is used for protocol reconciliation and transparency.
