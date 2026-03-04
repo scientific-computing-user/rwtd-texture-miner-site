@@ -29,6 +29,62 @@
       <div class="hero-right" id="top-summary"></div>
     </header>
 
+    <section class="official-results card">
+      <div class="official-head">
+        <h2>Official TextureSAM Results (Paper / GitHub)</h2>
+        <p>
+          Values below are the official Table 1 non-aggregated metrics, exactly as reported.
+          Source:
+          <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Cohen_Decoupling_Shape_and_Texture_in_SAM-2_via_Controlled_Texture_Replacement_WACV_2026_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a>
+          and
+          <a href="https://github.com/Scientific-Computing-Lab/TextureSAM" target="_blank" rel="noopener noreferrer">repo</a>.
+        </p>
+      </div>
+      <div class="official-wrap">
+        <table class="official-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>STMD mIoU</th>
+              <th>STMD ARI</th>
+              <th>RWTD mIoU</th>
+              <th>RWTD ARI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SAM-2</td>
+              <td>0.07</td>
+              <td>0.16</td>
+              <td>0.26</td>
+              <td>0.36</td>
+            </tr>
+            <tr>
+              <td>SAM-2*</td>
+              <td>0.17</td>
+              <td>0.16</td>
+              <td>0.14</td>
+              <td>0.19</td>
+            </tr>
+            <tr>
+              <td>TextureSAM η≤0.3</td>
+              <td>0.33</td>
+              <td>0.32</td>
+              <td><strong>0.47</strong></td>
+              <td><strong>0.62</strong></td>
+            </tr>
+            <tr>
+              <td>TextureSAM η≤1.0</td>
+              <td><strong>0.35</strong></td>
+              <td><strong>0.34</strong></td>
+              <td>0.42</td>
+              <td>0.54</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="controls card">
       <label>
         Highlight Method

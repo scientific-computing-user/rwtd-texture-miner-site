@@ -116,6 +116,53 @@ body {
 .top-pill b { display: block; font-size: 20px; color: #fff; }
 .top-pill span { font-size: 12px; color: #d7ecff; }
 
+.official-results {
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.official-head h2 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+}
+
+.official-head p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.official-head a {
+  color: var(--accent);
+}
+
+.official-wrap {
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.official-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.official-table th,
+.official-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.official-table th {
+  background: #f0f7ff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
 .controls {
   margin-top: 16px;
   padding: 14px;
