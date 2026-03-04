@@ -17,7 +17,7 @@ Dataset: `rwtd_kaust256` (256 images)
 
 | Method | mIoU | ARI |
 |---|---:|---:|
-| **TextureSAM-v2 strict PTD-v4 set selector** | **0.774049** | **0.551079** |
+| **TextureSAM-v2 strict PTD-v4 set selector** | **0.784300** | **0.690965** |
 
 ## Fixed configuration (frozen)
 
@@ -37,9 +37,8 @@ Dataset: `rwtd_kaust256` (256 images)
 ```bash
 cd /home/galoren/TextureSAM-v2
 PYTHONPATH=. python3 scripts/run_strict_ptd_v4_set_selector.py \
-  --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
-  --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
-  --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks \
-  --ptd-root /home/galoren/repo/data/ptd \
-  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_set_full256
+  --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root \
+  --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle \
+  --baseline-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle \
+  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_on_official0p3
 ```

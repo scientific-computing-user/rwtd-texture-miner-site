@@ -114,10 +114,10 @@
             </tr>
             <tr>
               <td><strong>TextureSAM-v2 Strict PTD-v4 Set Selector (ours)</strong></td>
-              <td><strong>0.774049</strong></td>
-              <td><strong>0.551079</strong></td>
-              <td><strong>+0.304049</strong></td>
-              <td><strong>-0.068921</strong></td>
+              <td><strong>0.486418</strong></td>
+              <td><strong>0.723768</strong></td>
+              <td><strong>+0.016418</strong></td>
+              <td><strong>+0.103768</strong></td>
             </tr>
           </tbody>
         </table>
@@ -204,8 +204,8 @@
       <div class="metric-grid">
         <article class="metric">
           <h3>TextureSAM-v2 Strict PTD-v4 Set Selector</h3>
-          <p class="big">mIoU 0.774049</p>
-          <p class="big">ARI 0.551079</p>
+          <p class="big">mIoU 0.784300</p>
+          <p class="big">ARI 0.690965</p>
         </article>
       </div>
       <p class="note">Only the kept strict model is shown on this page.</p>
@@ -221,8 +221,8 @@
           <tbody>
             <tr>
               <td><strong>TextureSAM-v2 strict PTD-v4 set selector</strong></td>
-              <td><strong>0.774049</strong></td>
-              <td><strong>0.551079</strong></td>
+              <td><strong>0.784300</strong></td>
+              <td><strong>0.690965</strong></td>
             </tr>
           </tbody>
         </table>
@@ -232,7 +232,7 @@
     <section class="panel">
       <h2>Pipeline Stages</h2>
       <ol class="flat-list">
-        <li><strong>High-recall proposal bank:</strong> SAM prompt-masks (v5 bank) provide many candidate fragments per image.</li>
+        <li><strong>High-recall proposal bank:</strong> official TextureSAM η≤0.3 auto-masks provide candidate fragments per image.</li>
         <li><strong>Texture descriptors:</strong> each candidate gets texture features (handcrafted/PTD encoder based).</li>
         <li><strong>Texture-aware merging:</strong> adjacent, texture-consistent fragments are consolidated.</li>
         <li><strong>Component-set selection:</strong> a PTD-v4 selector can keep multiple coherent components when evidence supports it.</li>
@@ -244,8 +244,8 @@
       <ul class="flat-list">
         <li><strong>v2/v3/v4/v5 prompts:</strong> versioned prompt-template families designed to diversify candidate masks.</li>
         <li><strong>Why diverse prompts:</strong> better proposal coverage before consolidation reduces miss risk.</li>
-        <li><strong>Strict PTD-v4 setting:</strong> uses the frozen v5 prompt-mask bank for protocol control.</li>
-        <li><strong>Average candidate count:</strong> 25.875 proposal masks per image.</li>
+        <li><strong>Strict PTD-v4 setting:</strong> uses the frozen official η≤0.3 proposal bank for protocol control.</li>
+        <li><strong>Average candidate count:</strong> 3.84375 proposal masks per image.</li>
       </ul>
     </section>
 
@@ -253,11 +253,10 @@
       <h2>Reproducibility (Strict Only)</h2>
       <pre><code>cd /home/galoren/TextureSAM-v2
 PYTHONPATH=. python3 scripts/run_strict_ptd_v4_set_selector.py \
-  --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
-  --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
-  --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks \
-  --ptd-root /home/galoren/repo/data/ptd \
-  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_set_full256</code></pre>
+  --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root \
+  --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle \
+  --baseline-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle \
+  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_on_official0p3</code></pre>
     </section>
 
     <section class="panel">

@@ -1,0 +1,18 @@
+{
+  "pred_folder": "/home/galoren/TextureSAM-v2/reports/repro_upstream_eval/strict_ptd_v4_on_official0p3_single_official",
+  "gt_folder": "/home/galoren/TextureSAM_upstream_20260303/Kaust256/labeles",
+  "noagg_official": {
+    "script": "eval_no_agg_masks.py (official import)",
+    "num_gt_images": 256,
+    "num_pred_image_ids": 256,
+    "num_gt_instances_evaluated": 512,
+    "overall_average_iou": 0.4864184025946193,
+    "overall_average_rand_index": 0.7237680450708758
+  },
+  "agg_like_custom": {
+    "num_images": 256,
+    "mean_iou": 0.5144630767349969,
+    "mean_iou_inverse": 0.5334435160339257,
+    "mean_iou_rwtd_average": 0.5239532963844613
+  }
+}

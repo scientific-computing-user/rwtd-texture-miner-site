@@ -19,15 +19,15 @@
 5. In strict PTD-v4 mode, merge is PTD-v3 learned and component-set selection is PTD-v4 learned.
 
 ## Candidate Generation and Prompts
-- Strict PTD-v4 uses frozen v5 prompt-mask bank.
-- Mean proposal count: **25.875 masks/image**.
+- Strict PTD-v4 uses frozen official TextureSAM `η<=0.3` proposal masks.
+- Mean proposal count: **3.84375 masks/image**.
 - v2/v3/v4/v5 are versioned prompt-template families used upstream to create complementary candidate distributions.
 - Prompt text diversity is used for proposal recall, not for RWTD-label fitting.
 
 ## Results (RWTD 256)
 | Method | mIoU | ARI |
 |---|---:|---:|
-| **TextureSAM-v2 strict PTD-v4 set selector** | **0.774049** | **0.551079** |
+| **TextureSAM-v2 strict PTD-v4 set selector** | **0.784300** | **0.690965** |
 
 Only the kept strict model is shown on this page.
 
@@ -40,9 +40,8 @@ Only the kept strict model is shown on this page.
 ```bash
 cd /home/galoren/TextureSAM-v2
 PYTHONPATH=. python3 scripts/run_strict_ptd_v4_set_selector.py \
-  --rwtd-root /home/galoren/rwtd_partition_nonsam/data/rwtd_kaust256 \
-  --prompt-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/prompt_masks \
-  --baseline-masks-root /home/galoren/rwtd_miner_public_site/texow_sam_vlm_freeform_rwtd_v5_qwen3_multiscale_attr/predictions/masks \
-  --ptd-root /home/galoren/repo/data/ptd \
-  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_set_full256
+  --rwtd-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/tmp_rwtd_official_root \
+  --prompt-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle \
+  --baseline-masks-root /home/galoren/TextureSAM-v2/reports/repro_upstream_eval/official_0p3_promptstyle \
+  --out-root /home/galoren/TextureSAM-v2/reports/strict_ptd_v4_on_official0p3
 ```
