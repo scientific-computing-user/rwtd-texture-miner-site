@@ -25,14 +25,11 @@
 - Prompt text diversity is used for proposal recall, not for RWTD-label fitting.
 
 ## Results (RWTD 256)
-| Method | mIoU | ARI | Delta mIoU vs baseline | Delta ARI vs baseline |
-|---|---:|---:|---:|---:|
-| v5 prompt-proxy baseline (not paper SAM-2/TextureSAM) | 0.467954 | 0.273033 | +0.000000 | +0.000000 |
-| TextureSAM-v2 strict handcrafted | 0.655111 | 0.296329 | +0.187156 | +0.023296 |
-| TextureSAM-v2 strict PTD heuristic | 0.653423 | 0.289793 | +0.185468 | +0.016760 |
-| **TextureSAM-v2 strict PTD learned** | **0.717714** | **0.376768** | **+0.249759** | **+0.103735** |
+| Method | mIoU | ARI |
+|---|---:|---:|
+| **TextureSAM-v2 strict PTD learned** | **0.717714** | **0.376768** |
 
-Best strict method vs strict handcrafted: **+0.062603 mIoU**, **+0.080439 ARI**.
+Only the kept strict model is shown on this page.
 
 ## PTD Learned Training Metrics
 - Pairwise merge validation AUC: 0.995264

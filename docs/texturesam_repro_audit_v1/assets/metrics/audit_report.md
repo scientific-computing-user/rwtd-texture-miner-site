@@ -20,7 +20,7 @@ Official TextureSAM paper/repo RWTD references:
 
 Our RWTD results (current):
 
-- v5 prompt-proxy baseline: `mIoU 0.4680`, `ARI 0.2730`
+- local proxy diagnostic (archived): `mIoU 0.4680`, `ARI 0.2730`
 - TextureSAM-v2 strict PTD-v2 learned: `mIoU 0.7177`, `ARI 0.3768`
 - TextureSAM-v2 strict PTD-v3 graph: `mIoU 0.6857`, `ARI 0.5245`
 - TextureSAM-v2 strict PTD-v3 fusion: `mIoU 0.7179`, `ARI 0.3811`

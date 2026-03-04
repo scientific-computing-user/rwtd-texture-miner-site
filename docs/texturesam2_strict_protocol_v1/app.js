@@ -10,7 +10,6 @@ const state = {
 };
 
 const methodColors = {
-  baseline_v5: "#d66a0e",
   strict_ptd_learned: "#6f59cf",
 };
 
@@ -119,7 +118,6 @@ async function drawMethodCanvas(canvas, originalSrc, maskSrc, colorHex, alpha) {
   drawImageContain(ctx, tinted, w, h);
   ctx.globalAlpha = 1.0;
 
-  // subtle frame for foreground structure
   ctx.strokeStyle = "rgba(255,255,255,0.45)";
   ctx.lineWidth = 1;
   ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
@@ -184,49 +182,43 @@ function setupControls() {
 
 function renderTopSummary() {
   const methods = state.data.methods;
-  const baseline = methods.find((m) => m.id === "baseline_v5");
-  const strictBest = methods
-    .filter((m) => m.id !== "baseline_v5")
-    .sort((a, b) => b.miou - a.miou)[0];
+  const best = [...methods].sort((a, b) => {
+    if (b.miou !== a.miou) return b.miou - a.miou;
+    if (b.ari !== a.ari) return b.ari - a.ari;
+    return a.name.localeCompare(b.name);
+  })[0];
 
-  if (!baseline || !strictBest) {
+  if (!best) {
     el.topSummary.innerHTML = `<div class="top-pill"><span>Images</span><b>${state.data.num_images}</b></div>`;
     return;
   }
 
-  const deltaStrict = {
-    iou: strictBest.miou - baseline.miou,
-    ari: strictBest.ari - baseline.ari,
-  };
-
   el.topSummary.innerHTML = `
     <div class="top-pill"><span>Images</span><b>${state.data.num_images}</b></div>
-    <div class="top-pill"><span>Strict Best</span><b>${esc(strictBest.name)}: ${fmt(strictBest.miou, 4)} / ${fmt(strictBest.ari, 4)}</b></div>
-    <div class="top-pill"><span>Strict Gain vs Baseline</span><b>${deltaStrict.iou >= 0 ? "+" : ""}${fmt(deltaStrict.iou, 4)} / ${deltaStrict.ari >= 0 ? "+" : ""}${fmt(deltaStrict.ari, 4)}</b></div>
+    <div class="top-pill"><span>Our Kept Model</span><b>${esc(best.name)}: ${fmt(best.miou, 4)} / ${fmt(best.ari, 4)}</b></div>
     <div class="top-pill"><span>Protocol</span><b>No RWTD-label training/tuning</b></div>
   `;
 }
 
 function renderScoreboard() {
-  const baseline = qMethod("baseline_v5");
-  const winner = [...state.data.methods].sort((a, b) => {
+  const methods = state.data.methods;
+  if (!methods.length) {
+    el.scoreGrid.innerHTML = "";
+    return;
+  }
+
+  const winner = [...methods].sort((a, b) => {
     if (b.miou !== a.miou) return b.miou - a.miou;
     if (b.ari !== a.ari) return b.ari - a.ari;
     return a.name.localeCompare(b.name);
   })[0];
-  const bestMiou = Math.max(...state.data.methods.map((m) => m.miou));
-  const bestAri = Math.max(...state.data.methods.map((m) => m.ari));
-  const bestDeltaI = Math.max(...state.data.methods.map((m) => m.miou - baseline.miou));
-  const bestDeltaA = Math.max(...state.data.methods.map((m) => m.ari - baseline.ari));
-  const cards = state.data.methods.map((m) => {
-    const dI = m.miou - baseline.miou;
-    const dA = m.ari - baseline.ari;
-    const clsI = dI >= 0 ? "delta-up" : "delta-dn";
-    const clsA = dA >= 0 ? "delta-up" : "delta-dn";
+
+  const bestMiou = Math.max(...methods.map((m) => m.miou));
+  const bestAri = Math.max(...methods.map((m) => m.ari));
+
+  const cards = methods.map((m) => {
     const bestIClass = m.miou >= bestMiou - 1e-12 ? "best-score" : "";
     const bestAClass = m.ari >= bestAri - 1e-12 ? "best-score" : "";
-    const bestDIClass = dI >= bestDeltaI - 1e-12 ? " best-score" : "";
-    const bestDAClass = dA >= bestDeltaA - 1e-12 ? " best-score" : "";
     const isWinner = winner && m.id === winner.id;
     const winnerBadge = isWinner ? '<div class="winner-badge">WINNER</div>' : "";
 
@@ -236,8 +228,6 @@ function renderScoreboard() {
         ${winnerBadge}
         <div class="score-main"><span>mIoU</span><b class="${bestIClass}">${fmt(m.miou)}</b></div>
         <div class="score-main"><span>ARI</span><b class="${bestAClass}">${fmt(m.ari)}</b></div>
-        <div class="score-main"><span>ΔIoU</span><b class="${clsI}${bestDIClass}">${dI >= 0 ? "+" : ""}${fmt(dI)}</b></div>
-        <div class="score-main"><span>ΔARI</span><b class="${clsA}${bestDAClass}">${dA >= 0 ? "+" : ""}${fmt(dA)}</b></div>
       </div>
     `;
   });
@@ -307,14 +297,9 @@ async function renderFocus() {
     return;
   }
 
-  const baseline = image.metrics.baseline_v5;
-  const preferredMethods = [
-    "baseline_v5",
-    "strict_ptd_learned",
-  ];
-  const focusMethods = preferredMethods
-    .map((id) => state.data.methods.find((m) => m.id === id))
-    .filter(Boolean);
+  const focusMethods = state.data.methods;
+  const bestIoU = qMethod(image.best_iou_method);
+  const bestARI = qMethod(image.best_ari_method);
 
   el.focus.innerHTML = `
     <div class="focus-head">
@@ -323,7 +308,7 @@ async function renderFocus() {
         <div class="id">${image.id}</div>
       </div>
       <div class="meta">
-        Best IoU: <b>${qMethod(image.best_iou_method).name}</b> | Best ARI: <b>${qMethod(image.best_ari_method).name}</b>
+        Best IoU: <b>${bestIoU ? bestIoU.name : "-"}</b> | Best ARI: <b>${bestARI ? bestARI.name : "-"}</b>
       </div>
     </div>
     <div class="compare-strip-wrap">
@@ -351,8 +336,6 @@ async function renderFocus() {
 
   for (const method of focusMethods) {
     const m = image.metrics[method.id];
-    const dI = m.iou - baseline.iou;
-    const dA = m.ari - baseline.ari;
     const card = document.createElement("article");
     card.className = "compare-card compare-method";
     if (method.id === state.selectedMethod) {
@@ -364,10 +347,6 @@ async function renderFocus() {
         <canvas width="320" height="320"></canvas>
       </div>
       <div class="compare-meta">IoU <b>${fmt(m.iou)}</b> | ARI <b>${fmt(m.ari)}</b></div>
-      <div class="compare-delta">
-        <span>ΔIoU <b class="${dI >= 0 ? "delta-up" : "delta-dn"}">${dI >= 0 ? "+" : ""}${fmt(dI)}</b></span>
-        <span>ΔARI <b class="${dA >= 0 ? "delta-up" : "delta-dn"}">${dA >= 0 ? "+" : ""}${fmt(dA)}</b></span>
-      </div>
       <div class="compare-link">
         <a href="${image.masks[method.id]}" target="_blank" rel="noopener">Open Mask PNG</a>
       </div>
@@ -393,8 +372,8 @@ async function init() {
   if (!res.ok) throw new Error("Failed to load data.json");
   state.data = await res.json();
 
-  state.selectedMethod = "strict_ptd_learned";
-  state.selectedImageId = state.data.images[0].id;
+  state.selectedMethod = state.data.methods[0]?.id ?? null;
+  state.selectedImageId = state.data.images[0]?.id ?? null;
 
   setupControls();
   renderTopSummary();

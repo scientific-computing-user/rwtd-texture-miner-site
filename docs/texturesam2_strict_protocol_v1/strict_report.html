@@ -120,28 +120,75 @@
             <th>Method</th>
             <th>mIoU</th>
             <th>ARI</th>
-            <th>Delta mIoU vs baseline</th>
-            <th>Delta ARI vs baseline</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>v5 prompt-proxy baseline (not paper SAM-2/TextureSAM)</td>
-            <td>0.467954</td>
-            <td>0.273033</td>
-            <td>+0.000000</td>
-            <td>+0.000000</td>
-          </tr>
-          <tr>
             <td><strong>TextureSAM-v2 strict PTD learned</strong></td>
             <td><strong>0.717714</strong></td>
             <td><strong>0.376768</strong></td>
-            <td><strong>+0.249759</strong></td>
-            <td><strong>+0.103735</strong></td>
           </tr>
         </tbody>
       </table>
-      <p class="small">Kept strict model gain vs baseline: +0.249759 mIoU, +0.103735 ARI.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Original Supplementary Results (Overleaf Table 3)</h2>
+      <p class="small">
+        Source: <a href="https://www.overleaf.com/read/hghkzsztgftq#221fb3" target="_blank" rel="noopener noreferrer">Overleaf read link</a> (compiled supplementary PDF).
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Potsdam mIoU</th>
+            <th>Potsdam ARI</th>
+            <th>UHCSDB mIoU</th>
+            <th>UHCSDB ARI</th>
+            <th>Satellite mIoU</th>
+            <th>Satellite ARI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SAM-2</td>
+            <td>0.14</td>
+            <td>0.15</td>
+            <td>0.08</td>
+            <td>0.07</td>
+            <td>0.08</td>
+            <td>0.11</td>
+          </tr>
+          <tr>
+            <td>SAM-2*</td>
+            <td>0.13</td>
+            <td>0.14</td>
+            <td>0.07</td>
+            <td>0.09</td>
+            <td>0.07</td>
+            <td>0.08</td>
+          </tr>
+          <tr>
+            <td>TextureSAM η≤0.3</td>
+            <td>0.21</td>
+            <td>0.20</td>
+            <td>0.25</td>
+            <td>0.23</td>
+            <td>0.17</td>
+            <td>0.22</td>
+          </tr>
+          <tr>
+            <td>TextureSAM η≤1.0</td>
+            <td><strong>0.22</strong></td>
+            <td><strong>0.21</strong></td>
+            <td><strong>0.26</strong></td>
+            <td><strong>0.26</strong></td>
+            <td>0.13</td>
+            <td>0.12</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small"><a href="../texturesam2_supercharged_v2/assets/metrics/overleaf_supp_output.pdf" target="_blank" rel="noopener noreferrer">Open extracted supplementary PDF</a>.</p>
     </section>
 
     <section class="panel">

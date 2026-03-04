@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=20260304-bestonly1" />
+  <link rel="stylesheet" href="./styles.css?v=20260304-bestonly2" />
 </head>
 <body>
   <div class="ambient"></div>
@@ -16,7 +16,7 @@
       <div class="hero-left">
         <p class="eyebrow">RWTD Kaust256 Visual Inspector</p>
         <h1>TextureSAM-2 Strict-Only Visual Comparison</h1>
-        <p class="sub">Strict protocol view: baseline vs TextureSAM-v2 Strict PTD Learned only (no RWTD-label training or tuning).</p>
+        <p class="sub">Strict protocol view: TextureSAM-v2 Strict PTD Learned only (no RWTD-label training or tuning).</p>
         <div class="hero-links">
           <a href="../index.html">Home</a>
           <a href="./data.json">Data JSON</a>
@@ -131,6 +131,71 @@
       </div>
     </section>
 
+    <section class="official-results card">
+      <div class="official-head">
+        <h2>Original Supplementary Results (Overleaf)</h2>
+        <p>
+          Extracted from the project supplementary document:
+          <a href="https://www.overleaf.com/read/hghkzsztgftq#221fb3" target="_blank" rel="noopener noreferrer">Overleaf read link</a>.
+          PDF artifact used for extraction:
+          <a href="./assets/metrics/overleaf_supp_output.pdf" target="_blank" rel="noopener noreferrer">supplementary PDF</a>.
+        </p>
+      </div>
+      <div class="official-wrap">
+        <table class="official-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Potsdam mIoU</th>
+              <th>Potsdam ARI</th>
+              <th>UHCSDB mIoU</th>
+              <th>UHCSDB ARI</th>
+              <th>Satellite mIoU</th>
+              <th>Satellite ARI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SAM-2</td>
+              <td>0.14</td>
+              <td>0.15</td>
+              <td>0.08</td>
+              <td>0.07</td>
+              <td>0.08</td>
+              <td>0.11</td>
+            </tr>
+            <tr>
+              <td>SAM-2*</td>
+              <td>0.13</td>
+              <td>0.14</td>
+              <td>0.07</td>
+              <td>0.09</td>
+              <td>0.07</td>
+              <td>0.08</td>
+            </tr>
+            <tr>
+              <td>TextureSAM η≤0.3</td>
+              <td>0.21</td>
+              <td>0.20</td>
+              <td>0.25</td>
+              <td>0.23</td>
+              <td>0.17</td>
+              <td>0.22</td>
+            </tr>
+            <tr>
+              <td>TextureSAM η≤1.0</td>
+              <td><strong>0.22</strong></td>
+              <td><strong>0.21</strong></td>
+              <td><strong>0.26</strong></td>
+              <td><strong>0.26</strong></td>
+              <td>0.13</td>
+              <td>0.12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="controls card">
       <label>
         Highlight Method
@@ -167,7 +232,7 @@
 
     <section class="scoreboard card">
       <h2>Method Scoreboard</h2>
-      <p class="score-note">Winner rule: highest mIoU (ARI tie-break).</p>
+      <p class="score-note">Only kept model is shown.</p>
       <div id="score-grid" class="score-grid"></div>
     </section>
 
@@ -182,6 +247,6 @@
     </section>
   </main>
 
-  <script src="./app.js?v=20260304-bestonly1"></script>
+  <script src="./app.js?v=20260304-bestonly2"></script>
 </body>
 </html>

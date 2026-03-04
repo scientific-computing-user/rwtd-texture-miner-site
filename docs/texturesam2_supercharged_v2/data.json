@@ -1,14 +1,8 @@
 {
-  "title": "TextureSAM-2 Strict RWTD Visual Comparison (Baseline vs PTD Learned)",
+  "title": "TextureSAM-2 RWTD Visual (Our Best Model Only)",
   "dataset": "rwtd_kaust256",
   "num_images": 256,
   "methods": [
-    {
-      "id": "baseline_v5",
-      "name": "v5 Prompt-Proxy Baseline (Not Paper SAM-2/TextureSAM)",
-      "miou": 0.4679543554428983,
-      "ari": 0.2730329517405916
-    },
     {
       "id": "strict_ptd_learned",
       "name": "TextureSAM-v2 Strict PTD Learned (PTD-only, No RWTD Supervision)",
@@ -22,38 +16,26 @@
       "original": "assets/images/originals/rwtd_1.jpg",
       "gt": "assets/masks/gt/rwtd_1.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_1.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_1.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9279993461839816,
-          "ari": 0.9362596918376475,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7896994397875323,
           "ari": -0.043894673777160116,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_101",
       "original": "assets/images/originals/rwtd_101.jpg",
       "gt": "assets/masks/gt/rwtd_101.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_101.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_101.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.18512187871535593,
-          "ari": -0.0006678527554990479,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6874580230670537,
           "ari": 0.45333507476182916,
@@ -68,15 +50,9 @@
       "original": "assets/images/originals/rwtd_102.jpg",
       "gt": "assets/masks/gt/rwtd_102.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_102.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_102.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4658684419690686,
-          "ari": 0.4039112931747566,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7468776019971614,
           "ari": 0.029845522099042027,
@@ -84,22 +60,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_103",
       "original": "assets/images/originals/rwtd_103.jpg",
       "gt": "assets/masks/gt/rwtd_103.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_103.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_103.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.26520634513916774,
-          "ari": -0.07189706281557905,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5570770647826879,
           "ari": -0.07302920718734908,
@@ -107,22 +77,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_104",
       "original": "assets/images/originals/rwtd_104.jpg",
       "gt": "assets/masks/gt/rwtd_104.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_104.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_104.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8030116779101718,
-          "ari": 0.8762128898564749,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8858991825311343,
           "ari": 0.9316267607243622,
@@ -137,38 +101,26 @@
       "original": "assets/images/originals/rwtd_106.jpg",
       "gt": "assets/masks/gt/rwtd_106.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_106.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_106.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7941894531237882,
-          "ari": -0.06916256459665963,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7823486328113062,
           "ari": -0.07749287271627674,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_107",
       "original": "assets/images/originals/rwtd_107.jpg",
       "gt": "assets/masks/gt/rwtd_107.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_107.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_107.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5642465862167271,
-          "ari": 0.10819067807089379,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9307275973637688,
           "ari": 0.8541887022092,
@@ -183,15 +135,9 @@
       "original": "assets/images/originals/rwtd_109.jpg",
       "gt": "assets/masks/gt/rwtd_109.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_109.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_109.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.44464794464693924,
-          "ari": 0.047581954850792633,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5493862548044962,
           "ari": 0.00970248119891146,
@@ -199,45 +145,33 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_118",
       "original": "assets/images/originals/rwtd_118.jpg",
       "gt": "assets/masks/gt/rwtd_118.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_118.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_118.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8701385041454831,
-          "ari": 0.8990910734087569,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6987402426760975,
           "ari": -0.054093552052229675,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_12",
       "original": "assets/images/originals/rwtd_12.jpg",
       "gt": "assets/masks/gt/rwtd_12.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_12.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_12.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6579901433165525,
-          "ari": 0.3987515907432396,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9159458278697656,
           "ari": 0.8316065782961762,
@@ -252,15 +186,9 @@
       "original": "assets/images/originals/rwtd_121.jpg",
       "gt": "assets/masks/gt/rwtd_121.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_121.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_121.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.30446439452287255,
-          "ari": 0.19648222777890686,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8490161549638634,
           "ari": -0.010466349654269647,
@@ -268,45 +196,33 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_122",
       "original": "assets/images/originals/rwtd_122.jpg",
       "gt": "assets/masks/gt/rwtd_122.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_122.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_122.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9403876103104909,
-          "ari": 0.877817529852189,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.560521703267415,
           "ari": 0.048166937376162934,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_125",
       "original": "assets/images/originals/rwtd_125.jpg",
       "gt": "assets/masks/gt/rwtd_125.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_125.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_125.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0656980279731003,
-          "ari": -0.023288320725383775,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9094795189735556,
           "ari": 0.8834196118056267,
@@ -321,15 +237,9 @@
       "original": "assets/images/originals/rwtd_128.jpg",
       "gt": "assets/masks/gt/rwtd_128.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_128.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_128.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.25940572894260683,
-          "ari": 0.2300769085870944,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7151151964506371,
           "ari": 0.16934745504360477,
@@ -337,45 +247,33 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_129",
       "original": "assets/images/originals/rwtd_129.jpg",
       "gt": "assets/masks/gt/rwtd_129.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_129.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_129.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.804453095326613,
-          "ari": 0.5601511141096163,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.6105005695895421,
           "ari": 0.06305535968451749,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_13",
       "original": "assets/images/originals/rwtd_13.jpg",
       "gt": "assets/masks/gt/rwtd_13.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_13.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_13.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8754431195588932,
-          "ari": 0.7779874936243742,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8848990633670599,
           "ari": 0.7436376827953883,
@@ -383,68 +281,50 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_134",
       "original": "assets/images/originals/rwtd_134.jpg",
       "gt": "assets/masks/gt/rwtd_134.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_134.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_134.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9629367934193123,
-          "ari": 0.9308033259757887,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.37904344180224125,
           "ari": 0.16908922920409333,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_139",
       "original": "assets/images/originals/rwtd_139.jpg",
       "gt": "assets/masks/gt/rwtd_139.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_139.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_139.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7269590382882709,
-          "ari": 0.4907703636381985,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5720714546770558,
           "ari": 0.18259717593976194,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_14",
       "original": "assets/images/originals/rwtd_14.jpg",
       "gt": "assets/masks/gt/rwtd_14.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_14.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_14.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.22692052980057312,
-          "ari": 0.07903441157905758,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5266375003870324,
           "ari": -0.0006411851652733326,
@@ -452,22 +332,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_142",
       "original": "assets/images/originals/rwtd_142.jpg",
       "gt": "assets/masks/gt/rwtd_142.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_142.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_142.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.32189345500553646,
-          "ari": 0.11153619633604023,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7007631257620562,
           "ari": -0.08876137375064756,
@@ -475,22 +349,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_149",
       "original": "assets/images/originals/rwtd_149.jpg",
       "gt": "assets/masks/gt/rwtd_149.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_149.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_149.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5366964364653446,
-          "ari": 0.1273877357360265,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5933328612389028,
           "ari": 0.07992319263956701,
@@ -498,45 +366,33 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_15",
       "original": "assets/images/originals/rwtd_15.jpg",
       "gt": "assets/masks/gt/rwtd_15.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_15.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_15.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5033260447776426,
-          "ari": -0.0211691376961114,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4022630315951169,
           "ari": -0.025587710527671174,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_16",
       "original": "assets/images/originals/rwtd_16.jpg",
       "gt": "assets/masks/gt/rwtd_16.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_16.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_16.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3205199115031585,
-          "ari": 0.19329039337967396,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7429272854787399,
           "ari": 0.44148573822988535,
@@ -551,38 +407,26 @@
       "original": "assets/images/originals/rwtd_17.jpg",
       "gt": "assets/masks/gt/rwtd_17.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_17.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_17.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7562127999002757,
-          "ari": 0.40222631561155364,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6882217564610031,
           "ari": 0.2882258957200118,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_175",
       "original": "assets/images/originals/rwtd_175.jpg",
       "gt": "assets/masks/gt/rwtd_175.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_175.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_175.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4667220146664129,
-          "ari": -0.0039086386017376275,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8362185586847127,
           "ari": 0.6109207651554744,
@@ -597,15 +441,9 @@
       "original": "assets/images/originals/rwtd_176.jpg",
       "gt": "assets/masks/gt/rwtd_176.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_176.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_176.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2686337677531949,
-          "ari": 0.29066566562612006,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8818914003622034,
           "ari": 0.5431316318118653,
@@ -620,15 +458,9 @@
       "original": "assets/images/originals/rwtd_178.jpg",
       "gt": "assets/masks/gt/rwtd_178.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_178.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_178.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2387556893515437,
-          "ari": 0.11109660833982767,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5324927579904347,
           "ari": 0.012695555677155067,
@@ -636,22 +468,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_18",
       "original": "assets/images/originals/rwtd_18.jpg",
       "gt": "assets/masks/gt/rwtd_18.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_18.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_18.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.41722402896174565,
-          "ari": 0.00021539439367717942,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8442274554805042,
           "ari": 0.8298022781754189,
@@ -666,38 +492,26 @@
       "original": "assets/images/originals/rwtd_180.jpg",
       "gt": "assets/masks/gt/rwtd_180.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_180.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_180.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6104985965199221,
-          "ari": 0.34699475712820077,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5751148488430367,
           "ari": 0.08909674617790825,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_181",
       "original": "assets/images/originals/rwtd_181.jpg",
       "gt": "assets/masks/gt/rwtd_181.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_181.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_181.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6803387502850685,
-          "ari": 3.442992337049044e-05,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9124132143115703,
           "ari": 0.0002872988957086332,
@@ -712,38 +526,26 @@
       "original": "assets/images/originals/rwtd_182.jpg",
       "gt": "assets/masks/gt/rwtd_182.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_182.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_182.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8246755229780892,
-          "ari": 0.6802802914454698,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.48992947455287833,
           "ari": -0.0005526216580770827,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_183",
       "original": "assets/images/originals/rwtd_183.jpg",
       "gt": "assets/masks/gt/rwtd_183.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_183.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_183.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.18443452285297132,
-          "ari": 0.04477243678769855,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5462694316334082,
           "ari": -0.0014314007738731084,
@@ -751,22 +553,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_184",
       "original": "assets/images/originals/rwtd_184.jpg",
       "gt": "assets/masks/gt/rwtd_184.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_184.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_184.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0,
-          "ari": 0.0,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.45622949568863014,
           "ari": -4.913707126891048e-06,
@@ -774,22 +570,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_185",
       "original": "assets/images/originals/rwtd_185.jpg",
       "gt": "assets/masks/gt/rwtd_185.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_185.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_185.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.1484415488259849,
-          "ari": 0.06661760279943214,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5650879443010793,
           "ari": -0.011215796067046663,
@@ -797,22 +587,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_186",
       "original": "assets/images/originals/rwtd_186.jpg",
       "gt": "assets/masks/gt/rwtd_186.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_186.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_186.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.31670024563156046,
-          "ari": 0.05506031541839355,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5725886585564972,
           "ari": 0.042003240291608936,
@@ -820,22 +604,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_188",
       "original": "assets/images/originals/rwtd_188.jpg",
       "gt": "assets/masks/gt/rwtd_188.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_188.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_188.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.08647374549147623,
-          "ari": 0.0002507177998854389,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5002587545274197,
           "ari": 0.0006602845624044458,
@@ -850,15 +628,9 @@
       "original": "assets/images/originals/rwtd_189.jpg",
       "gt": "assets/masks/gt/rwtd_189.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_189.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_189.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3553924560541452,
-          "ari": 0.06391177059994982,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7794494628894356,
           "ari": -0.07069069858413148,
@@ -866,22 +638,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_194",
       "original": "assets/images/originals/rwtd_194.jpg",
       "gt": "assets/masks/gt/rwtd_194.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_194.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_194.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2528055138280086,
-          "ari": 0.050873354817875124,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6814452062233508,
           "ari": 0.30615777495083446,
@@ -896,15 +662,9 @@
       "original": "assets/images/originals/rwtd_197.jpg",
       "gt": "assets/masks/gt/rwtd_197.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_197.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_197.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0,
-          "ari": 0.0,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.647259985511283,
           "ari": 0.11097535498208726,
@@ -919,15 +679,9 @@
       "original": "assets/images/originals/rwtd_2.jpg",
       "gt": "assets/masks/gt/rwtd_2.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_2.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_2.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.28830904777943644,
-          "ari": 0.1241388335058749,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9472984942400706,
           "ari": 0.8871611126416824,
@@ -942,15 +696,9 @@
       "original": "assets/images/originals/rwtd_200.jpg",
       "gt": "assets/masks/gt/rwtd_200.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_200.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_200.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6805873903598902,
-          "ari": -0.012760225734240979,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9600257578712105,
           "ari": 0.9501218529193634,
@@ -965,15 +713,9 @@
       "original": "assets/images/originals/rwtd_201.jpg",
       "gt": "assets/masks/gt/rwtd_201.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_201.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_201.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.025835064975263358,
-          "ari": 0.0009319176162379909,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.49786152802029915,
           "ari": 0.00019979544000206837,
@@ -981,22 +723,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_202",
       "original": "assets/images/originals/rwtd_202.jpg",
       "gt": "assets/masks/gt/rwtd_202.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_202.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_202.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.18753724918838147,
-          "ari": -0.06675056171964643,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.974462754163176,
           "ari": 0.9672672448307412,
@@ -1011,15 +747,9 @@
       "original": "assets/images/originals/rwtd_205.jpg",
       "gt": "assets/masks/gt/rwtd_205.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_205.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_205.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5882855515462535,
-          "ari": 0.11271474483880527,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9837411954648411,
           "ari": 0.9646705536479586,
@@ -1034,61 +764,43 @@
       "original": "assets/images/originals/rwtd_207.jpg",
       "gt": "assets/masks/gt/rwtd_207.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_207.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_207.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9961760300787222,
-          "ari": 0.9926890534210928,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9689771712760841,
           "ari": 0.9414930514302279,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_210",
       "original": "assets/images/originals/rwtd_210.jpg",
       "gt": "assets/masks/gt/rwtd_210.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_210.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_210.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9641798487382215,
-          "ari": 0.922634069439624,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9448425262424768,
           "ari": 0.9015226881521619,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_213",
       "original": "assets/images/originals/rwtd_213.jpg",
       "gt": "assets/masks/gt/rwtd_213.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_213.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_213.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5710243783064096,
-          "ari": 0.0015039448983145446,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9941852219508077,
           "ari": 0.9900111023158359,
@@ -1103,15 +815,9 @@
       "original": "assets/images/originals/rwtd_214.jpg",
       "gt": "assets/masks/gt/rwtd_214.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_214.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_214.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.348670894614935,
-          "ari": 0.1651665230003222,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7063728880531442,
           "ari": 0.2968348025012567,
@@ -1126,15 +832,9 @@
       "original": "assets/images/originals/rwtd_215.jpg",
       "gt": "assets/masks/gt/rwtd_215.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_215.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_215.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6409170638354371,
-          "ari": 0.13572682550875148,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8791287975619368,
           "ari": 0.707089770113413,
@@ -1149,153 +849,111 @@
       "original": "assets/images/originals/rwtd_216.jpg",
       "gt": "assets/masks/gt/rwtd_216.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_216.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_216.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5862848917894647,
-          "ari": 0.0669856784563618,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5031433541733354,
           "ari": 0.012101767673455605,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_219",
       "original": "assets/images/originals/rwtd_219.jpg",
       "gt": "assets/masks/gt/rwtd_219.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_219.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_219.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5426306971130055,
-          "ari": 0.06510338386141323,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5344047910038279,
           "ari": -0.0006392309891561692,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_22",
       "original": "assets/images/originals/rwtd_22.jpg",
       "gt": "assets/masks/gt/rwtd_22.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_22.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_22.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9799799129528625,
-          "ari": 0.9638302037203728,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5523486795969612,
           "ari": 0.08658213264852713,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_221",
       "original": "assets/images/originals/rwtd_221.jpg",
       "gt": "assets/masks/gt/rwtd_221.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_221.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_221.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8101920939805994,
-          "ari": 0.6683847182914927,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5119045800935996,
           "ari": -0.0008501162798174613,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_222",
       "original": "assets/images/originals/rwtd_222.jpg",
       "gt": "assets/masks/gt/rwtd_222.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_222.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_222.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9167397020100366,
-          "ari": 0.9135206970310382,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7447967529285511,
           "ari": -0.014826650799960093,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_224",
       "original": "assets/images/originals/rwtd_224.jpg",
       "gt": "assets/masks/gt/rwtd_224.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_224.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_224.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7365692742679041,
-          "ari": 0.4118283713035045,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5984967344098251,
           "ari": 0.10775244443254048,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_228",
       "original": "assets/images/originals/rwtd_228.jpg",
       "gt": "assets/masks/gt/rwtd_228.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_228.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_228.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0021543764618949983,
-          "ari": -0.0033833563506111483,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9369537116814339,
           "ari": 0.1866451912007377,
@@ -1310,15 +968,9 @@
       "original": "assets/images/originals/rwtd_229.jpg",
       "gt": "assets/masks/gt/rwtd_229.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_229.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_229.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.03404760192696467,
-          "ari": 0.008358615176789552,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5335210060883487,
           "ari": -0.016697498632498777,
@@ -1326,68 +978,50 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_236",
       "original": "assets/images/originals/rwtd_236.jpg",
       "gt": "assets/masks/gt/rwtd_236.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_236.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_236.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9777494014334309,
-          "ari": 0.9579099462624744,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5407907635325426,
           "ari": 0.00618391036991681,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_237",
       "original": "assets/images/originals/rwtd_237.jpg",
       "gt": "assets/masks/gt/rwtd_237.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_237.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_237.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.979703514966183,
-          "ari": 0.9576712258777283,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4976424874437535,
           "ari": -0.0011026243223553125,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_238",
       "original": "assets/images/originals/rwtd_238.jpg",
       "gt": "assets/masks/gt/rwtd_238.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_238.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_238.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5416259765616735,
-          "ari": -0.00270627514600254,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9798736957688636,
           "ari": 0.9557564870262469,
@@ -1402,15 +1036,9 @@
       "original": "assets/images/originals/rwtd_24.jpg",
       "gt": "assets/masks/gt/rwtd_24.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_24.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_24.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3371258440102484,
-          "ari": -0.036870619182707384,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5891590678815677,
           "ari": -0.08432414431631631,
@@ -1418,45 +1046,33 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_240",
       "original": "assets/images/originals/rwtd_240.jpg",
       "gt": "assets/masks/gt/rwtd_240.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_240.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_240.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8489631549693367,
-          "ari": 0.6406340245965265,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4909037366656454,
           "ari": -0.007376310356021653,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_243",
       "original": "assets/images/originals/rwtd_243.jpg",
       "gt": "assets/masks/gt/rwtd_243.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_243.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_243.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.1512748756207146,
-          "ari": 0.14532028078348305,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.49563718624910436,
           "ari": 0.5723275147999483,
@@ -1471,38 +1087,26 @@
       "original": "assets/images/originals/rwtd_244.jpg",
       "gt": "assets/masks/gt/rwtd_244.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_244.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_244.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.888765338944266,
-          "ari": 0.6741623096433935,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5277913610414742,
           "ari": 0.31058370149029463,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_245",
       "original": "assets/images/originals/rwtd_245.jpg",
       "gt": "assets/masks/gt/rwtd_245.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_245.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_245.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.09657219722599246,
-          "ari": -0.035897124810031544,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.530076243040998,
           "ari": 0.14203086373415472,
@@ -1517,15 +1121,9 @@
       "original": "assets/images/originals/rwtd_246.jpg",
       "gt": "assets/masks/gt/rwtd_246.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_246.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_246.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.04677697043961955,
-          "ari": -0.0018933589089922158,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9617061611344022,
           "ari": 0.9273918117588889,
@@ -1540,15 +1138,9 @@
       "original": "assets/images/originals/rwtd_247.jpg",
       "gt": "assets/masks/gt/rwtd_247.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_247.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_247.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8544231459985814,
-          "ari": 0.7463617996155766,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.97963421224513,
           "ari": 0.9567750077302914,
@@ -1563,15 +1155,9 @@
       "original": "assets/images/originals/rwtd_25.jpg",
       "gt": "assets/masks/gt/rwtd_25.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_25.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_25.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4584103512003337,
-          "ari": 0.10597918203421988,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7858994783344707,
           "ari": 0.6253896103822887,
@@ -1586,15 +1172,9 @@
       "original": "assets/images/originals/rwtd_250.jpg",
       "gt": "assets/masks/gt/rwtd_250.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_250.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_250.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2969586657912401,
-          "ari": -0.03677567967131537,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5500977671241484,
           "ari": -0.0403456713108509,
@@ -1602,22 +1182,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_251",
       "original": "assets/images/originals/rwtd_251.jpg",
       "gt": "assets/masks/gt/rwtd_251.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_251.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_251.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.05289156626490093,
-          "ari": 0.0014755488279535151,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5108624094791007,
           "ari": 0.0048094474078097275,
@@ -1632,38 +1206,26 @@
       "original": "assets/images/originals/rwtd_252.jpg",
       "gt": "assets/masks/gt/rwtd_252.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_252.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_252.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9682399999922541,
-          "ari": 0.9715932010147263,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8096008300768897,
           "ari": -0.008119781969688737,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_253",
       "original": "assets/images/originals/rwtd_253.jpg",
       "gt": "assets/masks/gt/rwtd_253.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_253.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_253.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7542357551982085,
-          "ari": 0.5642837599852611,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9168115941995767,
           "ari": 0.8645921448665124,
@@ -1678,38 +1240,26 @@
       "original": "assets/images/originals/rwtd_254.jpg",
       "gt": "assets/masks/gt/rwtd_254.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_254.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_254.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7044144013163144,
-          "ari": 0.39346122219930557,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5562170826645962,
           "ari": 7.336181792320795e-05,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_256",
       "original": "assets/images/originals/rwtd_256.jpg",
       "gt": "assets/masks/gt/rwtd_256.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_256.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_256.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9704541309472599,
-          "ari": 0.9415528348539203,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9916770450442219,
           "ari": 0.9833460330419198,
@@ -1724,38 +1274,26 @@
       "original": "assets/images/originals/rwtd_257.jpg",
       "gt": "assets/masks/gt/rwtd_257.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_257.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_257.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9863628940021788,
-          "ari": 0.9796280946567065,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6286006972041028,
           "ari": 0.001284561204823263,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_258",
       "original": "assets/images/originals/rwtd_258.jpg",
       "gt": "assets/masks/gt/rwtd_258.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_258.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_258.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.07709771437313362,
-          "ari": 0.003681306763658946,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.4900090974064429,
           "ari": -0.0012786585775955935,
@@ -1763,22 +1301,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_259",
       "original": "assets/images/originals/rwtd_259.jpg",
       "gt": "assets/masks/gt/rwtd_259.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_259.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_259.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2701549468778524,
-          "ari": -0.06789496749561118,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9767272727221988,
           "ari": 0.9719764119653803,
@@ -1793,61 +1325,43 @@
       "original": "assets/images/originals/rwtd_260.jpg",
       "gt": "assets/masks/gt/rwtd_260.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_260.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_260.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.977608722431386,
-          "ari": 0.9561189969319525,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5137406846118179,
           "ari": 0.00195816882422746,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_261",
       "original": "assets/images/originals/rwtd_261.jpg",
       "gt": "assets/masks/gt/rwtd_261.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_261.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_261.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9110256762291946,
-          "ari": 0.8479744623902096,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.6653469622792518,
           "ari": 0.17952358600185359,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_262",
       "original": "assets/images/originals/rwtd_262.jpg",
       "gt": "assets/masks/gt/rwtd_262.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_262.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_262.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.1641604350777317,
-          "ari": -0.00617972721074247,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9689969811031884,
           "ari": 0.9449817883113084,
@@ -1862,15 +1376,9 @@
       "original": "assets/images/originals/rwtd_263.jpg",
       "gt": "assets/masks/gt/rwtd_263.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_263.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_263.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3189033189022963,
-          "ari": 0.12263204117222017,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6524223078532765,
           "ari": 0.19882880497657152,
@@ -1885,15 +1393,9 @@
       "original": "assets/images/originals/rwtd_265.jpg",
       "gt": "assets/masks/gt/rwtd_265.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_265.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_265.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.1800747292965913,
-          "ari": -0.10423979233488896,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7455139160144875,
           "ari": -0.06298463824746489,
@@ -1908,15 +1410,9 @@
       "original": "assets/images/originals/rwtd_268.jpg",
       "gt": "assets/masks/gt/rwtd_268.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_268.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_268.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.028157251088623284,
-          "ari": -0.00031472280681575757,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5104098590226396,
           "ari": 0.0012536207697445704,
@@ -1931,38 +1427,26 @@
       "original": "assets/images/originals/rwtd_269.jpg",
       "gt": "assets/masks/gt/rwtd_269.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_269.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_269.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8633578629984654,
-          "ari": 0.7592503572936736,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.48498577436837426,
           "ari": -0.0023536765637750716,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_27",
       "original": "assets/images/originals/rwtd_27.jpg",
       "gt": "assets/masks/gt/rwtd_27.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_27.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_27.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5268339057891823,
-          "ari": -0.039839518162418985,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.6878451908493726,
           "ari": 0.5819148974323031,
@@ -1977,15 +1461,9 @@
       "original": "assets/images/originals/rwtd_270.jpg",
       "gt": "assets/masks/gt/rwtd_270.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_270.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_270.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.12369858026893447,
-          "ari": 0.022104809723905244,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.4563338936093929,
           "ari": 0.076402143897873,
@@ -2000,22 +1478,16 @@
       "original": "assets/images/originals/rwtd_274.jpg",
       "gt": "assets/masks/gt/rwtd_274.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_274.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_274.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9228432873891709,
-          "ari": 0.8239191453742196,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9194591619042198,
           "ari": 0.8621571956285357,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
+      "best_iou_method": "strict_ptd_learned",
       "best_ari_method": "strict_ptd_learned"
     },
     {
@@ -2023,15 +1495,9 @@
       "original": "assets/images/originals/rwtd_276.jpg",
       "gt": "assets/masks/gt/rwtd_276.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_276.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_276.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3196737460092215,
-          "ari": 0.18532570037726967,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5969085693350267,
           "ari": -0.051510168124386,
@@ -2039,22 +1505,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_28",
       "original": "assets/images/originals/rwtd_28.jpg",
       "gt": "assets/masks/gt/rwtd_28.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_28.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_28.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0,
-          "ari": 0.0,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5180204587614435,
           "ari": 0.010845283786806362,
@@ -2069,38 +1529,26 @@
       "original": "assets/images/originals/rwtd_280.jpg",
       "gt": "assets/masks/gt/rwtd_280.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_280.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_280.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7329841546947782,
-          "ari": 0.4785684982766813,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6761729775771524,
           "ari": 0.3948417634962617,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_281",
       "original": "assets/images/originals/rwtd_281.jpg",
       "gt": "assets/masks/gt/rwtd_281.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_281.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_281.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.18922951327255796,
-          "ari": 0.010752583606134684,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.4868345602472114,
           "ari": -0.004455876341546036,
@@ -2108,22 +1556,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_282",
       "original": "assets/images/originals/rwtd_282.jpg",
       "gt": "assets/masks/gt/rwtd_282.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_282.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_282.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0,
-          "ari": 0.0,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7976427490621495,
           "ari": 0.5888193083780838,
@@ -2138,15 +1580,9 @@
       "original": "assets/images/originals/rwtd_288.jpg",
       "gt": "assets/masks/gt/rwtd_288.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_288.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_288.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.12462561180479552,
-          "ari": -0.02025730036288817,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.435374988983105,
           "ari": -0.0028795402293900194,
@@ -2161,15 +1597,9 @@
       "original": "assets/images/originals/rwtd_293.jpg",
       "gt": "assets/masks/gt/rwtd_293.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_293.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_293.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7699970700188494,
-          "ari": 0.8092131037557886,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8255004882799903,
           "ari": -0.03917189666218678,
@@ -2177,22 +1607,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_294",
       "original": "assets/images/originals/rwtd_294.jpg",
       "gt": "assets/masks/gt/rwtd_294.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_294.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_294.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2390711338034585,
-          "ari": 0.10378266959873936,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5917325541412999,
           "ari": 0.06830024551660581,
@@ -2200,22 +1624,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_299",
       "original": "assets/images/originals/rwtd_299.jpg",
       "gt": "assets/masks/gt/rwtd_299.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_299.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_299.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6485609599176333,
-          "ari": 0.37992932841512206,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9295049375845598,
           "ari": 0.8723273207134133,
@@ -2230,15 +1648,9 @@
       "original": "assets/images/originals/rwtd_3.jpg",
       "gt": "assets/masks/gt/rwtd_3.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_3.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_3.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4374944763578491,
-          "ari": 0.04704423398836296,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5961480964705099,
           "ari": 0.2526696073397357,
@@ -2253,38 +1665,26 @@
       "original": "assets/images/originals/rwtd_30.jpg",
       "gt": "assets/masks/gt/rwtd_30.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_30.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_30.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5599093997724426,
-          "ari": 0.0802684807466176,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4863284808126955,
           "ari": -0.0029902254855175225,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_300",
       "original": "assets/images/originals/rwtd_300.jpg",
       "gt": "assets/masks/gt/rwtd_300.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_300.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_300.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.028684605928053938,
-          "ari": 0.006752147290809897,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9875634237784371,
           "ari": 0.9726594775785984,
@@ -2299,15 +1699,9 @@
       "original": "assets/images/originals/rwtd_302.jpg",
       "gt": "assets/masks/gt/rwtd_302.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_302.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_302.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.956708810482039,
-          "ari": 0.92175102536154,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9909681347642548,
           "ari": 0.9837680150762145,
@@ -2322,84 +1716,60 @@
       "original": "assets/images/originals/rwtd_303.jpg",
       "gt": "assets/masks/gt/rwtd_303.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_303.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_303.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9881520627301903,
-          "ari": 0.9829866510189538,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9816837665545537,
           "ari": 0.9531039263773925,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_304",
       "original": "assets/images/originals/rwtd_304.jpg",
       "gt": "assets/masks/gt/rwtd_304.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_304.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_304.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5204146196208865,
-          "ari": 0.044964269574543254,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.45818248757369734,
           "ari": -0.036510459959882564,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_308",
       "original": "assets/images/originals/rwtd_308.jpg",
       "gt": "assets/masks/gt/rwtd_308.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_308.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_308.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7684016014723714,
-          "ari": 0.7872614491385975,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.563391588957322,
           "ari": -0.07350228102899535,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_310",
       "original": "assets/images/originals/rwtd_310.jpg",
       "gt": "assets/masks/gt/rwtd_310.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_310.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_310.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5442463265634072,
-          "ari": 0.02358038025858082,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.753372192381663,
           "ari": -0.09046382941611791,
@@ -2407,45 +1777,33 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_311",
       "original": "assets/images/originals/rwtd_311.jpg",
       "gt": "assets/masks/gt/rwtd_311.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_311.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_311.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8896029705671293,
-          "ari": 0.9215456912284967,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8788501026565144,
           "ari": 0.9143479353344169,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_315",
       "original": "assets/images/originals/rwtd_315.jpg",
       "gt": "assets/masks/gt/rwtd_315.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_315.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_315.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7919398688502809,
-          "ari": 0.8525079925279171,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9110053722165602,
           "ari": 0.08917330113195386,
@@ -2453,22 +1811,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_318",
       "original": "assets/images/originals/rwtd_318.jpg",
       "gt": "assets/masks/gt/rwtd_318.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_318.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_318.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6858590436713946,
-          "ari": 0.05328967076135249,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8610963667962641,
           "ari": 0.5486828805199048,
@@ -2483,15 +1835,9 @@
       "original": "assets/images/originals/rwtd_319.jpg",
       "gt": "assets/masks/gt/rwtd_319.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_319.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_319.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7036905315549922,
-          "ari": 0.4478407729233144,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9728502116204781,
           "ari": 0.952410807507439,
@@ -2506,15 +1852,9 @@
       "original": "assets/images/originals/rwtd_321.jpg",
       "gt": "assets/masks/gt/rwtd_321.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_321.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_321.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.24951843698318135,
-          "ari": 0.10372738108222407,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4888806896303999,
           "ari": 0.28325343373612033,
@@ -2529,15 +1869,9 @@
       "original": "assets/images/originals/rwtd_322.jpg",
       "gt": "assets/masks/gt/rwtd_322.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_322.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_322.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6659108766401034,
-          "ari": 0.29773831333060846,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.722423288746743,
           "ari": 0.5337683867597262,
@@ -2552,15 +1886,9 @@
       "original": "assets/images/originals/rwtd_323.jpg",
       "gt": "assets/masks/gt/rwtd_323.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_323.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_323.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.537293359482944,
-          "ari": 0.24583085535746638,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7023623151139043,
           "ari": 0.37354816983730965,
@@ -2575,38 +1903,26 @@
       "original": "assets/images/originals/rwtd_324.jpg",
       "gt": "assets/masks/gt/rwtd_324.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_324.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_324.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8618412575671246,
-          "ari": 0.7553201252458728,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8463583467073476,
           "ari": 0.6609995717278984,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_325",
       "original": "assets/images/originals/rwtd_325.jpg",
       "gt": "assets/masks/gt/rwtd_325.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_325.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_325.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5845552944272465,
-          "ari": 0.3796852023216172,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8719463638910017,
           "ari": 0.7188391719497429,
@@ -2621,15 +1937,9 @@
       "original": "assets/images/originals/rwtd_327.jpg",
       "gt": "assets/masks/gt/rwtd_327.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_327.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_327.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.13697832859688117,
-          "ari": 0.04453835804699591,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.48657144601036656,
           "ari": -0.008171139677011332,
@@ -2637,22 +1947,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_328",
       "original": "assets/images/originals/rwtd_328.jpg",
       "gt": "assets/masks/gt/rwtd_328.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_328.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_328.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.13138157650441581,
-          "ari": -0.09421420801842778,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4046964247923112,
           "ari": 0.2286021797114267,
@@ -2667,15 +1971,9 @@
       "original": "assets/images/originals/rwtd_329.jpg",
       "gt": "assets/masks/gt/rwtd_329.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_329.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_329.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2849360192566675,
-          "ari": 0.09599289661694742,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.564401435614389,
           "ari": 0.042012618979361385,
@@ -2683,22 +1981,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_33",
       "original": "assets/images/originals/rwtd_33.jpg",
       "gt": "assets/masks/gt/rwtd_33.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_33.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_33.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.07834385659322457,
-          "ari": -0.07325622376211208,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9384828862077845,
           "ari": 0.9488761773436472,
@@ -2713,15 +2005,9 @@
       "original": "assets/images/originals/rwtd_330.jpg",
       "gt": "assets/masks/gt/rwtd_330.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_330.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_330.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3780014552495028,
-          "ari": 0.25832544740305674,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9621745938516291,
           "ari": 0.9076380731250842,
@@ -2736,38 +2022,26 @@
       "original": "assets/images/originals/rwtd_331.jpg",
       "gt": "assets/masks/gt/rwtd_331.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_331.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_331.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9117200137203484,
-          "ari": 0.8901488912883689,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.6875286285756137,
           "ari": -0.021636261043137983,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_332",
       "original": "assets/images/originals/rwtd_332.jpg",
       "gt": "assets/masks/gt/rwtd_332.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_332.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_332.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5525461180469632,
-          "ari": 0.3459374571793813,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8998703298448015,
           "ari": 0.8539210824036555,
@@ -2782,15 +2056,9 @@
       "original": "assets/images/originals/rwtd_334.jpg",
       "gt": "assets/masks/gt/rwtd_334.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_334.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_334.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.10281153204645506,
-          "ari": -0.038802184676981245,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5092633160159772,
           "ari": -0.03378886196367617,
@@ -2805,38 +2073,26 @@
       "original": "assets/images/originals/rwtd_337.jpg",
       "gt": "assets/masks/gt/rwtd_337.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_337.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_337.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6927836243743912,
-          "ari": 0.6718692477227668,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.4387110587724797,
           "ari": -0.011353481296712147,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_34",
       "original": "assets/images/originals/rwtd_34.jpg",
       "gt": "assets/masks/gt/rwtd_34.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_34.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_34.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.40702910678167836,
-          "ari": 0.0015280963623113414,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7358642538782941,
           "ari": 0.2643465936984358,
@@ -2851,15 +2107,9 @@
       "original": "assets/images/originals/rwtd_342.jpg",
       "gt": "assets/masks/gt/rwtd_342.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_342.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_342.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6572147329833551,
-          "ari": 0.3808380484052556,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9562098138715526,
           "ari": 0.9225645953984855,
@@ -2874,15 +2124,9 @@
       "original": "assets/images/originals/rwtd_343.jpg",
       "gt": "assets/masks/gt/rwtd_343.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_343.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_343.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.664050032345637,
-          "ari": 0.5704904802134498,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9264733991658077,
           "ari": 0.9244601856099299,
@@ -2897,130 +2141,94 @@
       "original": "assets/images/originals/rwtd_344.jpg",
       "gt": "assets/masks/gt/rwtd_344.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_344.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_344.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8962163263181941,
-          "ari": 0.8751597086260814,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7176195139855579,
           "ari": -0.004650274658768947,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_345",
       "original": "assets/images/originals/rwtd_345.jpg",
       "gt": "assets/masks/gt/rwtd_345.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_345.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_345.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7943781784543793,
-          "ari": 0.408723578021279,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5194391627625725,
           "ari": -0.053379839863449886,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_346",
       "original": "assets/images/originals/rwtd_346.jpg",
       "gt": "assets/masks/gt/rwtd_346.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_346.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_346.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7890056298605479,
-          "ari": 0.6723227893930896,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.47907250933281137,
           "ari": 0.05800829609509193,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_347",
       "original": "assets/images/originals/rwtd_347.jpg",
       "gt": "assets/masks/gt/rwtd_347.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_347.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_347.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8294793920570674,
-          "ari": 0.6406042136050097,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.528525422073722,
           "ari": 0.061075906466802096,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_348",
       "original": "assets/images/originals/rwtd_348.jpg",
       "gt": "assets/masks/gt/rwtd_348.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_348.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_348.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9353338500667958,
-          "ari": 0.926497932888784,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7115906750293175,
           "ari": 0.02822933234165947,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_349",
       "original": "assets/images/originals/rwtd_349.jpg",
       "gt": "assets/masks/gt/rwtd_349.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_349.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_349.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.45977783203054845,
-          "ari": -0.03828080111962499,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6940765380848785,
           "ari": -0.005529384647217328,
@@ -3035,15 +2243,9 @@
       "original": "assets/images/originals/rwtd_350.jpg",
       "gt": "assets/masks/gt/rwtd_350.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_350.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_350.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8439228445231516,
-          "ari": 0.800867588683953,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.941577233809756,
           "ari": 0.8214868277120677,
@@ -3058,38 +2260,26 @@
       "original": "assets/images/originals/rwtd_351.jpg",
       "gt": "assets/masks/gt/rwtd_351.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_351.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_351.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5212702499049962,
-          "ari": 0.0046254731590105415,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.49650585422592947,
           "ari": -0.00017964239976211825,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_352",
       "original": "assets/images/originals/rwtd_352.jpg",
       "gt": "assets/masks/gt/rwtd_352.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_352.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_352.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.684282146515298,
-          "ari": 0.03377923306268061,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9428519848335248,
           "ari": 0.8246698228749935,
@@ -3104,15 +2294,9 @@
       "original": "assets/images/originals/rwtd_357.jpg",
       "gt": "assets/masks/gt/rwtd_357.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_357.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_357.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4611833596772863,
-          "ari": -0.014157105441861273,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5990094469402931,
           "ari": -0.0027011038462028537,
@@ -3127,15 +2311,9 @@
       "original": "assets/images/originals/rwtd_358.jpg",
       "gt": "assets/masks/gt/rwtd_358.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_358.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_358.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.11782204851477472,
-          "ari": -0.0286129244389412,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9846061163324435,
           "ari": 0.8141655505061218,
@@ -3150,15 +2328,9 @@
       "original": "assets/images/originals/rwtd_359.jpg",
       "gt": "assets/masks/gt/rwtd_359.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_359.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_359.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.15031511922503307,
-          "ari": 0.028635462770406732,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9265806616402438,
           "ari": 0.8321888082746193,
@@ -3173,38 +2345,26 @@
       "original": "assets/images/originals/rwtd_36.jpg",
       "gt": "assets/masks/gt/rwtd_36.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_36.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_36.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9086906308581731,
-          "ari": 0.9133141527782086,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7679397706263184,
           "ari": -0.028408652093583647,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_362",
       "original": "assets/images/originals/rwtd_362.jpg",
       "gt": "assets/masks/gt/rwtd_362.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_362.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_362.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.042335899145274455,
-          "ari": 0.0012223790202395362,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5239031306889388,
           "ari": 0.009614674944755167,
@@ -3219,15 +2379,9 @@
       "original": "assets/images/originals/rwtd_363.jpg",
       "gt": "assets/masks/gt/rwtd_363.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_363.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_363.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.06853491480091657,
-          "ari": 0.03845216990088017,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7078005006203146,
           "ari": 0.18973540794891872,
@@ -3242,38 +2396,26 @@
       "original": "assets/images/originals/rwtd_364.jpg",
       "gt": "assets/masks/gt/rwtd_364.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_364.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_364.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8954854140842791,
-          "ari": 0.7192925823704247,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5030722563576214,
           "ari": -0.04966336883585574,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_365",
       "original": "assets/images/originals/rwtd_365.jpg",
       "gt": "assets/masks/gt/rwtd_365.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_365.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_365.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6075765477143427,
-          "ari": 0.4556933273774012,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9026273926184055,
           "ari": 0.7817367724474876,
@@ -3288,15 +2430,9 @@
       "original": "assets/images/originals/rwtd_366.jpg",
       "gt": "assets/masks/gt/rwtd_366.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_366.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_366.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5561896022695031,
-          "ari": 0.2783860866415369,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6671782893990275,
           "ari": 0.29523459173314764,
@@ -3311,15 +2447,9 @@
       "original": "assets/images/originals/rwtd_367.jpg",
       "gt": "assets/masks/gt/rwtd_367.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_367.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_367.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6073411838816615,
-          "ari": 0.4759620703088824,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7425004693059085,
           "ari": 0.3241486523631402,
@@ -3327,22 +2457,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_371",
       "original": "assets/images/originals/rwtd_371.jpg",
       "gt": "assets/masks/gt/rwtd_371.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_371.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_371.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2650996836597326,
-          "ari": 0.1370618412222935,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7159071562326846,
           "ari": 0.2860031922950787,
@@ -3357,15 +2481,9 @@
       "original": "assets/images/originals/rwtd_373.jpg",
       "gt": "assets/masks/gt/rwtd_373.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_373.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_373.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5951211525843356,
-          "ari": 0.4760753536904556,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9416111367622774,
           "ari": 0.9413117286888039,
@@ -3380,15 +2498,9 @@
       "original": "assets/images/originals/rwtd_374.jpg",
       "gt": "assets/masks/gt/rwtd_374.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_374.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_374.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2960618846689317,
-          "ari": -0.0949552759063977,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4498099801699859,
           "ari": 0.33017720017203095,
@@ -3403,15 +2515,9 @@
       "original": "assets/images/originals/rwtd_376.jpg",
       "gt": "assets/masks/gt/rwtd_376.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_376.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_376.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.09418181818139008,
-          "ari": 0.06316425086405975,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9707732064834752,
           "ari": 0.922762438918448,
@@ -3426,15 +2532,9 @@
       "original": "assets/images/originals/rwtd_377.jpg",
       "gt": "assets/masks/gt/rwtd_377.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_377.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_377.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.11923475701508539,
-          "ari": -0.07552723039567001,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8988259668353104,
           "ari": 0.9319000946944124,
@@ -3449,15 +2549,9 @@
       "original": "assets/images/originals/rwtd_378.jpg",
       "gt": "assets/masks/gt/rwtd_378.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_378.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_378.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2699163803703253,
-          "ari": 0.2516913059417762,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9535966720642144,
           "ari": 0.8266608775556337,
@@ -3472,22 +2566,16 @@
       "original": "assets/images/originals/rwtd_38.jpg",
       "gt": "assets/masks/gt/rwtd_38.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_38.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_38.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6412026689172979,
-          "ari": 0.05795778965439111,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.37459864430699535,
           "ari": 0.3864347602479326,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
+      "best_iou_method": "strict_ptd_learned",
       "best_ari_method": "strict_ptd_learned"
     },
     {
@@ -3495,15 +2583,9 @@
       "original": "assets/images/originals/rwtd_380.jpg",
       "gt": "assets/masks/gt/rwtd_380.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_380.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_380.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.16610305496551783,
-          "ari": 0.15340154851758778,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9563579147841572,
           "ari": 0.870591646068976,
@@ -3518,15 +2600,9 @@
       "original": "assets/images/originals/rwtd_382.jpg",
       "gt": "assets/masks/gt/rwtd_382.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_382.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_382.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7270150357362151,
-          "ari": 0.7179187585772929,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.845933080133967,
           "ari": 0.4393776023604692,
@@ -3534,22 +2610,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_383",
       "original": "assets/images/originals/rwtd_383.jpg",
       "gt": "assets/masks/gt/rwtd_383.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_383.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_383.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4985154814064099,
-          "ari": 0.31667019245037603,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.660381705090003,
           "ari": 0.1626852223761934,
@@ -3557,22 +2627,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_387",
       "original": "assets/images/originals/rwtd_387.jpg",
       "gt": "assets/masks/gt/rwtd_387.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_387.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_387.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2497922552756781,
-          "ari": 0.126816574271104,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9112475633510502,
           "ari": 0.7249145340274035,
@@ -3587,15 +2651,9 @@
       "original": "assets/images/originals/rwtd_388.jpg",
       "gt": "assets/masks/gt/rwtd_388.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_388.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_388.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.24934736842000274,
-          "ari": 0.1643602255076707,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5953356348283922,
           "ari": -0.026174028220677232,
@@ -3603,22 +2661,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_389",
       "original": "assets/images/originals/rwtd_389.jpg",
       "gt": "assets/masks/gt/rwtd_389.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_389.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_389.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5766680122236991,
-          "ari": 0.3041328497138664,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7116293861958833,
           "ari": 0.3407976706727313,
@@ -3633,15 +2685,9 @@
       "original": "assets/images/originals/rwtd_39.jpg",
       "gt": "assets/masks/gt/rwtd_39.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_39.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_39.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.24754112629417804,
-          "ari": -0.02754352136868605,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.4339338386875037,
           "ari": -0.011615276121343908,
@@ -3656,15 +2702,9 @@
       "original": "assets/images/originals/rwtd_391.jpg",
       "gt": "assets/masks/gt/rwtd_391.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_391.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_391.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4968105565807323,
-          "ari": 0.0290493949707085,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9160829461064145,
           "ari": 0.9183857399812098,
@@ -3679,15 +2719,9 @@
       "original": "assets/images/originals/rwtd_392.jpg",
       "gt": "assets/masks/gt/rwtd_392.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_392.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_392.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3388644352248682,
-          "ari": 0.1308487813504276,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9504198549825168,
           "ari": 0.8971947629148035,
@@ -3702,15 +2736,9 @@
       "original": "assets/images/originals/rwtd_393.jpg",
       "gt": "assets/masks/gt/rwtd_393.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_393.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_393.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4233930453090689,
-          "ari": 0.31396910604664924,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8904236142386426,
           "ari": 0.7235037245847753,
@@ -3725,15 +2753,9 @@
       "original": "assets/images/originals/rwtd_394.jpg",
       "gt": "assets/masks/gt/rwtd_394.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_394.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_394.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0,
-          "ari": 0.0,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.975323761625517,
           "ari": 0.9429997220757059,
@@ -3748,15 +2770,9 @@
       "original": "assets/images/originals/rwtd_395.jpg",
       "gt": "assets/masks/gt/rwtd_395.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_395.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_395.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0,
-          "ari": 0.0,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9399383229699448,
           "ari": 0.8555658098195431,
@@ -3771,15 +2787,9 @@
       "original": "assets/images/originals/rwtd_397.jpg",
       "gt": "assets/masks/gt/rwtd_397.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_397.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_397.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0649030377756703,
-          "ari": 0.04432696037712082,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4344341464408162,
           "ari": -0.00411439547098359,
@@ -3787,22 +2797,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_398",
       "original": "assets/images/originals/rwtd_398.jpg",
       "gt": "assets/masks/gt/rwtd_398.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_398.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_398.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.1536992840077124,
-          "ari": 0.18602895026869617,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8914489746080148,
           "ari": -0.022805405502736676,
@@ -3810,22 +2814,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_399",
       "original": "assets/images/originals/rwtd_399.jpg",
       "gt": "assets/masks/gt/rwtd_399.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_399.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_399.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.08747462264968227,
-          "ari": -0.07946933297395091,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.3712522045849083,
           "ari": -0.019605745551290656,
@@ -3840,15 +2838,9 @@
       "original": "assets/images/originals/rwtd_4.jpg",
       "gt": "assets/masks/gt/rwtd_4.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_4.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_4.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5555284168095691,
-          "ari": -0.0885980911008304,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9685398469431201,
           "ari": 0.9713026918377264,
@@ -3863,15 +2855,9 @@
       "original": "assets/images/originals/rwtd_40.jpg",
       "gt": "assets/masks/gt/rwtd_40.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_40.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_40.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.09756365232606692,
-          "ari": 0.038711560340664856,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4491267368994815,
           "ari": 0.2633309043174153,
@@ -3886,15 +2872,9 @@
       "original": "assets/images/originals/rwtd_400.jpg",
       "gt": "assets/masks/gt/rwtd_400.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_400.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_400.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8237567758641909,
-          "ari": 0.5953046095933597,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8254365824781693,
           "ari": 0.7168467350205409,
@@ -3909,15 +2889,9 @@
       "original": "assets/images/originals/rwtd_403.jpg",
       "gt": "assets/masks/gt/rwtd_403.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_403.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_403.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.826759628152678,
-          "ari": 0.3197731806996926,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9439243826019088,
           "ari": 0.7881563462325011,
@@ -3932,22 +2906,16 @@
       "original": "assets/images/originals/rwtd_408.jpg",
       "gt": "assets/masks/gt/rwtd_408.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_408.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_408.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.17866900175068767,
-          "ari": 0.06494353838310839,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.17784869804824163,
           "ari": 0.0778359545580141,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
+      "best_iou_method": "strict_ptd_learned",
       "best_ari_method": "strict_ptd_learned"
     },
     {
@@ -3955,15 +2923,9 @@
       "original": "assets/images/originals/rwtd_41.jpg",
       "gt": "assets/masks/gt/rwtd_41.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_41.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_41.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.29397904925606716,
-          "ari": 0.050139505050676214,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7110662953348201,
           "ari": 0.08119809134318678,
@@ -3978,15 +2940,9 @@
       "original": "assets/images/originals/rwtd_410.jpg",
       "gt": "assets/masks/gt/rwtd_410.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_410.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_410.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0,
-          "ari": 0.0,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9813330774005918,
           "ari": 0.9528629302001228,
@@ -4001,15 +2957,9 @@
       "original": "assets/images/originals/rwtd_411.jpg",
       "gt": "assets/masks/gt/rwtd_411.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_411.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_411.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.867877925227664,
-          "ari": 0.8147974062683613,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9570631172131241,
           "ari": 0.9447421509156064,
@@ -4024,38 +2974,26 @@
       "original": "assets/images/originals/rwtd_412.jpg",
       "gt": "assets/masks/gt/rwtd_412.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_412.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_412.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7844440557356163,
-          "ari": 0.7687882065335064,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7413472044803069,
           "ari": 0.02447880911329265,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_413",
       "original": "assets/images/originals/rwtd_413.jpg",
       "gt": "assets/masks/gt/rwtd_413.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_413.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_413.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0951601445467611,
-          "ari": 0.01028933942424678,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9257697298545305,
           "ari": 0.8522721461550834,
@@ -4070,15 +3008,9 @@
       "original": "assets/images/originals/rwtd_414.jpg",
       "gt": "assets/masks/gt/rwtd_414.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_414.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_414.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3580017142148696,
-          "ari": 0.02888804949734438,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9329149286252615,
           "ari": 0.8955825145850349,
@@ -4093,15 +3025,9 @@
       "original": "assets/images/originals/rwtd_416.jpg",
       "gt": "assets/masks/gt/rwtd_416.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_416.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_416.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.44059423285645005,
-          "ari": 0.25075554323817506,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9645036051002809,
           "ari": 0.911870597853383,
@@ -4116,38 +3042,26 @@
       "original": "assets/images/originals/rwtd_417.jpg",
       "gt": "assets/masks/gt/rwtd_417.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_417.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_417.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7772954059466137,
-          "ari": 0.4683068755252878,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5441733996262521,
           "ari": -0.00373976932715999,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_418",
       "original": "assets/images/originals/rwtd_418.jpg",
       "gt": "assets/masks/gt/rwtd_418.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_418.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_418.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5249959899453296,
-          "ari": 0.479119842931645,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8806693775345583,
           "ari": 0.8916572977722629,
@@ -4162,61 +3076,43 @@
       "original": "assets/images/originals/rwtd_422.jpg",
       "gt": "assets/masks/gt/rwtd_422.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_422.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_422.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9607005684407414,
-          "ari": 0.9234583577376729,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5094014415535735,
           "ari": 0.0019356445367145348,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_423",
       "original": "assets/images/originals/rwtd_423.jpg",
       "gt": "assets/masks/gt/rwtd_423.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_423.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_423.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9880738369755422,
-          "ari": 0.9833167343480003,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9540730955484188,
           "ari": 0.9366678185269941,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_424",
       "original": "assets/images/originals/rwtd_424.jpg",
       "gt": "assets/masks/gt/rwtd_424.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_424.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_424.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.13920332662242432,
-          "ari": 0.013666985456673896,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9188254410377928,
           "ari": 0.7970156102149213,
@@ -4231,38 +3127,26 @@
       "original": "assets/images/originals/rwtd_425.jpg",
       "gt": "assets/masks/gt/rwtd_425.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_425.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_425.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9173434107866956,
-          "ari": 0.8777754444342459,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5312414360086525,
           "ari": 0.13270713613805546,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_426",
       "original": "assets/images/originals/rwtd_426.jpg",
       "gt": "assets/masks/gt/rwtd_426.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_426.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_426.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6374642126763294,
-          "ari": 0.5222057650447177,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8357092731812817,
           "ari": 0.5524502802999374,
@@ -4277,15 +3161,9 @@
       "original": "assets/images/originals/rwtd_428.jpg",
       "gt": "assets/masks/gt/rwtd_428.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_428.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_428.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3492391728429604,
-          "ari": 0.22017603187280566,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9757345453618068,
           "ari": 0.9411349385654146,
@@ -4300,15 +3178,9 @@
       "original": "assets/images/originals/rwtd_429.jpg",
       "gt": "assets/masks/gt/rwtd_429.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_429.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_429.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4098462816770189,
-          "ari": 0.2229170964821703,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9466401090236224,
           "ari": 0.8795567936219669,
@@ -4323,15 +3195,9 @@
       "original": "assets/images/originals/rwtd_431.jpg",
       "gt": "assets/masks/gt/rwtd_431.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_431.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_431.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.003939475333503583,
-          "ari": -0.0008728537161262634,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9598628479203983,
           "ari": 0.8923433109064983,
@@ -4346,15 +3212,9 @@
       "original": "assets/images/originals/rwtd_432.jpg",
       "gt": "assets/masks/gt/rwtd_432.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_432.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_432.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.34331512420613536,
-          "ari": 0.20576051048584448,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.866926527588374,
           "ari": 0.6592519311304678,
@@ -4369,15 +3229,9 @@
       "original": "assets/images/originals/rwtd_434.jpg",
       "gt": "assets/masks/gt/rwtd_434.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_434.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_434.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5953444810821343,
-          "ari": 0.1332126889094157,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8002877007884361,
           "ari": 0.6754476776002544,
@@ -4392,15 +3246,9 @@
       "original": "assets/images/originals/rwtd_436.jpg",
       "gt": "assets/masks/gt/rwtd_436.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_436.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_436.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.09626481134068751,
-          "ari": -0.035459719816063454,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4667408231358747,
           "ari": 0.019473124550867527,
@@ -4415,38 +3263,26 @@
       "original": "assets/images/originals/rwtd_437.jpg",
       "gt": "assets/masks/gt/rwtd_437.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_437.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_437.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9693429885249255,
-          "ari": 0.9636534657267731,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7155318520350232,
           "ari": 0.04207058454384961,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_44",
       "original": "assets/images/originals/rwtd_44.jpg",
       "gt": "assets/masks/gt/rwtd_44.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_44.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_44.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4288193075152383,
-          "ari": 0.11294558240221865,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5785660597950172,
           "ari": 0.1470326503763343,
@@ -4461,15 +3297,9 @@
       "original": "assets/images/originals/rwtd_440.jpg",
       "gt": "assets/masks/gt/rwtd_440.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_440.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_440.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4314307417802897,
-          "ari": -0.0347962868075904,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9692120944496886,
           "ari": 0.9764354096798672,
@@ -4484,15 +3314,9 @@
       "original": "assets/images/originals/rwtd_441.jpg",
       "gt": "assets/masks/gt/rwtd_441.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_441.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_441.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5417341111068904,
-          "ari": -0.06614088117712671,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7763491794892882,
           "ari": 0.8034273864142442,
@@ -4507,15 +3331,9 @@
       "original": "assets/images/originals/rwtd_442.jpg",
       "gt": "assets/masks/gt/rwtd_442.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_442.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_442.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.24346140149470397,
-          "ari": 0.10817568601393485,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.4183761208683872,
           "ari": 0.17742497496836682,
@@ -4530,15 +3348,9 @@
       "original": "assets/images/originals/rwtd_443.jpg",
       "gt": "assets/masks/gt/rwtd_443.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_443.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_443.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2802081798983974,
-          "ari": 0.009081277565153237,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4495296640932742,
           "ari": -0.02126794118306813,
@@ -4546,22 +3358,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_444",
       "original": "assets/images/originals/rwtd_444.jpg",
       "gt": "assets/masks/gt/rwtd_444.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_444.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_444.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6196642531153833,
-          "ari": -0.00026462938450246855,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8011220706990582,
           "ari": 0.2847589104635089,
@@ -4576,15 +3382,9 @@
       "original": "assets/images/originals/rwtd_447.jpg",
       "gt": "assets/masks/gt/rwtd_447.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_447.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_447.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.39394574211656735,
-          "ari": 0.20258189723952985,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9236209945208013,
           "ari": 0.79197306880834,
@@ -4599,15 +3399,9 @@
       "original": "assets/images/originals/rwtd_448.jpg",
       "gt": "assets/masks/gt/rwtd_448.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_448.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_448.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8473524916818574,
-          "ari": 0.7132465290575736,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9761611179584987,
           "ari": 0.951052752561489,
@@ -4622,15 +3416,9 @@
       "original": "assets/images/originals/rwtd_449.jpg",
       "gt": "assets/masks/gt/rwtd_449.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_449.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_449.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3094420054707977,
-          "ari": 0.11305313055359918,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.963180331695389,
           "ari": 0.9245144272392495,
@@ -4645,15 +3433,9 @@
       "original": "assets/images/originals/rwtd_45.jpg",
       "gt": "assets/masks/gt/rwtd_45.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_45.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_45.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.46366333962648054,
-          "ari": 0.15422618095369484,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9920352482606046,
           "ari": 0.9799344154844501,
@@ -4668,15 +3450,9 @@
       "original": "assets/images/originals/rwtd_450.jpg",
       "gt": "assets/masks/gt/rwtd_450.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_450.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_450.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.33979280017761126,
-          "ari": 0.19672723893416788,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9475884572220159,
           "ari": 0.8783576246087214,
@@ -4691,38 +3467,26 @@
       "original": "assets/images/originals/rwtd_451.jpg",
       "gt": "assets/masks/gt/rwtd_451.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_451.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_451.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8634951248212606,
-          "ari": 0.8429234898361445,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.613454384003225,
           "ari": -0.08294400481060357,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_452",
       "original": "assets/images/originals/rwtd_452.jpg",
       "gt": "assets/masks/gt/rwtd_452.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_452.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_452.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0,
-          "ari": 0.0,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7729826705818406,
           "ari": 0.41326129157999975,
@@ -4737,15 +3501,9 @@
       "original": "assets/images/originals/rwtd_453.jpg",
       "gt": "assets/masks/gt/rwtd_453.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_453.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_453.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.21920206394477962,
-          "ari": 0.02828150081546382,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9300009222518445,
           "ari": 0.8222845107037584,
@@ -4760,15 +3518,9 @@
       "original": "assets/images/originals/rwtd_455.jpg",
       "gt": "assets/masks/gt/rwtd_455.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_455.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_455.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.4086828594577456,
-          "ari": 0.15913744075607195,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8605200945568353,
           "ari": 0.862394101675175,
@@ -4783,38 +3535,26 @@
       "original": "assets/images/originals/rwtd_456.jpg",
       "gt": "assets/masks/gt/rwtd_456.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_456.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_456.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6356094161012756,
-          "ari": 0.2552557508846924,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5182583952473561,
           "ari": 0.11471397827440574,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_457",
       "original": "assets/images/originals/rwtd_457.jpg",
       "gt": "assets/masks/gt/rwtd_457.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_457.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_457.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8098901948623187,
-          "ari": 0.7206509342962578,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9370443394885732,
           "ari": 0.9166321316564834,
@@ -4829,15 +3569,9 @@
       "original": "assets/images/originals/rwtd_461.jpg",
       "gt": "assets/masks/gt/rwtd_461.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_461.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_461.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.48085047303500494,
-          "ari": 0.03259130047722992,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7222201152898926,
           "ari": 0.29704457206313,
@@ -4852,15 +3586,9 @@
       "original": "assets/images/originals/rwtd_463.jpg",
       "gt": "assets/masks/gt/rwtd_463.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_463.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_463.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.46097065221102956,
-          "ari": 0.28114928632156383,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5693862216234885,
           "ari": 0.1086278577063512,
@@ -4868,22 +3596,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_464",
       "original": "assets/images/originals/rwtd_464.jpg",
       "gt": "assets/masks/gt/rwtd_464.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_464.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_464.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.013509717291892868,
-          "ari": -0.005001701567895586,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.6849938141316407,
           "ari": 0.21045188234985068,
@@ -4898,15 +3620,9 @@
       "original": "assets/images/originals/rwtd_465.jpg",
       "gt": "assets/masks/gt/rwtd_465.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_465.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_465.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3032462661114655,
-          "ari": 0.046856512435099335,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7093648538925053,
           "ari": 0.662823917295406,
@@ -4921,15 +3637,9 @@
       "original": "assets/images/originals/rwtd_466.jpg",
       "gt": "assets/masks/gt/rwtd_466.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_466.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_466.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6214111922080641,
-          "ari": 0.6782737207775714,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8236775818627224,
           "ari": -0.02700374393991477,
@@ -4937,45 +3647,33 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_467",
       "original": "assets/images/originals/rwtd_467.jpg",
       "gt": "assets/masks/gt/rwtd_467.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_467.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_467.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5560266505134923,
-          "ari": 0.19193183932687233,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5058545705000068,
           "ari": -0.013069507391716159,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_468",
       "original": "assets/images/originals/rwtd_468.jpg",
       "gt": "assets/masks/gt/rwtd_468.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_468.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_468.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.29368745188525874,
-          "ari": 0.042628955642818135,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9619208657390533,
           "ari": 0.9324429895652029,
@@ -4990,38 +3688,26 @@
       "original": "assets/images/originals/rwtd_469.jpg",
       "gt": "assets/masks/gt/rwtd_469.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_469.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_469.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5093572545461125,
-          "ari": 0.006351062137419023,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.18817683571020177,
           "ari": -0.08001953783377616,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_47",
       "original": "assets/images/originals/rwtd_47.jpg",
       "gt": "assets/masks/gt/rwtd_47.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_47.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_47.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5407125082667946,
-          "ari": 0.3077875920616331,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8109277792785036,
           "ari": 0.5857252218022041,
@@ -5036,61 +3722,43 @@
       "original": "assets/images/originals/rwtd_471.jpg",
       "gt": "assets/masks/gt/rwtd_471.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_471.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_471.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8290260443821401,
-          "ari": 0.5389994706947856,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.3434709247279992,
           "ari": 0.23447530067843236,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_472",
       "original": "assets/images/originals/rwtd_472.jpg",
       "gt": "assets/masks/gt/rwtd_472.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_472.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_472.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8198368773643465,
-          "ari": 0.6581188088408443,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5565574941647644,
           "ari": 0.016989679412237974,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_473",
       "original": "assets/images/originals/rwtd_473.jpg",
       "gt": "assets/masks/gt/rwtd_473.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_473.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_473.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3363114896569854,
-          "ari": 0.015496700281476558,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8391838482938317,
           "ari": 0.543973878142406,
@@ -5105,15 +3773,9 @@
       "original": "assets/images/originals/rwtd_474.jpg",
       "gt": "assets/masks/gt/rwtd_474.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_474.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_474.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.20556949698452082,
-          "ari": -0.02602761535856761,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4667022360180649,
           "ari": -0.013918591794346137,
@@ -5128,15 +3790,9 @@
       "original": "assets/images/originals/rwtd_475.jpg",
       "gt": "assets/masks/gt/rwtd_475.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_475.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_475.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.07117181883506926,
-          "ari": 0.041694294816539024,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7134847736052325,
           "ari": 0.19818300344771345,
@@ -5151,15 +3807,9 @@
       "original": "assets/images/originals/rwtd_476.jpg",
       "gt": "assets/masks/gt/rwtd_476.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_476.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_476.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.013278082252759086,
-          "ari": 0.00843328830063033,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.8502126130425621,
           "ari": 0.5835871857951459,
@@ -5174,15 +3824,9 @@
       "original": "assets/images/originals/rwtd_478.jpg",
       "gt": "assets/masks/gt/rwtd_478.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_478.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_478.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7031399046090955,
-          "ari": 0.29127978695244316,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9577711619244573,
           "ari": 0.8780432867833129,
@@ -5197,15 +3841,9 @@
       "original": "assets/images/originals/rwtd_479.jpg",
       "gt": "assets/masks/gt/rwtd_479.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_479.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_479.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3186537287089684,
-          "ari": 0.1451972191539476,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7160641608753007,
           "ari": 0.742480670206287,
@@ -5220,22 +3858,16 @@
       "original": "assets/images/originals/rwtd_48.jpg",
       "gt": "assets/masks/gt/rwtd_48.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_48.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_48.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6433563232412058,
-          "ari": -0.10635428616078553,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5622838000208239,
           "ari": 0.0694995848906114,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
+      "best_iou_method": "strict_ptd_learned",
       "best_ari_method": "strict_ptd_learned"
     },
     {
@@ -5243,15 +3875,9 @@
       "original": "assets/images/originals/rwtd_485.jpg",
       "gt": "assets/masks/gt/rwtd_485.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_485.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_485.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6641898864796619,
-          "ari": 0.20331190497145932,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.689504574220866,
           "ari": -0.08454733624202755,
@@ -5259,22 +3885,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_492",
       "original": "assets/images/originals/rwtd_492.jpg",
       "gt": "assets/masks/gt/rwtd_492.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_492.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_492.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.11431174656534093,
-          "ari": 0.03722626737672495,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9707078272939631,
           "ari": 0.9342671785376282,
@@ -5289,15 +3909,9 @@
       "original": "assets/images/originals/rwtd_5.jpg",
       "gt": "assets/masks/gt/rwtd_5.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_5.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_5.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.44399111022508375,
-          "ari": 0.22910843755477633,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4570686019690233,
           "ari": 0.39402656191075075,
@@ -5312,15 +3926,9 @@
       "original": "assets/images/originals/rwtd_51.jpg",
       "gt": "assets/masks/gt/rwtd_51.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_51.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_51.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.20360514011761224,
-          "ari": 0.02945361851534277,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9915476077806429,
           "ari": 0.9837091932964744,
@@ -5335,15 +3943,9 @@
       "original": "assets/images/originals/rwtd_54.jpg",
       "gt": "assets/masks/gt/rwtd_54.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_54.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_54.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.38478004455731607,
-          "ari": 0.29017249030654113,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9242464188396954,
           "ari": 0.7980785390479201,
@@ -5358,15 +3960,9 @@
       "original": "assets/images/originals/rwtd_56.jpg",
       "gt": "assets/masks/gt/rwtd_56.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_56.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_56.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.17475884762985205,
-          "ari": 0.04223701416258004,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.49305339015262956,
           "ari": 0.006222679936947743,
@@ -5374,22 +3970,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_58",
       "original": "assets/images/originals/rwtd_58.jpg",
       "gt": "assets/masks/gt/rwtd_58.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_58.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_58.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3453997392995182,
-          "ari": 0.06944507135192667,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5271623199680386,
           "ari": 0.0038435354469673823,
@@ -5397,22 +3987,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_59",
       "original": "assets/images/originals/rwtd_59.jpg",
       "gt": "assets/masks/gt/rwtd_59.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_59.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_59.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.05021712867714691,
-          "ari": 0.007510162740286086,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9777821250880951,
           "ari": 0.9520630079952028,
@@ -5427,15 +4011,9 @@
       "original": "assets/images/originals/rwtd_60.jpg",
       "gt": "assets/masks/gt/rwtd_60.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_60.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_60.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.022622016387501682,
-          "ari": 0.011584064529602693,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.4720043219870945,
           "ari": 0.04903312588417231,
@@ -5450,15 +4028,9 @@
       "original": "assets/images/originals/rwtd_63.jpg",
       "gt": "assets/masks/gt/rwtd_63.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_63.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_63.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.050506846878777996,
-          "ari": -0.022156456985337775,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5803833007803644,
           "ari": -0.06334319042936673,
@@ -5466,22 +4038,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_67",
       "original": "assets/images/originals/rwtd_67.jpg",
       "gt": "assets/masks/gt/rwtd_67.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_67.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_67.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.21977746363213146,
-          "ari": -0.01654661729378207,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6175693527071096,
           "ari": 0.007940730351116147,
@@ -5496,15 +4062,9 @@
       "original": "assets/images/originals/rwtd_69.jpg",
       "gt": "assets/masks/gt/rwtd_69.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_69.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_69.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.30191557891082693,
-          "ari": 0.0586849665538106,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5006832062945513,
           "ari": 0.0023658007690598205,
@@ -5512,22 +4072,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_70",
       "original": "assets/images/originals/rwtd_70.jpg",
       "gt": "assets/masks/gt/rwtd_70.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_70.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_70.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2764866615953224,
-          "ari": 0.043469200826058145,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5002860700694977,
           "ari": 0.0043111167734646615,
@@ -5535,68 +4089,50 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_71",
       "original": "assets/images/originals/rwtd_71.jpg",
       "gt": "assets/masks/gt/rwtd_71.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_71.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_71.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.7317908653802175,
-          "ari": 0.7191622858225476,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5082702636710994,
           "ari": -0.0636713516836982,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_73",
       "original": "assets/images/originals/rwtd_73.jpg",
       "gt": "assets/masks/gt/rwtd_73.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_73.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_73.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8637114992537779,
-          "ari": 0.7208457633812736,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5145562903085729,
           "ari": 0.00819147904293595,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_74",
       "original": "assets/images/originals/rwtd_74.jpg",
       "gt": "assets/masks/gt/rwtd_74.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_74.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_74.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.006915230795807885,
-          "ari": -0.0007645154341757959,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5772942798524107,
           "ari": 0.05204363029635495,
@@ -5611,15 +4147,9 @@
       "original": "assets/images/originals/rwtd_76.jpg",
       "gt": "assets/masks/gt/rwtd_76.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_76.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_76.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.9708509176531198,
-          "ari": 0.9463540391536823,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.9867586669246395,
           "ari": 0.9712766577044685,
@@ -5634,15 +4164,9 @@
       "original": "assets/images/originals/rwtd_77.jpg",
       "gt": "assets/masks/gt/rwtd_77.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_77.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_77.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.3049506634883893,
-          "ari": 0.3521873428495432,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7677795458706657,
           "ari": -0.04950747424034051,
@@ -5650,22 +4174,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_78",
       "original": "assets/images/originals/rwtd_78.jpg",
       "gt": "assets/masks/gt/rwtd_78.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_78.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_78.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.47660178172690615,
-          "ari": 0.03663171890834743,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.6308135986318499,
           "ari": -0.016049487760970427,
@@ -5673,45 +4191,33 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_79",
       "original": "assets/images/originals/rwtd_79.jpg",
       "gt": "assets/masks/gt/rwtd_79.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_79.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_79.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.8120690880601885,
-          "ari": 0.8201265655990184,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.7854125387850286,
           "ari": 0.40299273999714513,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_8",
       "original": "assets/images/originals/rwtd_8.jpg",
       "gt": "assets/masks/gt/rwtd_8.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_8.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_8.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.07877556548807049,
-          "ari": -0.011529376049273479,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.8858640458611438,
           "ari": 0.7986111634318228,
@@ -5726,15 +4232,9 @@
       "original": "assets/images/originals/rwtd_84.jpg",
       "gt": "assets/masks/gt/rwtd_84.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_84.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_84.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6058673913790358,
-          "ari": 0.08579964811798209,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.7291871365198258,
           "ari": 0.47411747258388603,
@@ -5749,15 +4249,9 @@
       "original": "assets/images/originals/rwtd_85.jpg",
       "gt": "assets/masks/gt/rwtd_85.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_85.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_85.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.005293054479717807,
-          "ari": -0.0018863443649180952,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5653708598964929,
           "ari": -0.004753192977365999,
@@ -5765,22 +4259,16 @@
         }
       },
       "best_iou_method": "strict_ptd_learned",
-      "best_ari_method": "baseline_v5"
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_86",
       "original": "assets/images/originals/rwtd_86.jpg",
       "gt": "assets/masks/gt/rwtd_86.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_86.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_86.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.34780261310779664,
-          "ari": 0.06611928013262147,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.865857635328273,
           "ari": 0.6786773064794634,
@@ -5795,38 +4283,26 @@
       "original": "assets/images/originals/rwtd_88.jpg",
       "gt": "assets/masks/gt/rwtd_88.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_88.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_88.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.5603867188151904,
-          "ari": 0.017687699198391412,
-          "used_inversion": 0
-        },
         "strict_ptd_learned": {
           "iou": 0.5073298511929631,
           "ari": -0.03761245705970963,
           "used_inversion": 0
         }
       },
-      "best_iou_method": "baseline_v5",
-      "best_ari_method": "baseline_v5"
+      "best_iou_method": "strict_ptd_learned",
+      "best_ari_method": "strict_ptd_learned"
     },
     {
       "id": "rwtd_91",
       "original": "assets/images/originals/rwtd_91.jpg",
       "gt": "assets/masks/gt/rwtd_91.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_91.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_91.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.2872085048002766,
-          "ari": 0.05703079009472506,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.5963304464674549,
           "ari": 0.11558859975540021,
@@ -5841,15 +4317,9 @@
       "original": "assets/images/originals/rwtd_93.jpg",
       "gt": "assets/masks/gt/rwtd_93.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_93.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_93.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.039089369128794495,
-          "ari": -0.012576664478678756,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.4879892902924655,
           "ari": 0.016795837071228194,
@@ -5864,15 +4334,9 @@
       "original": "assets/images/originals/rwtd_95.jpg",
       "gt": "assets/masks/gt/rwtd_95.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_95.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_95.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.6310476245872311,
-          "ari": 0.37558071967335,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.9730045835278236,
           "ari": 0.9485541596919951,
@@ -5887,15 +4351,9 @@
       "original": "assets/images/originals/rwtd_96.jpg",
       "gt": "assets/masks/gt/rwtd_96.png",
       "masks": {
-        "baseline_v5": "assets/masks/baseline_v5/rwtd_96.png",
         "strict_ptd_learned": "../texturesam2_strict_protocol_v1/assets/masks/strict_ptd_learned/rwtd_96.png"
       },
       "metrics": {
-        "baseline_v5": {
-          "iou": 0.0901098901096515,
-          "ari": -0.016595711616303885,
-          "used_inversion": 1
-        },
         "strict_ptd_learned": {
           "iou": 0.48179186073609115,
           "ari": 0.004248044706487994,
