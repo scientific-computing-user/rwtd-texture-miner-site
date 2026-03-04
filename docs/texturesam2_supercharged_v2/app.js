@@ -17,6 +17,9 @@ const methodColors = {
   reranker_cv_refined: "#12925b",
   reranker_in_sample: "#c93c5d",
   reranker_in_sample_refined: "#8f2442",
+  strict_handcrafted: "#0b8f8d",
+  strict_ptd_heuristic: "#3b82f6",
+  strict_ptd_learned: "#7c3aed",
 };
 
 const el = {
