@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "masks_dir": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v11_multibank/full256/v11_dense_rescue_permissive/strict_ptd_v11_dense_rescue/masks",
+    "per_image_csv": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v11_multibank/full256/v11_dense_rescue_permissive/strict_ptd_v11_dense_rescue/per_image.csv",
+    "summary_json": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v11_multibank/full256/v11_dense_rescue_permissive/strict_ptd_v11_dense_rescue/summary.json"
+  },
+  "dataset": "rwtd_kaust256",
+  "metrics": {
+    "delta_ari_vs_v9": 0.013746991455089286,
+    "delta_miou_vs_v9": 0.01265532805009173,
+    "v11_ari": 0.7310920148317845,
+    "v11_miou": 0.8574693584711603,
+    "v9_ari": 0.7173450233766954,
+    "v9_miou": 0.8448140304210685
+  },
+  "num_images": 256,
+  "paths": {
+    "dense_prompt_masks_root": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v11_multibank/overnight_multibank_promptstyle",
+    "rwtd_root": "/home/galoren/TextureSAM-v2/data/rwtd_kaust256_clean",
+    "v9_masks_root": "/home/galoren/TextureSAM-v2/reports/strict_ptd_v9_v7v8_on_official0p3/strict_ptd_v9_v7_v8_gate/masks"
+  },
+  "protocol": {
+    "external_training_data": "None (inference-only conservative dense rescue)",
+    "frozen_after_ptd_validation_only": true,
+    "name": "strict_ptd_v11_dense_rescue",
+    "uses_rwtd_labels_for_final_metric_reporting": true,
+    "uses_rwtd_labels_for_hyperparameter_search": false,
+    "uses_rwtd_labels_for_training": false
+  },
+  "switching": {
+    "switch_rate": 0.07421875,
+    "switched_count": 19
+  },
+  "thresholds": {
+    "area_ratio_max": 3.0,
+    "area_ratio_min": 0.02,
+    "cov9_low": 0.55,
+    "cov_gain_min": 0.03,
+    "prec_best_min": 0.15,
+    "score_margin": -0.05
+  }
+}

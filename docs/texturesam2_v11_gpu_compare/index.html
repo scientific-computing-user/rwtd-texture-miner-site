@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TextureSAM-v2 v11 GPU Run</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=20260305-v11gpu" />
+</head>
+<body>
+  <div class="ambient"></div>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-left">
+        <p class="eyebrow">RWTD Kaust256 Final GPU Run</p>
+        <h1>TextureSAM-v2 v11 Dense Rescue (GPU)</h1>
+        <p class="sub">Direct visual + metric comparison of three methods on all 256 RWTD images: v9 baseline, v11 conservative, and v11 permissive.</p>
+        <div class="hero-links">
+          <a href="../index.html">Home</a>
+          <a href="./data.json">Data JSON</a>
+          <a href="./assets/metrics/summary_conservative.json">Conservative Summary</a>
+          <a href="./assets/metrics/summary_permissive.json">Permissive Summary</a>
+          <a href="./assets/metrics/per_image_conservative.csv">Per-image CSV (Conservative)</a>
+          <a href="./assets/metrics/per_image_permissive.csv">Per-image CSV (Permissive)</a>
+        </div>
+      </div>
+      <div class="hero-right" id="top-summary"></div>
+    </header>
+
+    <section class="official-results card">
+      <div class="official-head">
+        <h2>Run Stats (All 256 RWTD Images)</h2>
+        <p>Official paper reference for RWTD non-aggregated TextureSAM η≤0.3 is <b>mIoU 0.47 / ARI 0.62</b>.</p>
+      </div>
+      <div class="official-wrap">
+        <table class="official-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>mIoU</th>
+              <th>ARI</th>
+              <th>Delta mIoU vs v9</th>
+              <th>Delta ARI vs v9</th>
+              <th>Switched Images</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TextureSAM-v2 Strict PTD-v9 Baseline</td>
+              <td>0.844814</td>
+              <td>0.717345</td>
+              <td>+0.000000</td>
+              <td>+0.000000</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>TextureSAM-v2 v11 Dense Rescue (Conservative)</td>
+              <td>0.850274</td>
+              <td>0.722664</td>
+              <td>+0.005460</td>
+              <td>+0.005319</td>
+              <td>2 / 256</td>
+            </tr>
+            <tr>
+              <td><strong>TextureSAM-v2 v11 Dense Rescue (Permissive)</strong></td>
+              <td><strong>0.857469</strong></td>
+              <td><strong>0.731092</strong></td>
+              <td><strong>+0.012655</strong></td>
+              <td><strong>+0.013747</strong></td>
+              <td><strong>19 / 256</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="controls card">
+      <label>
+        Highlight Method
+        <select id="method-select"></select>
+      </label>
+      <label>
+        Sort Images By
+        <select id="sort-select">
+          <option value="metric_desc">Selected Metric (High to Low)</option>
+          <option value="metric_asc">Selected Metric (Low to High)</option>
+          <option value="id_asc">Image ID</option>
+        </select>
+      </label>
+      <label>
+        Metric
+        <select id="metric-select">
+          <option value="iou">IoU</option>
+          <option value="ari">ARI</option>
+        </select>
+      </label>
+      <label>
+        Search ID
+        <input id="search-input" type="text" placeholder="rwtd_125" />
+      </label>
+      <label>
+        Overlay Opacity
+        <input id="alpha-input" type="range" min="0" max="100" value="56" />
+      </label>
+      <label>
+        Thumbnail Count
+        <input id="thumb-count" type="number" min="24" max="256" step="8" value="96" />
+      </label>
+    </section>
+
+    <section class="scoreboard card">
+      <h2>Method Scoreboard</h2>
+      <p class="score-note">Winner is automatically highlighted by best mean mIoU, then ARI.</p>
+      <div id="score-grid" class="score-grid"></div>
+    </section>
+
+    <section class="focus card" id="focus"></section>
+
+    <section class="thumbs card">
+      <div class="thumb-head">
+        <h2>Image Browser</h2>
+        <p id="thumb-meta"></p>
+      </div>
+      <div id="thumb-grid" class="thumb-grid"></div>
+    </section>
+  </main>
+
+  <script src="./app.js?v=20260305-v11gpu"></script>
+</body>
+</html>
