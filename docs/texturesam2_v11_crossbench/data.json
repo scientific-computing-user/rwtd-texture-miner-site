@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "TextureSAM-v2 v11 Cross-Benchmark",
+    "updated": "2026-03-05"
+  },
+  "datasets": [
+    {
+      "key": "stmd",
+      "display_name": "STMD (test split, 5000 images)",
+      "meta": "Synthetic texture-transition benchmark from TextureSAM paper",
+      "notes": "SAM proposal bank (TextureSAM 0.3 checkpoint, pps=24) + v11 dense-rescue transfer with no RWTD labels for this benchmark.",
+      "paper_rows": [
+        {
+          "method": "SAM-2",
+          "miou_noagg": 0.07,
+          "ari_noagg": 0.16,
+          "miou_agg": 0.16,
+          "source": "TextureSAM paper"
+        },
+        {
+          "method": "SAM-2*",
+          "miou_noagg": 0.17,
+          "ari_noagg": 0.16,
+          "miou_agg": 0.78,
+          "source": "TextureSAM paper"
+        },
+        {
+          "method": "TextureSAM eta<=0.3",
+          "miou_noagg": 0.33,
+          "ari_noagg": 0.32,
+          "miou_agg": 0.71,
+          "source": "TextureSAM paper"
+        },
+        {
+          "method": "TextureSAM eta<=1.0",
+          "miou_noagg": 0.35,
+          "ari_noagg": 0.34,
+          "miou_agg": 0.7,
+          "source": "TextureSAM paper"
+        }
+      ],
+      "our_rows": [
+        {
+          "method": "TextureSAM-v2 v11 conservative",
+          "miou_noagg": 0.24514593153109135,
+          "ari_noagg": 0.09654023046382905,
+          "miou_agg": 0.1660042815916952,
+          "source": "This run"
+        },
+        {
+          "method": "TextureSAM-v2 v11 permissive",
+          "miou_noagg": 0.24514593153109135,
+          "ari_noagg": 0.09654023046382905,
+          "miou_agg": 0.1660042815916952,
+          "source": "This run"
+        }
+      ],
+      "artifacts": {
+        "conservative_json": "./assets/metrics/stmd_v11_conservative_eval.json",
+        "permissive_json": "./assets/metrics/stmd_v11_permissive_eval.json"
+      }
+    },
+    {
+      "key": "ade20k",
+      "display_name": "ADE20K-Real (1999 images, unified GT)",
+      "meta": "Real-scene benchmark from TextureSAM paper",
+      "notes": "Numeric-mapped ADE20K real-images bundle from TextureSAM data release, evaluated with the same streaming no-agg/agg protocol used here.",
+      "paper_rows": [
+        {
+          "method": "SAM-2",
+          "miou_noagg": 0.08,
+          "ari_noagg": 0.08,
+          "miou_agg": 0.46,
+          "source": "TextureSAM paper"
+        },
+        {
+          "method": "SAM-2*",
+          "miou_noagg": 0.1,
+          "ari_noagg": 0.11,
+          "miou_agg": 0.65,
+          "source": "TextureSAM paper"
+        },
+        {
+          "method": "TextureSAM eta<=0.3",
+          "miou_noagg": 0.11,
+          "ari_noagg": 0.11,
+          "miou_agg": 0.55,
+          "source": "TextureSAM paper"
+        },
+        {
+          "method": "TextureSAM eta<=1.0",
+          "miou_noagg": 0.12,
+          "ari_noagg": 0.11,
+          "miou_agg": 0.4,
+          "source": "TextureSAM paper"
+        }
+      ],
+      "our_rows": [
+        {
+          "method": "TextureSAM-v2 v11 conservative",
+          "miou_noagg": 0.06955440242149656,
+          "ari_noagg": 0.041271754368023654,
+          "miou_agg": 0.04318529644309449,
+          "source": "This run"
+        },
+        {
+          "method": "TextureSAM-v2 v11 permissive",
+          "miou_noagg": 0.07140962012087511,
+          "ari_noagg": 0.04298066604573684,
+          "miou_agg": 0.04384622251940798,
+          "source": "This run"
+        }
+      ],
+      "artifacts": {
+        "conservative_json": "./assets/metrics/ade_v11_conservative_eval.json",
+        "permissive_json": "./assets/metrics/ade_v11_permissive_eval.json"
+      }
+    }
+  ]
+}
