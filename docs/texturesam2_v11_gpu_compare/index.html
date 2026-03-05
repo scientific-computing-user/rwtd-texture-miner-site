@@ -16,7 +16,7 @@
       <div class="hero-left">
         <p class="eyebrow">RWTD Kaust256 Final GPU Run</p>
         <h1>TextureSAM-v2 v11 Dense Rescue (GPU)</h1>
-        <p class="sub">Direct visual + metric comparison of three methods on all 256 RWTD images: v9 baseline, v11 conservative, and v11 permissive.</p>
+        <p class="sub">Direct visual + metric comparison of the two v11 configurations on all 256 RWTD images: conservative and permissive.</p>
         <div class="hero-links">
           <a href="../index.html">Home</a>
           <a href="./data.json">Data JSON</a>
@@ -41,34 +41,26 @@
               <th>Method</th>
               <th>mIoU</th>
               <th>ARI</th>
-              <th>Delta mIoU vs v9</th>
-              <th>Delta ARI vs v9</th>
+              <th>Delta mIoU vs Conservative</th>
+              <th>Delta ARI vs Conservative</th>
               <th>Switched Images</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>TextureSAM-v2 Strict PTD-v9 Baseline</td>
-              <td>0.844814</td>
-              <td>0.717345</td>
-              <td>+0.000000</td>
-              <td>+0.000000</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>TextureSAM-v2 v11 Dense Rescue (Conservative)</td>
+              <td><strong>TextureSAM-v2 v11 Dense Rescue (Conservative)</strong></td>
               <td>0.850274</td>
               <td>0.722664</td>
-              <td>+0.005460</td>
-              <td>+0.005319</td>
-              <td>2 / 256</td>
+              <td>+0.000000</td>
+              <td>+0.000000</td>
+              <td><strong>2 / 256</strong></td>
             </tr>
             <tr>
               <td><strong>TextureSAM-v2 v11 Dense Rescue (Permissive)</strong></td>
               <td><strong>0.857469</strong></td>
               <td><strong>0.731092</strong></td>
-              <td><strong>+0.012655</strong></td>
-              <td><strong>+0.013747</strong></td>
+              <td><strong>+0.007196</strong></td>
+              <td><strong>+0.008428</strong></td>
               <td><strong>19 / 256</strong></td>
             </tr>
           </tbody>

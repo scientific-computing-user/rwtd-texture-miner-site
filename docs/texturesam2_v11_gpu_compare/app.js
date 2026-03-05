@@ -10,7 +10,6 @@ const state = {
 };
 
 const methodColors = {
-  strict_ptd_v9_v7_v8_gate: "#0b7a4f",
   strict_ptd_v11_dense_rescue_conservative: "#b66a00",
   strict_ptd_v11_dense_rescue_permissive: "#0b67b0",
 };
