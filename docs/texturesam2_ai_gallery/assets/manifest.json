@@ -2,8 +2,8 @@
   {
     "image_id": 1,
     "ai_iou": 0.17837989087347852,
-    "baseline_iou": 0.0008281309720983565,
-    "delta_vs_texturesam": 0.17755175990138017,
+    "baseline_iou": 0.176415227518705,
+    "delta_vs_texturesam": 0.0019646633547735215,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 38,
@@ -13,13 +13,13 @@
     "raw_image": "./assets/raw/images/1.jpg",
     "raw_gt": "./assets/raw/gt/1.png",
     "raw_ours": "./assets/raw/ours/1.png",
-    "raw_baseline": "./assets/raw/texturesam/1.png"
+    "raw_baseline": "./assets/raw/texturesam_union/1.png"
   },
   {
     "image_id": 2,
     "ai_iou": 1.586017668236824e-05,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 1.586017668236824e-05,
+    "baseline_iou": 0.45685229867374866,
+    "delta_vs_texturesam": -0.4568364384970663,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 45,
@@ -29,13 +29,13 @@
     "raw_image": "./assets/raw/images/2.jpg",
     "raw_gt": "./assets/raw/gt/2.png",
     "raw_ours": "./assets/raw/ours/2.png",
-    "raw_baseline": "./assets/raw/texturesam/2.png"
+    "raw_baseline": "./assets/raw/texturesam_union/2.png"
   },
   {
     "image_id": 3,
     "ai_iou": 0.00034050132271667673,
-    "baseline_iou": 2.7051885516420494e-05,
-    "delta_vs_texturesam": 0.00031344943720025624,
+    "baseline_iou": 0.05739587320366053,
+    "delta_vs_texturesam": -0.05705537188094385,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 60,
@@ -45,13 +45,13 @@
     "raw_image": "./assets/raw/images/3.jpg",
     "raw_gt": "./assets/raw/gt/3.png",
     "raw_ours": "./assets/raw/ours/3.png",
-    "raw_baseline": "./assets/raw/texturesam/3.png"
+    "raw_baseline": "./assets/raw/texturesam_union/3.png"
   },
   {
     "image_id": 4,
     "ai_iou": 0.963055729492799,
-    "baseline_iou": 3.157213443414842e-05,
-    "delta_vs_texturesam": 0.9630241573583649,
+    "baseline_iou": 0.1936516951425371,
+    "delta_vs_texturesam": 0.769404034350262,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -61,13 +61,13 @@
     "raw_image": "./assets/raw/images/4.jpg",
     "raw_gt": "./assets/raw/gt/4.png",
     "raw_ours": "./assets/raw/ours/4.png",
-    "raw_baseline": "./assets/raw/texturesam/4.png"
+    "raw_baseline": "./assets/raw/texturesam_union/4.png"
   },
   {
     "image_id": 5,
     "ai_iou": 0.00021818408502945484,
-    "baseline_iou": 0.8898325887377878,
-    "delta_vs_texturesam": -0.8896144046527583,
+    "baseline_iou": 0.2847655084705845,
+    "delta_vs_texturesam": -0.2845473243855551,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 50,
@@ -77,7 +77,7 @@
     "raw_image": "./assets/raw/images/5.jpg",
     "raw_gt": "./assets/raw/gt/5.png",
     "raw_ours": "./assets/raw/ours/5.png",
-    "raw_baseline": "./assets/raw/texturesam/5.png"
+    "raw_baseline": "./assets/raw/texturesam_union/5.png"
   },
   {
     "image_id": 8,
@@ -93,13 +93,13 @@
     "raw_image": "./assets/raw/images/8.jpg",
     "raw_gt": "./assets/raw/gt/8.png",
     "raw_ours": "./assets/raw/ours/8.png",
-    "raw_baseline": "./assets/raw/texturesam/8.png"
+    "raw_baseline": "./assets/raw/texturesam_union/8.png"
   },
   {
     "image_id": 12,
     "ai_iou": 0.06229588255043799,
-    "baseline_iou": 0.045284465572764915,
-    "delta_vs_texturesam": 0.017011416977673076,
+    "baseline_iou": 0.04902966899995405,
+    "delta_vs_texturesam": 0.013266213550483942,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 63,
@@ -109,13 +109,13 @@
     "raw_image": "./assets/raw/images/12.jpg",
     "raw_gt": "./assets/raw/gt/12.png",
     "raw_ours": "./assets/raw/ours/12.png",
-    "raw_baseline": "./assets/raw/texturesam/12.png"
+    "raw_baseline": "./assets/raw/texturesam_union/12.png"
   },
   {
     "image_id": 13,
     "ai_iou": 0.0,
-    "baseline_iou": 0.880607146736179,
-    "delta_vs_texturesam": -0.880607146736179,
+    "baseline_iou": 0.5384417215450754,
+    "delta_vs_texturesam": -0.5384417215450754,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 116,
@@ -125,13 +125,13 @@
     "raw_image": "./assets/raw/images/13.jpg",
     "raw_gt": "./assets/raw/gt/13.png",
     "raw_ours": "./assets/raw/ours/13.png",
-    "raw_baseline": "./assets/raw/texturesam/13.png"
+    "raw_baseline": "./assets/raw/texturesam_union/13.png"
   },
   {
     "image_id": 14,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9622886866059818,
-    "delta_vs_texturesam": -0.9622886866059818,
+    "baseline_iou": 0.5291794919628144,
+    "delta_vs_texturesam": -0.5291794919628144,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 33,
@@ -141,13 +141,13 @@
     "raw_image": "./assets/raw/images/14.jpg",
     "raw_gt": "./assets/raw/gt/14.png",
     "raw_ours": "./assets/raw/ours/14.png",
-    "raw_baseline": "./assets/raw/texturesam/14.png"
+    "raw_baseline": "./assets/raw/texturesam_union/14.png"
   },
   {
     "image_id": 15,
     "ai_iou": 0.8564773656697842,
-    "baseline_iou": 0.9495416500597847,
-    "delta_vs_texturesam": -0.09306428439000058,
+    "baseline_iou": 0.8551642688426025,
+    "delta_vs_texturesam": 0.0013130968271816146,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 38,
@@ -157,13 +157,13 @@
     "raw_image": "./assets/raw/images/15.jpg",
     "raw_gt": "./assets/raw/gt/15.png",
     "raw_ours": "./assets/raw/ours/15.png",
-    "raw_baseline": "./assets/raw/texturesam/15.png"
+    "raw_baseline": "./assets/raw/texturesam_union/15.png"
   },
   {
     "image_id": 16,
     "ai_iou": 0.5071261652243138,
-    "baseline_iou": 0.11831434144338364,
-    "delta_vs_texturesam": 0.3888118237809301,
+    "baseline_iou": 0.6310106942271689,
+    "delta_vs_texturesam": -0.12388452900285518,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 47,
@@ -173,13 +173,13 @@
     "raw_image": "./assets/raw/images/16.jpg",
     "raw_gt": "./assets/raw/gt/16.png",
     "raw_ours": "./assets/raw/ours/16.png",
-    "raw_baseline": "./assets/raw/texturesam/16.png"
+    "raw_baseline": "./assets/raw/texturesam_union/16.png"
   },
   {
     "image_id": 17,
     "ai_iou": 0.818506571405721,
-    "baseline_iou": 0.8462879920279024,
-    "delta_vs_texturesam": -0.027781420622181363,
+    "baseline_iou": 0.8181380288474404,
+    "delta_vs_texturesam": 0.0003685425582806712,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -189,13 +189,13 @@
     "raw_image": "./assets/raw/images/17.jpg",
     "raw_gt": "./assets/raw/gt/17.png",
     "raw_ours": "./assets/raw/ours/17.png",
-    "raw_baseline": "./assets/raw/texturesam/17.png"
+    "raw_baseline": "./assets/raw/texturesam_union/17.png"
   },
   {
     "image_id": 18,
     "ai_iou": 0.40897015964717714,
-    "baseline_iou": 0.6745835903763109,
-    "delta_vs_texturesam": -0.26561343072913374,
+    "baseline_iou": 0.41374492539674174,
+    "delta_vs_texturesam": -0.004774765749564591,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 68,
@@ -205,13 +205,13 @@
     "raw_image": "./assets/raw/images/18.jpg",
     "raw_gt": "./assets/raw/gt/18.png",
     "raw_ours": "./assets/raw/ours/18.png",
-    "raw_baseline": "./assets/raw/texturesam/18.png"
+    "raw_baseline": "./assets/raw/texturesam_union/18.png"
   },
   {
     "image_id": 22,
     "ai_iou": 0.9475593220338983,
-    "baseline_iou": 0.930743415031018,
-    "delta_vs_texturesam": 0.01681590700288027,
+    "baseline_iou": 0.436859420473238,
+    "delta_vs_texturesam": 0.5106999015606603,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 67,
@@ -221,13 +221,13 @@
     "raw_image": "./assets/raw/images/22.jpg",
     "raw_gt": "./assets/raw/gt/22.png",
     "raw_ours": "./assets/raw/ours/22.png",
-    "raw_baseline": "./assets/raw/texturesam/22.png"
+    "raw_baseline": "./assets/raw/texturesam_union/22.png"
   },
   {
     "image_id": 24,
     "ai_iou": 0.9467764789231314,
-    "baseline_iou": 0.9440156152958921,
-    "delta_vs_texturesam": 0.002760863627239374,
+    "baseline_iou": 0.21979153792279488,
+    "delta_vs_texturesam": 0.7269849410003366,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -237,13 +237,13 @@
     "raw_image": "./assets/raw/images/24.jpg",
     "raw_gt": "./assets/raw/gt/24.png",
     "raw_ours": "./assets/raw/ours/24.png",
-    "raw_baseline": "./assets/raw/texturesam/24.png"
+    "raw_baseline": "./assets/raw/texturesam_union/24.png"
   },
   {
     "image_id": 25,
     "ai_iou": 0.9777464898901013,
-    "baseline_iou": 0.977472720872932,
-    "delta_vs_texturesam": 0.0002737690171692453,
+    "baseline_iou": 0.39342662406145223,
+    "delta_vs_texturesam": 0.584319865828649,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 34,
@@ -253,13 +253,13 @@
     "raw_image": "./assets/raw/images/25.jpg",
     "raw_gt": "./assets/raw/gt/25.png",
     "raw_ours": "./assets/raw/ours/25.png",
-    "raw_baseline": "./assets/raw/texturesam/25.png"
+    "raw_baseline": "./assets/raw/texturesam_union/25.png"
   },
   {
     "image_id": 27,
     "ai_iou": 0.9061003797259369,
-    "baseline_iou": 0.2638521336420774,
-    "delta_vs_texturesam": 0.6422482460838596,
+    "baseline_iou": 0.3558713102019679,
+    "delta_vs_texturesam": 0.5502290695239691,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 66,
@@ -269,13 +269,13 @@
     "raw_image": "./assets/raw/images/27.jpg",
     "raw_gt": "./assets/raw/gt/27.png",
     "raw_ours": "./assets/raw/ours/27.png",
-    "raw_baseline": "./assets/raw/texturesam/27.png"
+    "raw_baseline": "./assets/raw/texturesam_union/27.png"
   },
   {
     "image_id": 28,
     "ai_iou": 0.0005638113648262253,
-    "baseline_iou": 0.001245541527486837,
-    "delta_vs_texturesam": -0.0006817301626606116,
+    "baseline_iou": 0.001307215046630507,
+    "delta_vs_texturesam": -0.0007434036818042817,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 39,
@@ -285,7 +285,7 @@
     "raw_image": "./assets/raw/images/28.jpg",
     "raw_gt": "./assets/raw/gt/28.png",
     "raw_ours": "./assets/raw/ours/28.png",
-    "raw_baseline": "./assets/raw/texturesam/28.png"
+    "raw_baseline": "./assets/raw/texturesam_union/28.png"
   },
   {
     "image_id": 30,
@@ -301,13 +301,13 @@
     "raw_image": "./assets/raw/images/30.jpg",
     "raw_gt": "./assets/raw/gt/30.png",
     "raw_ours": "./assets/raw/ours/30.png",
-    "raw_baseline": "./assets/raw/texturesam/30.png"
+    "raw_baseline": "./assets/raw/texturesam_union/30.png"
   },
   {
     "image_id": 33,
     "ai_iou": 0.0009966619733907073,
-    "baseline_iou": 0.0008714175058094501,
-    "delta_vs_texturesam": 0.00012524446758125718,
+    "baseline_iou": 0.16069412637486694,
+    "delta_vs_texturesam": -0.15969746440147622,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 50,
@@ -317,13 +317,13 @@
     "raw_image": "./assets/raw/images/33.jpg",
     "raw_gt": "./assets/raw/gt/33.png",
     "raw_ours": "./assets/raw/ours/33.png",
-    "raw_baseline": "./assets/raw/texturesam/33.png"
+    "raw_baseline": "./assets/raw/texturesam_union/33.png"
   },
   {
     "image_id": 34,
     "ai_iou": 0.008071560285982337,
-    "baseline_iou": 0.0059267151680623305,
-    "delta_vs_texturesam": 0.0021448451179200065,
+    "baseline_iou": 0.24198838002963258,
+    "delta_vs_texturesam": -0.23391681974365025,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 75,
@@ -333,13 +333,13 @@
     "raw_image": "./assets/raw/images/34.jpg",
     "raw_gt": "./assets/raw/gt/34.png",
     "raw_ours": "./assets/raw/ours/34.png",
-    "raw_baseline": "./assets/raw/texturesam/34.png"
+    "raw_baseline": "./assets/raw/texturesam_union/34.png"
   },
   {
     "image_id": 36,
     "ai_iou": 0.0006485384722286562,
-    "baseline_iou": 0.0005653443889569396,
-    "delta_vs_texturesam": 8.319408327171654e-05,
+    "baseline_iou": 0.20464495880737543,
+    "delta_vs_texturesam": -0.20399642033514678,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -349,7 +349,7 @@
     "raw_image": "./assets/raw/images/36.jpg",
     "raw_gt": "./assets/raw/gt/36.png",
     "raw_ours": "./assets/raw/ours/36.png",
-    "raw_baseline": "./assets/raw/texturesam/36.png"
+    "raw_baseline": "./assets/raw/texturesam_union/36.png"
   },
   {
     "image_id": 38,
@@ -381,7 +381,7 @@
     "raw_image": "./assets/raw/images/39.jpg",
     "raw_gt": "./assets/raw/gt/39.png",
     "raw_ours": "./assets/raw/ours/39.png",
-    "raw_baseline": "./assets/raw/texturesam/39.png"
+    "raw_baseline": "./assets/raw/texturesam_union/39.png"
   },
   {
     "image_id": 40,
@@ -397,7 +397,7 @@
     "raw_image": "./assets/raw/images/40.jpg",
     "raw_gt": "./assets/raw/gt/40.png",
     "raw_ours": "./assets/raw/ours/40.png",
-    "raw_baseline": "./assets/raw/texturesam/40.png"
+    "raw_baseline": "./assets/raw/texturesam_union/40.png"
   },
   {
     "image_id": 41,
@@ -413,13 +413,13 @@
     "raw_image": "./assets/raw/images/41.jpg",
     "raw_gt": "./assets/raw/gt/41.png",
     "raw_ours": "./assets/raw/ours/41.png",
-    "raw_baseline": "./assets/raw/texturesam/41.png"
+    "raw_baseline": "./assets/raw/texturesam_union/41.png"
   },
   {
     "image_id": 44,
     "ai_iou": 0.00030345664707991945,
-    "baseline_iou": 0.0002474090771641422,
-    "delta_vs_texturesam": 5.6047569915777264e-05,
+    "baseline_iou": 0.00033688749642057036,
+    "delta_vs_texturesam": -3.343084934065091e-05,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 63,
@@ -429,13 +429,13 @@
     "raw_image": "./assets/raw/images/44.jpg",
     "raw_gt": "./assets/raw/gt/44.png",
     "raw_ours": "./assets/raw/ours/44.png",
-    "raw_baseline": "./assets/raw/texturesam/44.png"
+    "raw_baseline": "./assets/raw/texturesam_union/44.png"
   },
   {
     "image_id": 45,
     "ai_iou": 0.5985175136863524,
-    "baseline_iou": 0.0005548277722123758,
-    "delta_vs_texturesam": 0.59796268591414,
+    "baseline_iou": 0.6118517376897588,
+    "delta_vs_texturesam": -0.013334224003406336,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 113,
@@ -445,13 +445,13 @@
     "raw_image": "./assets/raw/images/45.jpg",
     "raw_gt": "./assets/raw/gt/45.png",
     "raw_ours": "./assets/raw/ours/45.png",
-    "raw_baseline": "./assets/raw/texturesam/45.png"
+    "raw_baseline": "./assets/raw/texturesam_union/45.png"
   },
   {
     "image_id": 47,
     "ai_iou": 0.0006186429884095417,
-    "baseline_iou": 0.9328233535566693,
-    "delta_vs_texturesam": -0.9322047105682598,
+    "baseline_iou": 0.5925485017019773,
+    "delta_vs_texturesam": -0.5919298587135677,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 58,
@@ -461,13 +461,13 @@
     "raw_image": "./assets/raw/images/47.jpg",
     "raw_gt": "./assets/raw/gt/47.png",
     "raw_ours": "./assets/raw/ours/47.png",
-    "raw_baseline": "./assets/raw/texturesam/47.png"
+    "raw_baseline": "./assets/raw/texturesam_union/47.png"
   },
   {
     "image_id": 48,
     "ai_iou": 0.5281822242072354,
-    "baseline_iou": 0.0009655259742315363,
-    "delta_vs_texturesam": 0.5272166982330039,
+    "baseline_iou": 0.18068712896299102,
+    "delta_vs_texturesam": 0.3474950952442444,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 89,
@@ -477,13 +477,13 @@
     "raw_image": "./assets/raw/images/48.jpg",
     "raw_gt": "./assets/raw/gt/48.png",
     "raw_ours": "./assets/raw/ours/48.png",
-    "raw_baseline": "./assets/raw/texturesam/48.png"
+    "raw_baseline": "./assets/raw/texturesam_union/48.png"
   },
   {
     "image_id": 51,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9775722475031027,
-    "delta_vs_texturesam": -0.9775722475031027,
+    "baseline_iou": 0.5096513795387673,
+    "delta_vs_texturesam": -0.5096513795387673,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -493,13 +493,13 @@
     "raw_image": "./assets/raw/images/51.jpg",
     "raw_gt": "./assets/raw/gt/51.png",
     "raw_ours": "./assets/raw/ours/51.png",
-    "raw_baseline": "./assets/raw/texturesam/51.png"
+    "raw_baseline": "./assets/raw/texturesam_union/51.png"
   },
   {
     "image_id": 54,
     "ai_iou": 2.032189887823118e-05,
-    "baseline_iou": 0.9764038650049013,
-    "delta_vs_texturesam": -0.976383543106023,
+    "baseline_iou": 0.85393533638145,
+    "delta_vs_texturesam": -0.8539150144825718,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 33,
@@ -509,7 +509,7 @@
     "raw_image": "./assets/raw/images/54.jpg",
     "raw_gt": "./assets/raw/gt/54.png",
     "raw_ours": "./assets/raw/ours/54.png",
-    "raw_baseline": "./assets/raw/texturesam/54.png"
+    "raw_baseline": "./assets/raw/texturesam_union/54.png"
   },
   {
     "image_id": 56,
@@ -525,7 +525,7 @@
     "raw_image": "./assets/raw/images/56.jpg",
     "raw_gt": "./assets/raw/gt/56.png",
     "raw_ours": "./assets/raw/ours/56.png",
-    "raw_baseline": "./assets/raw/texturesam/56.png"
+    "raw_baseline": "./assets/raw/texturesam_union/56.png"
   },
   {
     "image_id": 58,
@@ -541,13 +541,13 @@
     "raw_image": "./assets/raw/images/58.jpg",
     "raw_gt": "./assets/raw/gt/58.png",
     "raw_ours": "./assets/raw/ours/58.png",
-    "raw_baseline": "./assets/raw/texturesam/58.png"
+    "raw_baseline": "./assets/raw/texturesam_union/58.png"
   },
   {
     "image_id": 59,
     "ai_iou": 0.7788931934507819,
-    "baseline_iou": 0.0005192189687996602,
-    "delta_vs_texturesam": 0.7783739744819822,
+    "baseline_iou": 0.4949219056588965,
+    "delta_vs_texturesam": 0.2839712877918854,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 141,
@@ -557,13 +557,13 @@
     "raw_image": "./assets/raw/images/59.jpg",
     "raw_gt": "./assets/raw/gt/59.png",
     "raw_ours": "./assets/raw/ours/59.png",
-    "raw_baseline": "./assets/raw/texturesam/59.png"
+    "raw_baseline": "./assets/raw/texturesam_union/59.png"
   },
   {
     "image_id": 60,
     "ai_iou": 1.537373551025428e-05,
-    "baseline_iou": 0.9207640449438202,
-    "delta_vs_texturesam": -0.9207486712083099,
+    "baseline_iou": 0.3217235639584184,
+    "delta_vs_texturesam": -0.32170819022290814,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 44,
@@ -573,13 +573,13 @@
     "raw_image": "./assets/raw/images/60.jpg",
     "raw_gt": "./assets/raw/gt/60.png",
     "raw_ours": "./assets/raw/ours/60.png",
-    "raw_baseline": "./assets/raw/texturesam/60.png"
+    "raw_baseline": "./assets/raw/texturesam_union/60.png"
   },
   {
     "image_id": 63,
     "ai_iou": 0.37735030373155914,
-    "baseline_iou": 0.3778695053950322,
-    "delta_vs_texturesam": -0.0005192016634730789,
+    "baseline_iou": 0.35774643059150196,
+    "delta_vs_texturesam": 0.019603873140057182,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 43,
@@ -589,13 +589,13 @@
     "raw_image": "./assets/raw/images/63.jpg",
     "raw_gt": "./assets/raw/gt/63.png",
     "raw_ours": "./assets/raw/ours/63.png",
-    "raw_baseline": "./assets/raw/texturesam/63.png"
+    "raw_baseline": "./assets/raw/texturesam_union/63.png"
   },
   {
     "image_id": 67,
     "ai_iou": 0.6202135209355426,
-    "baseline_iou": 0.17751523442357917,
-    "delta_vs_texturesam": 0.4426982865119634,
+    "baseline_iou": 0.5350934290114147,
+    "delta_vs_texturesam": 0.08512009192412795,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 67,
@@ -605,13 +605,13 @@
     "raw_image": "./assets/raw/images/67.jpg",
     "raw_gt": "./assets/raw/gt/67.png",
     "raw_ours": "./assets/raw/ours/67.png",
-    "raw_baseline": "./assets/raw/texturesam/67.png"
+    "raw_baseline": "./assets/raw/texturesam_union/67.png"
   },
   {
     "image_id": 69,
     "ai_iou": 0.9676052268276238,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9676052268276238,
+    "baseline_iou": 0.46559633027522934,
+    "delta_vs_texturesam": 0.5020088965523946,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 78,
@@ -621,13 +621,13 @@
     "raw_image": "./assets/raw/images/69.jpg",
     "raw_gt": "./assets/raw/gt/69.png",
     "raw_ours": "./assets/raw/ours/69.png",
-    "raw_baseline": "./assets/raw/texturesam/69.png"
+    "raw_baseline": "./assets/raw/texturesam_union/69.png"
   },
   {
     "image_id": 70,
     "ai_iou": 0.5388620133609767,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.5388620133609767,
+    "baseline_iou": 0.5395828487245096,
+    "delta_vs_texturesam": -0.0007208353635328457,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 189,
@@ -637,13 +637,13 @@
     "raw_image": "./assets/raw/images/70.jpg",
     "raw_gt": "./assets/raw/gt/70.png",
     "raw_ours": "./assets/raw/ours/70.png",
-    "raw_baseline": "./assets/raw/texturesam/70.png"
+    "raw_baseline": "./assets/raw/texturesam_union/70.png"
   },
   {
     "image_id": 71,
     "ai_iou": 0.9716782650914387,
-    "baseline_iou": 0.00010831693535284242,
-    "delta_vs_texturesam": 0.9715699481560859,
+    "baseline_iou": 0.19032572094285122,
+    "delta_vs_texturesam": 0.7813525441485876,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 48,
@@ -653,13 +653,13 @@
     "raw_image": "./assets/raw/images/71.jpg",
     "raw_gt": "./assets/raw/gt/71.png",
     "raw_ours": "./assets/raw/ours/71.png",
-    "raw_baseline": "./assets/raw/texturesam/71.png"
+    "raw_baseline": "./assets/raw/texturesam_union/71.png"
   },
   {
     "image_id": 73,
     "ai_iou": 0.00023842070127475602,
-    "baseline_iou": 0.9552854419898135,
-    "delta_vs_texturesam": -0.9550470212885387,
+    "baseline_iou": 0.479986820014749,
+    "delta_vs_texturesam": -0.47974839931347424,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 37,
@@ -669,13 +669,13 @@
     "raw_image": "./assets/raw/images/73.jpg",
     "raw_gt": "./assets/raw/gt/73.png",
     "raw_ours": "./assets/raw/ours/73.png",
-    "raw_baseline": "./assets/raw/texturesam/73.png"
+    "raw_baseline": "./assets/raw/texturesam_union/73.png"
   },
   {
     "image_id": 74,
     "ai_iou": 0.9426650963720449,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9426650963720449,
+    "baseline_iou": 0.5518278614277657,
+    "delta_vs_texturesam": 0.39083723494427913,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 66,
@@ -685,13 +685,13 @@
     "raw_image": "./assets/raw/images/74.jpg",
     "raw_gt": "./assets/raw/gt/74.png",
     "raw_ours": "./assets/raw/ours/74.png",
-    "raw_baseline": "./assets/raw/texturesam/74.png"
+    "raw_baseline": "./assets/raw/texturesam_union/74.png"
   },
   {
     "image_id": 76,
     "ai_iou": 0.9848683546857662,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9848683546857662,
+    "baseline_iou": 0.44253442673680954,
+    "delta_vs_texturesam": 0.5423339279489566,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 30,
@@ -701,7 +701,7 @@
     "raw_image": "./assets/raw/images/76.jpg",
     "raw_gt": "./assets/raw/gt/76.png",
     "raw_ours": "./assets/raw/ours/76.png",
-    "raw_baseline": "./assets/raw/texturesam/76.png"
+    "raw_baseline": "./assets/raw/texturesam_union/76.png"
   },
   {
     "image_id": 77,
@@ -717,13 +717,13 @@
     "raw_image": "./assets/raw/images/77.jpg",
     "raw_gt": "./assets/raw/gt/77.png",
     "raw_ours": "./assets/raw/ours/77.png",
-    "raw_baseline": "./assets/raw/texturesam/77.png"
+    "raw_baseline": "./assets/raw/texturesam_union/77.png"
   },
   {
     "image_id": 78,
     "ai_iou": 0.3566953250104942,
-    "baseline_iou": 0.9038863715580342,
-    "delta_vs_texturesam": -0.54719104654754,
+    "baseline_iou": 0.3491998293811909,
+    "delta_vs_texturesam": 0.00749549562930335,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 30,
@@ -733,13 +733,13 @@
     "raw_image": "./assets/raw/images/78.jpg",
     "raw_gt": "./assets/raw/gt/78.png",
     "raw_ours": "./assets/raw/ours/78.png",
-    "raw_baseline": "./assets/raw/texturesam/78.png"
+    "raw_baseline": "./assets/raw/texturesam_union/78.png"
   },
   {
     "image_id": 79,
     "ai_iou": 0.0051254970178926445,
-    "baseline_iou": 0.0039480125704720245,
-    "delta_vs_texturesam": 0.00117748444742062,
+    "baseline_iou": 0.1812638146446991,
+    "delta_vs_texturesam": -0.17613831762680646,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -749,7 +749,7 @@
     "raw_image": "./assets/raw/images/79.jpg",
     "raw_gt": "./assets/raw/gt/79.png",
     "raw_ours": "./assets/raw/ours/79.png",
-    "raw_baseline": "./assets/raw/texturesam/79.png"
+    "raw_baseline": "./assets/raw/texturesam_union/79.png"
   },
   {
     "image_id": 84,
@@ -765,13 +765,13 @@
     "raw_image": "./assets/raw/images/84.jpg",
     "raw_gt": "./assets/raw/gt/84.png",
     "raw_ours": "./assets/raw/ours/84.png",
-    "raw_baseline": "./assets/raw/texturesam/84.png"
+    "raw_baseline": "./assets/raw/texturesam_union/84.png"
   },
   {
     "image_id": 85,
     "ai_iou": 3.1191515907673116e-05,
-    "baseline_iou": 0.9691711851278079,
-    "delta_vs_texturesam": -0.9691399936119002,
+    "baseline_iou": 0.5794819548640054,
+    "delta_vs_texturesam": -0.5794507633480978,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 48,
@@ -781,7 +781,7 @@
     "raw_image": "./assets/raw/images/85.jpg",
     "raw_gt": "./assets/raw/gt/85.png",
     "raw_ours": "./assets/raw/ours/85.png",
-    "raw_baseline": "./assets/raw/texturesam/85.png"
+    "raw_baseline": "./assets/raw/texturesam_union/85.png"
   },
   {
     "image_id": 86,
@@ -797,13 +797,13 @@
     "raw_image": "./assets/raw/images/86.jpg",
     "raw_gt": "./assets/raw/gt/86.png",
     "raw_ours": "./assets/raw/ours/86.png",
-    "raw_baseline": "./assets/raw/texturesam/86.png"
+    "raw_baseline": "./assets/raw/texturesam_union/86.png"
   },
   {
     "image_id": 88,
     "ai_iou": 0.034193608497158294,
-    "baseline_iou": 0.001977660348701073,
-    "delta_vs_texturesam": 0.03221594814845722,
+    "baseline_iou": 0.09204227688516044,
+    "delta_vs_texturesam": -0.05784866838800214,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -813,13 +813,13 @@
     "raw_image": "./assets/raw/images/88.jpg",
     "raw_gt": "./assets/raw/gt/88.png",
     "raw_ours": "./assets/raw/ours/88.png",
-    "raw_baseline": "./assets/raw/texturesam/88.png"
+    "raw_baseline": "./assets/raw/texturesam_union/88.png"
   },
   {
     "image_id": 91,
     "ai_iou": 0.9506644174139512,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9506644174139512,
+    "baseline_iou": 0.6002740548860608,
+    "delta_vs_texturesam": 0.35039036252789046,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 43,
@@ -829,13 +829,13 @@
     "raw_image": "./assets/raw/images/91.jpg",
     "raw_gt": "./assets/raw/gt/91.png",
     "raw_ours": "./assets/raw/ours/91.png",
-    "raw_baseline": "./assets/raw/texturesam/91.png"
+    "raw_baseline": "./assets/raw/texturesam_union/91.png"
   },
   {
     "image_id": 93,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9575901256867615,
-    "delta_vs_texturesam": -0.9575901256867615,
+    "baseline_iou": 0.41422015362583,
+    "delta_vs_texturesam": -0.41422015362583,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 55,
@@ -845,13 +845,13 @@
     "raw_image": "./assets/raw/images/93.jpg",
     "raw_gt": "./assets/raw/gt/93.png",
     "raw_ours": "./assets/raw/ours/93.png",
-    "raw_baseline": "./assets/raw/texturesam/93.png"
+    "raw_baseline": "./assets/raw/texturesam_union/93.png"
   },
   {
     "image_id": 95,
     "ai_iou": 0.9745656972838084,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9745656972838084,
+    "baseline_iou": 0.4753994820943599,
+    "delta_vs_texturesam": 0.4991662151894485,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 101,
@@ -861,13 +861,13 @@
     "raw_image": "./assets/raw/images/95.jpg",
     "raw_gt": "./assets/raw/gt/95.png",
     "raw_ours": "./assets/raw/ours/95.png",
-    "raw_baseline": "./assets/raw/texturesam/95.png"
+    "raw_baseline": "./assets/raw/texturesam_union/95.png"
   },
   {
     "image_id": 96,
     "ai_iou": 0.9733280541357714,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9733280541357714,
+    "baseline_iou": 0.4209035992952429,
+    "delta_vs_texturesam": 0.5524244548405285,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 66,
@@ -877,13 +877,13 @@
     "raw_image": "./assets/raw/images/96.jpg",
     "raw_gt": "./assets/raw/gt/96.png",
     "raw_ours": "./assets/raw/ours/96.png",
-    "raw_baseline": "./assets/raw/texturesam/96.png"
+    "raw_baseline": "./assets/raw/texturesam_union/96.png"
   },
   {
     "image_id": 101,
     "ai_iou": 0.09141782487041879,
-    "baseline_iou": 0.07192769961800057,
-    "delta_vs_texturesam": 0.019490125252418222,
+    "baseline_iou": 0.08152047328457633,
+    "delta_vs_texturesam": 0.009897351585842457,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 66,
@@ -893,13 +893,13 @@
     "raw_image": "./assets/raw/images/101.jpg",
     "raw_gt": "./assets/raw/gt/101.png",
     "raw_ours": "./assets/raw/ours/101.png",
-    "raw_baseline": "./assets/raw/texturesam/101.png"
+    "raw_baseline": "./assets/raw/texturesam_union/101.png"
   },
   {
     "image_id": 102,
     "ai_iou": 0.8580424661589386,
-    "baseline_iou": 0.8426902788244159,
-    "delta_vs_texturesam": 0.015352187334522704,
+    "baseline_iou": 0.9265516963060615,
+    "delta_vs_texturesam": -0.06850923014712285,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -909,13 +909,13 @@
     "raw_image": "./assets/raw/images/102.jpg",
     "raw_gt": "./assets/raw/gt/102.png",
     "raw_ours": "./assets/raw/ours/102.png",
-    "raw_baseline": "./assets/raw/texturesam/102.png"
+    "raw_baseline": "./assets/raw/texturesam_union/102.png"
   },
   {
     "image_id": 103,
     "ai_iou": 0.0003638661738514277,
-    "baseline_iou": 4.066363044892648e-05,
-    "delta_vs_texturesam": 0.0003232025434025012,
+    "baseline_iou": 0.34050941739045576,
+    "delta_vs_texturesam": -0.34014555121660434,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 32,
@@ -925,13 +925,13 @@
     "raw_image": "./assets/raw/images/103.jpg",
     "raw_gt": "./assets/raw/gt/103.png",
     "raw_ours": "./assets/raw/ours/103.png",
-    "raw_baseline": "./assets/raw/texturesam/103.png"
+    "raw_baseline": "./assets/raw/texturesam_union/103.png"
   },
   {
     "image_id": 104,
     "ai_iou": 3.1724881824815205e-05,
-    "baseline_iou": 3.257116800208455e-05,
-    "delta_vs_texturesam": -8.462861772693463e-07,
+    "baseline_iou": 0.04102289158583938,
+    "delta_vs_texturesam": -0.040991166704014564,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 32,
@@ -941,13 +941,13 @@
     "raw_image": "./assets/raw/images/104.jpg",
     "raw_gt": "./assets/raw/gt/104.png",
     "raw_ours": "./assets/raw/ours/104.png",
-    "raw_baseline": "./assets/raw/texturesam/104.png"
+    "raw_baseline": "./assets/raw/texturesam_union/104.png"
   },
   {
     "image_id": 106,
     "ai_iou": 0.0036455236724348343,
-    "baseline_iou": 0.002388098234743602,
-    "delta_vs_texturesam": 0.0012574254376912322,
+    "baseline_iou": 0.1422838262551374,
+    "delta_vs_texturesam": -0.13863830258270257,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 28,
@@ -957,13 +957,13 @@
     "raw_image": "./assets/raw/images/106.jpg",
     "raw_gt": "./assets/raw/gt/106.png",
     "raw_ours": "./assets/raw/ours/106.png",
-    "raw_baseline": "./assets/raw/texturesam/106.png"
+    "raw_baseline": "./assets/raw/texturesam_union/106.png"
   },
   {
     "image_id": 107,
     "ai_iou": 0.5620755458270191,
-    "baseline_iou": 0.0026183756663530886,
-    "delta_vs_texturesam": 0.5594571701606661,
+    "baseline_iou": 0.41945093366363023,
+    "delta_vs_texturesam": 0.1426246121633889,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 48,
@@ -973,13 +973,13 @@
     "raw_image": "./assets/raw/images/107.jpg",
     "raw_gt": "./assets/raw/gt/107.png",
     "raw_ours": "./assets/raw/ours/107.png",
-    "raw_baseline": "./assets/raw/texturesam/107.png"
+    "raw_baseline": "./assets/raw/texturesam_union/107.png"
   },
   {
     "image_id": 109,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9527690984014853,
-    "delta_vs_texturesam": -0.9527690984014853,
+    "baseline_iou": 0.603089976208903,
+    "delta_vs_texturesam": -0.603089976208903,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 41,
@@ -989,7 +989,7 @@
     "raw_image": "./assets/raw/images/109.jpg",
     "raw_gt": "./assets/raw/gt/109.png",
     "raw_ours": "./assets/raw/ours/109.png",
-    "raw_baseline": "./assets/raw/texturesam/109.png"
+    "raw_baseline": "./assets/raw/texturesam_union/109.png"
   },
   {
     "image_id": 118,
@@ -1005,13 +1005,13 @@
     "raw_image": "./assets/raw/images/118.jpg",
     "raw_gt": "./assets/raw/gt/118.png",
     "raw_ours": "./assets/raw/ours/118.png",
-    "raw_baseline": "./assets/raw/texturesam/118.png"
+    "raw_baseline": "./assets/raw/texturesam_union/118.png"
   },
   {
     "image_id": 121,
     "ai_iou": 0.9130097767109244,
-    "baseline_iou": 0.8693173293323331,
-    "delta_vs_texturesam": 0.04369244737859135,
+    "baseline_iou": 0.8020345551429032,
+    "delta_vs_texturesam": 0.1109752215680212,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 48,
@@ -1021,13 +1021,13 @@
     "raw_image": "./assets/raw/images/121.jpg",
     "raw_gt": "./assets/raw/gt/121.png",
     "raw_ours": "./assets/raw/ours/121.png",
-    "raw_baseline": "./assets/raw/texturesam/121.png"
+    "raw_baseline": "./assets/raw/texturesam_union/121.png"
   },
   {
     "image_id": 122,
     "ai_iou": 0.9145659964769484,
-    "baseline_iou": 0.9029945939379214,
-    "delta_vs_texturesam": 0.011571402539026998,
+    "baseline_iou": 0.4817912852208126,
+    "delta_vs_texturesam": 0.43277471125613576,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 28,
@@ -1037,13 +1037,13 @@
     "raw_image": "./assets/raw/images/122.jpg",
     "raw_gt": "./assets/raw/gt/122.png",
     "raw_ours": "./assets/raw/ours/122.png",
-    "raw_baseline": "./assets/raw/texturesam/122.png"
+    "raw_baseline": "./assets/raw/texturesam_union/122.png"
   },
   {
     "image_id": 125,
     "ai_iou": 0.9215733707484639,
-    "baseline_iou": 0.004762750448021441,
-    "delta_vs_texturesam": 0.9168106203004425,
+    "baseline_iou": 0.3099007201398579,
+    "delta_vs_texturesam": 0.611672650608606,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 41,
@@ -1053,13 +1053,13 @@
     "raw_image": "./assets/raw/images/125.jpg",
     "raw_gt": "./assets/raw/gt/125.png",
     "raw_ours": "./assets/raw/ours/125.png",
-    "raw_baseline": "./assets/raw/texturesam/125.png"
+    "raw_baseline": "./assets/raw/texturesam_union/125.png"
   },
   {
     "image_id": 128,
     "ai_iou": 0.6876770190402908,
-    "baseline_iou": 0.7757389766212731,
-    "delta_vs_texturesam": -0.08806195758098234,
+    "baseline_iou": 0.6753082094656591,
+    "delta_vs_texturesam": 0.012368809574631712,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 39,
@@ -1069,13 +1069,13 @@
     "raw_image": "./assets/raw/images/128.jpg",
     "raw_gt": "./assets/raw/gt/128.png",
     "raw_ours": "./assets/raw/ours/128.png",
-    "raw_baseline": "./assets/raw/texturesam/128.png"
+    "raw_baseline": "./assets/raw/texturesam_union/128.png"
   },
   {
     "image_id": 129,
     "ai_iou": 0.9572443833104081,
-    "baseline_iou": 0.9525395185057604,
-    "delta_vs_texturesam": 0.004704864804647713,
+    "baseline_iou": 0.39989443209264386,
+    "delta_vs_texturesam": 0.5573499512177642,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 47,
@@ -1085,13 +1085,13 @@
     "raw_image": "./assets/raw/images/129.jpg",
     "raw_gt": "./assets/raw/gt/129.png",
     "raw_ours": "./assets/raw/ours/129.png",
-    "raw_baseline": "./assets/raw/texturesam/129.png"
+    "raw_baseline": "./assets/raw/texturesam_union/129.png"
   },
   {
     "image_id": 134,
     "ai_iou": 0.9724247685185186,
-    "baseline_iou": 0.9700810185185185,
-    "delta_vs_texturesam": 0.002343750000000089,
+    "baseline_iou": 0.954939045231856,
+    "delta_vs_texturesam": 0.017485723286662536,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 36,
@@ -1101,13 +1101,13 @@
     "raw_image": "./assets/raw/images/134.jpg",
     "raw_gt": "./assets/raw/gt/134.png",
     "raw_ours": "./assets/raw/ours/134.png",
-    "raw_baseline": "./assets/raw/texturesam/134.png"
+    "raw_baseline": "./assets/raw/texturesam_union/134.png"
   },
   {
     "image_id": 139,
     "ai_iou": 0.8547423187794417,
-    "baseline_iou": 0.006967750183782402,
-    "delta_vs_texturesam": 0.8477745685956594,
+    "baseline_iou": 0.4017423434040994,
+    "delta_vs_texturesam": 0.4529999753753423,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 58,
@@ -1117,7 +1117,7 @@
     "raw_image": "./assets/raw/images/139.jpg",
     "raw_gt": "./assets/raw/gt/139.png",
     "raw_ours": "./assets/raw/ours/139.png",
-    "raw_baseline": "./assets/raw/texturesam/139.png"
+    "raw_baseline": "./assets/raw/texturesam_union/139.png"
   },
   {
     "image_id": 142,
@@ -1133,13 +1133,13 @@
     "raw_image": "./assets/raw/images/142.jpg",
     "raw_gt": "./assets/raw/gt/142.png",
     "raw_ours": "./assets/raw/ours/142.png",
-    "raw_baseline": "./assets/raw/texturesam/142.png"
+    "raw_baseline": "./assets/raw/texturesam_union/142.png"
   },
   {
     "image_id": 149,
     "ai_iou": 0.8904472878390202,
-    "baseline_iou": 0.014000161851582099,
-    "delta_vs_texturesam": 0.876447125987438,
+    "baseline_iou": 0.5232017445402944,
+    "delta_vs_texturesam": 0.3672455432987257,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -1149,13 +1149,13 @@
     "raw_image": "./assets/raw/images/149.jpg",
     "raw_gt": "./assets/raw/gt/149.png",
     "raw_ours": "./assets/raw/ours/149.png",
-    "raw_baseline": "./assets/raw/texturesam/149.png"
+    "raw_baseline": "./assets/raw/texturesam_union/149.png"
   },
   {
     "image_id": 175,
     "ai_iou": 0.8664757472704493,
-    "baseline_iou": 0.007531650673332796,
-    "delta_vs_texturesam": 0.8589440965971165,
+    "baseline_iou": 0.3138845000483668,
+    "delta_vs_texturesam": 0.5525912472220824,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -1165,13 +1165,13 @@
     "raw_image": "./assets/raw/images/175.jpg",
     "raw_gt": "./assets/raw/gt/175.png",
     "raw_ours": "./assets/raw/ours/175.png",
-    "raw_baseline": "./assets/raw/texturesam/175.png"
+    "raw_baseline": "./assets/raw/texturesam_union/175.png"
   },
   {
     "image_id": 176,
     "ai_iou": 0.0016300684942242285,
-    "baseline_iou": 0.0002764053484434924,
-    "delta_vs_texturesam": 0.0013536631457807362,
+    "baseline_iou": 0.060636958911529946,
+    "delta_vs_texturesam": -0.05900689041730572,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 43,
@@ -1181,13 +1181,13 @@
     "raw_image": "./assets/raw/images/176.jpg",
     "raw_gt": "./assets/raw/gt/176.png",
     "raw_ours": "./assets/raw/ours/176.png",
-    "raw_baseline": "./assets/raw/texturesam/176.png"
+    "raw_baseline": "./assets/raw/texturesam_union/176.png"
   },
   {
     "image_id": 178,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9647662444835133,
-    "delta_vs_texturesam": -0.9647662444835133,
+    "baseline_iou": 0.42759070033530916,
+    "delta_vs_texturesam": -0.42759070033530916,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 57,
@@ -1197,13 +1197,13 @@
     "raw_image": "./assets/raw/images/178.jpg",
     "raw_gt": "./assets/raw/gt/178.png",
     "raw_ours": "./assets/raw/ours/178.png",
-    "raw_baseline": "./assets/raw/texturesam/178.png"
+    "raw_baseline": "./assets/raw/texturesam_union/178.png"
   },
   {
     "image_id": 180,
     "ai_iou": 0.8498860828546674,
-    "baseline_iou": 0.843436126175272,
-    "delta_vs_texturesam": 0.006449956679395408,
+    "baseline_iou": 0.4410073740782402,
+    "delta_vs_texturesam": 0.4088787087764272,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 51,
@@ -1213,13 +1213,13 @@
     "raw_image": "./assets/raw/images/180.jpg",
     "raw_gt": "./assets/raw/gt/180.png",
     "raw_ours": "./assets/raw/ours/180.png",
-    "raw_baseline": "./assets/raw/texturesam/180.png"
+    "raw_baseline": "./assets/raw/texturesam_union/180.png"
   },
   {
     "image_id": 181,
     "ai_iou": 0.9859325906883748,
-    "baseline_iou": 0.9511393670976498,
-    "delta_vs_texturesam": 0.03479322359072501,
+    "baseline_iou": 0.5344759419602262,
+    "delta_vs_texturesam": 0.4514566487281486,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 37,
@@ -1229,13 +1229,13 @@
     "raw_image": "./assets/raw/images/181.jpg",
     "raw_gt": "./assets/raw/gt/181.png",
     "raw_ours": "./assets/raw/ours/181.png",
-    "raw_baseline": "./assets/raw/texturesam/181.png"
+    "raw_baseline": "./assets/raw/texturesam_union/181.png"
   },
   {
     "image_id": 182,
     "ai_iou": 0.00027788498649170207,
-    "baseline_iou": 0.00024856685671674256,
-    "delta_vs_texturesam": 2.9318129774959516e-05,
+    "baseline_iou": 0.0005267153103747425,
+    "delta_vs_texturesam": -0.0002488303238830404,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -1245,13 +1245,13 @@
     "raw_image": "./assets/raw/images/182.jpg",
     "raw_gt": "./assets/raw/gt/182.png",
     "raw_ours": "./assets/raw/ours/182.png",
-    "raw_baseline": "./assets/raw/texturesam/182.png"
+    "raw_baseline": "./assets/raw/texturesam_union/182.png"
   },
   {
     "image_id": 183,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9833268493302951,
-    "delta_vs_texturesam": -0.9833268493302951,
+    "baseline_iou": 0.5516048074075228,
+    "delta_vs_texturesam": -0.5516048074075228,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 33,
@@ -1261,13 +1261,13 @@
     "raw_image": "./assets/raw/images/183.jpg",
     "raw_gt": "./assets/raw/gt/183.png",
     "raw_ours": "./assets/raw/ours/183.png",
-    "raw_baseline": "./assets/raw/texturesam/183.png"
+    "raw_baseline": "./assets/raw/texturesam_union/183.png"
   },
   {
     "image_id": 184,
     "ai_iou": 0.9723022164698268,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9723022164698268,
+    "baseline_iou": 0.4652642493558726,
+    "delta_vs_texturesam": 0.5070379671139542,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -1277,13 +1277,13 @@
     "raw_image": "./assets/raw/images/184.jpg",
     "raw_gt": "./assets/raw/gt/184.png",
     "raw_ours": "./assets/raw/ours/184.png",
-    "raw_baseline": "./assets/raw/texturesam/184.png"
+    "raw_baseline": "./assets/raw/texturesam_union/184.png"
   },
   {
     "image_id": 185,
     "ai_iou": 0.9701951201451368,
-    "baseline_iou": 0.9591245215711047,
-    "delta_vs_texturesam": 0.011070598574032031,
+    "baseline_iou": 0.41547845118928833,
+    "delta_vs_texturesam": 0.5547166689558485,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 53,
@@ -1293,13 +1293,13 @@
     "raw_image": "./assets/raw/images/185.jpg",
     "raw_gt": "./assets/raw/gt/185.png",
     "raw_ours": "./assets/raw/ours/185.png",
-    "raw_baseline": "./assets/raw/texturesam/185.png"
+    "raw_baseline": "./assets/raw/texturesam_union/185.png"
   },
   {
     "image_id": 186,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.43035958518723705,
+    "delta_vs_texturesam": -0.43035958518723705,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 59,
@@ -1309,13 +1309,13 @@
     "raw_image": "./assets/raw/images/186.jpg",
     "raw_gt": "./assets/raw/gt/186.png",
     "raw_ours": "./assets/raw/ours/186.png",
-    "raw_baseline": "./assets/raw/texturesam/186.png"
+    "raw_baseline": "./assets/raw/texturesam_union/186.png"
   },
   {
     "image_id": 188,
     "ai_iou": 1.6125651073162078e-05,
-    "baseline_iou": 0.9335953784765648,
-    "delta_vs_texturesam": -0.9335792528254917,
+    "baseline_iou": 0.510828313496229,
+    "delta_vs_texturesam": -0.5108121878451559,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 51,
@@ -1325,13 +1325,13 @@
     "raw_image": "./assets/raw/images/188.jpg",
     "raw_gt": "./assets/raw/gt/188.png",
     "raw_ours": "./assets/raw/ours/188.png",
-    "raw_baseline": "./assets/raw/texturesam/188.png"
+    "raw_baseline": "./assets/raw/texturesam_union/188.png"
   },
   {
     "image_id": 189,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.0643475212340446,
+    "delta_vs_texturesam": -0.0643475212340446,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 54,
@@ -1341,13 +1341,13 @@
     "raw_image": "./assets/raw/images/189.jpg",
     "raw_gt": "./assets/raw/gt/189.png",
     "raw_ours": "./assets/raw/ours/189.png",
-    "raw_baseline": "./assets/raw/texturesam/189.png"
+    "raw_baseline": "./assets/raw/texturesam_union/189.png"
   },
   {
     "image_id": 194,
     "ai_iou": 0.16988589868297127,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.16988589868297127,
+    "baseline_iou": 0.1634328707678379,
+    "delta_vs_texturesam": 0.006453027915133358,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 62,
@@ -1357,13 +1357,13 @@
     "raw_image": "./assets/raw/images/194.jpg",
     "raw_gt": "./assets/raw/gt/194.png",
     "raw_ours": "./assets/raw/ours/194.png",
-    "raw_baseline": "./assets/raw/texturesam/194.png"
+    "raw_baseline": "./assets/raw/texturesam_union/194.png"
   },
   {
     "image_id": 197,
     "ai_iou": 0.9639095059555691,
-    "baseline_iou": 0.9661977636935126,
-    "delta_vs_texturesam": -0.0022882577379435,
+    "baseline_iou": 0.5901631606274682,
+    "delta_vs_texturesam": 0.3737463453281009,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 42,
@@ -1373,13 +1373,13 @@
     "raw_image": "./assets/raw/images/197.jpg",
     "raw_gt": "./assets/raw/gt/197.png",
     "raw_ours": "./assets/raw/ours/197.png",
-    "raw_baseline": "./assets/raw/texturesam/197.png"
+    "raw_baseline": "./assets/raw/texturesam_union/197.png"
   },
   {
     "image_id": 200,
     "ai_iou": 0.9812241645500274,
-    "baseline_iou": 0.0006191360670571986,
-    "delta_vs_texturesam": 0.9806050284829702,
+    "baseline_iou": 0.30478473456946914,
+    "delta_vs_texturesam": 0.6764394299805583,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 36,
@@ -1389,7 +1389,7 @@
     "raw_image": "./assets/raw/images/200.jpg",
     "raw_gt": "./assets/raw/gt/200.png",
     "raw_ours": "./assets/raw/ours/200.png",
-    "raw_baseline": "./assets/raw/texturesam/200.png"
+    "raw_baseline": "./assets/raw/texturesam_union/200.png"
   },
   {
     "image_id": 201,
@@ -1405,13 +1405,13 @@
     "raw_image": "./assets/raw/images/201.jpg",
     "raw_gt": "./assets/raw/gt/201.png",
     "raw_ours": "./assets/raw/ours/201.png",
-    "raw_baseline": "./assets/raw/texturesam/201.png"
+    "raw_baseline": "./assets/raw/texturesam_union/201.png"
   },
   {
     "image_id": 202,
     "ai_iou": 0.9830913166358055,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9830913166358055,
+    "baseline_iou": 0.31618918833925597,
+    "delta_vs_texturesam": 0.6669021282965495,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 28,
@@ -1421,13 +1421,13 @@
     "raw_image": "./assets/raw/images/202.jpg",
     "raw_gt": "./assets/raw/gt/202.png",
     "raw_ours": "./assets/raw/ours/202.png",
-    "raw_baseline": "./assets/raw/texturesam/202.png"
+    "raw_baseline": "./assets/raw/texturesam_union/202.png"
   },
   {
     "image_id": 205,
     "ai_iou": 0.0018301497954538463,
-    "baseline_iou": 0.0015449264615004326,
-    "delta_vs_texturesam": 0.0002852233339534138,
+    "baseline_iou": 0.4206989247311828,
+    "delta_vs_texturesam": -0.41886877493572894,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 118,
@@ -1437,13 +1437,13 @@
     "raw_image": "./assets/raw/images/205.jpg",
     "raw_gt": "./assets/raw/gt/205.png",
     "raw_ours": "./assets/raw/ours/205.png",
-    "raw_baseline": "./assets/raw/texturesam/205.png"
+    "raw_baseline": "./assets/raw/texturesam_union/205.png"
   },
   {
     "image_id": 207,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9558995668968746,
-    "delta_vs_texturesam": -0.9558995668968746,
+    "baseline_iou": 0.5042996310190975,
+    "delta_vs_texturesam": -0.5042996310190975,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 46,
@@ -1453,13 +1453,13 @@
     "raw_image": "./assets/raw/images/207.jpg",
     "raw_gt": "./assets/raw/gt/207.png",
     "raw_ours": "./assets/raw/ours/207.png",
-    "raw_baseline": "./assets/raw/texturesam/207.png"
+    "raw_baseline": "./assets/raw/texturesam_union/207.png"
   },
   {
     "image_id": 210,
     "ai_iou": 0.9596081185006855,
-    "baseline_iou": 0.0012694382735639479,
-    "delta_vs_texturesam": 0.9583386802271215,
+    "baseline_iou": 0.4451866155940359,
+    "delta_vs_texturesam": 0.5144215029066497,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 32,
@@ -1469,13 +1469,13 @@
     "raw_image": "./assets/raw/images/210.jpg",
     "raw_gt": "./assets/raw/gt/210.png",
     "raw_ours": "./assets/raw/ours/210.png",
-    "raw_baseline": "./assets/raw/texturesam/210.png"
+    "raw_baseline": "./assets/raw/texturesam_union/210.png"
   },
   {
     "image_id": 213,
     "ai_iou": 0.979007836601539,
-    "baseline_iou": 0.9787950781887167,
-    "delta_vs_texturesam": 0.00021275841282231145,
+    "baseline_iou": 0.42847164012293937,
+    "delta_vs_texturesam": 0.5505361964785996,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 28,
@@ -1485,13 +1485,13 @@
     "raw_image": "./assets/raw/images/213.jpg",
     "raw_gt": "./assets/raw/gt/213.png",
     "raw_ours": "./assets/raw/ours/213.png",
-    "raw_baseline": "./assets/raw/texturesam/213.png"
+    "raw_baseline": "./assets/raw/texturesam_union/213.png"
   },
   {
     "image_id": 214,
     "ai_iou": 0.9579820597558508,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9579820597558508,
+    "baseline_iou": 0.4288182285100621,
+    "delta_vs_texturesam": 0.5291638312457887,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 60,
@@ -1501,13 +1501,13 @@
     "raw_image": "./assets/raw/images/214.jpg",
     "raw_gt": "./assets/raw/gt/214.png",
     "raw_ours": "./assets/raw/ours/214.png",
-    "raw_baseline": "./assets/raw/texturesam/214.png"
+    "raw_baseline": "./assets/raw/texturesam_union/214.png"
   },
   {
     "image_id": 215,
     "ai_iou": 0.9326214085939486,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9326214085939486,
+    "baseline_iou": 0.39190697674418606,
+    "delta_vs_texturesam": 0.5407144318497625,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 49,
@@ -1517,13 +1517,13 @@
     "raw_image": "./assets/raw/images/215.jpg",
     "raw_gt": "./assets/raw/gt/215.png",
     "raw_ours": "./assets/raw/ours/215.png",
-    "raw_baseline": "./assets/raw/texturesam/215.png"
+    "raw_baseline": "./assets/raw/texturesam_union/215.png"
   },
   {
     "image_id": 216,
     "ai_iou": 0.7839580467675378,
-    "baseline_iou": 0.07689568690590458,
-    "delta_vs_texturesam": 0.7070623598616332,
+    "baseline_iou": 0.5174977586793211,
+    "delta_vs_texturesam": 0.26646028808821665,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 65,
@@ -1533,13 +1533,13 @@
     "raw_image": "./assets/raw/images/216.jpg",
     "raw_gt": "./assets/raw/gt/216.png",
     "raw_ours": "./assets/raw/ours/216.png",
-    "raw_baseline": "./assets/raw/texturesam/216.png"
+    "raw_baseline": "./assets/raw/texturesam_union/216.png"
   },
   {
     "image_id": 219,
     "ai_iou": 0.9865377635529745,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9865377635529745,
+    "baseline_iou": 0.45418530947054436,
+    "delta_vs_texturesam": 0.5323524540824301,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 48,
@@ -1549,13 +1549,13 @@
     "raw_image": "./assets/raw/images/219.jpg",
     "raw_gt": "./assets/raw/gt/219.png",
     "raw_ours": "./assets/raw/ours/219.png",
-    "raw_baseline": "./assets/raw/texturesam/219.png"
+    "raw_baseline": "./assets/raw/texturesam_union/219.png"
   },
   {
     "image_id": 221,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.5035356102971761,
+    "delta_vs_texturesam": -0.5035356102971761,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 43,
@@ -1565,13 +1565,13 @@
     "raw_image": "./assets/raw/images/221.jpg",
     "raw_gt": "./assets/raw/gt/221.png",
     "raw_ours": "./assets/raw/ours/221.png",
-    "raw_baseline": "./assets/raw/texturesam/221.png"
+    "raw_baseline": "./assets/raw/texturesam_union/221.png"
   },
   {
     "image_id": 222,
     "ai_iou": 0.9640067487346122,
-    "baseline_iou": 0.0013916905130490532,
-    "delta_vs_texturesam": 0.9626150582215631,
+    "baseline_iou": 0.24228310645015083,
+    "delta_vs_texturesam": 0.7217236422844614,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 29,
@@ -1581,13 +1581,13 @@
     "raw_image": "./assets/raw/images/222.jpg",
     "raw_gt": "./assets/raw/gt/222.png",
     "raw_ours": "./assets/raw/ours/222.png",
-    "raw_baseline": "./assets/raw/texturesam/222.png"
+    "raw_baseline": "./assets/raw/texturesam_union/222.png"
   },
   {
     "image_id": 224,
     "ai_iou": 0.9821588695463962,
-    "baseline_iou": 0.9656164002349958,
-    "delta_vs_texturesam": 0.016542469311400354,
+    "baseline_iou": 0.48207036013645976,
+    "delta_vs_texturesam": 0.5000885094099364,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 39,
@@ -1597,13 +1597,13 @@
     "raw_image": "./assets/raw/images/224.jpg",
     "raw_gt": "./assets/raw/gt/224.png",
     "raw_ours": "./assets/raw/ours/224.png",
-    "raw_baseline": "./assets/raw/texturesam/224.png"
+    "raw_baseline": "./assets/raw/texturesam_union/224.png"
   },
   {
     "image_id": 228,
     "ai_iou": 0.9796940928270043,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9796940928270043,
+    "baseline_iou": 0.4754545163048706,
+    "delta_vs_texturesam": 0.5042395765221337,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 35,
@@ -1613,13 +1613,13 @@
     "raw_image": "./assets/raw/images/228.jpg",
     "raw_gt": "./assets/raw/gt/228.png",
     "raw_ours": "./assets/raw/ours/228.png",
-    "raw_baseline": "./assets/raw/texturesam/228.png"
+    "raw_baseline": "./assets/raw/texturesam_union/228.png"
   },
   {
     "image_id": 229,
     "ai_iou": 0.9851752021563343,
-    "baseline_iou": 0.9851752021563343,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.4529802877288181,
+    "delta_vs_texturesam": 0.5321949144275162,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 39,
@@ -1629,13 +1629,13 @@
     "raw_image": "./assets/raw/images/229.jpg",
     "raw_gt": "./assets/raw/gt/229.png",
     "raw_ours": "./assets/raw/ours/229.png",
-    "raw_baseline": "./assets/raw/texturesam/229.png"
+    "raw_baseline": "./assets/raw/texturesam_union/229.png"
   },
   {
     "image_id": 236,
     "ai_iou": 1.535862386730149e-05,
-    "baseline_iou": 1.5489467162329617e-05,
-    "delta_vs_texturesam": -1.3084329502812797e-07,
+    "baseline_iou": 0.5133519206939281,
+    "delta_vs_texturesam": -0.5133365620700608,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -1645,13 +1645,13 @@
     "raw_image": "./assets/raw/images/236.jpg",
     "raw_gt": "./assets/raw/gt/236.png",
     "raw_ours": "./assets/raw/ours/236.png",
-    "raw_baseline": "./assets/raw/texturesam/236.png"
+    "raw_baseline": "./assets/raw/texturesam_union/236.png"
   },
   {
     "image_id": 237,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.5154253809028106,
+    "delta_vs_texturesam": -0.5154253809028106,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -1661,13 +1661,13 @@
     "raw_image": "./assets/raw/images/237.jpg",
     "raw_gt": "./assets/raw/gt/237.png",
     "raw_ours": "./assets/raw/ours/237.png",
-    "raw_baseline": "./assets/raw/texturesam/237.png"
+    "raw_baseline": "./assets/raw/texturesam_union/237.png"
   },
   {
     "image_id": 238,
     "ai_iou": 0.9629177682868958,
-    "baseline_iou": 0.00018689842070834502,
-    "delta_vs_texturesam": 0.9627308698661875,
+    "baseline_iou": 0.43486590038314177,
+    "delta_vs_texturesam": 0.528051867903754,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -1677,13 +1677,13 @@
     "raw_image": "./assets/raw/images/238.jpg",
     "raw_gt": "./assets/raw/gt/238.png",
     "raw_ours": "./assets/raw/ours/238.png",
-    "raw_baseline": "./assets/raw/texturesam/238.png"
+    "raw_baseline": "./assets/raw/texturesam_union/238.png"
   },
   {
     "image_id": 240,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9797107535630857,
-    "delta_vs_texturesam": -0.9797107535630857,
+    "baseline_iou": 0.6080242388701559,
+    "delta_vs_texturesam": -0.6080242388701559,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 48,
@@ -1693,13 +1693,13 @@
     "raw_image": "./assets/raw/images/240.jpg",
     "raw_gt": "./assets/raw/gt/240.png",
     "raw_ours": "./assets/raw/ours/240.png",
-    "raw_baseline": "./assets/raw/texturesam/240.png"
+    "raw_baseline": "./assets/raw/texturesam_union/240.png"
   },
   {
     "image_id": 243,
     "ai_iou": 0.5051059624464698,
-    "baseline_iou": 0.5062761506276151,
-    "delta_vs_texturesam": -0.0011701881811453374,
+    "baseline_iou": 0.07402699789229804,
+    "delta_vs_texturesam": 0.4310789645541717,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 49,
@@ -1709,13 +1709,13 @@
     "raw_image": "./assets/raw/images/243.jpg",
     "raw_gt": "./assets/raw/gt/243.png",
     "raw_ours": "./assets/raw/ours/243.png",
-    "raw_baseline": "./assets/raw/texturesam/243.png"
+    "raw_baseline": "./assets/raw/texturesam_union/243.png"
   },
   {
     "image_id": 244,
     "ai_iou": 0.9193382772390188,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9193382772390188,
+    "baseline_iou": 0.3292427168338213,
+    "delta_vs_texturesam": 0.5900955604051976,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -1725,13 +1725,13 @@
     "raw_image": "./assets/raw/images/244.jpg",
     "raw_gt": "./assets/raw/gt/244.png",
     "raw_ours": "./assets/raw/ours/244.png",
-    "raw_baseline": "./assets/raw/texturesam/244.png"
+    "raw_baseline": "./assets/raw/texturesam_union/244.png"
   },
   {
     "image_id": 245,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9544716142270862,
-    "delta_vs_texturesam": -0.9544716142270862,
+    "baseline_iou": 0.3636556127435012,
+    "delta_vs_texturesam": -0.3636556127435012,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 53,
@@ -1741,13 +1741,13 @@
     "raw_image": "./assets/raw/images/245.jpg",
     "raw_gt": "./assets/raw/gt/245.png",
     "raw_ours": "./assets/raw/ours/245.png",
-    "raw_baseline": "./assets/raw/texturesam/245.png"
+    "raw_baseline": "./assets/raw/texturesam_union/245.png"
   },
   {
     "image_id": 246,
     "ai_iou": 0.9851280903188665,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9851280903188665,
+    "baseline_iou": 0.4685631988106668,
+    "delta_vs_texturesam": 0.5165648915081997,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 40,
@@ -1757,13 +1757,13 @@
     "raw_image": "./assets/raw/images/246.jpg",
     "raw_gt": "./assets/raw/gt/246.png",
     "raw_ours": "./assets/raw/ours/246.png",
-    "raw_baseline": "./assets/raw/texturesam/246.png"
+    "raw_baseline": "./assets/raw/texturesam_union/246.png"
   },
   {
     "image_id": 247,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9710929927589942,
-    "delta_vs_texturesam": -0.9710929927589942,
+    "baseline_iou": 0.5314030763470718,
+    "delta_vs_texturesam": -0.5314030763470718,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 45,
@@ -1773,13 +1773,13 @@
     "raw_image": "./assets/raw/images/247.jpg",
     "raw_gt": "./assets/raw/gt/247.png",
     "raw_ours": "./assets/raw/ours/247.png",
-    "raw_baseline": "./assets/raw/texturesam/247.png"
+    "raw_baseline": "./assets/raw/texturesam_union/247.png"
   },
   {
     "image_id": 250,
     "ai_iou": 0.8904878048780488,
-    "baseline_iou": 0.8794634146341463,
-    "delta_vs_texturesam": 0.011024390243902449,
+    "baseline_iou": 0.2868569831013916,
+    "delta_vs_texturesam": 0.6036308217766572,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 36,
@@ -1789,13 +1789,13 @@
     "raw_image": "./assets/raw/images/250.jpg",
     "raw_gt": "./assets/raw/gt/250.png",
     "raw_ours": "./assets/raw/ours/250.png",
-    "raw_baseline": "./assets/raw/texturesam/250.png"
+    "raw_baseline": "./assets/raw/texturesam_union/250.png"
   },
   {
     "image_id": 251,
     "ai_iou": 0.9748886689757545,
-    "baseline_iou": 0.00018494259073745858,
-    "delta_vs_texturesam": 0.9747037263850171,
+    "baseline_iou": 0.47715188410264314,
+    "delta_vs_texturesam": 0.4977367848731114,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 47,
@@ -1805,13 +1805,13 @@
     "raw_image": "./assets/raw/images/251.jpg",
     "raw_gt": "./assets/raw/gt/251.png",
     "raw_ours": "./assets/raw/ours/251.png",
-    "raw_baseline": "./assets/raw/texturesam/251.png"
+    "raw_baseline": "./assets/raw/texturesam_union/251.png"
   },
   {
     "image_id": 252,
     "ai_iou": 0.1851897110038492,
-    "baseline_iou": 0.00039835117253801656,
-    "delta_vs_texturesam": 0.1847913598313112,
+    "baseline_iou": 0.1853999685682854,
+    "delta_vs_texturesam": -0.0002102575644361837,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 30,
@@ -1821,13 +1821,13 @@
     "raw_image": "./assets/raw/images/252.jpg",
     "raw_gt": "./assets/raw/gt/252.png",
     "raw_ours": "./assets/raw/ours/252.png",
-    "raw_baseline": "./assets/raw/texturesam/252.png"
+    "raw_baseline": "./assets/raw/texturesam_union/252.png"
   },
   {
     "image_id": 253,
     "ai_iou": 0.7744108626700569,
-    "baseline_iou": 0.000784990972603815,
-    "delta_vs_texturesam": 0.7736258716974531,
+    "baseline_iou": 0.4461260695502002,
+    "delta_vs_texturesam": 0.3282847931198567,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 42,
@@ -1837,13 +1837,13 @@
     "raw_image": "./assets/raw/images/253.jpg",
     "raw_gt": "./assets/raw/gt/253.png",
     "raw_ours": "./assets/raw/ours/253.png",
-    "raw_baseline": "./assets/raw/texturesam/253.png"
+    "raw_baseline": "./assets/raw/texturesam_union/253.png"
   },
   {
     "image_id": 254,
     "ai_iou": 0.9915753424657534,
-    "baseline_iou": 0.9713512216853432,
-    "delta_vs_texturesam": 0.02022412078041025,
+    "baseline_iou": 0.4504640518720997,
+    "delta_vs_texturesam": 0.5411112905936537,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 57,
@@ -1853,13 +1853,13 @@
     "raw_image": "./assets/raw/images/254.jpg",
     "raw_gt": "./assets/raw/gt/254.png",
     "raw_ours": "./assets/raw/ours/254.png",
-    "raw_baseline": "./assets/raw/texturesam/254.png"
+    "raw_baseline": "./assets/raw/texturesam_union/254.png"
   },
   {
     "image_id": 256,
     "ai_iou": 0.9867865496187843,
-    "baseline_iou": 0.9749703836456973,
-    "delta_vs_texturesam": 0.01181616597308699,
+    "baseline_iou": 0.49701915483361464,
+    "delta_vs_texturesam": 0.4897673947851697,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 38,
@@ -1869,13 +1869,13 @@
     "raw_image": "./assets/raw/images/256.jpg",
     "raw_gt": "./assets/raw/gt/256.png",
     "raw_ours": "./assets/raw/ours/256.png",
-    "raw_baseline": "./assets/raw/texturesam/256.png"
+    "raw_baseline": "./assets/raw/texturesam_union/256.png"
   },
   {
     "image_id": 257,
     "ai_iou": 0.97578125,
-    "baseline_iou": 0.9714191717728338,
-    "delta_vs_texturesam": 0.004362078227166277,
+    "baseline_iou": 0.37600050920548034,
+    "delta_vs_texturesam": 0.5997807407945197,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 38,
@@ -1885,13 +1885,13 @@
     "raw_image": "./assets/raw/images/257.jpg",
     "raw_gt": "./assets/raw/gt/257.png",
     "raw_ours": "./assets/raw/ours/257.png",
-    "raw_baseline": "./assets/raw/texturesam/257.png"
+    "raw_baseline": "./assets/raw/texturesam_union/257.png"
   },
   {
     "image_id": 258,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9860219981668195,
-    "delta_vs_texturesam": -0.9860219981668195,
+    "baseline_iou": 0.5459274295863994,
+    "delta_vs_texturesam": -0.5459274295863994,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 32,
@@ -1901,13 +1901,13 @@
     "raw_image": "./assets/raw/images/258.jpg",
     "raw_gt": "./assets/raw/gt/258.png",
     "raw_ours": "./assets/raw/ours/258.png",
-    "raw_baseline": "./assets/raw/texturesam/258.png"
+    "raw_baseline": "./assets/raw/texturesam_union/258.png"
   },
   {
     "image_id": 259,
     "ai_iou": 0.9330350174306675,
-    "baseline_iou": 0.895832249336594,
-    "delta_vs_texturesam": 0.037202768094073524,
+    "baseline_iou": 0.2717672312489228,
+    "delta_vs_texturesam": 0.6612677861817446,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 56,
@@ -1917,13 +1917,13 @@
     "raw_image": "./assets/raw/images/259.jpg",
     "raw_gt": "./assets/raw/gt/259.png",
     "raw_ours": "./assets/raw/ours/259.png",
-    "raw_baseline": "./assets/raw/texturesam/259.png"
+    "raw_baseline": "./assets/raw/texturesam_union/259.png"
   },
   {
     "image_id": 260,
     "ai_iou": 0.9736599303550701,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9736599303550701,
+    "baseline_iou": 0.49777023377825785,
+    "delta_vs_texturesam": 0.4758896965768123,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 43,
@@ -1933,13 +1933,13 @@
     "raw_image": "./assets/raw/images/260.jpg",
     "raw_gt": "./assets/raw/gt/260.png",
     "raw_ours": "./assets/raw/ours/260.png",
-    "raw_baseline": "./assets/raw/texturesam/260.png"
+    "raw_baseline": "./assets/raw/texturesam_union/260.png"
   },
   {
     "image_id": 261,
     "ai_iou": 0.9725598329496172,
-    "baseline_iou": 0.972185040424051,
-    "delta_vs_texturesam": 0.00037479252556626985,
+    "baseline_iou": 0.5628487290762554,
+    "delta_vs_texturesam": 0.40971110387336185,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 77,
@@ -1949,13 +1949,13 @@
     "raw_image": "./assets/raw/images/261.jpg",
     "raw_gt": "./assets/raw/gt/261.png",
     "raw_ours": "./assets/raw/ours/261.png",
-    "raw_baseline": "./assets/raw/texturesam/261.png"
+    "raw_baseline": "./assets/raw/texturesam_union/261.png"
   },
   {
     "image_id": 262,
     "ai_iou": 0.4199320190346703,
-    "baseline_iou": 0.0018892175232667978,
-    "delta_vs_texturesam": 0.4180428015114035,
+    "baseline_iou": 0.375783947845208,
+    "delta_vs_texturesam": 0.04414807118946229,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 119,
@@ -1965,13 +1965,13 @@
     "raw_image": "./assets/raw/images/262.jpg",
     "raw_gt": "./assets/raw/gt/262.png",
     "raw_ours": "./assets/raw/ours/262.png",
-    "raw_baseline": "./assets/raw/texturesam/262.png"
+    "raw_baseline": "./assets/raw/texturesam_union/262.png"
   },
   {
     "image_id": 263,
     "ai_iou": 0.11810010871395979,
-    "baseline_iou": 4.642381851381882e-05,
-    "delta_vs_texturesam": 0.11805368489544597,
+    "baseline_iou": 0.11245396304664046,
+    "delta_vs_texturesam": 0.00564614566731933,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 150,
@@ -1981,13 +1981,13 @@
     "raw_image": "./assets/raw/images/263.jpg",
     "raw_gt": "./assets/raw/gt/263.png",
     "raw_ours": "./assets/raw/ours/263.png",
-    "raw_baseline": "./assets/raw/texturesam/263.png"
+    "raw_baseline": "./assets/raw/texturesam_union/263.png"
   },
   {
     "image_id": 265,
     "ai_iou": 0.0,
-    "baseline_iou": 0.4625013259785722,
-    "delta_vs_texturesam": -0.4625013259785722,
+    "baseline_iou": 0.2083698405365364,
+    "delta_vs_texturesam": -0.2083698405365364,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 48,
@@ -1997,13 +1997,13 @@
     "raw_image": "./assets/raw/images/265.jpg",
     "raw_gt": "./assets/raw/gt/265.png",
     "raw_ours": "./assets/raw/ours/265.png",
-    "raw_baseline": "./assets/raw/texturesam/265.png"
+    "raw_baseline": "./assets/raw/texturesam_union/265.png"
   },
   {
     "image_id": 268,
     "ai_iou": 0.971466799427469,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.971466799427469,
+    "baseline_iou": 0.43693176528997424,
+    "delta_vs_texturesam": 0.5345350341374948,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 41,
@@ -2013,13 +2013,13 @@
     "raw_image": "./assets/raw/images/268.jpg",
     "raw_gt": "./assets/raw/gt/268.png",
     "raw_ours": "./assets/raw/ours/268.png",
-    "raw_baseline": "./assets/raw/texturesam/268.png"
+    "raw_baseline": "./assets/raw/texturesam_union/268.png"
   },
   {
     "image_id": 269,
     "ai_iou": 0.8005996137103981,
-    "baseline_iou": 1.543686322939179e-05,
-    "delta_vs_texturesam": 0.8005841768471688,
+    "baseline_iou": 0.39127817227539363,
+    "delta_vs_texturesam": 0.4093214414350045,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 137,
@@ -2029,13 +2029,13 @@
     "raw_image": "./assets/raw/images/269.jpg",
     "raw_gt": "./assets/raw/gt/269.png",
     "raw_ours": "./assets/raw/ours/269.png",
-    "raw_baseline": "./assets/raw/texturesam/269.png"
+    "raw_baseline": "./assets/raw/texturesam_union/269.png"
   },
   {
     "image_id": 270,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.16598103745494436,
+    "delta_vs_texturesam": -0.16598103745494436,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 38,
@@ -2045,13 +2045,13 @@
     "raw_image": "./assets/raw/images/270.jpg",
     "raw_gt": "./assets/raw/gt/270.png",
     "raw_ours": "./assets/raw/ours/270.png",
-    "raw_baseline": "./assets/raw/texturesam/270.png"
+    "raw_baseline": "./assets/raw/texturesam_union/270.png"
   },
   {
     "image_id": 274,
     "ai_iou": 4.705808536336685e-05,
-    "baseline_iou": 0.9294866540993908,
-    "delta_vs_texturesam": -0.9294395960140275,
+    "baseline_iou": 0.5406040961596518,
+    "delta_vs_texturesam": -0.5405570380742885,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 38,
@@ -2061,13 +2061,13 @@
     "raw_image": "./assets/raw/images/274.jpg",
     "raw_gt": "./assets/raw/gt/274.png",
     "raw_ours": "./assets/raw/ours/274.png",
-    "raw_baseline": "./assets/raw/texturesam/274.png"
+    "raw_baseline": "./assets/raw/texturesam_union/274.png"
   },
   {
     "image_id": 276,
     "ai_iou": 0.33203569779966147,
-    "baseline_iou": 0.09176493268643768,
-    "delta_vs_texturesam": 0.2402707651132238,
+    "baseline_iou": 0.3401032102830368,
+    "delta_vs_texturesam": -0.008067512483375339,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 46,
@@ -2077,13 +2077,13 @@
     "raw_image": "./assets/raw/images/276.jpg",
     "raw_gt": "./assets/raw/gt/276.png",
     "raw_ours": "./assets/raw/ours/276.png",
-    "raw_baseline": "./assets/raw/texturesam/276.png"
+    "raw_baseline": "./assets/raw/texturesam_union/276.png"
   },
   {
     "image_id": 280,
     "ai_iou": 0.9495589072282299,
-    "baseline_iou": 0.9215679293648533,
-    "delta_vs_texturesam": 0.027990977863376565,
+    "baseline_iou": 0.4241036377911542,
+    "delta_vs_texturesam": 0.5254552694370758,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 33,
@@ -2093,13 +2093,13 @@
     "raw_image": "./assets/raw/images/280.jpg",
     "raw_gt": "./assets/raw/gt/280.png",
     "raw_ours": "./assets/raw/ours/280.png",
-    "raw_baseline": "./assets/raw/texturesam/280.png"
+    "raw_baseline": "./assets/raw/texturesam_union/280.png"
   },
   {
     "image_id": 281,
     "ai_iou": 0.9597100692177093,
-    "baseline_iou": 0.9404582651391162,
-    "delta_vs_texturesam": 0.01925180407859306,
+    "baseline_iou": 0.49239944473959313,
+    "delta_vs_texturesam": 0.46731062447811617,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 44,
@@ -2109,13 +2109,13 @@
     "raw_image": "./assets/raw/images/281.jpg",
     "raw_gt": "./assets/raw/gt/281.png",
     "raw_ours": "./assets/raw/ours/281.png",
-    "raw_baseline": "./assets/raw/texturesam/281.png"
+    "raw_baseline": "./assets/raw/texturesam_union/281.png"
   },
   {
     "image_id": 282,
     "ai_iou": 0.970646363194557,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.970646363194557,
+    "baseline_iou": 0.48069314126063856,
+    "delta_vs_texturesam": 0.48995322193391844,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 37,
@@ -2125,7 +2125,7 @@
     "raw_image": "./assets/raw/images/282.jpg",
     "raw_gt": "./assets/raw/gt/282.png",
     "raw_ours": "./assets/raw/ours/282.png",
-    "raw_baseline": "./assets/raw/texturesam/282.png"
+    "raw_baseline": "./assets/raw/texturesam_union/282.png"
   },
   {
     "image_id": 288,
@@ -2141,7 +2141,7 @@
     "raw_image": "./assets/raw/images/288.jpg",
     "raw_gt": "./assets/raw/gt/288.png",
     "raw_ours": "./assets/raw/ours/288.png",
-    "raw_baseline": "./assets/raw/texturesam/288.png"
+    "raw_baseline": "./assets/raw/texturesam_union/288.png"
   },
   {
     "image_id": 293,
@@ -2157,7 +2157,7 @@
     "raw_image": "./assets/raw/images/293.jpg",
     "raw_gt": "./assets/raw/gt/293.png",
     "raw_ours": "./assets/raw/ours/293.png",
-    "raw_baseline": "./assets/raw/texturesam/293.png"
+    "raw_baseline": "./assets/raw/texturesam_union/293.png"
   },
   {
     "image_id": 294,
@@ -2173,13 +2173,13 @@
     "raw_image": "./assets/raw/images/294.jpg",
     "raw_gt": "./assets/raw/gt/294.png",
     "raw_ours": "./assets/raw/ours/294.png",
-    "raw_baseline": "./assets/raw/texturesam/294.png"
+    "raw_baseline": "./assets/raw/texturesam_union/294.png"
   },
   {
     "image_id": 299,
     "ai_iou": 0.07863822371594392,
-    "baseline_iou": 0.0002082365567284435,
-    "delta_vs_texturesam": 0.07842998715921548,
+    "baseline_iou": 0.07779901258162128,
+    "delta_vs_texturesam": 0.0008392111343226427,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 134,
@@ -2189,13 +2189,13 @@
     "raw_image": "./assets/raw/images/299.jpg",
     "raw_gt": "./assets/raw/gt/299.png",
     "raw_ours": "./assets/raw/ours/299.png",
-    "raw_baseline": "./assets/raw/texturesam/299.png"
+    "raw_baseline": "./assets/raw/texturesam_union/299.png"
   },
   {
     "image_id": 300,
     "ai_iou": 0.00030566551023215296,
-    "baseline_iou": 0.00018476604000184767,
-    "delta_vs_texturesam": 0.00012089947023030529,
+    "baseline_iou": 0.5301399602753014,
+    "delta_vs_texturesam": -0.5298342947650693,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 37,
@@ -2205,13 +2205,13 @@
     "raw_image": "./assets/raw/images/300.jpg",
     "raw_gt": "./assets/raw/gt/300.png",
     "raw_ours": "./assets/raw/ours/300.png",
-    "raw_baseline": "./assets/raw/texturesam/300.png"
+    "raw_baseline": "./assets/raw/texturesam_union/300.png"
   },
   {
     "image_id": 302,
     "ai_iou": 0.9860800650274334,
-    "baseline_iou": 7.813965118459711e-05,
-    "delta_vs_texturesam": 0.9860019253762488,
+    "baseline_iou": 0.4528791311821236,
+    "delta_vs_texturesam": 0.5332009338453099,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 44,
@@ -2221,13 +2221,13 @@
     "raw_image": "./assets/raw/images/302.jpg",
     "raw_gt": "./assets/raw/gt/302.png",
     "raw_ours": "./assets/raw/ours/302.png",
-    "raw_baseline": "./assets/raw/texturesam/302.png"
+    "raw_baseline": "./assets/raw/texturesam_union/302.png"
   },
   {
     "image_id": 303,
     "ai_iou": 0.975261085430577,
-    "baseline_iou": 9.312576634745224e-05,
-    "delta_vs_texturesam": 0.9751679596642295,
+    "baseline_iou": 0.352488399882059,
+    "delta_vs_texturesam": 0.6227726855485181,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -2237,7 +2237,7 @@
     "raw_image": "./assets/raw/images/303.jpg",
     "raw_gt": "./assets/raw/gt/303.png",
     "raw_ours": "./assets/raw/ours/303.png",
-    "raw_baseline": "./assets/raw/texturesam/303.png"
+    "raw_baseline": "./assets/raw/texturesam_union/303.png"
   },
   {
     "image_id": 304,
@@ -2253,13 +2253,13 @@
     "raw_image": "./assets/raw/images/304.jpg",
     "raw_gt": "./assets/raw/gt/304.png",
     "raw_ours": "./assets/raw/ours/304.png",
-    "raw_baseline": "./assets/raw/texturesam/304.png"
+    "raw_baseline": "./assets/raw/texturesam_union/304.png"
   },
   {
     "image_id": 308,
     "ai_iou": 0.1213224833551471,
-    "baseline_iou": 0.8121357945787435,
-    "delta_vs_texturesam": -0.6908133112235965,
+    "baseline_iou": 0.7636462205700124,
+    "delta_vs_texturesam": -0.6423237372148654,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 61,
@@ -2269,13 +2269,13 @@
     "raw_image": "./assets/raw/images/308.jpg",
     "raw_gt": "./assets/raw/gt/308.png",
     "raw_ours": "./assets/raw/ours/308.png",
-    "raw_baseline": "./assets/raw/texturesam/308.png"
+    "raw_baseline": "./assets/raw/texturesam_union/308.png"
   },
   {
     "image_id": 310,
     "ai_iou": 0.0015964877270005988,
-    "baseline_iou": 0.9611888640602161,
-    "delta_vs_texturesam": -0.9595923763332155,
+    "baseline_iou": 0.8799175663621543,
+    "delta_vs_texturesam": -0.8783210786351537,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 32,
@@ -2285,13 +2285,13 @@
     "raw_image": "./assets/raw/images/310.jpg",
     "raw_gt": "./assets/raw/gt/310.png",
     "raw_ours": "./assets/raw/ours/310.png",
-    "raw_baseline": "./assets/raw/texturesam/310.png"
+    "raw_baseline": "./assets/raw/texturesam_union/310.png"
   },
   {
     "image_id": 311,
     "ai_iou": 0.9855392074340932,
-    "baseline_iou": 0.9691794664510913,
-    "delta_vs_texturesam": 0.016359740983001858,
+    "baseline_iou": 0.8824205813810867,
+    "delta_vs_texturesam": 0.10311862605300648,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -2301,13 +2301,13 @@
     "raw_image": "./assets/raw/images/311.jpg",
     "raw_gt": "./assets/raw/gt/311.png",
     "raw_ours": "./assets/raw/ours/311.png",
-    "raw_baseline": "./assets/raw/texturesam/311.png"
+    "raw_baseline": "./assets/raw/texturesam_union/311.png"
   },
   {
     "image_id": 315,
     "ai_iou": 0.996522727652674,
-    "baseline_iou": 0.9814926271441469,
-    "delta_vs_texturesam": 0.015030100508527156,
+    "baseline_iou": 0.8994318442855174,
+    "delta_vs_texturesam": 0.09709088336715666,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 36,
@@ -2317,13 +2317,13 @@
     "raw_image": "./assets/raw/images/315.jpg",
     "raw_gt": "./assets/raw/gt/315.png",
     "raw_ours": "./assets/raw/ours/315.png",
-    "raw_baseline": "./assets/raw/texturesam/315.png"
+    "raw_baseline": "./assets/raw/texturesam_union/315.png"
   },
   {
     "image_id": 318,
     "ai_iou": 0.9890456594160297,
-    "baseline_iou": 0.9693034933213032,
-    "delta_vs_texturesam": 0.019742166094726565,
+    "baseline_iou": 0.7653544770341004,
+    "delta_vs_texturesam": 0.2236911823819293,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -2333,13 +2333,13 @@
     "raw_image": "./assets/raw/images/318.jpg",
     "raw_gt": "./assets/raw/gt/318.png",
     "raw_ours": "./assets/raw/ours/318.png",
-    "raw_baseline": "./assets/raw/texturesam/318.png"
+    "raw_baseline": "./assets/raw/texturesam_union/318.png"
   },
   {
     "image_id": 319,
     "ai_iou": 0.0007620072166565813,
-    "baseline_iou": 0.9596373914242382,
-    "delta_vs_texturesam": -0.9588753842075817,
+    "baseline_iou": 0.4357226608301415,
+    "delta_vs_texturesam": -0.4349606536134849,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 42,
@@ -2349,13 +2349,13 @@
     "raw_image": "./assets/raw/images/319.jpg",
     "raw_gt": "./assets/raw/gt/319.png",
     "raw_ours": "./assets/raw/ours/319.png",
-    "raw_baseline": "./assets/raw/texturesam/319.png"
+    "raw_baseline": "./assets/raw/texturesam_union/319.png"
   },
   {
     "image_id": 321,
     "ai_iou": 0.5149569683509162,
-    "baseline_iou": 0.45137380632261176,
-    "delta_vs_texturesam": 0.06358316202830444,
+    "baseline_iou": 0.9514268993769148,
+    "delta_vs_texturesam": -0.4364699310259986,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 31,
@@ -2365,7 +2365,7 @@
     "raw_image": "./assets/raw/images/321.jpg",
     "raw_gt": "./assets/raw/gt/321.png",
     "raw_ours": "./assets/raw/ours/321.png",
-    "raw_baseline": "./assets/raw/texturesam/321.png"
+    "raw_baseline": "./assets/raw/texturesam_union/321.png"
   },
   {
     "image_id": 322,
@@ -2381,7 +2381,7 @@
     "raw_image": "./assets/raw/images/322.jpg",
     "raw_gt": "./assets/raw/gt/322.png",
     "raw_ours": "./assets/raw/ours/322.png",
-    "raw_baseline": "./assets/raw/texturesam/322.png"
+    "raw_baseline": "./assets/raw/texturesam_union/322.png"
   },
   {
     "image_id": 323,
@@ -2397,13 +2397,13 @@
     "raw_image": "./assets/raw/images/323.jpg",
     "raw_gt": "./assets/raw/gt/323.png",
     "raw_ours": "./assets/raw/ours/323.png",
-    "raw_baseline": "./assets/raw/texturesam/323.png"
+    "raw_baseline": "./assets/raw/texturesam_union/323.png"
   },
   {
     "image_id": 324,
     "ai_iou": 0.9608320353063343,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9608320353063343,
+    "baseline_iou": 0.45068589793838676,
+    "delta_vs_texturesam": 0.5101461373679476,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 75,
@@ -2413,7 +2413,7 @@
     "raw_image": "./assets/raw/images/324.jpg",
     "raw_gt": "./assets/raw/gt/324.png",
     "raw_ours": "./assets/raw/ours/324.png",
-    "raw_baseline": "./assets/raw/texturesam/324.png"
+    "raw_baseline": "./assets/raw/texturesam_union/324.png"
   },
   {
     "image_id": 325,
@@ -2429,13 +2429,13 @@
     "raw_image": "./assets/raw/images/325.jpg",
     "raw_gt": "./assets/raw/gt/325.png",
     "raw_ours": "./assets/raw/ours/325.png",
-    "raw_baseline": "./assets/raw/texturesam/325.png"
+    "raw_baseline": "./assets/raw/texturesam_union/325.png"
   },
   {
     "image_id": 327,
     "ai_iou": 6.217358865953743e-05,
-    "baseline_iou": 6.222000995520159e-05,
-    "delta_vs_texturesam": -4.642129566415933e-08,
+    "baseline_iou": 0.5438253805847518,
+    "delta_vs_texturesam": -0.5437632069960923,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 49,
@@ -2445,13 +2445,13 @@
     "raw_image": "./assets/raw/images/327.jpg",
     "raw_gt": "./assets/raw/gt/327.png",
     "raw_ours": "./assets/raw/ours/327.png",
-    "raw_baseline": "./assets/raw/texturesam/327.png"
+    "raw_baseline": "./assets/raw/texturesam_union/327.png"
   },
   {
     "image_id": 328,
     "ai_iou": 0.004251621512584179,
-    "baseline_iou": 0.8706632896874701,
-    "delta_vs_texturesam": -0.8664116681748859,
+    "baseline_iou": 0.5687665957545924,
+    "delta_vs_texturesam": -0.5645149742420082,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 39,
@@ -2461,13 +2461,13 @@
     "raw_image": "./assets/raw/images/328.jpg",
     "raw_gt": "./assets/raw/gt/328.png",
     "raw_ours": "./assets/raw/ours/328.png",
-    "raw_baseline": "./assets/raw/texturesam/328.png"
+    "raw_baseline": "./assets/raw/texturesam_union/328.png"
   },
   {
     "image_id": 329,
     "ai_iou": 0.004243304034329287,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.004243304034329287,
+    "baseline_iou": 0.003341043433564636,
+    "delta_vs_texturesam": 0.0009022606007646505,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -2477,13 +2477,13 @@
     "raw_image": "./assets/raw/images/329.jpg",
     "raw_gt": "./assets/raw/gt/329.png",
     "raw_ours": "./assets/raw/ours/329.png",
-    "raw_baseline": "./assets/raw/texturesam/329.png"
+    "raw_baseline": "./assets/raw/texturesam_union/329.png"
   },
   {
     "image_id": 330,
     "ai_iou": 0.5986421725239617,
-    "baseline_iou": 0.00017188574285892868,
-    "delta_vs_texturesam": 0.5984702867811027,
+    "baseline_iou": 0.35426628578525743,
+    "delta_vs_texturesam": 0.24437588673870425,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 132,
@@ -2493,13 +2493,13 @@
     "raw_image": "./assets/raw/images/330.jpg",
     "raw_gt": "./assets/raw/gt/330.png",
     "raw_ours": "./assets/raw/ours/330.png",
-    "raw_baseline": "./assets/raw/texturesam/330.png"
+    "raw_baseline": "./assets/raw/texturesam_union/330.png"
   },
   {
     "image_id": 331,
     "ai_iou": 0.8647168753504018,
-    "baseline_iou": 0.9022194845709063,
-    "delta_vs_texturesam": -0.037502609220504524,
+    "baseline_iou": 0.8686339383044235,
+    "delta_vs_texturesam": -0.003917062954021722,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 72,
@@ -2509,13 +2509,13 @@
     "raw_image": "./assets/raw/images/331.jpg",
     "raw_gt": "./assets/raw/gt/331.png",
     "raw_ours": "./assets/raw/ours/331.png",
-    "raw_baseline": "./assets/raw/texturesam/331.png"
+    "raw_baseline": "./assets/raw/texturesam_union/331.png"
   },
   {
     "image_id": 332,
     "ai_iou": 0.00011069818929390369,
-    "baseline_iou": 0.966092791136369,
-    "delta_vs_texturesam": -0.9659820929470752,
+    "baseline_iou": 0.6360978370221329,
+    "delta_vs_texturesam": -0.635987138832839,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 33,
@@ -2525,13 +2525,13 @@
     "raw_image": "./assets/raw/images/332.jpg",
     "raw_gt": "./assets/raw/gt/332.png",
     "raw_ours": "./assets/raw/ours/332.png",
-    "raw_baseline": "./assets/raw/texturesam/332.png"
+    "raw_baseline": "./assets/raw/texturesam_union/332.png"
   },
   {
     "image_id": 334,
     "ai_iou": 0.9475530246760749,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9475530246760749,
+    "baseline_iou": 0.34194250733646775,
+    "delta_vs_texturesam": 0.6056105173396071,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 33,
@@ -2541,13 +2541,13 @@
     "raw_image": "./assets/raw/images/334.jpg",
     "raw_gt": "./assets/raw/gt/334.png",
     "raw_ours": "./assets/raw/ours/334.png",
-    "raw_baseline": "./assets/raw/texturesam/334.png"
+    "raw_baseline": "./assets/raw/texturesam_union/334.png"
   },
   {
     "image_id": 337,
     "ai_iou": 0.00095204459254027,
-    "baseline_iou": 0.9590050580635384,
-    "delta_vs_texturesam": -0.9580530134709981,
+    "baseline_iou": 0.791512376503849,
+    "delta_vs_texturesam": -0.7905603319113087,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 32,
@@ -2557,13 +2557,13 @@
     "raw_image": "./assets/raw/images/337.jpg",
     "raw_gt": "./assets/raw/gt/337.png",
     "raw_ours": "./assets/raw/ours/337.png",
-    "raw_baseline": "./assets/raw/texturesam/337.png"
+    "raw_baseline": "./assets/raw/texturesam_union/337.png"
   },
   {
     "image_id": 342,
     "ai_iou": 0.0005598668760983499,
-    "baseline_iou": 0.0003586520918773098,
-    "delta_vs_texturesam": 0.00020121478422104012,
+    "baseline_iou": 0.06475807331867584,
+    "delta_vs_texturesam": -0.06419820644257748,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 40,
@@ -2573,13 +2573,13 @@
     "raw_image": "./assets/raw/images/342.jpg",
     "raw_gt": "./assets/raw/gt/342.png",
     "raw_ours": "./assets/raw/ours/342.png",
-    "raw_baseline": "./assets/raw/texturesam/342.png"
+    "raw_baseline": "./assets/raw/texturesam_union/342.png"
   },
   {
     "image_id": 343,
     "ai_iou": 0.0,
-    "baseline_iou": 0.952927991033903,
-    "delta_vs_texturesam": -0.952927991033903,
+    "baseline_iou": 0.7565654365548572,
+    "delta_vs_texturesam": -0.7565654365548572,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 39,
@@ -2589,13 +2589,13 @@
     "raw_image": "./assets/raw/images/343.jpg",
     "raw_gt": "./assets/raw/gt/343.png",
     "raw_ours": "./assets/raw/ours/343.png",
-    "raw_baseline": "./assets/raw/texturesam/343.png"
+    "raw_baseline": "./assets/raw/texturesam_union/343.png"
   },
   {
     "image_id": 344,
     "ai_iou": 0.9874401788886334,
-    "baseline_iou": 0.9401550062840386,
-    "delta_vs_texturesam": 0.04728517260459486,
+    "baseline_iou": 0.7253106707985101,
+    "delta_vs_texturesam": 0.26212950809012336,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -2605,13 +2605,13 @@
     "raw_image": "./assets/raw/images/344.jpg",
     "raw_gt": "./assets/raw/gt/344.png",
     "raw_ours": "./assets/raw/ours/344.png",
-    "raw_baseline": "./assets/raw/texturesam/344.png"
+    "raw_baseline": "./assets/raw/texturesam_union/344.png"
   },
   {
     "image_id": 345,
     "ai_iou": 0.05172333668964449,
-    "baseline_iou": 0.8971943843046225,
-    "delta_vs_texturesam": -0.845471047614978,
+    "baseline_iou": 0.6719633969147062,
+    "delta_vs_texturesam": -0.6202400602250617,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -2621,13 +2621,13 @@
     "raw_image": "./assets/raw/images/345.jpg",
     "raw_gt": "./assets/raw/gt/345.png",
     "raw_ours": "./assets/raw/ours/345.png",
-    "raw_baseline": "./assets/raw/texturesam/345.png"
+    "raw_baseline": "./assets/raw/texturesam_union/345.png"
   },
   {
     "image_id": 346,
     "ai_iou": 0.014580989226097813,
-    "baseline_iou": 0.013384527609443185,
-    "delta_vs_texturesam": 0.0011964616166546278,
+    "baseline_iou": 0.6100043042489086,
+    "delta_vs_texturesam": -0.5954233150228108,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -2637,7 +2637,7 @@
     "raw_image": "./assets/raw/images/346.jpg",
     "raw_gt": "./assets/raw/gt/346.png",
     "raw_ours": "./assets/raw/ours/346.png",
-    "raw_baseline": "./assets/raw/texturesam/346.png"
+    "raw_baseline": "./assets/raw/texturesam_union/346.png"
   },
   {
     "image_id": 347,
@@ -2653,13 +2653,13 @@
     "raw_image": "./assets/raw/images/347.jpg",
     "raw_gt": "./assets/raw/gt/347.png",
     "raw_ours": "./assets/raw/ours/347.png",
-    "raw_baseline": "./assets/raw/texturesam/347.png"
+    "raw_baseline": "./assets/raw/texturesam_union/347.png"
   },
   {
     "image_id": 348,
     "ai_iou": 0.0007364231769609225,
-    "baseline_iou": 0.9594683700803627,
-    "delta_vs_texturesam": -0.9587319469034018,
+    "baseline_iou": 0.723617778192043,
+    "delta_vs_texturesam": -0.7228813550150821,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 28,
@@ -2669,13 +2669,13 @@
     "raw_image": "./assets/raw/images/348.jpg",
     "raw_gt": "./assets/raw/gt/348.png",
     "raw_ours": "./assets/raw/ours/348.png",
-    "raw_baseline": "./assets/raw/texturesam/348.png"
+    "raw_baseline": "./assets/raw/texturesam_union/348.png"
   },
   {
     "image_id": 349,
     "ai_iou": 0.0005784142071035517,
-    "baseline_iou": 0.9606869484138171,
-    "delta_vs_texturesam": -0.9601085342067135,
+    "baseline_iou": 0.6918767069840032,
+    "delta_vs_texturesam": -0.6912982927768996,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 31,
@@ -2685,13 +2685,13 @@
     "raw_image": "./assets/raw/images/349.jpg",
     "raw_gt": "./assets/raw/gt/349.png",
     "raw_ours": "./assets/raw/ours/349.png",
-    "raw_baseline": "./assets/raw/texturesam/349.png"
+    "raw_baseline": "./assets/raw/texturesam_union/349.png"
   },
   {
     "image_id": 350,
     "ai_iou": 0.8523058319133733,
-    "baseline_iou": 0.0016247330795655,
-    "delta_vs_texturesam": 0.8506810988338078,
+    "baseline_iou": 0.2671751001655245,
+    "delta_vs_texturesam": 0.5851307317478488,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 31,
@@ -2701,13 +2701,13 @@
     "raw_image": "./assets/raw/images/350.jpg",
     "raw_gt": "./assets/raw/gt/350.png",
     "raw_ours": "./assets/raw/ours/350.png",
-    "raw_baseline": "./assets/raw/texturesam/350.png"
+    "raw_baseline": "./assets/raw/texturesam_union/350.png"
   },
   {
     "image_id": 351,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9723743605176046,
-    "delta_vs_texturesam": -0.9723743605176046,
+    "baseline_iou": 0.5001625311518041,
+    "delta_vs_texturesam": -0.5001625311518041,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 38,
@@ -2717,7 +2717,7 @@
     "raw_image": "./assets/raw/images/351.jpg",
     "raw_gt": "./assets/raw/gt/351.png",
     "raw_ours": "./assets/raw/ours/351.png",
-    "raw_baseline": "./assets/raw/texturesam/351.png"
+    "raw_baseline": "./assets/raw/texturesam_union/351.png"
   },
   {
     "image_id": 352,
@@ -2733,13 +2733,13 @@
     "raw_image": "./assets/raw/images/352.jpg",
     "raw_gt": "./assets/raw/gt/352.png",
     "raw_ours": "./assets/raw/ours/352.png",
-    "raw_baseline": "./assets/raw/texturesam/352.png"
+    "raw_baseline": "./assets/raw/texturesam_union/352.png"
   },
   {
     "image_id": 357,
     "ai_iou": 0.9764521792229601,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9764521792229601,
+    "baseline_iou": 0.4016626663063693,
+    "delta_vs_texturesam": 0.5747895129165908,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -2749,13 +2749,13 @@
     "raw_image": "./assets/raw/images/357.jpg",
     "raw_gt": "./assets/raw/gt/357.png",
     "raw_ours": "./assets/raw/ours/357.png",
-    "raw_baseline": "./assets/raw/texturesam/357.png"
+    "raw_baseline": "./assets/raw/texturesam_union/357.png"
   },
   {
     "image_id": 358,
     "ai_iou": 0.5528338219731798,
-    "baseline_iou": 0.5468140103741999,
-    "delta_vs_texturesam": 0.006019811598979907,
+    "baseline_iou": 0.8390516252390058,
+    "delta_vs_texturesam": -0.286217803265826,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 34,
@@ -2765,13 +2765,13 @@
     "raw_image": "./assets/raw/images/358.jpg",
     "raw_gt": "./assets/raw/gt/358.png",
     "raw_ours": "./assets/raw/ours/358.png",
-    "raw_baseline": "./assets/raw/texturesam/358.png"
+    "raw_baseline": "./assets/raw/texturesam_union/358.png"
   },
   {
     "image_id": 359,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.39725359423663764,
+    "delta_vs_texturesam": -0.39725359423663764,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 118,
@@ -2781,7 +2781,7 @@
     "raw_image": "./assets/raw/images/359.jpg",
     "raw_gt": "./assets/raw/gt/359.png",
     "raw_ours": "./assets/raw/ours/359.png",
-    "raw_baseline": "./assets/raw/texturesam/359.png"
+    "raw_baseline": "./assets/raw/texturesam_union/359.png"
   },
   {
     "image_id": 362,
@@ -2813,7 +2813,7 @@
     "raw_image": "./assets/raw/images/363.jpg",
     "raw_gt": "./assets/raw/gt/363.png",
     "raw_ours": "./assets/raw/ours/363.png",
-    "raw_baseline": "./assets/raw/texturesam/363.png"
+    "raw_baseline": "./assets/raw/texturesam_union/363.png"
   },
   {
     "image_id": 364,
@@ -2829,13 +2829,13 @@
     "raw_image": "./assets/raw/images/364.jpg",
     "raw_gt": "./assets/raw/gt/364.png",
     "raw_ours": "./assets/raw/ours/364.png",
-    "raw_baseline": "./assets/raw/texturesam/364.png"
+    "raw_baseline": "./assets/raw/texturesam_union/364.png"
   },
   {
     "image_id": 365,
     "ai_iou": 0.5638897124221761,
-    "baseline_iou": 0.869976276862964,
-    "delta_vs_texturesam": -0.30608656444078786,
+    "baseline_iou": 0.5622677589691214,
+    "delta_vs_texturesam": 0.0016219534530547142,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 119,
@@ -2845,13 +2845,13 @@
     "raw_image": "./assets/raw/images/365.jpg",
     "raw_gt": "./assets/raw/gt/365.png",
     "raw_ours": "./assets/raw/ours/365.png",
-    "raw_baseline": "./assets/raw/texturesam/365.png"
+    "raw_baseline": "./assets/raw/texturesam_union/365.png"
   },
   {
     "image_id": 366,
     "ai_iou": 0.9174618187887723,
-    "baseline_iou": 0.8914851485148515,
-    "delta_vs_texturesam": 0.02597667027392081,
+    "baseline_iou": 0.9082319660537482,
+    "delta_vs_texturesam": 0.00922985273502408,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 28,
@@ -2861,7 +2861,7 @@
     "raw_image": "./assets/raw/images/366.jpg",
     "raw_gt": "./assets/raw/gt/366.png",
     "raw_ours": "./assets/raw/ours/366.png",
-    "raw_baseline": "./assets/raw/texturesam/366.png"
+    "raw_baseline": "./assets/raw/texturesam_union/366.png"
   },
   {
     "image_id": 367,
@@ -2877,7 +2877,7 @@
     "raw_image": "./assets/raw/images/367.jpg",
     "raw_gt": "./assets/raw/gt/367.png",
     "raw_ours": "./assets/raw/ours/367.png",
-    "raw_baseline": "./assets/raw/texturesam/367.png"
+    "raw_baseline": "./assets/raw/texturesam_union/367.png"
   },
   {
     "image_id": 371,
@@ -2893,13 +2893,13 @@
     "raw_image": "./assets/raw/images/371.jpg",
     "raw_gt": "./assets/raw/gt/371.png",
     "raw_ours": "./assets/raw/ours/371.png",
-    "raw_baseline": "./assets/raw/texturesam/371.png"
+    "raw_baseline": "./assets/raw/texturesam_union/371.png"
   },
   {
     "image_id": 373,
     "ai_iou": 0.0,
-    "baseline_iou": 0.40895919339472847,
-    "delta_vs_texturesam": -0.40895919339472847,
+    "baseline_iou": 0.734429954246942,
+    "delta_vs_texturesam": -0.734429954246942,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 45,
@@ -2909,13 +2909,13 @@
     "raw_image": "./assets/raw/images/373.jpg",
     "raw_gt": "./assets/raw/gt/373.png",
     "raw_ours": "./assets/raw/ours/373.png",
-    "raw_baseline": "./assets/raw/texturesam/373.png"
+    "raw_baseline": "./assets/raw/texturesam_union/373.png"
   },
   {
     "image_id": 374,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.2971796937953263,
+    "delta_vs_texturesam": -0.2971796937953263,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 44,
@@ -2925,13 +2925,13 @@
     "raw_image": "./assets/raw/images/374.jpg",
     "raw_gt": "./assets/raw/gt/374.png",
     "raw_ours": "./assets/raw/ours/374.png",
-    "raw_baseline": "./assets/raw/texturesam/374.png"
+    "raw_baseline": "./assets/raw/texturesam_union/374.png"
   },
   {
     "image_id": 376,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.31562608339374076,
+    "delta_vs_texturesam": -0.31562608339374076,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 43,
@@ -2941,13 +2941,13 @@
     "raw_image": "./assets/raw/images/376.jpg",
     "raw_gt": "./assets/raw/gt/376.png",
     "raw_ours": "./assets/raw/ours/376.png",
-    "raw_baseline": "./assets/raw/texturesam/376.png"
+    "raw_baseline": "./assets/raw/texturesam_union/376.png"
   },
   {
     "image_id": 377,
     "ai_iou": 0.4685296501934872,
-    "baseline_iou": 0.4987506753106429,
-    "delta_vs_texturesam": -0.030221025117155687,
+    "baseline_iou": 0.4760232033515952,
+    "delta_vs_texturesam": -0.007493553158108013,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 44,
@@ -2957,13 +2957,13 @@
     "raw_image": "./assets/raw/images/377.jpg",
     "raw_gt": "./assets/raw/gt/377.png",
     "raw_ours": "./assets/raw/ours/377.png",
-    "raw_baseline": "./assets/raw/texturesam/377.png"
+    "raw_baseline": "./assets/raw/texturesam_union/377.png"
   },
   {
     "image_id": 378,
     "ai_iou": 0.9806806550665302,
-    "baseline_iou": 0.9611689645057202,
-    "delta_vs_texturesam": 0.019511690560810035,
+    "baseline_iou": 0.8178900860398419,
+    "delta_vs_texturesam": 0.16279056902668831,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 33,
@@ -2973,7 +2973,7 @@
     "raw_image": "./assets/raw/images/378.jpg",
     "raw_gt": "./assets/raw/gt/378.png",
     "raw_ours": "./assets/raw/ours/378.png",
-    "raw_baseline": "./assets/raw/texturesam/378.png"
+    "raw_baseline": "./assets/raw/texturesam_union/378.png"
   },
   {
     "image_id": 380,
@@ -2989,7 +2989,7 @@
     "raw_image": "./assets/raw/images/380.jpg",
     "raw_gt": "./assets/raw/gt/380.png",
     "raw_ours": "./assets/raw/ours/380.png",
-    "raw_baseline": "./assets/raw/texturesam/380.png"
+    "raw_baseline": "./assets/raw/texturesam_union/380.png"
   },
   {
     "image_id": 382,
@@ -3005,13 +3005,13 @@
     "raw_image": "./assets/raw/images/382.jpg",
     "raw_gt": "./assets/raw/gt/382.png",
     "raw_ours": "./assets/raw/ours/382.png",
-    "raw_baseline": "./assets/raw/texturesam/382.png"
+    "raw_baseline": "./assets/raw/texturesam_union/382.png"
   },
   {
     "image_id": 383,
     "ai_iou": 0.9677453173050042,
-    "baseline_iou": 0.0012920100209557724,
-    "delta_vs_texturesam": 0.9664533072840484,
+    "baseline_iou": 0.41615207085828343,
+    "delta_vs_texturesam": 0.5515932464467208,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 33,
@@ -3021,13 +3021,13 @@
     "raw_image": "./assets/raw/images/383.jpg",
     "raw_gt": "./assets/raw/gt/383.png",
     "raw_ours": "./assets/raw/ours/383.png",
-    "raw_baseline": "./assets/raw/texturesam/383.png"
+    "raw_baseline": "./assets/raw/texturesam_union/383.png"
   },
   {
     "image_id": 387,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.22235872235872237,
+    "delta_vs_texturesam": -0.22235872235872237,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 44,
@@ -3037,13 +3037,13 @@
     "raw_image": "./assets/raw/images/387.jpg",
     "raw_gt": "./assets/raw/gt/387.png",
     "raw_ours": "./assets/raw/ours/387.png",
-    "raw_baseline": "./assets/raw/texturesam/387.png"
+    "raw_baseline": "./assets/raw/texturesam_union/387.png"
   },
   {
     "image_id": 388,
     "ai_iou": 0.6536781852872589,
-    "baseline_iou": 0.11307436867711793,
-    "delta_vs_texturesam": 0.5406038166101409,
+    "baseline_iou": 0.3446289288748166,
+    "delta_vs_texturesam": 0.30904925641244224,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 30,
@@ -3053,13 +3053,13 @@
     "raw_image": "./assets/raw/images/388.jpg",
     "raw_gt": "./assets/raw/gt/388.png",
     "raw_ours": "./assets/raw/ours/388.png",
-    "raw_baseline": "./assets/raw/texturesam/388.png"
+    "raw_baseline": "./assets/raw/texturesam_union/388.png"
   },
   {
     "image_id": 389,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.43615033391287394,
+    "delta_vs_texturesam": -0.43615033391287394,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 70,
@@ -3069,13 +3069,13 @@
     "raw_image": "./assets/raw/images/389.jpg",
     "raw_gt": "./assets/raw/gt/389.png",
     "raw_ours": "./assets/raw/ours/389.png",
-    "raw_baseline": "./assets/raw/texturesam/389.png"
+    "raw_baseline": "./assets/raw/texturesam_union/389.png"
   },
   {
     "image_id": 391,
     "ai_iou": 0.0006884035296326428,
-    "baseline_iou": 0.9588347178014129,
-    "delta_vs_texturesam": -0.9581463142717803,
+    "baseline_iou": 0.7717813822064724,
+    "delta_vs_texturesam": -0.7710929786768398,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 37,
@@ -3085,7 +3085,7 @@
     "raw_image": "./assets/raw/images/391.jpg",
     "raw_gt": "./assets/raw/gt/391.png",
     "raw_ours": "./assets/raw/ours/391.png",
-    "raw_baseline": "./assets/raw/texturesam/391.png"
+    "raw_baseline": "./assets/raw/texturesam_union/391.png"
   },
   {
     "image_id": 392,
@@ -3101,13 +3101,13 @@
     "raw_image": "./assets/raw/images/392.jpg",
     "raw_gt": "./assets/raw/gt/392.png",
     "raw_ours": "./assets/raw/ours/392.png",
-    "raw_baseline": "./assets/raw/texturesam/392.png"
+    "raw_baseline": "./assets/raw/texturesam_union/392.png"
   },
   {
     "image_id": 393,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.35487281348113026,
+    "delta_vs_texturesam": -0.35487281348113026,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 145,
@@ -3117,13 +3117,13 @@
     "raw_image": "./assets/raw/images/393.jpg",
     "raw_gt": "./assets/raw/gt/393.png",
     "raw_ours": "./assets/raw/ours/393.png",
-    "raw_baseline": "./assets/raw/texturesam/393.png"
+    "raw_baseline": "./assets/raw/texturesam_union/393.png"
   },
   {
     "image_id": 394,
     "ai_iou": 0.0008413704990573534,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0008413704990573534,
+    "baseline_iou": 0.40530480017443854,
+    "delta_vs_texturesam": -0.4044634296753812,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 28,
@@ -3133,13 +3133,13 @@
     "raw_image": "./assets/raw/images/394.jpg",
     "raw_gt": "./assets/raw/gt/394.png",
     "raw_ours": "./assets/raw/ours/394.png",
-    "raw_baseline": "./assets/raw/texturesam/394.png"
+    "raw_baseline": "./assets/raw/texturesam_union/394.png"
   },
   {
     "image_id": 395,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.35787668563411024,
+    "delta_vs_texturesam": -0.35787668563411024,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 28,
@@ -3149,13 +3149,13 @@
     "raw_image": "./assets/raw/images/395.jpg",
     "raw_gt": "./assets/raw/gt/395.png",
     "raw_ours": "./assets/raw/ours/395.png",
-    "raw_baseline": "./assets/raw/texturesam/395.png"
+    "raw_baseline": "./assets/raw/texturesam_union/395.png"
   },
   {
     "image_id": 397,
     "ai_iou": 0.0,
-    "baseline_iou": 0.8715379109079896,
-    "delta_vs_texturesam": -0.8715379109079896,
+    "baseline_iou": 0.2889270198240298,
+    "delta_vs_texturesam": -0.2889270198240298,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 59,
@@ -3165,13 +3165,13 @@
     "raw_image": "./assets/raw/images/397.jpg",
     "raw_gt": "./assets/raw/gt/397.png",
     "raw_ours": "./assets/raw/ours/397.png",
-    "raw_baseline": "./assets/raw/texturesam/397.png"
+    "raw_baseline": "./assets/raw/texturesam_union/397.png"
   },
   {
     "image_id": 398,
     "ai_iou": 0.00041455403552409194,
-    "baseline_iou": 0.9457642147264196,
-    "delta_vs_texturesam": -0.9453496606908955,
+    "baseline_iou": 0.805445022884195,
+    "delta_vs_texturesam": -0.8050304688486709,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 52,
@@ -3181,13 +3181,13 @@
     "raw_image": "./assets/raw/images/398.jpg",
     "raw_gt": "./assets/raw/gt/398.png",
     "raw_ours": "./assets/raw/ours/398.png",
-    "raw_baseline": "./assets/raw/texturesam/398.png"
+    "raw_baseline": "./assets/raw/texturesam_union/398.png"
   },
   {
     "image_id": 399,
     "ai_iou": 0.6428117833833128,
-    "baseline_iou": 0.6503274231225826,
-    "delta_vs_texturesam": -0.00751563973926983,
+    "baseline_iou": 0.7553708880634167,
+    "delta_vs_texturesam": -0.11255910468010388,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 43,
@@ -3197,13 +3197,13 @@
     "raw_image": "./assets/raw/images/399.jpg",
     "raw_gt": "./assets/raw/gt/399.png",
     "raw_ours": "./assets/raw/ours/399.png",
-    "raw_baseline": "./assets/raw/texturesam/399.png"
+    "raw_baseline": "./assets/raw/texturesam_union/399.png"
   },
   {
     "image_id": 400,
     "ai_iou": 0.0008500322697435736,
-    "baseline_iou": 0.0005100007968762451,
-    "delta_vs_texturesam": 0.0003400314728673285,
+    "baseline_iou": 0.26232978420902975,
+    "delta_vs_texturesam": -0.2614797519392862,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 46,
@@ -3213,13 +3213,13 @@
     "raw_image": "./assets/raw/images/400.jpg",
     "raw_gt": "./assets/raw/gt/400.png",
     "raw_ours": "./assets/raw/ours/400.png",
-    "raw_baseline": "./assets/raw/texturesam/400.png"
+    "raw_baseline": "./assets/raw/texturesam_union/400.png"
   },
   {
     "image_id": 403,
     "ai_iou": 0.17860895502152324,
-    "baseline_iou": 0.8953574744661096,
-    "delta_vs_texturesam": -0.7167485194445864,
+    "baseline_iou": 0.1781265255202589,
+    "delta_vs_texturesam": 0.00048242950126434203,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 60,
@@ -3229,13 +3229,13 @@
     "raw_image": "./assets/raw/images/403.jpg",
     "raw_gt": "./assets/raw/gt/403.png",
     "raw_ours": "./assets/raw/ours/403.png",
-    "raw_baseline": "./assets/raw/texturesam/403.png"
+    "raw_baseline": "./assets/raw/texturesam_union/403.png"
   },
   {
     "image_id": 408,
     "ai_iou": 0.002914005828011656,
-    "baseline_iou": 0.00010648776721774086,
-    "delta_vs_texturesam": 0.002807518060793915,
+    "baseline_iou": 0.4855703657780533,
+    "delta_vs_texturesam": -0.48265635995004164,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 94,
@@ -3245,7 +3245,7 @@
     "raw_image": "./assets/raw/images/408.jpg",
     "raw_gt": "./assets/raw/gt/408.png",
     "raw_ours": "./assets/raw/ours/408.png",
-    "raw_baseline": "./assets/raw/texturesam/408.png"
+    "raw_baseline": "./assets/raw/texturesam_union/408.png"
   },
   {
     "image_id": 410,
@@ -3261,13 +3261,13 @@
     "raw_image": "./assets/raw/images/410.jpg",
     "raw_gt": "./assets/raw/gt/410.png",
     "raw_ours": "./assets/raw/ours/410.png",
-    "raw_baseline": "./assets/raw/texturesam/410.png"
+    "raw_baseline": "./assets/raw/texturesam_union/410.png"
   },
   {
     "image_id": 411,
     "ai_iou": 0.0013477088948787063,
-    "baseline_iou": 0.9665934163503584,
-    "delta_vs_texturesam": -0.9652457074554798,
+    "baseline_iou": 0.6727867436047767,
+    "delta_vs_texturesam": -0.6714390347098981,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 47,
@@ -3277,13 +3277,13 @@
     "raw_image": "./assets/raw/images/411.jpg",
     "raw_gt": "./assets/raw/gt/411.png",
     "raw_ours": "./assets/raw/ours/411.png",
-    "raw_baseline": "./assets/raw/texturesam/411.png"
+    "raw_baseline": "./assets/raw/texturesam_union/411.png"
   },
   {
     "image_id": 412,
     "ai_iou": 0.00020287457669439287,
-    "baseline_iou": 0.9602881456237373,
-    "delta_vs_texturesam": -0.9600852710470429,
+    "baseline_iou": 0.7333032069062237,
+    "delta_vs_texturesam": -0.7331003323295293,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 43,
@@ -3293,13 +3293,13 @@
     "raw_image": "./assets/raw/images/412.jpg",
     "raw_gt": "./assets/raw/gt/412.png",
     "raw_ours": "./assets/raw/ours/412.png",
-    "raw_baseline": "./assets/raw/texturesam/412.png"
+    "raw_baseline": "./assets/raw/texturesam_union/412.png"
   },
   {
     "image_id": 413,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.4780577576443941,
+    "delta_vs_texturesam": -0.4780577576443941,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 40,
@@ -3309,13 +3309,13 @@
     "raw_image": "./assets/raw/images/413.jpg",
     "raw_gt": "./assets/raw/gt/413.png",
     "raw_ours": "./assets/raw/ours/413.png",
-    "raw_baseline": "./assets/raw/texturesam/413.png"
+    "raw_baseline": "./assets/raw/texturesam_union/413.png"
   },
   {
     "image_id": 414,
     "ai_iou": 9.379103357719002e-05,
-    "baseline_iou": 9.878494517435543e-05,
-    "delta_vs_texturesam": -4.993911597165414e-06,
+    "baseline_iou": 0.5866529196738214,
+    "delta_vs_texturesam": -0.5865591286402442,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 49,
@@ -3325,13 +3325,13 @@
     "raw_image": "./assets/raw/images/414.jpg",
     "raw_gt": "./assets/raw/gt/414.png",
     "raw_ours": "./assets/raw/ours/414.png",
-    "raw_baseline": "./assets/raw/texturesam/414.png"
+    "raw_baseline": "./assets/raw/texturesam_union/414.png"
   },
   {
     "image_id": 416,
     "ai_iou": 1.552361141295911e-05,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 1.552361141295911e-05,
+    "baseline_iou": 0.18663924721131675,
+    "delta_vs_texturesam": -0.18662372359990378,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 33,
@@ -3341,7 +3341,7 @@
     "raw_image": "./assets/raw/images/416.jpg",
     "raw_gt": "./assets/raw/gt/416.png",
     "raw_ours": "./assets/raw/ours/416.png",
-    "raw_baseline": "./assets/raw/texturesam/416.png"
+    "raw_baseline": "./assets/raw/texturesam_union/416.png"
   },
   {
     "image_id": 417,
@@ -3357,13 +3357,13 @@
     "raw_image": "./assets/raw/images/417.jpg",
     "raw_gt": "./assets/raw/gt/417.png",
     "raw_ours": "./assets/raw/ours/417.png",
-    "raw_baseline": "./assets/raw/texturesam/417.png"
+    "raw_baseline": "./assets/raw/texturesam_union/417.png"
   },
   {
     "image_id": 418,
     "ai_iou": 0.0020648326398807677,
-    "baseline_iou": 0.1412138040460135,
-    "delta_vs_texturesam": -0.13914897140613272,
+    "baseline_iou": 0.3520806393818063,
+    "delta_vs_texturesam": -0.3500158067419255,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -3373,13 +3373,13 @@
     "raw_image": "./assets/raw/images/418.jpg",
     "raw_gt": "./assets/raw/gt/418.png",
     "raw_ours": "./assets/raw/ours/418.png",
-    "raw_baseline": "./assets/raw/texturesam/418.png"
+    "raw_baseline": "./assets/raw/texturesam_union/418.png"
   },
   {
     "image_id": 422,
     "ai_iou": 0.9904738491795219,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.9904738491795219,
+    "baseline_iou": 0.49160158671129295,
+    "delta_vs_texturesam": 0.4988722624682289,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 32,
@@ -3389,13 +3389,13 @@
     "raw_image": "./assets/raw/images/422.jpg",
     "raw_gt": "./assets/raw/gt/422.png",
     "raw_ours": "./assets/raw/ours/422.png",
-    "raw_baseline": "./assets/raw/texturesam/422.png"
+    "raw_baseline": "./assets/raw/texturesam_union/422.png"
   },
   {
     "image_id": 423,
     "ai_iou": 7.706297586387596e-05,
-    "baseline_iou": 0.9555280605098515,
-    "delta_vs_texturesam": -0.9554509975339877,
+    "baseline_iou": 0.6310661651353517,
+    "delta_vs_texturesam": -0.6309891021594879,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 46,
@@ -3405,7 +3405,7 @@
     "raw_image": "./assets/raw/images/423.jpg",
     "raw_gt": "./assets/raw/gt/423.png",
     "raw_ours": "./assets/raw/ours/423.png",
-    "raw_baseline": "./assets/raw/texturesam/423.png"
+    "raw_baseline": "./assets/raw/texturesam_union/423.png"
   },
   {
     "image_id": 424,
@@ -3421,13 +3421,13 @@
     "raw_image": "./assets/raw/images/424.jpg",
     "raw_gt": "./assets/raw/gt/424.png",
     "raw_ours": "./assets/raw/ours/424.png",
-    "raw_baseline": "./assets/raw/texturesam/424.png"
+    "raw_baseline": "./assets/raw/texturesam_union/424.png"
   },
   {
     "image_id": 425,
     "ai_iou": 0.0014860468026529846,
-    "baseline_iou": 0.0007403440236910088,
-    "delta_vs_texturesam": 0.0007457027789619759,
+    "baseline_iou": 0.6262061403508772,
+    "delta_vs_texturesam": -0.6247200935482242,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -3437,13 +3437,13 @@
     "raw_image": "./assets/raw/images/425.jpg",
     "raw_gt": "./assets/raw/gt/425.png",
     "raw_ours": "./assets/raw/ours/425.png",
-    "raw_baseline": "./assets/raw/texturesam/425.png"
+    "raw_baseline": "./assets/raw/texturesam_union/425.png"
   },
   {
     "image_id": 426,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9687601090623411,
-    "delta_vs_texturesam": -0.9687601090623411,
+    "baseline_iou": 0.652412741390847,
+    "delta_vs_texturesam": -0.652412741390847,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 30,
@@ -3453,7 +3453,7 @@
     "raw_image": "./assets/raw/images/426.jpg",
     "raw_gt": "./assets/raw/gt/426.png",
     "raw_ours": "./assets/raw/ours/426.png",
-    "raw_baseline": "./assets/raw/texturesam/426.png"
+    "raw_baseline": "./assets/raw/texturesam_union/426.png"
   },
   {
     "image_id": 428,
@@ -3469,13 +3469,13 @@
     "raw_image": "./assets/raw/images/428.jpg",
     "raw_gt": "./assets/raw/gt/428.png",
     "raw_ours": "./assets/raw/ours/428.png",
-    "raw_baseline": "./assets/raw/texturesam/428.png"
+    "raw_baseline": "./assets/raw/texturesam_union/428.png"
   },
   {
     "image_id": 429,
     "ai_iou": 0.36711635750421584,
-    "baseline_iou": 0.00017166310335679395,
-    "delta_vs_texturesam": 0.36694469440085903,
+    "baseline_iou": 0.338412550481516,
+    "delta_vs_texturesam": 0.028703807022699868,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 56,
@@ -3485,13 +3485,13 @@
     "raw_image": "./assets/raw/images/429.jpg",
     "raw_gt": "./assets/raw/gt/429.png",
     "raw_ours": "./assets/raw/ours/429.png",
-    "raw_baseline": "./assets/raw/texturesam/429.png"
+    "raw_baseline": "./assets/raw/texturesam_union/429.png"
   },
   {
     "image_id": 431,
     "ai_iou": 0.4642635177128651,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.4642635177128651,
+    "baseline_iou": 0.1479688655881123,
+    "delta_vs_texturesam": 0.31629465212475283,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 38,
@@ -3501,13 +3501,13 @@
     "raw_image": "./assets/raw/images/431.jpg",
     "raw_gt": "./assets/raw/gt/431.png",
     "raw_ours": "./assets/raw/ours/431.png",
-    "raw_baseline": "./assets/raw/texturesam/431.png"
+    "raw_baseline": "./assets/raw/texturesam_union/431.png"
   },
   {
     "image_id": 432,
     "ai_iou": 0.0,
-    "baseline_iou": 0.7414429943363704,
-    "delta_vs_texturesam": -0.7414429943363704,
+    "baseline_iou": 0.3068067024773511,
+    "delta_vs_texturesam": -0.3068067024773511,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 47,
@@ -3517,13 +3517,13 @@
     "raw_image": "./assets/raw/images/432.jpg",
     "raw_gt": "./assets/raw/gt/432.png",
     "raw_ours": "./assets/raw/ours/432.png",
-    "raw_baseline": "./assets/raw/texturesam/432.png"
+    "raw_baseline": "./assets/raw/texturesam_union/432.png"
   },
   {
     "image_id": 434,
     "ai_iou": 0.0015781900326468723,
-    "baseline_iou": 0.8194391087207069,
-    "delta_vs_texturesam": -0.81786091868806,
+    "baseline_iou": 0.525370110643603,
+    "delta_vs_texturesam": -0.523791920610956,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 39,
@@ -3533,13 +3533,13 @@
     "raw_image": "./assets/raw/images/434.jpg",
     "raw_gt": "./assets/raw/gt/434.png",
     "raw_ours": "./assets/raw/ours/434.png",
-    "raw_baseline": "./assets/raw/texturesam/434.png"
+    "raw_baseline": "./assets/raw/texturesam_union/434.png"
   },
   {
     "image_id": 436,
     "ai_iou": 0.0,
-    "baseline_iou": 9.255831173639393e-05,
-    "delta_vs_texturesam": -9.255831173639393e-05,
+    "baseline_iou": 0.627952059325815,
+    "delta_vs_texturesam": -0.627952059325815,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 50,
@@ -3549,13 +3549,13 @@
     "raw_image": "./assets/raw/images/436.jpg",
     "raw_gt": "./assets/raw/gt/436.png",
     "raw_ours": "./assets/raw/ours/436.png",
-    "raw_baseline": "./assets/raw/texturesam/436.png"
+    "raw_baseline": "./assets/raw/texturesam_union/436.png"
   },
   {
     "image_id": 437,
     "ai_iou": 0.00023079408551690181,
-    "baseline_iou": 0.9407139184093246,
-    "delta_vs_texturesam": -0.9404831243238078,
+    "baseline_iou": 0.6763433077171854,
+    "delta_vs_texturesam": -0.6761125136316686,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 34,
@@ -3565,13 +3565,13 @@
     "raw_image": "./assets/raw/images/437.jpg",
     "raw_gt": "./assets/raw/gt/437.png",
     "raw_ours": "./assets/raw/ours/437.png",
-    "raw_baseline": "./assets/raw/texturesam/437.png"
+    "raw_baseline": "./assets/raw/texturesam_union/437.png"
   },
   {
     "image_id": 440,
     "ai_iou": 0.65032958984375,
-    "baseline_iou": 0.7351076417710117,
-    "delta_vs_texturesam": -0.08477805192726173,
+    "baseline_iou": 0.6379740251793609,
+    "delta_vs_texturesam": 0.01235556466438914,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 49,
@@ -3581,13 +3581,13 @@
     "raw_image": "./assets/raw/images/440.jpg",
     "raw_gt": "./assets/raw/gt/440.png",
     "raw_ours": "./assets/raw/ours/440.png",
-    "raw_baseline": "./assets/raw/texturesam/440.png"
+    "raw_baseline": "./assets/raw/texturesam_union/440.png"
   },
   {
     "image_id": 441,
     "ai_iou": 0.00023200779546192753,
-    "baseline_iou": 0.9561481534191988,
-    "delta_vs_texturesam": -0.9559161456237368,
+    "baseline_iou": 0.831084110126915,
+    "delta_vs_texturesam": -0.830852102331453,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 28,
@@ -3597,13 +3597,13 @@
     "raw_image": "./assets/raw/images/441.jpg",
     "raw_gt": "./assets/raw/gt/441.png",
     "raw_ours": "./assets/raw/ours/441.png",
-    "raw_baseline": "./assets/raw/texturesam/441.png"
+    "raw_baseline": "./assets/raw/texturesam_union/441.png"
   },
   {
     "image_id": 442,
     "ai_iou": 0.00021901692687963456,
-    "baseline_iou": 0.0001252661906551422,
-    "delta_vs_texturesam": 9.375073622449237e-05,
+    "baseline_iou": 0.7253399373861035,
+    "delta_vs_texturesam": -0.7251209204592238,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 35,
@@ -3613,7 +3613,7 @@
     "raw_image": "./assets/raw/images/442.jpg",
     "raw_gt": "./assets/raw/gt/442.png",
     "raw_ours": "./assets/raw/ours/442.png",
-    "raw_baseline": "./assets/raw/texturesam/442.png"
+    "raw_baseline": "./assets/raw/texturesam_union/442.png"
   },
   {
     "image_id": 443,
@@ -3634,8 +3634,8 @@
   {
     "image_id": 444,
     "ai_iou": 0.0014947913456204154,
-    "baseline_iou": 0.9503022301074825,
-    "delta_vs_texturesam": -0.9488074387618621,
+    "baseline_iou": 0.7111419325011558,
+    "delta_vs_texturesam": -0.7096471411555354,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -3645,13 +3645,13 @@
     "raw_image": "./assets/raw/images/444.jpg",
     "raw_gt": "./assets/raw/gt/444.png",
     "raw_ours": "./assets/raw/ours/444.png",
-    "raw_baseline": "./assets/raw/texturesam/444.png"
+    "raw_baseline": "./assets/raw/texturesam_union/444.png"
   },
   {
     "image_id": 447,
     "ai_iou": 0.00014103046257991727,
-    "baseline_iou": 0.00014510044175023378,
-    "delta_vs_texturesam": -4.0699791703165155e-06,
+    "baseline_iou": 0.0001422070534698521,
+    "delta_vs_texturesam": -1.1765908899348315e-06,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 32,
@@ -3661,13 +3661,13 @@
     "raw_image": "./assets/raw/images/447.jpg",
     "raw_gt": "./assets/raw/gt/447.png",
     "raw_ours": "./assets/raw/ours/447.png",
-    "raw_baseline": "./assets/raw/texturesam/447.png"
+    "raw_baseline": "./assets/raw/texturesam_union/447.png"
   },
   {
     "image_id": 448,
     "ai_iou": 0.0031601939491580563,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0031601939491580563,
+    "baseline_iou": 0.4713758222663522,
+    "delta_vs_texturesam": -0.46821562831719415,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 32,
@@ -3677,13 +3677,13 @@
     "raw_image": "./assets/raw/images/448.jpg",
     "raw_gt": "./assets/raw/gt/448.png",
     "raw_ours": "./assets/raw/ours/448.png",
-    "raw_baseline": "./assets/raw/texturesam/448.png"
+    "raw_baseline": "./assets/raw/texturesam_union/448.png"
   },
   {
     "image_id": 449,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.47234161838908617,
+    "delta_vs_texturesam": -0.47234161838908617,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 28,
@@ -3693,13 +3693,13 @@
     "raw_image": "./assets/raw/images/449.jpg",
     "raw_gt": "./assets/raw/gt/449.png",
     "raw_ours": "./assets/raw/ours/449.png",
-    "raw_baseline": "./assets/raw/texturesam/449.png"
+    "raw_baseline": "./assets/raw/texturesam_union/449.png"
   },
   {
     "image_id": 450,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.3991956226909227,
+    "delta_vs_texturesam": -0.3991956226909227,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 31,
@@ -3709,13 +3709,13 @@
     "raw_image": "./assets/raw/images/450.jpg",
     "raw_gt": "./assets/raw/gt/450.png",
     "raw_ours": "./assets/raw/ours/450.png",
-    "raw_baseline": "./assets/raw/texturesam/450.png"
+    "raw_baseline": "./assets/raw/texturesam_union/450.png"
   },
   {
     "image_id": 451,
     "ai_iou": 1.5518552429429383e-05,
-    "baseline_iou": 0.9676836529380364,
-    "delta_vs_texturesam": -0.967668134385607,
+    "baseline_iou": 0.7300650557620818,
+    "delta_vs_texturesam": -0.7300495372096524,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -3725,13 +3725,13 @@
     "raw_image": "./assets/raw/images/451.jpg",
     "raw_gt": "./assets/raw/gt/451.png",
     "raw_ours": "./assets/raw/ours/451.png",
-    "raw_baseline": "./assets/raw/texturesam/451.png"
+    "raw_baseline": "./assets/raw/texturesam_union/451.png"
   },
   {
     "image_id": 452,
     "ai_iou": 0.0008889859321875292,
-    "baseline_iou": 0.0006766538679423428,
-    "delta_vs_texturesam": 0.0002123320642451864,
+    "baseline_iou": 0.36153036704308084,
+    "delta_vs_texturesam": -0.36064138111089333,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 257,
@@ -3741,13 +3741,13 @@
     "raw_image": "./assets/raw/images/452.jpg",
     "raw_gt": "./assets/raw/gt/452.png",
     "raw_ours": "./assets/raw/ours/452.png",
-    "raw_baseline": "./assets/raw/texturesam/452.png"
+    "raw_baseline": "./assets/raw/texturesam_union/452.png"
   },
   {
     "image_id": 453,
     "ai_iou": 0.0,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.0,
+    "baseline_iou": 0.3254318497036944,
+    "delta_vs_texturesam": -0.3254318497036944,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 54,
@@ -3757,13 +3757,13 @@
     "raw_image": "./assets/raw/images/453.jpg",
     "raw_gt": "./assets/raw/gt/453.png",
     "raw_ours": "./assets/raw/ours/453.png",
-    "raw_baseline": "./assets/raw/texturesam/453.png"
+    "raw_baseline": "./assets/raw/texturesam_union/453.png"
   },
   {
     "image_id": 455,
     "ai_iou": 0.000141629685582098,
-    "baseline_iou": 0.9419761895820032,
-    "delta_vs_texturesam": -0.9418345598964212,
+    "baseline_iou": 0.7862214041546147,
+    "delta_vs_texturesam": -0.7860797744690327,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 44,
@@ -3773,13 +3773,13 @@
     "raw_image": "./assets/raw/images/455.jpg",
     "raw_gt": "./assets/raw/gt/455.png",
     "raw_ours": "./assets/raw/ours/455.png",
-    "raw_baseline": "./assets/raw/texturesam/455.png"
+    "raw_baseline": "./assets/raw/texturesam_union/455.png"
   },
   {
     "image_id": 456,
     "ai_iou": 0.017550782051484397,
-    "baseline_iou": 0.010967035408764106,
-    "delta_vs_texturesam": 0.006583746642720292,
+    "baseline_iou": 0.6249280323659846,
+    "delta_vs_texturesam": -0.6073772503145002,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 29,
@@ -3789,13 +3789,13 @@
     "raw_image": "./assets/raw/images/456.jpg",
     "raw_gt": "./assets/raw/gt/456.png",
     "raw_ours": "./assets/raw/ours/456.png",
-    "raw_baseline": "./assets/raw/texturesam/456.png"
+    "raw_baseline": "./assets/raw/texturesam_union/456.png"
   },
   {
     "image_id": 457,
     "ai_iou": 3.1368120579055504e-05,
-    "baseline_iou": 0.950560697757209,
-    "delta_vs_texturesam": -0.95052932963663,
+    "baseline_iou": 0.6591887429990897,
+    "delta_vs_texturesam": -0.6591573748785107,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 29,
@@ -3805,7 +3805,7 @@
     "raw_image": "./assets/raw/images/457.jpg",
     "raw_gt": "./assets/raw/gt/457.png",
     "raw_ours": "./assets/raw/ours/457.png",
-    "raw_baseline": "./assets/raw/texturesam/457.png"
+    "raw_baseline": "./assets/raw/texturesam_union/457.png"
   },
   {
     "image_id": 461,
@@ -3821,13 +3821,13 @@
     "raw_image": "./assets/raw/images/461.jpg",
     "raw_gt": "./assets/raw/gt/461.png",
     "raw_ours": "./assets/raw/ours/461.png",
-    "raw_baseline": "./assets/raw/texturesam/461.png"
+    "raw_baseline": "./assets/raw/texturesam_union/461.png"
   },
   {
     "image_id": 463,
     "ai_iou": 0.052474638309956925,
-    "baseline_iou": 0.7380129166938483,
-    "delta_vs_texturesam": -0.6855382783838914,
+    "baseline_iou": 0.230085098214857,
+    "delta_vs_texturesam": -0.1776104599049001,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 52,
@@ -3837,13 +3837,13 @@
     "raw_image": "./assets/raw/images/463.jpg",
     "raw_gt": "./assets/raw/gt/463.png",
     "raw_ours": "./assets/raw/ours/463.png",
-    "raw_baseline": "./assets/raw/texturesam/463.png"
+    "raw_baseline": "./assets/raw/texturesam_union/463.png"
   },
   {
     "image_id": 464,
     "ai_iou": 0.39894468032736446,
-    "baseline_iou": 0.0,
-    "delta_vs_texturesam": 0.39894468032736446,
+    "baseline_iou": 0.7215033887861984,
+    "delta_vs_texturesam": -0.3225587084588339,
     "decision": "learned rescue",
     "switched": true,
     "proposal_count": 338,
@@ -3853,13 +3853,13 @@
     "raw_image": "./assets/raw/images/464.jpg",
     "raw_gt": "./assets/raw/gt/464.png",
     "raw_ours": "./assets/raw/ours/464.png",
-    "raw_baseline": "./assets/raw/texturesam/464.png"
+    "raw_baseline": "./assets/raw/texturesam_union/464.png"
   },
   {
     "image_id": 465,
     "ai_iou": 6.227328631700216e-05,
-    "baseline_iou": 3.117644307960905e-05,
-    "delta_vs_texturesam": 3.1096843237393114e-05,
+    "baseline_iou": 0.3538526289535627,
+    "delta_vs_texturesam": -0.35379035566724565,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 41,
@@ -3869,13 +3869,13 @@
     "raw_image": "./assets/raw/images/465.jpg",
     "raw_gt": "./assets/raw/gt/465.png",
     "raw_ours": "./assets/raw/ours/465.png",
-    "raw_baseline": "./assets/raw/texturesam/465.png"
+    "raw_baseline": "./assets/raw/texturesam_union/465.png"
   },
   {
     "image_id": 466,
     "ai_iou": 0.013342588307882153,
-    "baseline_iou": 0.009689233669700668,
-    "delta_vs_texturesam": 0.0036533546381814844,
+    "baseline_iou": 0.39642785408587367,
+    "delta_vs_texturesam": -0.3830852657779915,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 32,
@@ -3885,7 +3885,7 @@
     "raw_image": "./assets/raw/images/466.jpg",
     "raw_gt": "./assets/raw/gt/466.png",
     "raw_ours": "./assets/raw/ours/466.png",
-    "raw_baseline": "./assets/raw/texturesam/466.png"
+    "raw_baseline": "./assets/raw/texturesam_union/466.png"
   },
   {
     "image_id": 467,
@@ -3901,13 +3901,13 @@
     "raw_image": "./assets/raw/images/467.jpg",
     "raw_gt": "./assets/raw/gt/467.png",
     "raw_ours": "./assets/raw/ours/467.png",
-    "raw_baseline": "./assets/raw/texturesam/467.png"
+    "raw_baseline": "./assets/raw/texturesam_union/467.png"
   },
   {
     "image_id": 468,
     "ai_iou": 4.695056105920466e-05,
-    "baseline_iou": 4.711721191751347e-05,
-    "delta_vs_texturesam": -1.666508583088086e-07,
+    "baseline_iou": 0.540247532508225,
+    "delta_vs_texturesam": -0.5402005819471658,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 41,
@@ -3917,13 +3917,13 @@
     "raw_image": "./assets/raw/images/468.jpg",
     "raw_gt": "./assets/raw/gt/468.png",
     "raw_ours": "./assets/raw/ours/468.png",
-    "raw_baseline": "./assets/raw/texturesam/468.png"
+    "raw_baseline": "./assets/raw/texturesam_union/468.png"
   },
   {
     "image_id": 469,
     "ai_iou": 0.0,
-    "baseline_iou": 0.9576709881350497,
-    "delta_vs_texturesam": -0.9576709881350497,
+    "baseline_iou": 0.6516013402945531,
+    "delta_vs_texturesam": -0.6516013402945531,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 42,
@@ -3933,13 +3933,13 @@
     "raw_image": "./assets/raw/images/469.jpg",
     "raw_gt": "./assets/raw/gt/469.png",
     "raw_ours": "./assets/raw/ours/469.png",
-    "raw_baseline": "./assets/raw/texturesam/469.png"
+    "raw_baseline": "./assets/raw/texturesam_union/469.png"
   },
   {
     "image_id": 471,
     "ai_iou": 0.0,
-    "baseline_iou": 0.951938639082401,
-    "delta_vs_texturesam": -0.951938639082401,
+    "baseline_iou": 0.63502793033845,
+    "delta_vs_texturesam": -0.63502793033845,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 32,
@@ -3949,13 +3949,13 @@
     "raw_image": "./assets/raw/images/471.jpg",
     "raw_gt": "./assets/raw/gt/471.png",
     "raw_ours": "./assets/raw/ours/471.png",
-    "raw_baseline": "./assets/raw/texturesam/471.png"
+    "raw_baseline": "./assets/raw/texturesam_union/471.png"
   },
   {
     "image_id": 472,
     "ai_iou": 0.26015032658286014,
-    "baseline_iou": 1.639209900827801e-05,
-    "delta_vs_texturesam": 0.26013393448385186,
+    "baseline_iou": 0.1254862859197751,
+    "delta_vs_texturesam": 0.13466404066308504,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 36,
@@ -3965,13 +3965,13 @@
     "raw_image": "./assets/raw/images/472.jpg",
     "raw_gt": "./assets/raw/gt/472.png",
     "raw_ours": "./assets/raw/ours/472.png",
-    "raw_baseline": "./assets/raw/texturesam/472.png"
+    "raw_baseline": "./assets/raw/texturesam_union/472.png"
   },
   {
     "image_id": 473,
     "ai_iou": 0.6956661729667074,
-    "baseline_iou": 0.658582821283828,
-    "delta_vs_texturesam": 0.03708335168287946,
+    "baseline_iou": 0.6607573486280388,
+    "delta_vs_texturesam": 0.0349088243386686,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 38,
@@ -3981,13 +3981,13 @@
     "raw_image": "./assets/raw/images/473.jpg",
     "raw_gt": "./assets/raw/gt/473.png",
     "raw_ours": "./assets/raw/ours/473.png",
-    "raw_baseline": "./assets/raw/texturesam/473.png"
+    "raw_baseline": "./assets/raw/texturesam_union/473.png"
   },
   {
     "image_id": 474,
     "ai_iou": 0.0,
-    "baseline_iou": 0.45286336726519605,
-    "delta_vs_texturesam": -0.45286336726519605,
+    "baseline_iou": 0.4657017193122751,
+    "delta_vs_texturesam": -0.4657017193122751,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 45,
@@ -3997,7 +3997,7 @@
     "raw_image": "./assets/raw/images/474.jpg",
     "raw_gt": "./assets/raw/gt/474.png",
     "raw_ours": "./assets/raw/ours/474.png",
-    "raw_baseline": "./assets/raw/texturesam/474.png"
+    "raw_baseline": "./assets/raw/texturesam_union/474.png"
   },
   {
     "image_id": 475,
@@ -4013,7 +4013,7 @@
     "raw_image": "./assets/raw/images/475.jpg",
     "raw_gt": "./assets/raw/gt/475.png",
     "raw_ours": "./assets/raw/ours/475.png",
-    "raw_baseline": "./assets/raw/texturesam/475.png"
+    "raw_baseline": "./assets/raw/texturesam_union/475.png"
   },
   {
     "image_id": 476,
@@ -4029,13 +4029,13 @@
     "raw_image": "./assets/raw/images/476.jpg",
     "raw_gt": "./assets/raw/gt/476.png",
     "raw_ours": "./assets/raw/ours/476.png",
-    "raw_baseline": "./assets/raw/texturesam/476.png"
+    "raw_baseline": "./assets/raw/texturesam_union/476.png"
   },
   {
     "image_id": 478,
     "ai_iou": 7.846953028139174e-05,
-    "baseline_iou": 0.959977883633889,
-    "delta_vs_texturesam": -0.9598994141036077,
+    "baseline_iou": 0.7032790715787834,
+    "delta_vs_texturesam": -0.7032006020485021,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 28,
@@ -4045,13 +4045,13 @@
     "raw_image": "./assets/raw/images/478.jpg",
     "raw_gt": "./assets/raw/gt/478.png",
     "raw_ours": "./assets/raw/ours/478.png",
-    "raw_baseline": "./assets/raw/texturesam/478.png"
+    "raw_baseline": "./assets/raw/texturesam_union/478.png"
   },
   {
     "image_id": 479,
     "ai_iou": 0.22539050535987748,
-    "baseline_iou": 0.0006148170919151552,
-    "delta_vs_texturesam": 0.22477568826796232,
+    "baseline_iou": 0.21420780138575227,
+    "delta_vs_texturesam": 0.011182703974125213,
     "decision": "keep core",
     "switched": false,
     "proposal_count": 288,
@@ -4061,7 +4061,7 @@
     "raw_image": "./assets/raw/images/479.jpg",
     "raw_gt": "./assets/raw/gt/479.png",
     "raw_ours": "./assets/raw/ours/479.png",
-    "raw_baseline": "./assets/raw/texturesam/479.png"
+    "raw_baseline": "./assets/raw/texturesam_union/479.png"
   },
   {
     "image_id": 485,
@@ -4077,7 +4077,7 @@
     "raw_image": "./assets/raw/images/485.jpg",
     "raw_gt": "./assets/raw/gt/485.png",
     "raw_ours": "./assets/raw/ours/485.png",
-    "raw_baseline": "./assets/raw/texturesam/485.png"
+    "raw_baseline": "./assets/raw/texturesam_union/485.png"
   },
   {
     "image_id": 492,
@@ -4093,6 +4093,6 @@
     "raw_image": "./assets/raw/images/492.jpg",
     "raw_gt": "./assets/raw/gt/492.png",
     "raw_ours": "./assets/raw/ours/492.png",
-    "raw_baseline": "./assets/raw/texturesam/492.png"
+    "raw_baseline": "./assets/raw/texturesam_union/492.png"
   }
 ]
