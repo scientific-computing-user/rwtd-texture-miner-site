@@ -3,35 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TextureSAM-2 Results</title>
+  <title>TextureSAM-2 RWTD Results</title>
   <style>
     :root { color-scheme: light; }
-    body { margin: 0; font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(180deg, #f5f8fc 0%, #eef4fb 100%); color: #11243b; }
-    .wrap { max-width: 980px; margin: 36px auto; padding: 0 16px; }
-    .card { background: #fff; border: 1px solid #d6e0ea; border-radius: 14px; padding: 24px; box-shadow: 0 8px 25px rgba(9, 29, 52, 0.06); }
-    h1 { margin: 0 0 8px; font-size: 32px; line-height: 1.15; }
-    p { margin: 0 0 14px; color: #4f6278; }
-    .grid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    a.btn { display: block; text-decoration: none; background: #f8fbff; border: 1px solid #bfd0e2; border-radius: 10px; padding: 14px 16px; color: #0f3c75; font-weight: 700; }
-    a.btn:hover { background: #edf5ff; }
-    .meta { margin-top: 14px; font-size: 13px; color: #60748d; }
-    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: #13222c;
+      background: linear-gradient(180deg, #f7fafc 0%, #eef3f6 100%);
+    }
+    .wrap {
+      width: min(1040px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 44px 0;
+    }
+    .card {
+      background: rgba(255,255,255,.94);
+      border: 1px solid #d6dfe6;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 14px 36px rgba(19,34,44,.08);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.02;
+    }
+    p {
+      margin: 0;
+      color: #60707d;
+      line-height: 1.65;
+      max-width: 860px;
+    }
+    a.btn {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #12222d;
+      background: #ffffff;
+      border: 1px solid #d6dfe6;
+      border-radius: 18px;
+      padding: 16px 20px;
+      font-weight: 800;
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
-      <h1>TextureSAM-2 Results Hub</h1>
-      <p>Published pages for strict PTD-v9 conservative-gate no-RWTD-supervision results and official TextureSAM references.</p>
-      <div class="grid">
-        <a class="btn" href="./texturesam2_strict_protocol_v1/index.html">Open Strict PTD-v9 Visual Compare (No RWTD Supervision)</a>
-        <a class="btn" href="./texturesam2_v11_gpu_compare/index.html">Open TextureSAM-v2 v11 GPU Final Compare</a>
-        <a class="btn" href="./texturesam2_v11_crossbench/index.html">Open TextureSAM-v2 v11 Cross-Benchmark (STMD + ADE20K)</a>
-        <a class="btn" href="./texturesam2_supercharged_v2/index.html">Open Strict-Only Visual Gallery</a>
-        <a class="btn" href="./texturesam2_full_report/index.html">Open Strict Narrative Report</a>
-        <a class="btn" href="./texturesam_repro_audit_v1/index.html">Open TextureSAM Reproduction Audit (Paper/Repo Reconciliation)</a>
-      </div>
-      <p class="meta">Updated March 4, 2026.</p>
+      <h1>TextureSAM-2 RWTD Results</h1>
+      <p>The public site currently exposes only the final RWTD visual results gallery: all 256 RWTD images, ground-truth masks, reproduced TextureSAM masks where available, and TextureSAM-2 AI-only predictions.</p>
+      <a class="btn" href="./texturesam2_ai_gallery/index.html">Open RWTD Gallery</a>
     </section>
   </main>
 </body>
