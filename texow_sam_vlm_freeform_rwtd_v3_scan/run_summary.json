@@ -1,7 +1,0 @@
-{
-  "run_id": "vlm_freeform_rwtd_v3_scan",
-  "mode": "vlm_freeform",
-  "prompt_strategy": "bank_topk_global",
-  "num_images": 256,
-  "out_dir": "/home/galoren/repo/outputs/rwtd_runs/vlm_freeform_rwtd_v3_scan"
-}
