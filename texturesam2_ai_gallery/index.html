@@ -105,8 +105,8 @@
         </label>
 
         <label class="control control-range">
-          <span>Min decision margin: <strong id="minMarginValue">0.00</strong></span>
-          <input id="minMargin" type="range" min="0" max="1" value="0" step="0.01" />
+          <span>Min decision margin: <strong id="minMarginValue">-1.00</strong></span>
+          <input id="minMargin" type="range" min="-1" max="1" value="-1" step="0.01" />
         </label>
 
         <div class="control">
@@ -156,7 +156,7 @@
         data: [],
         topN: 32,
         minDelta: -1,
-        minMargin: 0,
+        minMargin: -1,
       };
 
       const els = {
@@ -347,7 +347,7 @@
         addThumb(strip, 'Final', row.final_mask);
         addThumb(strip, 'All candidates overlay', row.candidate_stack_overlay);
         addThumb(strip, 'Candidate overlap', row.candidate_overlap);
-        addThumb(strip, 'Support heatmap', row.support_heatmap);
+        addThumb(strip, 'Proposal support (pixel frequency)', row.support_heatmap);
         addThumb(strip, 'Diff final vs GT', row.diff_final_gt);
         addThumb(strip, 'Mitigation final', row.mitigation_final_mask);
 
@@ -433,10 +433,10 @@
           });
           state.topN = Math.min(32, state.data.length);
           state.minDelta = -1;
-          state.minMargin = 0;
+          state.minMargin = -1;
           els.topN.value = String(state.topN);
           els.minDelta.value = '-1';
-          els.minMargin.value = '0';
+          els.minMargin.value = '-1';
           updateSliderLabels();
           render();
         });
