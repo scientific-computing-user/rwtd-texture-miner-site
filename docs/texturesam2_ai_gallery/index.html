@@ -291,6 +291,8 @@
           ['GT mask', row.gt_mask],
           ['Baseline scored', row.baseline_mask],
           ['Core mask', row.core_mask],
+          ['All candidates overlay', row.candidate_stack_overlay],
+          ['All candidates density', row.candidate_stack_density],
           ['Final mask', row.final_mask],
           ['Best candidate', row.best_candidate_mask],
           ['Case manifest', row.audit_manifest],
@@ -343,6 +345,7 @@
         addThumb(strip, 'Core', row.core_mask);
         addThumb(strip, 'Best candidate', row.best_candidate_mask);
         addThumb(strip, 'Final', row.final_mask);
+        addThumb(strip, 'All candidates overlay', row.candidate_stack_overlay);
         addThumb(strip, 'Candidate overlap', row.candidate_overlap);
         addThumb(strip, 'Support heatmap', row.support_heatmap);
         addThumb(strip, 'Diff final vs GT', row.diff_final_gt);
