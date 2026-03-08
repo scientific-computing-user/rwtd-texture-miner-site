@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ArchiTexture RWTD Gallery</title>
+  <title>ArchiTexture Failure-Audit Gallery</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="hero wrap">
-    <p class="kicker">ArchiTexture | Frozen SAM + Learned Texture Layer</p>
-    <h1>RWTD Interactive Gallery</h1>
-    <p>Browse all RWTD visual comparisons, select a specific image, and order results by the metrics you care about. Each card includes a candidate-overlap map built from all suggested TextureSAM fragments so viewers can directly see the ambiguity the model faced.</p>
+    <p class="kicker">ArchiTexture | Diagnostic Failure Audit</p>
+    <h1>RWTD Diagnostic Gallery</h1>
+    <p>This view is designed for error analysis, not promotion. Each case exposes the exact scored masks, candidate-overlap evidence, decision margins, confidence, and auto-generated failure diagnosis.</p>
     <div class="links">
-      <a href="./assets/manifest.json">Download Manifest JSON</a>
+      <a href="./assets/failure_manifest.json">Download Failure Manifest</a>
+      <a href="./assets/failure_manifest_summary.json">Download Failure Summary</a>
       <a href="../index.html">Docs Home</a>
     </div>
   </header>
@@ -20,20 +21,20 @@
   <main class="wrap">
     <section class="panel">
       <div class="stats">
-        <div class="stat"><div class="value">0.5166</div><div class="label">Official RWTD mIoU</div></div>
-        <div class="stat"><div class="value">0.7175</div><div class="label">Official RWTD ARI</div></div>
-        <div class="stat"><div class="value">0.5188</div><div class="label">Gallery-subset mIoU</div></div>
-        <div class="stat"><div class="value">0.7254</div><div class="label">Gallery-subset ARI</div></div>
-        <div class="stat"><div class="value" id="rescueCount">-</div><div class="label">Learned Rescue Activations</div></div>
-        <div class="stat"><div class="value" id="galleryCount">-</div><div class="label">Gallery images</div></div>
+        <div class="stat"><div class="value" id="statCount">-</div><div class="label">Audit images</div></div>
+        <div class="stat"><div class="value" id="statSwitch">-</div><div class="label">Rescue activations</div></div>
+        <div class="stat"><div class="value" id="statSuccess">-</div><div class="label">Successful rescues</div></div>
+        <div class="stat"><div class="value" id="statWrong">-</div><div class="label">Wrong-partition</div></div>
+        <div class="stat"><div class="value" id="statUnsafe">-</div><div class="label">Unsafe expansion</div></div>
+        <div class="stat"><div class="value" id="statAmb">-</div><div class="label">Ambiguous cases</div></div>
       </div>
-      <p class="note">Official claims use the upstream no-aggregation evaluator over both RWTD partitions. The gallery shows only images with available TextureSAM fragment masks so each card can include baseline and candidate-overlap evidence.</p>
+      <p class="note">Displayed masks are exact scored masks exported from the run. Official RWTD metrics still average both complementary partitions per image. Filter labels are taxonomy flags computed from the audit pipeline.</p>
     </section>
 
     <section class="panel">
       <div class="section-head">
         <h2>Controls</h2>
-        <p>Choose image, filter by thresholds, and sort by metric.</p>
+        <p>Filter by failure type, confidence behavior, and margin-based ambiguity.</p>
       </div>
       <div class="controls-grid">
         <label class="control">
@@ -45,7 +46,7 @@
 
         <label class="control">
           <span>Search image ID</span>
-          <input id="searchInput" type="search" inputmode="numeric" placeholder="e.g., 347" />
+          <input id="searchInput" type="search" inputmode="numeric" placeholder="e.g., 343" />
         </label>
 
         <label class="control">
@@ -58,12 +59,27 @@
         </label>
 
         <label class="control">
+          <span>Failure type</span>
+          <select id="failureSelect">
+            <option value="all">All failure types</option>
+            <option value="overstated_rescue_success">Overstated rescue</option>
+            <option value="wrong_partition_commitment">Wrong-partition commitment</option>
+            <option value="unsafe_expansion">Unsafe expansion</option>
+            <option value="fragmented_but_recoverable">Fragmented but recoverable</option>
+            <option value="genuine_proposal_bank_miss">Proposal-bank miss</option>
+            <option value="stable_or_uncategorized">Stable / uncategorized</option>
+          </select>
+        </label>
+
+        <label class="control">
           <span>Sort metric</span>
           <select id="sortMetric">
-            <option value="delta_vs_texturesam">Delta vs TextureSAM</option>
-            <option value="ai_iou">ArchiTexture IoU</option>
-            <option value="ai_internal_ari">ArchiTexture ARI</option>
-            <option value="baseline_iou">TextureSAM IoU</option>
+            <option value="delta_iou_vs_core">Delta IoU vs core</option>
+            <option value="official_iou">Official IoU</option>
+            <option value="official_ari">Official ARI</option>
+            <option value="decision_margin">Decision margin</option>
+            <option value="rescue_confidence">Rescue confidence</option>
+            <option value="topk_oracle_gain_iou">Top-k oracle gain</option>
             <option value="proposal_count">Proposal count</option>
             <option value="dense_candidates">Dense candidates</option>
             <option value="image_id">Image ID</option>
@@ -84,24 +100,25 @@
         </label>
 
         <label class="control control-range">
-          <span>Min ArchiTexture IoU: <strong id="minAiIouValue">0.00</strong></span>
-          <input id="minAiIou" type="range" min="0" max="1" value="0" step="0.01" />
-        </label>
-
-        <label class="control control-range">
-          <span>Min ArchiTexture ARI: <strong id="minAriValue">-0.20</strong></span>
-          <input id="minAri" type="range" min="-0.2" max="1" value="-0.2" step="0.01" />
-        </label>
-
-        <label class="control control-range">
-          <span>Min delta vs TextureSAM: <strong id="minDeltaValue">-1.00</strong></span>
+          <span>Min delta IoU vs core: <strong id="minDeltaValue">-1.00</strong></span>
           <input id="minDelta" type="range" min="-1" max="1" value="-1" step="0.01" />
         </label>
 
         <label class="control control-range">
-          <span>Min proposal count: <strong id="minProposalValue">0</strong></span>
-          <input id="minProposal" type="range" min="0" max="256" value="0" step="1" />
+          <span>Min decision margin: <strong id="minMarginValue">0.00</strong></span>
+          <input id="minMargin" type="range" min="0" max="1" value="0" step="0.01" />
         </label>
+
+        <div class="control">
+          <span>Flag filters</span>
+          <label class="toggle-row"><input type="checkbox" id="flagSuccess" /> successful rescue</label>
+          <label class="toggle-row"><input type="checkbox" id="flagOverstated" /> overstated rescue</label>
+          <label class="toggle-row"><input type="checkbox" id="flagWrong" /> wrong-partition commitment</label>
+          <label class="toggle-row"><input type="checkbox" id="flagUnsafe" /> unsafe expansion</label>
+          <label class="toggle-row"><input type="checkbox" id="flagAmb" /> ambiguous case</label>
+          <label class="toggle-row"><input type="checkbox" id="flagTopk" /> top-k recoverable</label>
+          <label class="toggle-row"><input type="checkbox" id="flagCalib" /> calibration failure</label>
+        </div>
       </div>
       <div class="controls-footer">
         <button id="resetBtn" type="button">Reset controls</button>
@@ -111,7 +128,7 @@
 
     <section class="panel">
       <div class="section-head">
-        <h2>Gallery</h2>
+        <h2>Cases</h2>
         <p id="gallerySubhead">Loading...</p>
       </div>
       <div id="galleryGrid" class="grid"></div>
@@ -121,12 +138,13 @@
 
   <template id="cardTemplate">
     <article class="card">
-      <img loading="lazy" alt="RWTD compare" />
-      <div class="candidate-preview"></div>
+      <img class="hero-image" loading="lazy" alt="RWTD case" />
+      <div class="audit-strip"></div>
       <div class="meta">
         <h3></h3>
         <div class="badges"></div>
         <div class="metric-row"></div>
+        <div class="why-box"></div>
         <div class="downloads"></div>
       </div>
     </article>
@@ -137,107 +155,88 @@
       const state = {
         data: [],
         topN: 32,
-        minAiIou: 0,
-        minAri: -0.2,
         minDelta: -1,
-        minProposal: 0
+        minMargin: 0,
       };
 
       const els = {
         imageSelect: document.getElementById('imageSelect'),
         searchInput: document.getElementById('searchInput'),
         decisionSelect: document.getElementById('decisionSelect'),
+        failureSelect: document.getElementById('failureSelect'),
         sortMetric: document.getElementById('sortMetric'),
         sortOrder: document.getElementById('sortOrder'),
         topN: document.getElementById('topN'),
-        minAiIou: document.getElementById('minAiIou'),
-        minAri: document.getElementById('minAri'),
         minDelta: document.getElementById('minDelta'),
-        minProposal: document.getElementById('minProposal'),
+        minMargin: document.getElementById('minMargin'),
         topNValue: document.getElementById('topNValue'),
-        minAiIouValue: document.getElementById('minAiIouValue'),
-        minAriValue: document.getElementById('minAriValue'),
         minDeltaValue: document.getElementById('minDeltaValue'),
-        minProposalValue: document.getElementById('minProposalValue'),
+        minMarginValue: document.getElementById('minMarginValue'),
+        flagSuccess: document.getElementById('flagSuccess'),
+        flagOverstated: document.getElementById('flagOverstated'),
+        flagWrong: document.getElementById('flagWrong'),
+        flagUnsafe: document.getElementById('flagUnsafe'),
+        flagAmb: document.getElementById('flagAmb'),
+        flagTopk: document.getElementById('flagTopk'),
+        flagCalib: document.getElementById('flagCalib'),
         resetBtn: document.getElementById('resetBtn'),
         galleryGrid: document.getElementById('galleryGrid'),
         gallerySubhead: document.getElementById('gallerySubhead'),
         resultMeta: document.getElementById('resultMeta'),
         emptyState: document.getElementById('emptyState'),
         cardTemplate: document.getElementById('cardTemplate'),
-        rescueCount: document.getElementById('rescueCount'),
-        galleryCount: document.getElementById('galleryCount')
+        statCount: document.getElementById('statCount'),
+        statSwitch: document.getElementById('statSwitch'),
+        statSuccess: document.getElementById('statSuccess'),
+        statWrong: document.getElementById('statWrong'),
+        statUnsafe: document.getElementById('statUnsafe'),
+        statAmb: document.getElementById('statAmb'),
       };
 
+      function num(value) {
+        const x = Number(value);
+        return Number.isFinite(x) ? x : null;
+      }
+
       function fmt(value, digits) {
-        return Number.isFinite(value) ? value.toFixed(digits) : 'n/a';
+        const x = num(value);
+        return x === null ? 'n/a' : x.toFixed(digits);
       }
 
       function fmtSigned(value, digits) {
-        if (!Number.isFinite(value)) {
-          return 'n/a';
-        }
-        return (value >= 0 ? '+' : '') + value.toFixed(digits);
+        const x = num(value);
+        if (x === null) return 'n/a';
+        return (x >= 0 ? '+' : '') + x.toFixed(digits);
       }
 
-      function safeNumber(value) {
-        return Number.isFinite(value) ? value : null;
-      }
-
-      function cardMetric(row) {
-        const ai = 'ArchiTexture IoU ' + fmt(row.ai_iou, 4);
-        const ari = 'ArchiTexture ARI ' + fmt(row.ai_internal_ari, 4);
-        const baseline = 'TextureSAM IoU ' + fmt(row.baseline_iou, 4);
-        const delta = 'Delta ' + fmtSigned(row.delta_vs_texturesam, 4);
-        return [ai, ari, baseline, delta];
-      }
-
-      function candidateOverlapPath(row) {
-        return './assets/raw/candidate_overlap/' + row.image_id + '.png';
-      }
-
-      function buildDownloadLinks(row) {
-        const links = [
-          { href: row.raw_image, label: 'RWTD image' },
-          { href: row.raw_gt, label: 'GT partition mask' },
-          { href: row.raw_ours, label: 'ArchiTexture mask' },
-          { href: row.raw_baseline, label: 'TextureSAM union mask' },
-          { href: candidateOverlapPath(row), label: 'Candidate overlap map' }
-        ];
-        return links;
+      function boolFlag(row, key) {
+        return row[key] === true || row[key] === 1 || row[key] === '1';
       }
 
       function rowMatches(row) {
         const chosen = els.imageSelect.value;
-        if (chosen !== 'all' && String(row.image_id) !== chosen) {
-          return false;
-        }
+        if (chosen !== 'all' && String(row.image_id) !== chosen) return false;
 
         const search = els.searchInput.value.trim();
-        if (search && !String(row.image_id).includes(search)) {
-          return false;
-        }
+        if (search && !String(row.image_id).includes(search)) return false;
 
-        const decision = els.decisionSelect.value;
-        if (decision !== 'all' && row.decision !== decision) {
-          return false;
-        }
+        if (els.decisionSelect.value !== 'all' && row.decision !== els.decisionSelect.value) return false;
 
-        if (safeNumber(row.ai_iou) !== null && row.ai_iou < state.minAiIou) {
-          return false;
-        }
+        if (els.failureSelect.value !== 'all' && row.failure_type !== els.failureSelect.value) return false;
 
-        if (safeNumber(row.ai_internal_ari) !== null && row.ai_internal_ari < state.minAri) {
-          return false;
-        }
+        const delta = num(row.delta_iou_vs_core);
+        if (delta !== null && delta < state.minDelta) return false;
 
-        if (safeNumber(row.delta_vs_texturesam) !== null && row.delta_vs_texturesam < state.minDelta) {
-          return false;
-        }
+        const margin = num(row.decision_margin);
+        if (margin !== null && margin < state.minMargin) return false;
 
-        if ((row.proposal_count || 0) < state.minProposal) {
-          return false;
-        }
+        if (els.flagSuccess.checked && !boolFlag(row, 'successful_rescue')) return false;
+        if (els.flagOverstated.checked && !boolFlag(row, 'overstated_rescue')) return false;
+        if (els.flagWrong.checked && !boolFlag(row, 'wrong_partition_commitment')) return false;
+        if (els.flagUnsafe.checked && !boolFlag(row, 'unsafe_expansion')) return false;
+        if (els.flagAmb.checked && !boolFlag(row, 'ambiguous_case')) return false;
+        if (els.flagTopk.checked && !boolFlag(row, 'topk_recoverable')) return false;
+        if (els.flagCalib.checked && !boolFlag(row, 'calibration_failure')) return false;
 
         return true;
       }
@@ -245,79 +244,125 @@
       function compareRows(a, b) {
         const key = els.sortMetric.value;
         const order = els.sortOrder.value;
-        const av = safeNumber(a[key]);
-        const bv = safeNumber(b[key]);
+        const av = num(a[key]);
+        const bv = num(b[key]);
 
-        if (av === null && bv === null) {
-          return a.image_id - b.image_id;
-        }
-        if (av === null) {
-          return 1;
-        }
-        if (bv === null) {
-          return -1;
-        }
-        if (av === bv) {
-          return a.image_id - b.image_id;
-        }
+        if (av === null && bv === null) return Number(a.image_id) - Number(b.image_id);
+        if (av === null) return 1;
+        if (bv === null) return -1;
+        if (av === bv) return Number(a.image_id) - Number(b.image_id);
         return order === 'asc' ? av - bv : bv - av;
+      }
+
+      function addBadge(parent, text, cls) {
+        const span = document.createElement('span');
+        span.className = 'badge ' + (cls || '');
+        span.textContent = text;
+        parent.appendChild(span);
+      }
+
+      function addMetric(parent, label, value) {
+        const span = document.createElement('span');
+        span.innerHTML = label + ' <strong>' + value + '</strong>';
+        parent.appendChild(span);
+      }
+
+      function addThumb(parent, label, path) {
+        if (!path) return;
+        const tile = document.createElement('div');
+        tile.className = 'audit-tile';
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.src = path;
+        img.alt = label;
+        img.addEventListener('error', function () {
+          tile.remove();
+        });
+        const cap = document.createElement('p');
+        cap.textContent = label;
+        tile.appendChild(img);
+        tile.appendChild(cap);
+        parent.appendChild(tile);
+      }
+
+      function buildDownloads(row) {
+        const links = [
+          ['RWTD image', row.image_rgb],
+          ['GT mask', row.gt_mask],
+          ['Baseline scored', row.baseline_mask],
+          ['Core mask', row.core_mask],
+          ['Final mask', row.final_mask],
+          ['Best candidate', row.best_candidate_mask],
+          ['Case manifest', row.audit_manifest],
+        ];
+        return links.filter(function (x) { return !!x[1]; });
       }
 
       function buildCard(row) {
         const node = els.cardTemplate.content.firstElementChild.cloneNode(true);
-        const img = node.querySelector('img');
+        const hero = node.querySelector('.hero-image');
+        const strip = node.querySelector('.audit-strip');
         const title = node.querySelector('h3');
-        const candidatePreview = node.querySelector('.candidate-preview');
         const badges = node.querySelector('.badges');
         const metricRow = node.querySelector('.metric-row');
+        const whyBox = node.querySelector('.why-box');
         const downloads = node.querySelector('.downloads');
 
         node.id = 'img-' + row.image_id;
-        img.src = row.card;
-        img.alt = 'RWTD ' + row.image_id + ' compare';
+        hero.src = row.image_rgb || row.card || row.raw_image || '';
+        hero.alt = 'RWTD ' + row.image_id + ' image';
         title.textContent = 'RWTD ' + row.image_id;
 
-        const overlapImg = document.createElement('img');
-        overlapImg.loading = 'lazy';
-        overlapImg.src = candidateOverlapPath(row);
-        overlapImg.alt = 'RWTD ' + row.image_id + ' candidate overlap map';
-        overlapImg.addEventListener('error', function () {
-          candidatePreview.remove();
-        });
-        const overlapCaption = document.createElement('p');
-        overlapCaption.textContent = 'All suggested candidates overlap';
-        candidatePreview.appendChild(overlapImg);
-        candidatePreview.appendChild(overlapCaption);
+        addBadge(badges, row.decision || 'decision n/a', boolFlag(row, 'switched') ? 'orange' : 'gray');
+        addBadge(badges, 'failure: ' + (row.failure_type || 'n/a'), 'blue');
+        addBadge(badges, 'proposals ' + (row.proposal_count ?? 'n/a'));
+        addBadge(badges, 'candidates ' + (row.dense_candidates ?? 'n/a'));
+        if (boolFlag(row, 'wrong_partition_commitment')) addBadge(badges, 'wrong partition', 'orange');
+        if (boolFlag(row, 'unsafe_expansion')) addBadge(badges, 'unsafe expansion', 'orange');
+        if (boolFlag(row, 'ambiguous_case')) addBadge(badges, 'ambiguous', 'gray');
+        if (boolFlag(row, 'topk_recoverable')) addBadge(badges, 'top-k recoverable', 'blue');
+        if (boolFlag(row, 'calibration_failure')) addBadge(badges, 'calibration fail', 'orange');
 
-        const decisionBadge = document.createElement('span');
-        const isRescue = row.decision === 'learned rescue' || row.switched === true;
-        decisionBadge.className = 'badge ' + (isRescue ? 'orange' : 'gray');
-        decisionBadge.textContent = isRescue ? 'learned rescue' : 'keep core';
-        badges.appendChild(decisionBadge);
+        addMetric(metricRow, 'Official IoU', fmt(row.official_iou, 4));
+        addMetric(metricRow, 'Official ARI', fmt(row.official_ari, 4));
+        addMetric(metricRow, 'Core IoU', fmt(row.core_iou, 4));
+        addMetric(metricRow, 'Delta IoU vs core', fmtSigned(row.delta_iou_vs_core, 4));
+        addMetric(metricRow, 'Delta ARI vs core', fmtSigned(row.delta_ari_vs_core, 4));
+        addMetric(metricRow, 'Margin', fmt(row.decision_margin, 3));
+        addMetric(metricRow, 'Rescue confidence', fmt(row.rescue_confidence, 3));
+        addMetric(metricRow, 'Top-k oracle gain', fmt(row.topk_oracle_gain_iou, 4));
 
-        const proposalBadge = document.createElement('span');
-        proposalBadge.className = 'badge blue';
-        proposalBadge.textContent = 'dense proposals ' + row.proposal_count;
-        badges.appendChild(proposalBadge);
+        const mitIou = num(row.mitigation_iou);
+        if (mitIou !== null) {
+          addMetric(metricRow, 'Mitigation IoU', fmt(row.mitigation_iou, 4));
+          addMetric(metricRow, 'Mitigation ΔIoU vs core', fmtSigned(row.mitigation_delta_iou_vs_core, 4));
+        }
 
-        const candidateBadge = document.createElement('span');
-        candidateBadge.className = 'badge';
-        candidateBadge.textContent = 'candidates ' + row.dense_candidates;
-        badges.appendChild(candidateBadge);
+        addThumb(strip, 'GT', row.gt_mask);
+        addThumb(strip, 'Baseline', row.baseline_mask);
+        addThumb(strip, 'Core', row.core_mask);
+        addThumb(strip, 'Best candidate', row.best_candidate_mask);
+        addThumb(strip, 'Final', row.final_mask);
+        addThumb(strip, 'Candidate overlap', row.candidate_overlap);
+        addThumb(strip, 'Support heatmap', row.support_heatmap);
+        addThumb(strip, 'Diff final vs GT', row.diff_final_gt);
+        addThumb(strip, 'Mitigation final', row.mitigation_final_mask);
 
-        cardMetric(row).forEach(function (text) {
-          const span = document.createElement('span');
-          const parts = text.split(' ');
-          const label = parts.slice(0, -1).join(' ');
-          const value = parts[parts.length - 1];
-          span.innerHTML = label + ' <strong>' + value + '</strong>';
-          metricRow.appendChild(span);
-        });
+        const whyStrong = document.createElement('strong');
+        whyStrong.textContent = 'Why this case happened: ';
+        const whyText = document.createElement('span');
+        whyText.textContent = row.why_case || 'No diagnostic note available.';
+        const note = document.createElement('p');
+        note.className = 'note';
+        note.textContent = row.display_note || '';
+        whyBox.appendChild(whyStrong);
+        whyBox.appendChild(whyText);
+        whyBox.appendChild(note);
 
-        buildDownloadLinks(row).forEach(function (link) {
+        buildDownloads(row).forEach(function (link) {
           const a = document.createElement('a');
-          a.href = link.href;
-          a.textContent = link.label;
+          a.href = link[1];
+          a.textContent = link[0];
           downloads.appendChild(a);
         });
 
@@ -326,10 +371,8 @@
 
       function updateSliderLabels() {
         els.topNValue.textContent = String(state.topN);
-        els.minAiIouValue.textContent = Number(state.minAiIou).toFixed(2);
-        els.minAriValue.textContent = Number(state.minAri).toFixed(2);
         els.minDeltaValue.textContent = Number(state.minDelta).toFixed(2);
-        els.minProposalValue.textContent = String(state.minProposal);
+        els.minMarginValue.textContent = Number(state.minMargin).toFixed(2);
       }
 
       function render() {
@@ -342,7 +385,7 @@
         });
 
         els.emptyState.classList.toggle('hidden', visible.length > 0);
-        els.gallerySubhead.textContent = 'Showing ' + visible.length + ' of ' + filtered.length + ' matching images (' + state.data.length + ' total).';
+        els.gallerySubhead.textContent = 'Showing ' + visible.length + ' of ' + filtered.length + ' matching cases (' + state.data.length + ' total).';
         els.resultMeta.textContent = 'Sort: ' + els.sortMetric.options[els.sortMetric.selectedIndex].text + ' (' + els.sortOrder.value + ').';
       }
 
@@ -353,31 +396,23 @@
           render();
         });
 
-        els.minAiIou.addEventListener('input', function () {
-          state.minAiIou = parseFloat(els.minAiIou.value);
-          updateSliderLabels();
-          render();
-        });
-
-        els.minAri.addEventListener('input', function () {
-          state.minAri = parseFloat(els.minAri.value);
-          updateSliderLabels();
-          render();
-        });
-
         els.minDelta.addEventListener('input', function () {
           state.minDelta = parseFloat(els.minDelta.value);
           updateSliderLabels();
           render();
         });
 
-        els.minProposal.addEventListener('input', function () {
-          state.minProposal = parseInt(els.minProposal.value, 10);
+        els.minMargin.addEventListener('input', function () {
+          state.minMargin = parseFloat(els.minMargin.value);
           updateSliderLabels();
           render();
         });
 
-        ['imageSelect', 'searchInput', 'decisionSelect', 'sortMetric', 'sortOrder'].forEach(function (id) {
+        [
+          'imageSelect', 'searchInput', 'decisionSelect', 'failureSelect',
+          'sortMetric', 'sortOrder', 'flagSuccess', 'flagOverstated',
+          'flagWrong', 'flagUnsafe', 'flagAmb', 'flagTopk', 'flagCalib'
+        ].forEach(function (id) {
           const el = els[id];
           const eventName = id === 'searchInput' ? 'input' : 'change';
           el.addEventListener(eventName, render);
@@ -387,25 +422,25 @@
           els.imageSelect.value = 'all';
           els.searchInput.value = '';
           els.decisionSelect.value = 'all';
-          els.sortMetric.value = 'delta_vs_texturesam';
+          els.failureSelect.value = 'all';
+          els.sortMetric.value = 'delta_iou_vs_core';
           els.sortOrder.value = 'desc';
+          ['flagSuccess','flagOverstated','flagWrong','flagUnsafe','flagAmb','flagTopk','flagCalib'].forEach(function(id){
+            els[id].checked = false;
+          });
           state.topN = Math.min(32, state.data.length);
-          state.minAiIou = 0;
-          state.minAri = parseFloat(els.minAri.min);
           state.minDelta = -1;
-          state.minProposal = 0;
+          state.minMargin = 0;
           els.topN.value = String(state.topN);
-          els.minAiIou.value = '0';
-          els.minAri.value = els.minAri.min;
           els.minDelta.value = '-1';
-          els.minProposal.value = '0';
+          els.minMargin.value = '0';
           updateSliderLabels();
           render();
         });
       }
 
       function populateControls() {
-        const ids = state.data.map(function (row) { return row.image_id; }).sort(function (a, b) { return a - b; });
+        const ids = state.data.map(function (row) { return Number(row.image_id); }).sort(function (a, b) { return a - b; });
         ids.forEach(function (id) {
           const option = document.createElement('option');
           option.value = String(id);
@@ -413,36 +448,79 @@
           els.imageSelect.appendChild(option);
         });
 
-        const maxProposal = state.data.reduce(function (acc, row) {
-          return Math.max(acc, row.proposal_count || 0);
-        }, 0);
-
         state.topN = Math.min(32, state.data.length);
-        els.topN.max = String(state.data.length);
+        els.topN.max = String(state.data.length || 1);
         els.topN.value = String(state.topN);
+      }
 
-        els.minProposal.max = String(maxProposal);
-        els.minProposal.value = '0';
+      function setStats(summary) {
+        if (summary) {
+          els.statCount.textContent = String(summary.num_images ?? state.data.length);
+          els.statSwitch.textContent = String(summary.switched_count ?? state.data.filter(function (r) { return boolFlag(r, 'switched'); }).length);
+          els.statSuccess.textContent = String(summary.successful_rescue_count ?? state.data.filter(function (r) { return boolFlag(r, 'successful_rescue'); }).length);
+          els.statWrong.textContent = String(summary.wrong_partition_count ?? state.data.filter(function (r) { return boolFlag(r, 'wrong_partition_commitment'); }).length);
+          els.statUnsafe.textContent = String(summary.unsafe_expansion_count ?? state.data.filter(function (r) { return boolFlag(r, 'unsafe_expansion'); }).length);
+          els.statAmb.textContent = String(summary.ambiguous_count ?? state.data.filter(function (r) { return boolFlag(r, 'ambiguous_case'); }).length);
+          return;
+        }
+        els.statCount.textContent = String(state.data.length);
+        els.statSwitch.textContent = String(state.data.filter(function (r) { return boolFlag(r, 'switched'); }).length);
+        els.statSuccess.textContent = String(state.data.filter(function (r) { return boolFlag(r, 'successful_rescue'); }).length);
+        els.statWrong.textContent = String(state.data.filter(function (r) { return boolFlag(r, 'wrong_partition_commitment'); }).length);
+        els.statUnsafe.textContent = String(state.data.filter(function (r) { return boolFlag(r, 'unsafe_expansion'); }).length);
+        els.statAmb.textContent = String(state.data.filter(function (r) { return boolFlag(r, 'ambiguous_case'); }).length);
+      }
 
-        const ariValues = state.data
-          .map(function (row) { return safeNumber(row.ai_internal_ari); })
-          .filter(function (v) { return v !== null; });
-        const minAri = ariValues.length ? Math.floor(Math.min.apply(null, ariValues) * 100.0) / 100.0 : -0.2;
-        els.minAri.min = String(minAri);
-        els.minAri.value = String(minAri);
-        state.minAri = minAri;
-
-        els.rescueCount.textContent = String(state.data.filter(function (row) {
-          return row.decision === 'learned rescue' || row.switched === true;
-        }).length);
-        els.galleryCount.textContent = String(state.data.length);
+      async function loadSummary() {
+        try {
+          const resp = await fetch('./assets/failure_manifest_summary.json', { cache: 'no-store' });
+          if (!resp.ok) return null;
+          return await resp.json();
+        } catch (_) {
+          return null;
+        }
       }
 
       async function init() {
         try {
-          const resp = await fetch('./assets/manifest.json', { cache: 'no-store' });
-          const rawData = await resp.json();
-          state.data = rawData.filter(function (row) { return !!row.raw_baseline; });
+          let data = [];
+          try {
+            const respFail = await fetch('./assets/failure_manifest.json', { cache: 'no-store' });
+            if (respFail.ok) {
+              data = await respFail.json();
+            }
+          } catch (_) {
+            data = [];
+          }
+
+          if (!Array.isArray(data) || data.length === 0) {
+            const resp = await fetch('./assets/manifest.json', { cache: 'no-store' });
+            const raw = await resp.json();
+            data = (Array.isArray(raw) ? raw : []).map(function (row) {
+              return {
+                image_id: row.image_id,
+                decision: row.decision,
+                switched: row.switched,
+                failure_type: 'stable_or_uncategorized',
+                official_iou: row.ai_iou,
+                official_ari: row.ai_internal_ari,
+                core_iou: row.baseline_iou,
+                delta_iou_vs_core: row.delta_vs_texturesam,
+                proposal_count: row.proposal_count,
+                dense_candidates: row.dense_candidates,
+                image_rgb: row.raw_image,
+                gt_mask: row.raw_gt,
+                final_mask: row.raw_ours,
+                baseline_mask: row.raw_baseline,
+                why_case: 'Legacy manifest without full failure diagnostics.',
+                display_note: 'Switch to failure_manifest.json for full audit fields.'
+              };
+            });
+          }
+
+          state.data = data;
+          const summary = await loadSummary();
+          setStats(summary);
           populateControls();
           bindControls();
           updateSliderLabels();

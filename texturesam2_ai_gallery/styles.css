@@ -84,7 +84,7 @@ h1 {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -237,6 +237,37 @@ button:hover {
   font-weight: 700;
 }
 
+.audit-strip {
+  border-top: 1px solid var(--line);
+  background: #f7fafb;
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.audit-tile {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.audit-tile img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  background: #edf3f6;
+}
+
+.audit-tile p {
+  margin: 0;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
 .meta {
   padding: 14px 16px 16px;
 }
@@ -297,6 +328,20 @@ button:hover {
   margin-top: 10px;
 }
 
+.why-box {
+  margin-top: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f9fcfd;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.why-box .note {
+  margin: 8px 0 0;
+}
+
 .downloads a,
 .missing-pill {
   text-decoration: none;
@@ -335,11 +380,15 @@ button:hover {
   .controls-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .audit-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 1080px) {
   .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .grid {
@@ -349,14 +398,22 @@ button:hover {
   .controls-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .audit-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 700px) {
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-strip {
     grid-template-columns: 1fr;
   }
 
