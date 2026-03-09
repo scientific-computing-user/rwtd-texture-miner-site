@@ -2,9 +2,9 @@
   "abstained_flag": false,
   "ambiguous_flag": false,
   "candidate_ranking_order": [
-    9,
     1,
     0,
+    9,
     8,
     7,
     6,
@@ -15,7 +15,7 @@
   ],
   "candidate_records": [
     {
-      "adjusted_gain": 0.07136506587266922,
+      "adjusted_gain": 0.11480507999658585,
       "delta_ari_vs_core": -0.910795271396637,
       "delta_iou_vs_core": -0.4965217709541321,
       "dense_ari": -0.0030090429354459047,
@@ -23,15 +23,15 @@
       "dense_iou": 0.45103752613067627,
       "idx_dense": 0,
       "is_selected": false,
-      "pred_gain": 0.07136506587266922,
+      "pred_gain": 0.11480507999658585,
       "pred_prob": 0.0,
-      "rank_adjusted_gain": 3,
+      "rank_adjusted_gain": 2,
       "risk_prob": 0.0,
       "support_norm": -0.5297781229019165,
       "support_raw": 0.20549848675727844
     },
     {
-      "adjusted_gain": 0.08380212634801865,
+      "adjusted_gain": 0.1708267629146576,
       "delta_ari_vs_core": -0.9057233333587646,
       "delta_iou_vs_core": -0.5234438180923462,
       "dense_ari": 0.0020629148930311203,
@@ -39,15 +39,15 @@
       "dense_iou": 0.42411550879478455,
       "idx_dense": 1,
       "is_selected": false,
-      "pred_gain": 0.08380212634801865,
+      "pred_gain": 0.1708267629146576,
       "pred_prob": 0.0,
-      "rank_adjusted_gain": 2,
+      "rank_adjusted_gain": 1,
       "risk_prob": 0.0,
       "support_norm": -0.07232116162776947,
       "support_raw": 0.2273816019296646
     },
     {
-      "adjusted_gain": -0.4096128046512604,
+      "adjusted_gain": -0.4423743188381195,
       "delta_ari_vs_core": -0.8810650110244751,
       "delta_iou_vs_core": -0.6541122198104858,
       "dense_ari": 0.026721248403191566,
@@ -55,7 +55,7 @@
       "dense_iou": 0.2934470772743225,
       "idx_dense": 2,
       "is_selected": false,
-      "pred_gain": -0.4096128046512604,
+      "pred_gain": -0.4423743188381195,
       "pred_prob": 0.0,
       "rank_adjusted_gain": 9,
       "risk_prob": 0.0,
@@ -63,7 +63,7 @@
       "support_raw": 0.285091757774353
     },
     {
-      "adjusted_gain": -0.6982449293136597,
+      "adjusted_gain": -0.6700250506401062,
       "delta_ari_vs_core": -0.9143815636634827,
       "delta_iou_vs_core": -0.9019471406936646,
       "dense_ari": -0.006595299579203129,
@@ -71,15 +71,15 @@
       "dense_iou": 0.045612186193466187,
       "idx_dense": 3,
       "is_selected": false,
-      "pred_gain": -0.6982449293136597,
-      "pred_prob": 1.7227909427590366e-27,
+      "pred_gain": -0.6700250506401062,
+      "pred_prob": 1.8916884507199863e-27,
       "rank_adjusted_gain": 10,
       "risk_prob": 0.0,
       "support_norm": 2.586148977279663,
       "support_raw": 0.35455337166786194
     },
     {
-      "adjusted_gain": -0.18863517045974731,
+      "adjusted_gain": -0.16877539455890656,
       "delta_ari_vs_core": -0.25847095251083374,
       "delta_iou_vs_core": -0.12260264158248901,
       "dense_ari": 0.6493152976036072,
@@ -87,7 +87,7 @@
       "dense_iou": 0.8249566555023193,
       "idx_dense": 4,
       "is_selected": false,
-      "pred_gain": -0.18863517045974731,
+      "pred_gain": -0.16877539455890656,
       "pred_prob": 0.0,
       "rank_adjusted_gain": 7,
       "risk_prob": 0.0,
@@ -95,7 +95,7 @@
       "support_raw": 0.21072088181972504
     },
     {
-      "adjusted_gain": -0.19401423633098602,
+      "adjusted_gain": -0.17415446043014526,
       "delta_ari_vs_core": -0.2561070919036865,
       "delta_iou_vs_core": -0.12128216028213501,
       "dense_ari": 0.6516791582107544,
@@ -103,7 +103,7 @@
       "dense_iou": 0.8262771368026733,
       "idx_dense": 5,
       "is_selected": false,
-      "pred_gain": -0.19401423633098602,
+      "pred_gain": -0.17415446043014526,
       "pred_prob": 0.0,
       "rank_adjusted_gain": 8,
       "risk_prob": 0.0,
@@ -111,7 +111,7 @@
       "support_raw": 0.2104412317276001
     },
     {
-      "adjusted_gain": -0.1847078502178192,
+      "adjusted_gain": -0.16725997626781464,
       "delta_ari_vs_core": -0.24918192625045776,
       "delta_iou_vs_core": -0.11632126569747925,
       "dense_ari": 0.6586043238639832,
@@ -119,7 +119,7 @@
       "dense_iou": 0.8312380313873291,
       "idx_dense": 6,
       "is_selected": false,
-      "pred_gain": -0.1847078502178192,
+      "pred_gain": -0.16725997626781464,
       "pred_prob": 0.0,
       "rank_adjusted_gain": 6,
       "risk_prob": 0.0,
@@ -127,7 +127,7 @@
       "support_raw": 0.20847953855991364
     },
     {
-      "adjusted_gain": -0.1847078502178192,
+      "adjusted_gain": -0.16725997626781464,
       "delta_ari_vs_core": -0.24386966228485107,
       "delta_iou_vs_core": -0.11336523294448853,
       "dense_ari": 0.6639165878295898,
@@ -135,7 +135,7 @@
       "dense_iou": 0.8341940641403198,
       "idx_dense": 7,
       "is_selected": false,
-      "pred_gain": -0.1847078502178192,
+      "pred_gain": -0.16725997626781464,
       "pred_prob": 0.0,
       "rank_adjusted_gain": 5,
       "risk_prob": 0.0,
@@ -143,7 +143,7 @@
       "support_raw": 0.20785273611545563
     },
     {
-      "adjusted_gain": -0.1809597611427307,
+      "adjusted_gain": -0.16725997626781464,
       "delta_ari_vs_core": -0.23838645219802856,
       "delta_iou_vs_core": -0.1103595495223999,
       "dense_ari": 0.6693997979164124,
@@ -151,7 +151,7 @@
       "dense_iou": 0.8371997475624084,
       "idx_dense": 8,
       "is_selected": false,
-      "pred_gain": -0.1809597611427307,
+      "pred_gain": -0.16725997626781464,
       "pred_prob": 0.0,
       "rank_adjusted_gain": 4,
       "risk_prob": 0.0,
@@ -159,7 +159,7 @@
       "support_raw": 0.20722416043281555
     },
     {
-      "adjusted_gain": 0.11243662983179092,
+      "adjusted_gain": 0.1014784649014473,
       "delta_ari_vs_core": -0.9140990376472473,
       "delta_iou_vs_core": -0.46474364399909973,
       "dense_ari": -0.006312776356935501,
@@ -167,9 +167,9 @@
       "dense_iou": 0.4828156530857086,
       "idx_dense": 9,
       "is_selected": false,
-      "pred_gain": 0.11243662983179092,
-      "pred_prob": 3.0465016032054597e-36,
-      "rank_adjusted_gain": 1,
+      "pred_gain": 0.1014784649014473,
+      "pred_prob": 3.343477508765619e-36,
+      "rank_adjusted_gain": 3,
       "risk_prob": 0.0,
       "support_norm": -0.8293470144271851,
       "support_raw": 0.1911681741476059
@@ -177,7 +177,7 @@
   ],
   "core_ari": 0.9077862686774758,
   "core_iou": 0.9475593220306863,
-  "decision_margin": -0.11243662983179092,
+  "decision_margin": -0.1708267629146576,
   "dense_candidate_count": 10,
   "exported_candidate_count": 10,
   "final_ari": 0.9077862686774758,

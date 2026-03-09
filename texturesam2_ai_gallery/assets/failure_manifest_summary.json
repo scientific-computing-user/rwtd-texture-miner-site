@@ -1,15 +1,15 @@
 {
   "ambiguous_count": 0,
-  "baseline_audit_dir": "/home/galoren/TextureSAM-v2/reports/failure_audit_full256_fixed_baseline/audit",
-  "baseline_run_dir": "/home/galoren/TextureSAM-v2/reports/failure_audit_full256_fixed_baseline/texturesam2_acute_learned_rescue",
-  "calibration_failure_count": 11,
-  "mitigation_audit_dir": "/home/galoren/TextureSAM-v2/reports/failure_audit_full256_fixed_margin03/audit",
-  "mitigation_run_dir": "/home/galoren/TextureSAM-v2/reports/failure_audit_full256_fixed_margin03/texturesam2_acute_learned_rescue",
+  "baseline_audit_dir": "/home/galoren/TextureSAM-v2/reports/release_swinb_full256_audit/audit",
+  "baseline_run_dir": "/home/galoren/TextureSAM-v2/reports/release_swinb_full256_audit/texturesam2_acute_learned_rescue",
+  "calibration_failure_count": 7,
+  "mitigation_audit_dir": "/home/galoren/TextureSAM-v2/reports/release_swinb_full256_audit/audit",
+  "mitigation_run_dir": "/home/galoren/TextureSAM-v2/reports/release_swinb_full256_audit/texturesam2_acute_learned_rescue",
   "num_images": 256,
   "overstated_rescue_count": 0,
-  "successful_rescue_count": 8,
-  "switched_count": 20,
-  "topk_recoverable_count": 133,
-  "unsafe_expansion_count": 12,
-  "wrong_partition_count": 8
+  "successful_rescue_count": 13,
+  "switched_count": 21,
+  "topk_recoverable_count": 141,
+  "unsafe_expansion_count": 6,
+  "wrong_partition_count": 4
 }

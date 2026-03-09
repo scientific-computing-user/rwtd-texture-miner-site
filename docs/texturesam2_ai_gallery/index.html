@@ -10,7 +10,7 @@
   <header class="hero wrap">
     <p class="kicker">ArchiTexture | RWTD Diagnostic Explorer</p>
     <h1>Browse All RWTD Images, Inspect One in Depth</h1>
-    <p>The left gallery is for fast browsing across all RWTD images. Click one image to open its full diagnostic panel on the right: exact scored masks, mitigation view, proposal support, and the full ranked candidate-mask strip.</p>
+    <p>The left gallery is for fast browsing across all RWTD images. Click one image to open its full diagnostic panel on the right: exact scored masks, proposal support, and the full ranked candidate-mask strip.</p>
     <div class="links">
       <a href="./assets/failure_manifest.json">Download Failure Manifest</a>
       <a href="./assets/failure_manifest_summary.json">Download Failure Summary</a>
@@ -114,12 +114,11 @@
             <dt>Baseline scored mask</dt><dd>The exact baseline mask that is scored in the audit protocol.</dd>
             <dt>Core mask</dt><dd>Conservative mask before rescue switching.</dd>
             <dt>Final mask</dt><dd>Selected output after decision layer commits.</dd>
-            <dt>Mitigation final</dt><dd>Output from the stricter mitigation policy for comparison.</dd>
             <dt>Decision margin</dt><dd>Top-1 vs top-2 decision score gap; lower values indicate higher ambiguity.</dd>
             <dt>Rescue confidence</dt><dd>Model confidence associated with rescue switching behavior.</dd>
             <dt>Top-k recoverable</dt><dd>Whether a better candidate exists in top-k even if final output is wrong.</dd>
             <dt>All candidates overlay</dt><dd>All candidate masks overlaid together on the image; shows full suggestion spread.</dd>
-            <dt>Proposal support (pixel frequency)</dt><dd>How many proposals support each pixel; hotter means more proposal agreement.</dd>
+            <dt>Support heatmap (pixel frequency)</dt><dd>How many proposals support each pixel; warmer colors mean stronger proposal agreement.</dd>
           </dl>
         </details>
 
@@ -326,12 +325,10 @@
           ['Core mask', row.core_mask],
           ['Best candidate', row.best_candidate_mask],
           ['Final selected', row.final_mask],
-          ['Mitigation final', row.mitigation_final_mask],
           ['All candidates overlay', row.candidate_stack_overlay],
           ['Candidate overlap union', row.candidate_overlap],
           ['Proposal support (pixel frequency)', row.support_heatmap],
-          ['Diff final vs GT', row.diff_final_gt],
-          ['Mitigation diff vs GT', row.mitigation_diff_final_gt]
+          ['Diff final vs GT', row.diff_final_gt]
         ].forEach(function (item) {
           const tile = makeTile(item[0], item[1]);
           if (tile) els.diagGrid.appendChild(tile);
@@ -344,7 +341,6 @@
           ['Baseline scored', row.baseline_mask],
           ['Core mask', row.core_mask],
           ['Final mask', row.final_mask],
-          ['Mitigation final', row.mitigation_final_mask],
           ['All candidates overlay', row.candidate_stack_overlay],
           ['Case manifest', row.audit_manifest]
         ].forEach(function (pair) {

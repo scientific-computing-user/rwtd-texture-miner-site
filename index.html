@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TextureSAM-2 RWTD Results</title>
+  <title>ArchiTexture RWTD Results</title>
   <style>
     :root { color-scheme: light; }
     * { box-sizing: border-box; }
@@ -25,15 +25,15 @@
 <body>
   <main class="wrap">
     <section class="card">
-      <h1>TextureSAM-2 RWTD Results</h1>
-      <p>This public site exposes only the final RWTD visual results. The paper stays local. The method shown here is the final learned texture layer above frozen SAM proposals, compared against the reproduced TextureSAM baseline.</p>
+      <h1>ArchiTexture RWTD Results</h1>
+      <p>This public site exposes the final ArchiTexture RWTD release: frozen high-recall proposals plus learned consolidation. Metrics below are from the official upstream no-aggregation evaluator.</p>
       <div class="stats">
-        <div class="stat"><div class="value">0.5166</div><div class="label">RWTD mIoU</div></div>
-        <div class="stat"><div class="value">0.7175</div><div class="label">RWTD ARI</div></div>
+        <div class="stat"><div class="value">0.4611</div><div class="label">RWTD mIoU</div></div>
+        <div class="stat"><div class="value">0.6966</div><div class="label">RWTD ARI</div></div>
         <div class="stat"><div class="value">0.4684 / 0.6163</div><div class="label">TextureSAM Reproduction</div></div>
       </div>
-      <a class="btn" href="./texturesam2_ai_gallery/index.html">Open Full RWTD Gallery<span>All 256 RWTD images with GT, TextureSAM union views, and TextureSAM-2 predictions.</span></a>
-      <p class="meta">Updated March 6, 2026.</p>
+      <a class="btn" href="./texturesam2_ai_gallery/index.html">Open Full RWTD Gallery<span>All 256 RWTD images with diagnostic masks, proposal evidence, and ranked candidate-strip inspection.</span></a>
+      <p class="meta">Updated March 9, 2026.</p>
     </section>
   </main>
 </body>
