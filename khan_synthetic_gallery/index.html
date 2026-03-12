@@ -28,7 +28,7 @@
         <div class="stat"><div class="value">154 / 182</div><div class="label">Covered-image Wins</div></div>
         <div class="stat"><div class="value">18</div><div class="label">Proposal-bank Misses</div></div>
       </div>
-      <p class="note">This page uses a held-out Khan/STLD-style synthetic benchmark: two Brodatz textures plus one MPEG-7 foreground shape per image. The raw baseline is the union of frozen proposal-bank masks, and the ArchiTexture output is the learned single-region consolidation on top of the same bank. "Top recoveries" below exclude the images where the frozen proposal bank emitted no baseline mask at all.</p>
+      <p class="note">This page uses a held-out Khan/STLD-style synthetic benchmark: two Brodatz textures plus one MPEG-7 foreground shape per image. The raw baseline is the union of frozen proposal-bank masks, and the ArchiTexture output is the learned single-region consolidation on top of the same bank. Zero-proposal cases are shown separately as proposal-bank misses, because their ArchiTexture panel comes from the no-proposal fallback path rather than a normal same-bank consolidation comparison.</p>
     </section>
 
     <section class="panel">
@@ -42,6 +42,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9244</strong></span>
@@ -65,6 +66,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9312</strong></span>
@@ -88,6 +90,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9624</strong></span>
@@ -111,6 +114,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8762</strong></span>
@@ -134,6 +138,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9390</strong></span>
@@ -157,6 +162,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9343</strong></span>
@@ -180,6 +186,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9173</strong></span>
@@ -203,6 +210,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.7926</strong></span>
@@ -226,6 +234,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9180</strong></span>
@@ -249,6 +258,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9451</strong></span>
@@ -272,6 +282,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 4</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9557</strong></span>
@@ -295,6 +306,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9122</strong></span>
@@ -315,6 +327,419 @@
     <section class="panel">
       <div class="section-head"><h2>Most Challenging Cases</h2><p>Lowest per-image IoUs for the learned consolidation output.</p></div>
       <div class="grid">
+        <article class="card" id="img-139">
+          <img loading="lazy" src="./assets/cards/139.jpg" alt="Synthetic benchmark 139 comparison" />
+          <div class="meta">
+            <h3>Synthetic 139</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 1</span>
+              <span class="badge gray">merged components 1</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.0184</strong></span>
+              <span>Proposal union IoU <strong>0.0175</strong></span>
+              <span>Delta <strong>+0.0008</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/139.png">Synthetic image</a>
+              <a href="./assets/raw/gt/139.png">GT mask</a>
+              <a href="./assets/raw/baseline/139.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/139.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-130">
+          <img loading="lazy" src="./assets/cards/130.jpg" alt="Synthetic benchmark 130 comparison" />
+          <div class="meta">
+            <h3>Synthetic 130</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 2</span>
+              <span class="badge gray">merged components 2</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.2156</strong></span>
+              <span>Proposal union IoU <strong>0.4779</strong></span>
+              <span>Delta <strong>-0.2623</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/130.png">Synthetic image</a>
+              <a href="./assets/raw/gt/130.png">GT mask</a>
+              <a href="./assets/raw/baseline/130.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/130.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-179">
+          <img loading="lazy" src="./assets/cards/179.jpg" alt="Synthetic benchmark 179 comparison" />
+          <div class="meta">
+            <h3>Synthetic 179</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 1</span>
+              <span class="badge gray">merged components 1</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.2872</strong></span>
+              <span>Proposal union IoU <strong>0.2780</strong></span>
+              <span>Delta <strong>+0.0091</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/179.png">Synthetic image</a>
+              <a href="./assets/raw/gt/179.png">GT mask</a>
+              <a href="./assets/raw/baseline/179.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/179.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-11">
+          <img loading="lazy" src="./assets/cards/11.jpg" alt="Synthetic benchmark 11 comparison" />
+          <div class="meta">
+            <h3>Synthetic 11</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 1</span>
+              <span class="badge gray">merged components 1</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.2994</strong></span>
+              <span>Proposal union IoU <strong>0.2833</strong></span>
+              <span>Delta <strong>+0.0161</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/11.png">Synthetic image</a>
+              <a href="./assets/raw/gt/11.png">GT mask</a>
+              <a href="./assets/raw/baseline/11.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/11.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-192">
+          <img loading="lazy" src="./assets/cards/192.jpg" alt="Synthetic benchmark 192 comparison" />
+          <div class="meta">
+            <h3>Synthetic 192</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 3</span>
+              <span class="badge gray">merged components 3</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.3068</strong></span>
+              <span>Proposal union IoU <strong>0.7460</strong></span>
+              <span>Delta <strong>-0.4392</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/192.png">Synthetic image</a>
+              <a href="./assets/raw/gt/192.png">GT mask</a>
+              <a href="./assets/raw/baseline/192.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/192.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-104">
+          <img loading="lazy" src="./assets/cards/104.jpg" alt="Synthetic benchmark 104 comparison" />
+          <div class="meta">
+            <h3>Synthetic 104</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 1</span>
+              <span class="badge gray">merged components 1</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.3119</strong></span>
+              <span>Proposal union IoU <strong>0.2927</strong></span>
+              <span>Delta <strong>+0.0192</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/104.png">Synthetic image</a>
+              <a href="./assets/raw/gt/104.png">GT mask</a>
+              <a href="./assets/raw/baseline/104.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/104.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-42">
+          <img loading="lazy" src="./assets/cards/42.jpg" alt="Synthetic benchmark 42 comparison" />
+          <div class="meta">
+            <h3>Synthetic 42</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 2</span>
+              <span class="badge gray">merged components 2</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.3335</strong></span>
+              <span>Proposal union IoU <strong>0.2974</strong></span>
+              <span>Delta <strong>+0.0361</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/42.png">Synthetic image</a>
+              <a href="./assets/raw/gt/42.png">GT mask</a>
+              <a href="./assets/raw/baseline/42.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/42.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-116">
+          <img loading="lazy" src="./assets/cards/116.jpg" alt="Synthetic benchmark 116 comparison" />
+          <div class="meta">
+            <h3>Synthetic 116</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 2</span>
+              <span class="badge gray">merged components 2</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.3373</strong></span>
+              <span>Proposal union IoU <strong>0.8436</strong></span>
+              <span>Delta <strong>-0.5063</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/116.png">Synthetic image</a>
+              <a href="./assets/raw/gt/116.png">GT mask</a>
+              <a href="./assets/raw/baseline/116.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/116.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-43">
+          <img loading="lazy" src="./assets/cards/43.jpg" alt="Synthetic benchmark 43 comparison" />
+          <div class="meta">
+            <h3>Synthetic 43</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 2</span>
+              <span class="badge gray">merged components 2</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.3429</strong></span>
+              <span>Proposal union IoU <strong>0.8879</strong></span>
+              <span>Delta <strong>-0.5450</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/43.png">Synthetic image</a>
+              <a href="./assets/raw/gt/43.png">GT mask</a>
+              <a href="./assets/raw/baseline/43.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/43.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-166">
+          <img loading="lazy" src="./assets/cards/166.jpg" alt="Synthetic benchmark 166 comparison" />
+          <div class="meta">
+            <h3>Synthetic 166</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 2</span>
+              <span class="badge gray">merged components 2</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.3544</strong></span>
+              <span>Proposal union IoU <strong>0.8783</strong></span>
+              <span>Delta <strong>-0.5239</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/166.png">Synthetic image</a>
+              <a href="./assets/raw/gt/166.png">GT mask</a>
+              <a href="./assets/raw/baseline/166.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/166.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-98">
+          <img loading="lazy" src="./assets/cards/98.jpg" alt="Synthetic benchmark 98 comparison" />
+          <div class="meta">
+            <h3>Synthetic 98</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 2</span>
+              <span class="badge gray">merged components 2</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.3600</strong></span>
+              <span>Proposal union IoU <strong>0.8621</strong></span>
+              <span>Delta <strong>-0.5021</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/98.png">Synthetic image</a>
+              <a href="./assets/raw/gt/98.png">GT mask</a>
+              <a href="./assets/raw/baseline/98.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/98.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-24">
+          <img loading="lazy" src="./assets/cards/24.jpg" alt="Synthetic benchmark 24 comparison" />
+          <div class="meta">
+            <h3>Synthetic 24</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 2</span>
+              <span class="badge gray">merged components 2</span>
+              
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.3623</strong></span>
+              <span>Proposal union IoU <strong>0.3560</strong></span>
+              <span>Delta <strong>+0.0064</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/24.png">Synthetic image</a>
+              <a href="./assets/raw/gt/24.png">GT mask</a>
+              <a href="./assets/raw/baseline/24.png">Proposal union mask</a>
+              <a href="./assets/raw/ours/24.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><h2>Proposal-Bank Misses</h2><p>Frozen SAM emitted no proposal masks. The ArchiTexture panel here is fallback-only and should not be read as a standard baseline comparison.</p></div>
+      <div class="grid">
+        <article class="card" id="img-6">
+          <img loading="lazy" src="./assets/cards/6.jpg" alt="Synthetic benchmark 6 comparison" />
+          <div class="meta">
+            <h3>Synthetic 6</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.4071</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/6.png">Synthetic image</a>
+              <a href="./assets/raw/gt/6.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/6.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-10">
+          <img loading="lazy" src="./assets/cards/10.jpg" alt="Synthetic benchmark 10 comparison" />
+          <div class="meta">
+            <h3>Synthetic 10</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.2783</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/10.png">Synthetic image</a>
+              <a href="./assets/raw/gt/10.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/10.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-17">
+          <img loading="lazy" src="./assets/cards/17.jpg" alt="Synthetic benchmark 17 comparison" />
+          <div class="meta">
+            <h3>Synthetic 17</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.2312</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/17.png">Synthetic image</a>
+              <a href="./assets/raw/gt/17.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/17.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-33">
+          <img loading="lazy" src="./assets/cards/33.jpg" alt="Synthetic benchmark 33 comparison" />
+          <div class="meta">
+            <h3>Synthetic 33</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.0805</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/33.png">Synthetic image</a>
+              <a href="./assets/raw/gt/33.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/33.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-38">
+          <img loading="lazy" src="./assets/cards/38.jpg" alt="Synthetic benchmark 38 comparison" />
+          <div class="meta">
+            <h3>Synthetic 38</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.0294</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/38.png">Synthetic image</a>
+              <a href="./assets/raw/gt/38.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/38.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
         <article class="card" id="img-65">
           <img loading="lazy" src="./assets/cards/65.jpg" alt="Synthetic benchmark 65 comparison" />
           <div class="meta">
@@ -323,11 +748,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 6</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0090</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0090</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/65.png">Synthetic image</a>
@@ -346,11 +772,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0109</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0109</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/69.png">Synthetic image</a>
@@ -361,71 +788,26 @@
           </div>
         </article>
         
-        <article class="card" id="img-189">
-          <img loading="lazy" src="./assets/cards/189.jpg" alt="Synthetic benchmark 189 comparison" />
+        <article class="card" id="img-72">
+          <img loading="lazy" src="./assets/cards/72.jpg" alt="Synthetic benchmark 72 comparison" />
           <div class="meta">
-            <h3>Synthetic 189</h3>
+            <h3>Synthetic 72</h3>
             <div class="badges">
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
-              <span class="badge gray">merged components 6</span>
+              <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
-              <span>ArchiTexture IoU <strong>0.0131</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0131</strong></span>
+              <span>ArchiTexture IoU <strong>0.4453</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
-              <a href="./assets/raw/images/189.png">Synthetic image</a>
-              <a href="./assets/raw/gt/189.png">GT mask</a>
+              <a href="./assets/raw/images/72.png">Synthetic image</a>
+              <a href="./assets/raw/gt/72.png">GT mask</a>
               <span>Proposal union missing</span>
-              <a href="./assets/raw/ours/189.png">ArchiTexture mask</a>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card" id="img-150">
-          <img loading="lazy" src="./assets/cards/150.jpg" alt="Synthetic benchmark 150 comparison" />
-          <div class="meta">
-            <h3>Synthetic 150</h3>
-            <div class="badges">
-              <span class="badge orange">ArchiTexture</span>
-              <span class="badge blue">proposals 0</span>
-              <span class="badge gray">merged components 6</span>
-            </div>
-            <div class="metric-row">
-              <span>ArchiTexture IoU <strong>0.0180</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0180</strong></span>
-            </div>
-            <div class="downloads">
-              <a href="./assets/raw/images/150.png">Synthetic image</a>
-              <a href="./assets/raw/gt/150.png">GT mask</a>
-              <span>Proposal union missing</span>
-              <a href="./assets/raw/ours/150.png">ArchiTexture mask</a>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card" id="img-139">
-          <img loading="lazy" src="./assets/cards/139.jpg" alt="Synthetic benchmark 139 comparison" />
-          <div class="meta">
-            <h3>Synthetic 139</h3>
-            <div class="badges">
-              <span class="badge orange">ArchiTexture</span>
-              <span class="badge blue">proposals 1</span>
-              <span class="badge gray">merged components 1</span>
-            </div>
-            <div class="metric-row">
-              <span>ArchiTexture IoU <strong>0.0184</strong></span>
-              <span>Proposal union IoU <strong>0.0175</strong></span>
-              <span>Delta <strong>+0.0008</strong></span>
-            </div>
-            <div class="downloads">
-              <a href="./assets/raw/images/139.png">Synthetic image</a>
-              <a href="./assets/raw/gt/139.png">GT mask</a>
-              <a href="./assets/raw/baseline/139.png">Proposal union mask</a>
-              <a href="./assets/raw/ours/139.png">ArchiTexture mask</a>
+              <a href="./assets/raw/ours/72.png">ArchiTexture mask</a>
             </div>
           </div>
         </article>
@@ -438,109 +820,18 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0282</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0282</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/107.png">Synthetic image</a>
               <a href="./assets/raw/gt/107.png">GT mask</a>
               <span>Proposal union missing</span>
               <a href="./assets/raw/ours/107.png">ArchiTexture mask</a>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card" id="img-38">
-          <img loading="lazy" src="./assets/cards/38.jpg" alt="Synthetic benchmark 38 comparison" />
-          <div class="meta">
-            <h3>Synthetic 38</h3>
-            <div class="badges">
-              <span class="badge orange">ArchiTexture</span>
-              <span class="badge blue">proposals 0</span>
-              <span class="badge gray">merged components 8</span>
-            </div>
-            <div class="metric-row">
-              <span>ArchiTexture IoU <strong>0.0294</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0294</strong></span>
-            </div>
-            <div class="downloads">
-              <a href="./assets/raw/images/38.png">Synthetic image</a>
-              <a href="./assets/raw/gt/38.png">GT mask</a>
-              <span>Proposal union missing</span>
-              <a href="./assets/raw/ours/38.png">ArchiTexture mask</a>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card" id="img-158">
-          <img loading="lazy" src="./assets/cards/158.jpg" alt="Synthetic benchmark 158 comparison" />
-          <div class="meta">
-            <h3>Synthetic 158</h3>
-            <div class="badges">
-              <span class="badge orange">ArchiTexture</span>
-              <span class="badge blue">proposals 0</span>
-              <span class="badge gray">merged components 7</span>
-            </div>
-            <div class="metric-row">
-              <span>ArchiTexture IoU <strong>0.0466</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0466</strong></span>
-            </div>
-            <div class="downloads">
-              <a href="./assets/raw/images/158.png">Synthetic image</a>
-              <a href="./assets/raw/gt/158.png">GT mask</a>
-              <span>Proposal union missing</span>
-              <a href="./assets/raw/ours/158.png">ArchiTexture mask</a>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card" id="img-187">
-          <img loading="lazy" src="./assets/cards/187.jpg" alt="Synthetic benchmark 187 comparison" />
-          <div class="meta">
-            <h3>Synthetic 187</h3>
-            <div class="badges">
-              <span class="badge orange">ArchiTexture</span>
-              <span class="badge blue">proposals 0</span>
-              <span class="badge gray">merged components 7</span>
-            </div>
-            <div class="metric-row">
-              <span>ArchiTexture IoU <strong>0.0577</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0577</strong></span>
-            </div>
-            <div class="downloads">
-              <a href="./assets/raw/images/187.png">Synthetic image</a>
-              <a href="./assets/raw/gt/187.png">GT mask</a>
-              <span>Proposal union missing</span>
-              <a href="./assets/raw/ours/187.png">ArchiTexture mask</a>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card" id="img-149">
-          <img loading="lazy" src="./assets/cards/149.jpg" alt="Synthetic benchmark 149 comparison" />
-          <div class="meta">
-            <h3>Synthetic 149</h3>
-            <div class="badges">
-              <span class="badge orange">ArchiTexture</span>
-              <span class="badge blue">proposals 0</span>
-              <span class="badge gray">merged components 7</span>
-            </div>
-            <div class="metric-row">
-              <span>ArchiTexture IoU <strong>0.0691</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0691</strong></span>
-            </div>
-            <div class="downloads">
-              <a href="./assets/raw/images/149.png">Synthetic image</a>
-              <a href="./assets/raw/gt/149.png">GT mask</a>
-              <span>Proposal union missing</span>
-              <a href="./assets/raw/ours/149.png">ArchiTexture mask</a>
             </div>
           </div>
         </article>
@@ -553,11 +844,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0748</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0748</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/142.png">Synthetic image</a>
@@ -568,25 +860,194 @@
           </div>
         </article>
         
-        <article class="card" id="img-33">
-          <img loading="lazy" src="./assets/cards/33.jpg" alt="Synthetic benchmark 33 comparison" />
+        <article class="card" id="img-146">
+          <img loading="lazy" src="./assets/cards/146.jpg" alt="Synthetic benchmark 146 comparison" />
           <div class="meta">
-            <h3>Synthetic 33</h3>
+            <h3>Synthetic 146</h3>
             <div class="badges">
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
-              <span>ArchiTexture IoU <strong>0.0805</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0805</strong></span>
+              <span>ArchiTexture IoU <strong>0.6994</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
-              <a href="./assets/raw/images/33.png">Synthetic image</a>
-              <a href="./assets/raw/gt/33.png">GT mask</a>
+              <a href="./assets/raw/images/146.png">Synthetic image</a>
+              <a href="./assets/raw/gt/146.png">GT mask</a>
               <span>Proposal union missing</span>
-              <a href="./assets/raw/ours/33.png">ArchiTexture mask</a>
+              <a href="./assets/raw/ours/146.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-149">
+          <img loading="lazy" src="./assets/cards/149.jpg" alt="Synthetic benchmark 149 comparison" />
+          <div class="meta">
+            <h3>Synthetic 149</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.0691</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/149.png">Synthetic image</a>
+              <a href="./assets/raw/gt/149.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/149.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-150">
+          <img loading="lazy" src="./assets/cards/150.jpg" alt="Synthetic benchmark 150 comparison" />
+          <div class="meta">
+            <h3>Synthetic 150</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 6</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.0180</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/150.png">Synthetic image</a>
+              <a href="./assets/raw/gt/150.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/150.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-158">
+          <img loading="lazy" src="./assets/cards/158.jpg" alt="Synthetic benchmark 158 comparison" />
+          <div class="meta">
+            <h3>Synthetic 158</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.0466</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/158.png">Synthetic image</a>
+              <a href="./assets/raw/gt/158.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/158.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-164">
+          <img loading="lazy" src="./assets/cards/164.jpg" alt="Synthetic benchmark 164 comparison" />
+          <div class="meta">
+            <h3>Synthetic 164</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.7962</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/164.png">Synthetic image</a>
+              <a href="./assets/raw/gt/164.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/164.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-181">
+          <img loading="lazy" src="./assets/cards/181.jpg" alt="Synthetic benchmark 181 comparison" />
+          <div class="meta">
+            <h3>Synthetic 181</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.1157</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/181.png">Synthetic image</a>
+              <a href="./assets/raw/gt/181.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/181.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-187">
+          <img loading="lazy" src="./assets/cards/187.jpg" alt="Synthetic benchmark 187 comparison" />
+          <div class="meta">
+            <h3>Synthetic 187</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.0577</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/187.png">Synthetic image</a>
+              <a href="./assets/raw/gt/187.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/187.png">ArchiTexture mask</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="card" id="img-189">
+          <img loading="lazy" src="./assets/cards/189.jpg" alt="Synthetic benchmark 189 comparison" />
+          <div class="meta">
+            <h3>Synthetic 189</h3>
+            <div class="badges">
+              <span class="badge orange">ArchiTexture</span>
+              <span class="badge blue">proposals 0</span>
+              <span class="badge gray">merged components 6</span>
+              <span class="badge gray">fallback-only</span>
+            </div>
+            <div class="metric-row">
+              <span>ArchiTexture IoU <strong>0.0131</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
+            </div>
+            <div class="downloads">
+              <a href="./assets/raw/images/189.png">Synthetic image</a>
+              <a href="./assets/raw/gt/189.png">GT mask</a>
+              <span>Proposal union missing</span>
+              <a href="./assets/raw/ours/189.png">ArchiTexture mask</a>
             </div>
           </div>
         </article>
@@ -604,6 +1065,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4528</strong></span>
@@ -627,6 +1089,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9580</strong></span>
@@ -650,6 +1113,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8622</strong></span>
@@ -673,6 +1137,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9524</strong></span>
@@ -696,6 +1161,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9761</strong></span>
@@ -719,11 +1185,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4071</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.4071</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/6.png">Synthetic image</a>
@@ -742,6 +1209,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9869</strong></span>
@@ -765,6 +1233,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9401</strong></span>
@@ -788,6 +1257,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9313</strong></span>
@@ -811,11 +1281,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.2783</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.2783</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/10.png">Synthetic image</a>
@@ -834,6 +1305,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.2994</strong></span>
@@ -857,6 +1329,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9593</strong></span>
@@ -880,6 +1353,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9173</strong></span>
@@ -903,6 +1377,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8469</strong></span>
@@ -926,6 +1401,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8696</strong></span>
@@ -949,6 +1425,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9072</strong></span>
@@ -972,11 +1449,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.2312</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.2312</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/17.png">Synthetic image</a>
@@ -995,6 +1473,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8876</strong></span>
@@ -1018,6 +1497,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9323</strong></span>
@@ -1041,6 +1521,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9348</strong></span>
@@ -1064,6 +1545,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9754</strong></span>
@@ -1087,6 +1569,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9067</strong></span>
@@ -1110,6 +1593,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9624</strong></span>
@@ -1133,6 +1617,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3623</strong></span>
@@ -1156,6 +1641,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9222</strong></span>
@@ -1179,6 +1665,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9802</strong></span>
@@ -1202,6 +1689,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9320</strong></span>
@@ -1225,6 +1713,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4201</strong></span>
@@ -1248,6 +1737,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9427</strong></span>
@@ -1271,6 +1761,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8384</strong></span>
@@ -1294,6 +1785,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9550</strong></span>
@@ -1317,6 +1809,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8386</strong></span>
@@ -1340,11 +1833,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0805</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0805</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/33.png">Synthetic image</a>
@@ -1363,6 +1857,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8850</strong></span>
@@ -1386,6 +1881,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9204</strong></span>
@@ -1409,6 +1905,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4669</strong></span>
@@ -1432,6 +1929,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9389</strong></span>
@@ -1455,11 +1953,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0294</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0294</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/38.png">Synthetic image</a>
@@ -1478,6 +1977,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8895</strong></span>
@@ -1501,6 +2001,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.5872</strong></span>
@@ -1524,6 +2025,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8916</strong></span>
@@ -1547,6 +2049,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3335</strong></span>
@@ -1570,6 +2073,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3429</strong></span>
@@ -1593,6 +2097,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9221</strong></span>
@@ -1616,6 +2121,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4340</strong></span>
@@ -1639,6 +2145,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9448</strong></span>
@@ -1662,6 +2169,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9445</strong></span>
@@ -1685,6 +2193,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9242</strong></span>
@@ -1708,6 +2217,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4659</strong></span>
@@ -1731,6 +2241,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9699</strong></span>
@@ -1754,6 +2265,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9342</strong></span>
@@ -1777,6 +2289,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9363</strong></span>
@@ -1800,6 +2313,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4799</strong></span>
@@ -1823,6 +2337,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8912</strong></span>
@@ -1846,6 +2361,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8620</strong></span>
@@ -1869,6 +2385,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9041</strong></span>
@@ -1892,6 +2409,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9602</strong></span>
@@ -1915,6 +2433,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9495</strong></span>
@@ -1938,6 +2457,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9375</strong></span>
@@ -1961,6 +2481,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8227</strong></span>
@@ -1984,6 +2505,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.7926</strong></span>
@@ -2007,6 +2529,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8792</strong></span>
@@ -2030,6 +2553,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8756</strong></span>
@@ -2053,6 +2577,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9075</strong></span>
@@ -2076,11 +2601,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 6</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0090</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0090</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/65.png">Synthetic image</a>
@@ -2099,6 +2625,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.5278</strong></span>
@@ -2122,6 +2649,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9615</strong></span>
@@ -2145,6 +2673,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9182</strong></span>
@@ -2168,11 +2697,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0109</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0109</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/69.png">Synthetic image</a>
@@ -2191,6 +2721,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9309</strong></span>
@@ -2214,6 +2745,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.5289</strong></span>
@@ -2237,11 +2769,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4453</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.4453</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/72.png">Synthetic image</a>
@@ -2260,6 +2793,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4681</strong></span>
@@ -2283,6 +2817,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8825</strong></span>
@@ -2306,6 +2841,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9309</strong></span>
@@ -2329,6 +2865,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8721</strong></span>
@@ -2352,6 +2889,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8363</strong></span>
@@ -2375,6 +2913,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9180</strong></span>
@@ -2398,6 +2937,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9189</strong></span>
@@ -2421,6 +2961,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9291</strong></span>
@@ -2444,6 +2985,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9312</strong></span>
@@ -2467,6 +3009,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9147</strong></span>
@@ -2490,6 +3033,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9568</strong></span>
@@ -2513,6 +3057,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9391</strong></span>
@@ -2536,6 +3081,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9196</strong></span>
@@ -2559,6 +3105,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9262</strong></span>
@@ -2582,6 +3129,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8653</strong></span>
@@ -2605,6 +3153,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8833</strong></span>
@@ -2628,6 +3177,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.6567</strong></span>
@@ -2651,6 +3201,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9681</strong></span>
@@ -2674,6 +3225,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9476</strong></span>
@@ -2697,6 +3249,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4860</strong></span>
@@ -2720,6 +3273,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8392</strong></span>
@@ -2743,6 +3297,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9244</strong></span>
@@ -2766,6 +3321,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4261</strong></span>
@@ -2789,6 +3345,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8876</strong></span>
@@ -2812,6 +3369,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9770</strong></span>
@@ -2835,6 +3393,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3600</strong></span>
@@ -2858,6 +3417,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9216</strong></span>
@@ -2881,6 +3441,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8422</strong></span>
@@ -2904,6 +3465,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.7722</strong></span>
@@ -2927,6 +3489,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9631</strong></span>
@@ -2950,6 +3513,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.7656</strong></span>
@@ -2973,6 +3537,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3119</strong></span>
@@ -2996,6 +3561,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9295</strong></span>
@@ -3019,6 +3585,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9045</strong></span>
@@ -3042,11 +3609,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0282</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0282</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/107.png">Synthetic image</a>
@@ -3065,6 +3633,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 4</span>
               <span class="badge gray">merged components 4</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9127</strong></span>
@@ -3088,6 +3657,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9348</strong></span>
@@ -3111,6 +3681,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9550</strong></span>
@@ -3134,6 +3705,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8912</strong></span>
@@ -3157,6 +3729,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 4</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.5991</strong></span>
@@ -3180,6 +3753,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9307</strong></span>
@@ -3203,6 +3777,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9200</strong></span>
@@ -3226,6 +3801,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3893</strong></span>
@@ -3249,6 +3825,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3373</strong></span>
@@ -3272,6 +3849,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9204</strong></span>
@@ -3295,6 +3873,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9592</strong></span>
@@ -3318,6 +3897,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 4</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9560</strong></span>
@@ -3341,6 +3921,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9569</strong></span>
@@ -3364,6 +3945,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9552</strong></span>
@@ -3387,6 +3969,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.5836</strong></span>
@@ -3410,6 +3993,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9429</strong></span>
@@ -3433,6 +4017,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.7967</strong></span>
@@ -3456,6 +4041,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4177</strong></span>
@@ -3479,6 +4065,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9438</strong></span>
@@ -3502,6 +4089,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9420</strong></span>
@@ -3525,6 +4113,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8850</strong></span>
@@ -3548,6 +4137,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9372</strong></span>
@@ -3571,6 +4161,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.2156</strong></span>
@@ -3594,6 +4185,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8623</strong></span>
@@ -3617,6 +4209,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9566</strong></span>
@@ -3640,6 +4233,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9521</strong></span>
@@ -3663,6 +4257,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.4711</strong></span>
@@ -3686,6 +4281,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8629</strong></span>
@@ -3709,6 +4305,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9397</strong></span>
@@ -3732,6 +4329,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9215</strong></span>
@@ -3755,6 +4353,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9658</strong></span>
@@ -3778,6 +4377,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0184</strong></span>
@@ -3801,6 +4401,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9428</strong></span>
@@ -3824,6 +4425,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.5939</strong></span>
@@ -3847,11 +4449,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0748</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0748</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/142.png">Synthetic image</a>
@@ -3870,6 +4473,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9694</strong></span>
@@ -3893,6 +4497,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9006</strong></span>
@@ -3916,6 +4521,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9624</strong></span>
@@ -3939,11 +4545,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.6994</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.6994</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/146.png">Synthetic image</a>
@@ -3962,6 +4569,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8902</strong></span>
@@ -3985,6 +4593,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8920</strong></span>
@@ -4008,11 +4617,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0691</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0691</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/149.png">Synthetic image</a>
@@ -4031,11 +4641,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 6</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0180</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0180</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/150.png">Synthetic image</a>
@@ -4054,6 +4665,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9180</strong></span>
@@ -4077,6 +4689,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9051</strong></span>
@@ -4100,6 +4713,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9216</strong></span>
@@ -4123,6 +4737,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9649</strong></span>
@@ -4146,6 +4761,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8806</strong></span>
@@ -4169,6 +4785,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 4</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9557</strong></span>
@@ -4192,6 +4809,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9480</strong></span>
@@ -4215,11 +4833,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0466</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0466</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/158.png">Synthetic image</a>
@@ -4238,6 +4857,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9228</strong></span>
@@ -4261,6 +4881,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9122</strong></span>
@@ -4284,6 +4905,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9130</strong></span>
@@ -4307,6 +4929,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9370</strong></span>
@@ -4330,6 +4953,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9378</strong></span>
@@ -4353,11 +4977,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.7962</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.7962</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/164.png">Synthetic image</a>
@@ -4376,6 +5001,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8862</strong></span>
@@ -4399,6 +5025,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3544</strong></span>
@@ -4422,6 +5049,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9529</strong></span>
@@ -4445,6 +5073,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9184</strong></span>
@@ -4468,6 +5097,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 4</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9773</strong></span>
@@ -4491,6 +5121,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9117</strong></span>
@@ -4514,6 +5145,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8284</strong></span>
@@ -4537,6 +5169,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9268</strong></span>
@@ -4560,6 +5193,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9690</strong></span>
@@ -4583,6 +5217,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9173</strong></span>
@@ -4606,6 +5241,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9520</strong></span>
@@ -4629,6 +5265,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9506</strong></span>
@@ -4652,6 +5289,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9314</strong></span>
@@ -4675,6 +5313,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8567</strong></span>
@@ -4698,6 +5337,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.2872</strong></span>
@@ -4721,6 +5361,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9368</strong></span>
@@ -4744,11 +5385,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 8</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.1157</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.1157</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/181.png">Synthetic image</a>
@@ -4767,6 +5409,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9060</strong></span>
@@ -4790,6 +5433,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9451</strong></span>
@@ -4813,6 +5457,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8964</strong></span>
@@ -4836,6 +5481,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8879</strong></span>
@@ -4859,6 +5505,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9390</strong></span>
@@ -4882,11 +5529,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 7</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0577</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0577</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/187.png">Synthetic image</a>
@@ -4905,6 +5553,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.8762</strong></span>
@@ -4928,11 +5577,12 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 0</span>
               <span class="badge gray">merged components 6</span>
+              <span class="badge gray">fallback-only</span>
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.0131</strong></span>
-              <span>Proposal union IoU <strong>0.0000</strong></span>
-              <span>Delta <strong>+0.0131</strong></span>
+              <span>Proposal union IoU <strong>n/a</strong></span>
+              <span>Delta <strong>n/a</strong></span>
             </div>
             <div class="downloads">
               <a href="./assets/raw/images/189.png">Synthetic image</a>
@@ -4951,6 +5601,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9127</strong></span>
@@ -4974,6 +5625,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.6009</strong></span>
@@ -4997,6 +5649,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 3</span>
               <span class="badge gray">merged components 3</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.3068</strong></span>
@@ -5020,6 +5673,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9534</strong></span>
@@ -5043,6 +5697,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.5231</strong></span>
@@ -5066,6 +5721,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9343</strong></span>
@@ -5089,6 +5745,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9220</strong></span>
@@ -5112,6 +5769,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9356</strong></span>
@@ -5135,6 +5793,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9553</strong></span>
@@ -5158,6 +5817,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 1</span>
               <span class="badge gray">merged components 1</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9556</strong></span>
@@ -5181,6 +5841,7 @@
               <span class="badge orange">ArchiTexture</span>
               <span class="badge blue">proposals 2</span>
               <span class="badge gray">merged components 2</span>
+              
             </div>
             <div class="metric-row">
               <span>ArchiTexture IoU <strong>0.9465</strong></span>
