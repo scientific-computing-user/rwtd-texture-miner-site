@@ -1,0 +1,14 @@
+{
+  "num_images": 200,
+  "covered_count": 182,
+  "miss_count": 18,
+  "beats_union_count": 156,
+  "beats_handcrafted_count": 97,
+  "beats_heuristic_count": 96,
+  "proposal_union_miou_covered": 0.2543154499736777,
+  "proposal_union_ari_covered": 0.1731311766985869,
+  "architexture_miou_covered": 0.7194616806936366,
+  "architexture_ari_covered": 0.7791096027513711,
+  "delta_iou_covered": 0.46514623071995886,
+  "delta_ari_covered": 0.6059784260527842
+}
