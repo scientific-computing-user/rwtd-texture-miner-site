@@ -14,5 +14,9 @@
   "delta_direct_all_ari": -0.040689874533278436,
   "delta_invariant_all_miou": 0.037814467775866833,
   "delta_invariant_all_ari": 0.052936459779739486,
-  "texturesam_missing": 3
+  "texturesam_missing": 3,
+  "sam2_original_label": "SAM2.1-small original",
+  "sam2_original_coverage": 1742,
+  "sam2_original_invariant_miou_all": 0.27696221848119573,
+  "sam2_original_invariant_ari_all": 0.22129031084374362
 }

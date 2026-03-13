@@ -10,5 +10,9 @@
   "architexture_miou_covered": 0.7194616806936366,
   "architexture_ari_covered": 0.7791096027513711,
   "delta_iou_covered": 0.46514623071995886,
-  "delta_ari_covered": 0.6059784260527842
+  "delta_ari_covered": 0.6059784260527842,
+  "sam2_original_label": "SAM2.1-small original",
+  "sam2_original_coverage": 199,
+  "sam2_original_miou_all": 0.36860694577008873,
+  "sam2_original_ari_all": 0.5269121551062448
 }

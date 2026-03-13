@@ -27,6 +27,7 @@
         <div class="stat"><div class="value" id="statUnion">-</div><div class="label">Proposal union mIoU</div></div>
         <div class="stat"><div class="value" id="statArch">-</div><div class="label">ArchiTexture mIoU</div></div>
         <div class="stat"><div class="value" id="statAri">-</div><div class="label">ArchiTexture ARI</div></div>
+        <div class="stat"><div class="value" id="statSam2">-</div><div class="label" id="statSam2Label">SAM2.1-small original mIoU / ARI</div></div>
       </div>
       <p class="note">This page uses STLD (Shape-Tailored Local Descriptors), a held-out synthetic benchmark built from Brodatz textures and MPEG-7 shapes. Metrics are direct foreground IoU and ARI against the canonical foreground mask. Proposal-bank misses are shown, but separated from normal same-bank comparisons because their ArchiTexture output comes from the no-proposal fallback path.</p>
     </section>
@@ -163,7 +164,9 @@
         statMiss: document.getElementById('statMiss'),
         statUnion: document.getElementById('statUnion'),
         statArch: document.getElementById('statArch'),
-        statAri: document.getElementById('statAri')
+        statAri: document.getElementById('statAri'),
+        statSam2: document.getElementById('statSam2'),
+        statSam2Label: document.getElementById('statSam2Label')
       };
 
       function num(v) {
@@ -372,6 +375,10 @@
         els.statUnion.textContent = fmt(summary.proposal_union_miou_covered, 4);
         els.statArch.textContent = fmt(summary.architexture_miou_covered, 4);
         els.statAri.textContent = fmt(summary.architexture_ari_covered, 4);
+        if (summary.sam2_original_label) {
+          els.statSam2Label.textContent = summary.sam2_original_label + ' mIoU / ARI';
+          els.statSam2.textContent = fmt(summary.sam2_original_miou_all, 4) + ' / ' + fmt(summary.sam2_original_ari_all, 4);
+        }
       }
 
       function bindControls() {

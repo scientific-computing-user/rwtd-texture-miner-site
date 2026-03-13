@@ -1,0 +1,22 @@
+{
+  "num_images": 3104,
+  "texturesam_coverage": 3063,
+  "architexture_coverage": 3104,
+  "texturesam_direct_all_miou": 0.5580938026928699,
+  "texturesam_direct_all_ari": 0.6100395200632832,
+  "architexture_direct_all_miou": 0.3710508742807676,
+  "architexture_direct_all_ari": 0.5745264367070227,
+  "texturesam_invariant_all_miou": 0.6690540742991616,
+  "texturesam_invariant_all_ari": 0.5080070568954286,
+  "architexture_invariant_all_miou": 0.6676954039470209,
+  "architexture_invariant_all_ari": 0.5745264367070227,
+  "delta_direct_all_miou": -0.1870429284121023,
+  "delta_direct_all_ari": -0.035513083356260466,
+  "delta_invariant_all_miou": -0.0013586703521407673,
+  "delta_invariant_all_ari": 0.06651937981159417,
+  "texturesam_missing": 41,
+  "sam2_original_label": "SAM2.1-small original",
+  "sam2_original_coverage": 3104,
+  "sam2_original_invariant_miou_all": 0.2587795631712037,
+  "sam2_original_invariant_ari_all": 0.20396723609579445
+}

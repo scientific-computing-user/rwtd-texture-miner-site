@@ -27,8 +27,9 @@
         <div class="stat"><div class="value" id="statWrong">-</div><div class="label">Wrong-partition</div></div>
         <div class="stat"><div class="value" id="statUnsafe">-</div><div class="label">Unsafe expansion</div></div>
         <div class="stat"><div class="value" id="statAmb">-</div><div class="label">Ambiguous cases</div></div>
+        <div class="stat"><div class="value" id="statSam2">-</div><div class="label" id="statSam2Label">SAM2.1-small original mIoU / ARI</div></div>
       </div>
-      <p class="note">Displayed masks are exact scored masks from exported run artifacts. Official RWTD metrics still average both complementary partitions per image.</p>
+      <p class="note">Displayed masks are exact scored masks from exported run artifacts. Official RWTD metrics still average both complementary partitions per image. When present, the extra SAM2 stat reports the unfine-tuned SAM2.1-small checkpoint under the same official RWTD evaluator.</p>
     </section>
 
     <section class="explorer">
@@ -164,7 +165,9 @@
         statSuccess: document.getElementById('statSuccess'),
         statWrong: document.getElementById('statWrong'),
         statUnsafe: document.getElementById('statUnsafe'),
-        statAmb: document.getElementById('statAmb')
+        statAmb: document.getElementById('statAmb'),
+        statSam2: document.getElementById('statSam2'),
+        statSam2Label: document.getElementById('statSam2Label')
       };
 
       function num(v) {
@@ -425,6 +428,12 @@
         els.statAmb.textContent = String(state.data.filter(function (r) { return boolFlag(r, 'ambiguous_case'); }).length);
       }
 
+      function setSam2Summary(summary) {
+        if (!summary || !summary.noagg_official) return;
+        els.statSam2Label.textContent = 'SAM2.1-small original mIoU / ARI';
+        els.statSam2.textContent = fmt(summary.noagg_official.overall_average_iou, 4) + ' / ' + fmt(summary.noagg_official.overall_average_rand_index, 4);
+      }
+
       function bindControls() {
         els.searchInput.addEventListener('input', render);
         els.failureSelect.addEventListener('change', render);
@@ -461,9 +470,10 @@
 
       async function init() {
         try {
-          const [dataResp, sumResp] = await Promise.all([
+          const [dataResp, sumResp, sam2Resp] = await Promise.all([
             fetch('./assets/failure_manifest.json', { cache: 'no-store' }),
-            fetch('./assets/failure_manifest_summary.json', { cache: 'no-store' }).catch(function () { return null; })
+            fetch('./assets/failure_manifest_summary.json', { cache: 'no-store' }).catch(function () { return null; }),
+            fetch('./assets/sam2_original_rwtd_eval.json', { cache: 'no-store' }).catch(function () { return null; })
           ]);
 
           if (!dataResp.ok) throw new Error('Could not load failure manifest');
@@ -476,6 +486,10 @@
           let summary = null;
           if (sumResp && sumResp.ok) summary = await sumResp.json();
           setStats(summary);
+          if (sam2Resp && sam2Resp.ok) {
+            const sam2Summary = await sam2Resp.json();
+            setSam2Summary(sam2Summary);
+          }
           bindControls();
           render();
         } catch (err) {

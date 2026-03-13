@@ -27,6 +27,7 @@
         <div class="stat"><div class="value" id="statArchDirect">-</div><div class="label">ArchiTexture direct mIoU / ARI</div></div>
         <div class="stat"><div class="value" id="statTsInv">-</div><div class="label">TextureSAM invariant mIoU / ARI</div></div>
         <div class="stat"><div class="value" id="statArchInv">-</div><div class="label">ArchiTexture invariant mIoU / ARI</div></div>
+        <div class="stat"><div class="value" id="statSam2">-</div><div class="label" id="statSam2Label">SAM2.1-small original invariant mIoU / ARI</div></div>
       </div>
       <p class="note">This page uses the ControlNet-stitched PTD benchmark: one transition between two PTD texture samples, regenerated into more realistic images with ControlNet. Direct metrics score the provided canonical foreground mask. Partition-invariant metrics allow complement matching and are often the more faithful view of a two-texture binary partition.</p>
     </section>
@@ -157,7 +158,9 @@
         statTsDirect: document.getElementById('statTsDirect'),
         statArchDirect: document.getElementById('statArchDirect'),
         statTsInv: document.getElementById('statTsInv'),
-        statArchInv: document.getElementById('statArchInv')
+        statArchInv: document.getElementById('statArchInv'),
+        statSam2: document.getElementById('statSam2'),
+        statSam2Label: document.getElementById('statSam2Label')
       };
 
       function num(v) { const x = Number(v); return Number.isFinite(x) ? x : null; }
@@ -338,6 +341,10 @@
         els.statArchDirect.textContent = fmt(summary.architexture_direct_all_miou, 4) + ' / ' + fmt(summary.architexture_direct_all_ari, 4);
         els.statTsInv.textContent = fmt(summary.texturesam_invariant_all_miou, 4) + ' / ' + fmt(summary.texturesam_invariant_all_ari, 4);
         els.statArchInv.textContent = fmt(summary.architexture_invariant_all_miou, 4) + ' / ' + fmt(summary.architexture_invariant_all_ari, 4);
+        if (summary.sam2_original_label) {
+          els.statSam2Label.textContent = summary.sam2_original_label + ' invariant mIoU / ARI';
+          els.statSam2.textContent = fmt(summary.sam2_original_invariant_miou_all, 4) + ' / ' + fmt(summary.sam2_original_invariant_ari_all, 4);
+        }
       }
 
       function bindControls() {
