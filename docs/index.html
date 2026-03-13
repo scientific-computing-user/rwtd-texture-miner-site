@@ -26,7 +26,7 @@
   <main class="wrap">
     <section class="card">
       <h1>ArchiTexture Results</h1>
-      <p>This public site exposes both the real-world RWTD release and the new held-out Khan/STLD-style synthetic benchmark: frozen high-recall proposals plus learned consolidation, shown in the same gallery format for direct inspection.</p>
+      <p>This public site exposes the real-world RWTD release, the held-out STLD synthetic benchmark, and a ControlNet-stitched PTD benchmark that sits between synthetic and natural imagery: frozen high-recall proposals plus learned consolidation, shown in the same gallery format for direct inspection.</p>
       <div class="stats">
         <div class="stat"><div class="value">0.4611</div><div class="label">RWTD mIoU</div></div>
         <div class="stat"><div class="value">0.6966</div><div class="label">RWTD ARI</div></div>
@@ -34,7 +34,8 @@
       </div>
       <a class="btn" href="./texturesam2_ai_gallery/index.html">Open Full RWTD Gallery<span>All 256 RWTD images with diagnostic masks, proposal evidence, and ranked candidate-strip inspection.</span></a>
       <a class="btn" href="./khan_synthetic_gallery/index.html">Open Synthetic Gallery<span>Held-out Brodatz + MPEG-7 benchmark with proposal-union baseline versus ArchiTexture consolidation.</span></a>
-      <p class="meta">Updated March 12, 2026.</p>
+      <a class="btn" href="./controlnet_stitched_gallery/index.html">Open ControlNet-Stitched Gallery<span>All 1742 ControlNet-regenerated PTD transitions with public TextureSAM 0.3 versus ArchiTexture small_pre_ring_hi.</span></a>
+      <p class="meta">Updated March 13, 2026.</p>
     </section>
   </main>
 </body>
