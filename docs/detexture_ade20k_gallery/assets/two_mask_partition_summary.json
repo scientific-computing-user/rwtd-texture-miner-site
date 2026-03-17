@@ -1,60 +1,60 @@
 {
-  "benchmark_root": "/home/galoren/TextureSAM-v2/experiments/detexture_ade20k_eval_20260317/benchmarks/detexture_validation_refined",
+  "benchmark_root": "/home/galoren/TextureSAM-v2/experiments/detexture_ade20k_eval_20260317/benchmarks/detexture_all_refined",
   "gt_mode": "two_mask_exclusive_valid_pixels",
   "methods": {
     "ArchiTexture_small_pre_ring_hi_0p3": {
-      "coverage": 56,
+      "coverage": 753,
       "direct": {
         "all": {
-          "ari": 0.36753242099773936,
-          "miou": 0.25436121307159576
+          "ari": 0.36365775481781043,
+          "miou": 0.23441767858361273
         },
         "covered": {
-          "ari": 0.36753242099773936,
-          "miou": 0.25436121307159576
+          "ari": 0.36365775481781043,
+          "miou": 0.23441767858361273
         }
       },
       "invariant": {
         "all": {
-          "ari": 0.36753242099773936,
-          "miou": 0.500760085576693
+          "ari": 0.36365775481781043,
+          "miou": 0.4742111198873006
         },
         "covered": {
-          "ari": 0.36753242099773936,
-          "miou": 0.500760085576693
+          "ari": 0.36365775481781043,
+          "miou": 0.4742111198873006
         }
       },
       "mean_mask_count_on_present": 1.0,
       "mode": "single_mask"
     },
     "TextureSAM_0p3": {
-      "coverage": 54,
+      "coverage": 728,
       "direct": {
         "all": {
-          "ari": 0.3649416068875543,
-          "miou": 0.2899136421418592
+          "ari": 0.3996881411433793,
+          "miou": 0.3251084310057403
         },
         "covered": {
-          "ari": 0.3784579626982044,
-          "miou": 0.3006511844434096
+          "ari": 0.4134136954408856,
+          "miou": 0.33627286888368463
         }
       },
       "invariant": {
         "all": {
-          "ari": 0.3187452810696893,
-          "miou": 0.45465942810476523
+          "ari": 0.35664452247468037,
+          "miou": 0.47979703495288134
         },
         "covered": {
-          "ari": 0.3305506618500481,
-          "miou": 0.47149866618271946
+          "ari": 0.3688919305266955,
+          "miou": 0.4962735814828566
         }
       },
-      "mean_mask_count_on_present": 3.425925925925926,
+      "mean_mask_count_on_present": 3.51510989010989,
       "mode": "mask_bank"
     }
   },
-  "num_images": 56,
-  "overlap_fraction_mean": 3.7529243050551466e-05,
-  "valid_fraction_mean": 0.9967425737837894,
-  "void_fraction_mean": 0.0032198969731601903
+  "num_images": 753,
+  "overlap_fraction_mean": 0.0006472778653092094,
+  "valid_fraction_mean": 0.9944105888611762,
+  "void_fraction_mean": 0.0049421332735144615
 }

@@ -2,11 +2,11 @@
   "dataset_root": "/home/galoren/detexture_ADE20K",
   "gallery_path": "/home/galoren/detexture_ADE20K/gallery.json",
   "variant": "refined",
-  "split": "validation",
-  "num_images": 56,
-  "out_root": "/home/galoren/TextureSAM-v2/experiments/detexture_ade20k_eval_20260317/benchmarks/detexture_validation_refined",
+  "split": "all",
+  "num_images": 753,
+  "out_root": "/home/galoren/TextureSAM-v2/experiments/detexture_ade20k_eval_20260317/benchmarks/detexture_all_refined",
   "gt_layout": "two_mask_pair_with_label_a_compat",
-  "valid_fraction_mean": 0.9967425737837894,
-  "overlap_fraction_mean": 3.7529243050551466e-05,
-  "void_fraction_mean": 0.0032198969731601903
+  "valid_fraction_mean": 0.9944105888611762,
+  "overlap_fraction_mean": 0.0006472778653092094,
+  "void_fraction_mean": 0.0049421332735144615
 }

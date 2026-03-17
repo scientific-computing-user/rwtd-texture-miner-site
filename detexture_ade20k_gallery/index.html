@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ArchiTexture DeTexture ADE20K Validation Explorer</title>
+  <title>ArchiTexture DeTexture ADE20K Explorer</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="hero wrap">
-    <p class="kicker">ArchiTexture | DeTexture ADE20K Validation Explorer</p>
-    <h1>Browse All Validation Crops, Inspect One in Depth</h1>
-    <p>Validation-only diagnostic on 56 refined crops from the public detexture_ADE20K gallery. The 697 training crops are intentionally excluded because the released TextureSAM checkpoint was trained on ADE20K.</p>
+    <p class="kicker">ArchiTexture | DeTexture ADE20K Explorer</p>
+    <h1>Browse All Public Crops, Inspect One in Depth</h1>
+    <p>All 753 public DeTexture ADE20K refined crops (697 training-prefixed, 56 validation-prefixed) under the two-mask GT protocol. This route treats the released DeTexture crop set as a standalone benchmark and shows TextureSAM 0.3, ArchiTexture small_pre_ring_hi, and raw SAM2.1-small context.</p>
     <div class="links">
       <a href="./assets/detexture_manifest.json">Download Manifest</a>
       <a href="./assets/two_mask_partition_summary.json">Download Metric Summary</a>
@@ -21,7 +21,7 @@
   <main class="wrap">
     <section class="panel stats-panel">
       <div class="stats">
-        <div class="stat"><div class="value" id="statCount">-</div><div class="label">Validation crops</div></div>
+        <div class="stat"><div class="value" id="statCount">-</div><div class="label">Public crops</div></div>
         <div class="stat"><div class="value" id="statCoverage">-</div><div class="label">TextureSAM coverage</div></div>
         <div class="stat"><div class="value" id="statTsDirect">-</div><div class="label">TextureSAM direct mIoU / ARI</div></div>
         <div class="stat"><div class="value" id="statArchDirect">-</div><div class="label">ArchiTexture direct mIoU / ARI</div></div>
@@ -29,7 +29,7 @@
         <div class="stat"><div class="value" id="statArchInv">-</div><div class="label">ArchiTexture invariant mIoU / ARI</div></div>
         <div class="stat"><div class="value" id="statSam2">-</div><div class="label" id="statSam2Label">SAM2.1-small original invariant mIoU / ARI</div></div>
       </div>
-      <p class="note">This page uses the public detexture_ADE20K crop benchmark. Direct metrics score GT texture A as the canonical foreground. Invariant metrics allow complement matching and ignore overlap and void pixels by scoring only on exclusive-valid pixels. The public comparison is validation-only (56 crops) because the released TextureSAM checkpoint was trained on ADE20K. Matched common-54 invariant results: TextureSAM 0.4715 / 0.3306, ArchiTexture 0.5043 / 0.3762.</p>
+      <p class="note">This page uses the public detexture_ADE20K crop benchmark. Direct metrics score GT texture A as the canonical foreground. Invariant metrics allow complement matching and ignore overlap and void pixels by scoring only on exclusive-valid pixels. This route scores all 753 published crops (697 training-prefixed, 56 validation-prefixed), treating DeTexture ADE20K as a standalone released benchmark. Matched common-728 invariant results: TextureSAM 0.4963 / 0.3689, ArchiTexture 0.4855 / 0.3756.</p>
     </section>
 
     <section class="explorer">
@@ -117,7 +117,7 @@
           <dl>
             <dt>Direct metrics</dt><dd>IoU and ARI against GT texture A, which is the canonical foreground side for this route.</dd>
             <dt>Invariant metrics</dt><dd>IoU and ARI after allowing complement matching, computed only on exclusive-valid pixels where GT texture A and GT texture B disagree.</dd>
-            <dt>GT texture A / B</dt><dd>The two curated region masks released with the public DeTexture validation crop benchmark.</dd>
+            <dt>GT texture A / B</dt><dd>The two curated region masks released with the public DeTexture ADE20K crop benchmark.</dd>
             <dt>TextureSAM union view</dt><dd>A visualization-only union of TextureSAM's mask bank. The reported TextureSAM numbers still come from the full mask bank, not from this union image.</dd>
             <dt>TextureSAM miss</dt><dd>The public TextureSAM checkpoint emitted no masks for this crop. ArchiTexture still returns one region.</dd>
             <dt>Overlap / void pixels</dt><dd>Pixels where both GT masks are active or both are inactive. They are ignored by this evaluator.</dd>

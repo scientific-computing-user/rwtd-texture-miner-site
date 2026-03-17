@@ -1,35 +1,35 @@
 {
-  "benchmark_root": "/home/galoren/TextureSAM-v2/experiments/detexture_ade20k_eval_20260317/benchmarks/detexture_validation_refined",
+  "benchmark_root": "/home/galoren/TextureSAM-v2/experiments/detexture_ade20k_eval_20260317/benchmarks/detexture_all_refined",
   "gt_mode": "two_mask_exclusive_valid_pixels",
   "methods": {
     "SAM2_original": {
-      "coverage": 56,
+      "coverage": 753,
       "direct": {
         "all": {
-          "ari": 0.13790112066907662,
-          "miou": 0.12633116447971368
+          "ari": 0.1484920437750682,
+          "miou": 0.1426020128241034
         },
         "covered": {
-          "ari": 0.13790112066907662,
-          "miou": 0.12633116447971368
+          "ari": 0.1484920437750682,
+          "miou": 0.1426020128241034
         }
       },
       "invariant": {
         "all": {
-          "ari": 0.10153823787436712,
-          "miou": 0.16647945483980037
+          "ari": 0.10485859155423957,
+          "miou": 0.16630244392210247
         },
         "covered": {
-          "ari": 0.10153823787436712,
-          "miou": 0.16647945483980037
+          "ari": 0.10485859155423957,
+          "miou": 0.16630244392210247
         }
       },
-      "mean_mask_count_on_present": 13.142857142857142,
+      "mean_mask_count_on_present": 14.297476759628154,
       "mode": "mask_bank"
     }
   },
-  "num_images": 56,
-  "overlap_fraction_mean": 3.7529243050551466e-05,
-  "valid_fraction_mean": 0.9967425737837894,
-  "void_fraction_mean": 0.0032198969731601903
+  "num_images": 753,
+  "overlap_fraction_mean": 0.0006472778653092094,
+  "valid_fraction_mean": 0.9944105888611762,
+  "void_fraction_mean": 0.0049421332735144615
 }
